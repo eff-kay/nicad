@@ -1,0 +1,32 @@
+<clones>
+<systeminfo processor="nicad5" system="smart-contracts" granularity="functions-blind" threshold="30%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="493" npairs="1"/>
+<runinfo ncompares="43" cputime="60858"/>
+<classinfo nclasses="1"/>
+
+<class classid="1" nclones="2" nlines="11" similarity="90">
+<source file="systems/smart-contracts/augur.sol" startline="593" endline="601" pcid="149">
+    function min(uint256 a, uint256 b) internal pure returns (uint256) {
+        if (a <= b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    function max(uint256 a, uint256 b) internal pure returns (uint256) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="601" endline="609" pcid="150">
+    function max(uint256 a, uint256 b) internal pure returns (uint256) {
+        if (a >= b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    function getUint256Min() internal pure returns (uint256) {
+</source>
+</class>
+
+</clones>

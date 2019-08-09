@@ -1,0 +1,3561 @@
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="39" endline="47">
+function add (uint a, uint b) internal pure returns (uint c)
+
+    {
+        c = a + b; require (c > = a);
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="47" endline="55">
+function sub (uint a, uint b) internal pure returns (uint c)
+
+    {
+        require (b < = a); c = a - b;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="55" endline="63">
+function mul (uint a, uint b) internal pure returns (uint c)
+
+    {
+        c = a * b; require (a = = 0 | | c / a = = b);
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="63" endline="71">
+function div (uint a, uint b) internal pure returns (uint c)
+
+    {
+        require (b > 0); c = a / b;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="79" endline="86">
+function limitLessThan (uint a, uint b) internal pure returns (uint c)
+
+    {
+        if (a > b) return b; return a;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="98" endline="100">
+function totalSupply () public constant returns (uint)
+    ;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="100" endline="102">
+function balanceOf (address tokenOwner) public constant returns (uint balance)
+    ;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="102" endline="104">
+function allowance (address tokenOwner, address spender) public constant returns (uint remaining)
+    ;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="104" endline="106">
+function transfer (address to, uint tokens) public returns (bool success)
+    ;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="106" endline="108">
+function approve (address spender, uint tokens) public returns (bool success)
+    ;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="108" endline="111">
+function transferFrom (address from, address to, uint tokens) public returns (bool success)
+    ;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="131" endline="133">
+function receiveApproval (address from, uint256 tokens, address token, bytes data) public
+    ;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="153" endline="160">
+function Owned () public
+
+    {
+        owner = msg.sender;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="169" endline="175">
+function transferOwnership (address _newOwner) public onlyOwner
+
+    {
+        newOwner = _newOwner;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="175" endline="187">
+function acceptOwnership () public
+
+    {
+        require (msg.sender = = newOwner); OwnershipTransferred (owner, newOwner); owner = newOwner; newOwner = address (0);
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="268" endline="304">
+function _drsebitoken () public onlyOwner
+
+    {
+        symbol = "SEBI"; name = "Dr Sebi Token"; decimals = 8; _totalSupply = 100000000 * 10 * * uint (decimals); if (locked) revert (); locked = true; tokensMinted = 0; rewardEra = 0; maxSupplyForEra = _totalSupply.div (2); miningTarget = _MAXIMUM_TARGET
+          ; latestDifficultyPeriodStarted = block.number; _startNewMiningEpoch ();
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="304" endline="349">
+function mint (uint256 nonce, bytes32 challenge_digest) public returns (bool success)
+
+    {
+        bytes32 digest = keccak256 (challengeNumber, msg.sender, nonce); if (digest ! = challenge_digest) revert (); if (uint256 (digest) > miningTarget) revert (); bytes32 solution = solutionForChallenge [challengeNumber]; solutionForChallenge [
+          challengeNumber] = digest; if (solution ! = 0x0) revert (); uint reward_amount = getMiningReward (); balances [msg.sender] = balances [msg.sender].add (reward_amount); tokensMinted = tokensMinted.add (reward_amount); assert (tokensMinted < =
+          maxSupplyForEra); lastRewardTo = msg.sender; lastRewardAmount = reward_amount; lastRewardEthBlockNumber = block.number; _startNewMiningEpoch (); Mint (msg.sender, reward_amount, epochCount, challengeNumber); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="349" endline="391">
+function _startNewMiningEpoch () internal
+
+    {
+        if (tokensMinted.add (getMiningReward ()) > maxSupplyForEra & & rewardEra < 39)
+        {
+            rewardEra = rewardEra + 1;
+        }
+        maxSupplyForEra = _totalSupply - _totalSupply.div (2 * * (rewardEra + 1)); epochCount = epochCount.add (1); if (epochCount % _BLOCKS_PER_READJUSTMENT = = 0)
+        {
+            _reAdjustDifficulty ();
+        }
+        challengeNumber = block.blockhash (block.number - 1);
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="391" endline="438">
+function _reAdjustDifficulty () internal
+
+    {
+        uint ethBlocksSinceLastDifficultyPeriod = block.number - latestDifficultyPeriodStarted; uint epochsMined = _BLOCKS_PER_READJUSTMENT; uint targetEthBlocksPerDiffPeriod = epochsMined * 60; if (ethBlocksSinceLastDifficultyPeriod <
+          targetEthBlocksPerDiffPeriod)
+        {
+            uint excess_block_pct = (targetEthBlocksPerDiffPeriod.mul (100)).div (ethBlocksSinceLastDifficultyPeriod); uint excess_block_pct_extra = excess_block_pct.sub (100).limitLessThan (1000); miningTarget = miningTarget.sub (miningTarget.div (2000).
+              mul (excess_block_pct_extra));
+        }
+        else
+        {
+            uint shortage_block_pct = (ethBlocksSinceLastDifficultyPeriod.mul (100)).div (targetEthBlocksPerDiffPeriod); uint shortage_block_pct_extra = shortage_block_pct.sub (100).limitLessThan (1000); miningTarget = miningTarget.add (miningTarget.div (
+              2000).mul (shortage_block_pct_extra));
+        }
+        latestDifficultyPeriodStarted = block.number; if (miningTarget < _MINIMUM_TARGET)
+        {
+            miningTarget = _MINIMUM_TARGET;
+        }
+        if (miningTarget > _MAXIMUM_TARGET)
+        {
+            miningTarget = _MAXIMUM_TARGET;
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443">
+function getChallengeNumber () public constant returns (bytes32)
+
+    {
+        return challengeNumber;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="443" endline="447">
+function getMiningDifficulty () public constant returns (uint)
+
+    {
+        return _MAXIMUM_TARGET.div (miningTarget);
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455">
+function getMiningTarget () public constant returns (uint)
+
+    {
+        return miningTarget;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="455" endline="465">
+function getMiningReward () public constant returns (uint)
+
+    {
+        return (50 * 10 * uint (decimals)).div (2 * rewardEra);
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="465" endline="474">
+function getMintDigest (uint256 nonce, bytes32 challenge_digest, bytes32 challenge_number) public view returns (bytes32 digesttest)
+
+    {
+        bytes32 digest = keccak256 (challenge_number, msg.sender, nonce); return digest;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="474" endline="492">
+function checkMintSolution (uint256 nonce, bytes32 challenge_digest, bytes32 challenge_number, uint testTarget) public view returns (bool success)
+
+    {
+        bytes32 digest = keccak256 (challenge_number, msg.sender, nonce); if (uint256 (digest) > testTarget) revert (); return (digest = = challenge_digest);
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="492" endline="506">
+function totalSupply () public constant returns (uint)
+
+    {
+        return _totalSupply - balances [address (0)];
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="506" endline="524">
+function balanceOf (address tokenOwner) public constant returns (uint balance)
+
+    {
+        return balances [tokenOwner];
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="524" endline="554">
+function transfer (address to, uint tokens) public returns (bool success)
+
+    {
+        balances [msg.sender] = balances [msg.sender].sub (tokens); balances [to] = balances [to].add (tokens); Transfer (msg.sender, to, tokens); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="554" endline="584">
+function approve (address spender, uint tokens) public returns (bool success)
+
+    {
+        allowed [msg.sender] [spender] = tokens; Approval (msg.sender, spender, tokens); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="584" endline="608">
+function transferFrom (address from, address to, uint tokens) public returns (bool success)
+
+    {
+        balances [from] = balances [from].sub (tokens); allowed [from] [msg.sender] = allowed [from] [msg.sender].sub (tokens); balances [to] = balances [to].add (tokens); Transfer (from, to, tokens); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="608" endline="626">
+function allowance (address tokenOwner, address spender) public constant returns (uint remaining)
+
+    {
+        return allowed [tokenOwner] [spender];
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="626" endline="646">
+function approveAndCall (address spender, uint tokens, bytes data) public returns (bool success)
+
+    {
+        allowed [msg.sender] [spender] = tokens; Approval (msg.sender, spender, tokens); ApproveAndCallFallBack (spender).receiveApproval (msg.sender, tokens, this, data); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="646" endline="660">
+function () public payable
+
+    {
+        revert ();
+    }
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="660" endline="666">
+function transferAnyERC20Token (address tokenAddress, uint tokens) public onlyOwner returns (bool success)
+
+    {
+        return ERC20Interface (tokenAddress).transfer (owner, tokens);
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="4" endline="5">
+function createChildUniverse (bytes32 _parentPayoutDistributionHash, uint256 [] _parentPayoutNumerators, bool _parentInvalid) public returns (IUniverse)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="5" endline="6">
+function isKnownUniverse (IUniverse _universe) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="6" endline="7">
+function trustedTransfer (ERC20 _token, address _from, address _to, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="7" endline="8">
+function logMarketCreated (bytes32 _topic, string _description, string _extraInfo, IUniverse _universe, address _market, address _marketCreator, bytes32 [] _outcomes, int256 _minPrice, int256 _maxPrice, IMarket.MarketType _marketType) public returns (bool
+  )
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="8" endline="9">
+function logMarketCreated (bytes32 _topic, string _description, string _extraInfo, IUniverse _universe, address _market, address _marketCreator, int256 _minPrice, int256 _maxPrice, IMarket.MarketType _marketType) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="9" endline="10">
+function logInitialReportSubmitted (IUniverse _universe, address _reporter, address _market, uint256 _amountStaked, bool _isDesignatedReporter, uint256 [] _payoutNumerators, bool _invalid) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="10" endline="11">
+function disputeCrowdsourcerCreated (IUniverse _universe, address _market, address _disputeCrowdsourcer, uint256 [] _payoutNumerators, uint256 _size, bool _invalid) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="11" endline="12">
+function logDisputeCrowdsourcerContribution (IUniverse _universe, address _reporter, address _market, address _disputeCrowdsourcer, uint256 _amountStaked) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="12" endline="13">
+function logDisputeCrowdsourcerCompleted (IUniverse _universe, address _market, address _disputeCrowdsourcer) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="13" endline="14">
+function logInitialReporterRedeemed (IUniverse _universe, address _reporter, address _market, uint256 _amountRedeemed, uint256 _repReceived, uint256 _reportingFeesReceived, uint256 [] _payoutNumerators) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="14" endline="15">
+function logDisputeCrowdsourcerRedeemed (IUniverse _universe, address _reporter, address _market, uint256 _amountRedeemed, uint256 _repReceived, uint256 _reportingFeesReceived, uint256 [] _payoutNumerators) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="15" endline="16">
+function logFeeWindowRedeemed (IUniverse _universe, address _reporter, uint256 _amountRedeemed, uint256 _reportingFeesReceived) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="16" endline="17">
+function logMarketFinalized (IUniverse _universe) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="17" endline="18">
+function logMarketMigrated (IMarket _market, IUniverse _originalUniverse) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="18" endline="19">
+function logReportingParticipantDisavowed (IUniverse _universe, IMarket _market) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="19" endline="20">
+function logMarketParticipantsDisavowed (IUniverse _universe) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="20" endline="21">
+function logOrderCanceled (IUniverse _universe, address _shareToken, address _sender, bytes32 _orderId, Order.Types _orderType, uint256 _tokenRefund, uint256 _sharesRefund) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="21" endline="22">
+function logOrderCreated (Order.Types _orderType, uint256 _amount, uint256 _price, address _creator, uint256 _moneyEscrowed, uint256 _sharesEscrowed, bytes32 _tradeGroupId, bytes32 _orderId, IUniverse _universe, address _shareToken) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="22" endline="23">
+function logOrderFilled (IUniverse _universe, address _shareToken, address _filler, bytes32 _orderId, uint256 _numCreatorShares, uint256 _numCreatorTokens, uint256 _numFillerShares, uint256 _numFillerTokens, uint256 _marketCreatorFees, uint256
+  _reporterFees, uint256 _amountFilled, bytes32 _tradeGroupId) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="23" endline="24">
+function logCompleteSetsPurchased (IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="24" endline="25">
+function logCompleteSetsSold (IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="25" endline="26">
+function logTradingProceedsClaimed (IUniverse _universe, address _shareToken, address _sender, address _market, uint256 _numShares, uint256 _numPayoutTokens, uint256 _finalTokenBalance) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="26" endline="27">
+function logUniverseForked () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="27" endline="28">
+function logFeeWindowTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="28" endline="29">
+function logReputationTokensTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="29" endline="30">
+function logDisputeCrowdsourcerTokensTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="30" endline="31">
+function logShareTokensTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="31" endline="32">
+function logReputationTokenBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="32" endline="33">
+function logReputationTokenMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="33" endline="34">
+function logShareTokenBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="34" endline="35">
+function logShareTokenMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="35" endline="36">
+function logFeeWindowBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="36" endline="37">
+function logFeeWindowMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="37" endline="38">
+function logDisputeCrowdsourcerTokensBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="38" endline="39">
+function logDisputeCrowdsourcerTokensMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="39" endline="40">
+function logFeeWindowCreated (IFeeWindow _feeWindow, uint256 _id) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="40" endline="41">
+function logFeeTokenTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="41" endline="42">
+function logFeeTokenBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="42" endline="43">
+function logFeeTokenMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="43" endline="44">
+function logTimestampSet (uint256 _newTimestamp) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="44" endline="45">
+function logInitialReporterTransferred (IUniverse _universe, IMarket _market, address _from, address _to) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="45" endline="46">
+function logMarketTransferred (IUniverse _universe, address _from, address _to) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="46" endline="47">
+function logMarketMailboxTransferred (IUniverse _universe, IMarket _market, address _from, address _to) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="47" endline="48">
+function logEscapeHatchChanged (bool _isOn) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="51" endline="52">
+function getController () public view returns (IController)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="52" endline="53">
+function setController (IController _controller) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="83" endline="87">
+function Controlled () public
+
+    {
+        controller = IController (msg.sender);
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91">
+function getController () public view returns (IController)
+
+    {
+        return controller;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="91" endline="95">
+function setController (IController _controller) public onlyControllerCaller returns (bool)
+
+    {
+        controller = _controller; return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="145" endline="149">
+function createGenesisUniverse () public returns (IUniverse)
+
+    {
+        return createUniverse (IUniverse (0), bytes32 (0), new uint256 [] (0), false);
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="149" endline="155">
+function createChildUniverse (bytes32 _parentPayoutDistributionHash, uint256 [] _parentPayoutNumerators, bool _parentInvalid) public returns (IUniverse)
+
+    {
+        IUniverse _parentUniverse = IUniverse (msg.sender); require (isKnownUniverse (_parentUniverse)); return createUniverse (_parentUniverse, _parentPayoutDistributionHash, _parentPayoutNumerators, _parentInvalid);
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="155" endline="163">
+function createUniverse (IUniverse _parentUniverse, bytes32 _parentPayoutDistributionHash, uint256 [] _parentPayoutNumerators, bool _parentInvalid) private returns (IUniverse)
+
+    {
+        UniverseFactory _universeFactory = UniverseFactory (controller.lookup ("UniverseFactory")); IUniverse _newUniverse = _universeFactory.createUniverse (controller, _parentUniverse, _parentPayoutDistributionHash); universes [_newUniverse] = true;
+          UniverseCreated (_parentUniverse, _newUniverse, _parentPayoutNumerators, _parentInvalid); return _newUniverse;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="163" endline="171">
+function isKnownUniverse (IUniverse _universe) public view returns (bool)
+
+    {
+        return universes [_universe];
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="171" endline="175">
+function isKnownCrowdsourcer (IDisputeCrowdsourcer _crowdsourcer) public view returns (bool)
+
+    {
+        return crowdsourcers [_crowdsourcer];
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="175" endline="187">
+function disputeCrowdsourcerCreated (IUniverse _universe, address _market, address _disputeCrowdsourcer, uint256 [] _payoutNumerators, uint256 _size, bool _invalid) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForMarket (IMarket (msg.sender))); crowdsourcers [_disputeCrowdsourcer] = true; DisputeCrowdsourcerCreated (_universe, _market, _disputeCrowdsourcer, _payoutNumerators, _size,
+          _invalid); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="187" endline="198">
+function trustedTransfer (ERC20 _token, address _from, address _to, uint256 _amount) public onlyWhitelistedCallers returns (bool)
+
+    {
+        require (_amount > 0); require (_token.transferFrom (_from, _to, _amount)); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="198" endline="206">
+function logMarketCreated (bytes32 _topic, string _description, string _extraInfo, IUniverse _universe, address _market, address _marketCreator, bytes32 [] _outcomes, int256 _minPrice, int256 _maxPrice, IMarket.MarketType _marketType) public returns (bool
+  )
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe = = IUniverse (msg.sender)); MarketCreated (_topic, _description, _extraInfo, _universe, _market, _marketCreator, _outcomes, _universe.getOrCacheMarketCreationCost (), _minPrice, _maxPrice,
+          _marketType); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="206" endline="213">
+function logMarketCreated (bytes32 _topic, string _description, string _extraInfo, IUniverse _universe, address _market, address _marketCreator, int256 _minPrice, int256 _maxPrice, IMarket.MarketType _marketType) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe = = IUniverse (msg.sender)); MarketCreated (_topic, _description, _extraInfo, _universe, _market, _marketCreator, new bytes32 [] (0), _universe.getOrCacheMarketCreationCost (), _minPrice,
+          _maxPrice, _marketType); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="213" endline="220">
+function logInitialReportSubmitted (IUniverse _universe, address _reporter, address _market, uint256 _amountStaked, bool _isDesignatedReporter, uint256 [] _payoutNumerators, bool _invalid) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForMarket (IMarket (msg.sender))); InitialReportSubmitted (_universe, _reporter, _market, _amountStaked, _isDesignatedReporter, _payoutNumerators, _invalid); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="220" endline="227">
+function logDisputeCrowdsourcerContribution (IUniverse _universe, address _reporter, address _market, address _disputeCrowdsourcer, uint256 _amountStaked) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForMarket (IMarket (msg.sender))); DisputeCrowdsourcerContribution (_universe, _reporter, _market, _disputeCrowdsourcer, _amountStaked); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="227" endline="234">
+function logDisputeCrowdsourcerCompleted (IUniverse _universe, address _market, address _disputeCrowdsourcer) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForMarket (IMarket (msg.sender))); DisputeCrowdsourcerCompleted (_universe, _market, _disputeCrowdsourcer); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="234" endline="241">
+function logInitialReporterRedeemed (IUniverse _universe, address _reporter, address _market, uint256 _amountRedeemed, uint256 _repReceived, uint256 _reportingFeesReceived, uint256 [] _payoutNumerators) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForReportingParticipant (IReportingParticipant (msg.sender))); InitialReporterRedeemed (_universe, _reporter, _market, _amountRedeemed, _repReceived, _reportingFeesReceived,
+          _payoutNumerators); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="241" endline="248">
+function logDisputeCrowdsourcerRedeemed (IUniverse _universe, address _reporter, address _market, uint256 _amountRedeemed, uint256 _repReceived, uint256 _reportingFeesReceived, uint256 [] _payoutNumerators) public returns (bool)
+
+    {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer (msg.sender); require (isKnownCrowdsourcer (_disputeCrowdsourcer)); DisputeCrowdsourcerRedeemed (_universe, _reporter, _market, _disputeCrowdsourcer, _amountRedeemed, _repReceived,
+          _reportingFeesReceived, _payoutNumerators); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="248" endline="255">
+function logReportingParticipantDisavowed (IUniverse _universe, IMarket _market) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForReportingParticipant (IReportingParticipant (msg.sender))); ReportingParticipantDisavowed (_universe, _market, msg.sender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="255" endline="263">
+function logMarketParticipantsDisavowed (IUniverse _universe) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); IMarket _market = IMarket (msg.sender); require (_universe.isContainerForMarket (_market)); MarketParticipantsDisavowed (_universe, _market); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="263" endline="270">
+function logFeeWindowRedeemed (IUniverse _universe, address _reporter, uint256 _amountRedeemed, uint256 _reportingFeesReceived) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForFeeWindow (IFeeWindow (msg.sender))); FeeWindowRedeemed (_universe, _reporter, msg.sender, _amountRedeemed, _reportingFeesReceived); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="270" endline="278">
+function logMarketFinalized (IUniverse _universe) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); IMarket _market = IMarket (msg.sender); require (_universe.isContainerForMarket (_market)); MarketFinalized (_universe, _market); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="278" endline="285">
+function logMarketMigrated (IMarket _market, IUniverse _originalUniverse) public returns (bool)
+
+    {
+        IUniverse _newUniverse = IUniverse (msg.sender); require (isKnownUniverse (_newUniverse)); MarketMigrated (_market, _originalUniverse, _newUniverse); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="285" endline="290">
+function logOrderCanceled (IUniverse _universe, address _shareToken, address _sender, bytes32 _orderId, Order.Types _orderType, uint256 _tokenRefund, uint256 _sharesRefund) public onlyWhitelistedCallers returns (bool)
+
+    {
+        OrderCanceled (_universe, _shareToken, _sender, _orderId, _orderType, _tokenRefund, _sharesRefund); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="290" endline="295">
+function logOrderCreated (Order.Types _orderType, uint256 _amount, uint256 _price, address _creator, uint256 _moneyEscrowed, uint256 _sharesEscrowed, bytes32 _tradeGroupId, bytes32 _orderId, IUniverse _universe, address _shareToken) public
+  onlyWhitelistedCallers returns (bool)
+
+    {
+        OrderCreated (_orderType, _amount, _price, _creator, _moneyEscrowed, _sharesEscrowed, _tradeGroupId, _orderId, _universe, _shareToken); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="295" endline="300">
+function logOrderFilled (IUniverse _universe, address _shareToken, address _filler, bytes32 _orderId, uint256 _numCreatorShares, uint256 _numCreatorTokens, uint256 _numFillerShares, uint256 _numFillerTokens, uint256 _marketCreatorFees, uint256
+  _reporterFees, uint256 _amountFilled, bytes32 _tradeGroupId) public onlyWhitelistedCallers returns (bool)
+
+    {
+        OrderFilled (_universe, _shareToken, _filler, _orderId, _numCreatorShares, _numCreatorTokens, _numFillerShares, _numFillerTokens, _marketCreatorFees, _reporterFees, _amountFilled, _tradeGroupId); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="300" endline="305">
+function logCompleteSetsPurchased (IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets) public onlyWhitelistedCallers returns (bool)
+
+    {
+        CompleteSetsPurchased (_universe, _market, _account, _numCompleteSets); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="305" endline="310">
+function logCompleteSetsSold (IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets) public onlyWhitelistedCallers returns (bool)
+
+    {
+        CompleteSetsSold (_universe, _market, _account, _numCompleteSets); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="310" endline="315">
+function logTradingProceedsClaimed (IUniverse _universe, address _shareToken, address _sender, address _market, uint256 _numShares, uint256 _numPayoutTokens, uint256 _finalTokenBalance) public onlyWhitelistedCallers returns (bool)
+
+    {
+        TradingProceedsClaimed (_universe, _shareToken, _sender, _market, _numShares, _numPayoutTokens, _finalTokenBalance); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="315" endline="321">
+function logUniverseForked () public returns (bool)
+
+    {
+        require (universes [msg.sender]); UniverseForked (msg.sender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="321" endline="328">
+function logFeeWindowTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForFeeWindow (IFeeWindow (msg.sender))); TokensTransferred (_universe, msg.sender, _from, _to, _value, TokenType.FeeWindow, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="328" endline="335">
+function logReputationTokensTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.getReputationToken () = = IReputationToken (msg.sender)); TokensTransferred (_universe, msg.sender, _from, _to, _value, TokenType.ReputationToken, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="335" endline="342">
+function logDisputeCrowdsourcerTokensTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+
+    {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer (msg.sender); require (isKnownCrowdsourcer (_disputeCrowdsourcer)); TokensTransferred (_universe, msg.sender, _from, _to, _value, TokenType.DisputeCrowdsourcer, _disputeCrowdsourcer.
+          getMarket ()); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="342" endline="350">
+function logShareTokensTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); IShareToken _shareToken = IShareToken (msg.sender); require (_universe.isContainerForShareToken (_shareToken)); TokensTransferred (_universe, msg.sender, _from, _to, _value, TokenType.ShareToken, _shareToken.
+          getMarket ()); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="350" endline="357">
+function logReputationTokenBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.getReputationToken () = = IReputationToken (msg.sender)); TokensBurned (_universe, msg.sender, _target, _amount, TokenType.ReputationToken, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="357" endline="364">
+function logReputationTokenMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.getReputationToken () = = IReputationToken (msg.sender)); TokensMinted (_universe, msg.sender, _target, _amount, TokenType.ReputationToken, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="364" endline="372">
+function logShareTokenBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); IShareToken _shareToken = IShareToken (msg.sender); require (_universe.isContainerForShareToken (_shareToken)); TokensBurned (_universe, msg.sender, _target, _amount, TokenType.ShareToken, _shareToken.
+          getMarket ()); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="372" endline="380">
+function logShareTokenMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); IShareToken _shareToken = IShareToken (msg.sender); require (_universe.isContainerForShareToken (_shareToken)); TokensMinted (_universe, msg.sender, _target, _amount, TokenType.ShareToken, _shareToken.
+          getMarket ()); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="380" endline="387">
+function logFeeWindowBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForFeeWindow (IFeeWindow (msg.sender))); TokensBurned (_universe, msg.sender, _target, _amount, TokenType.FeeWindow, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="387" endline="394">
+function logFeeWindowMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForFeeWindow (IFeeWindow (msg.sender))); TokensMinted (_universe, msg.sender, _target, _amount, TokenType.FeeWindow, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="394" endline="401">
+function logDisputeCrowdsourcerTokensBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer (msg.sender); require (isKnownCrowdsourcer (_disputeCrowdsourcer)); TokensBurned (_universe, msg.sender, _target, _amount, TokenType.DisputeCrowdsourcer, _disputeCrowdsourcer.
+          getMarket ()); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="401" endline="408">
+function logDisputeCrowdsourcerTokensMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer (msg.sender); require (isKnownCrowdsourcer (_disputeCrowdsourcer)); TokensMinted (_universe, msg.sender, _target, _amount, TokenType.DisputeCrowdsourcer, _disputeCrowdsourcer.
+          getMarket ()); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="408" endline="414">
+function logFeeWindowCreated (IFeeWindow _feeWindow, uint256 _id) public returns (bool)
+
+    {
+        require (universes [msg.sender]); FeeWindowCreated (msg.sender, _feeWindow, _feeWindow.getStartTime (), _feeWindow.getEndTime (), _id); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="414" endline="421">
+function logFeeTokenTransferred (IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForFeeToken (IFeeToken (msg.sender))); TokensTransferred (_universe, msg.sender, _from, _to, _value, TokenType.FeeToken, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="421" endline="428">
+function logFeeTokenBurned (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForFeeToken (IFeeToken (msg.sender))); TokensBurned (_universe, msg.sender, _target, _amount, TokenType.FeeToken, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="428" endline="435">
+function logFeeTokenMinted (IUniverse _universe, address _target, uint256 _amount) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForFeeToken (IFeeToken (msg.sender))); TokensMinted (_universe, msg.sender, _target, _amount, TokenType.FeeToken, 0); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="435" endline="441">
+function logTimestampSet (uint256 _newTimestamp) public returns (bool)
+
+    {
+        require (msg.sender = = controller.lookup ("Time")); TimestampSet (_newTimestamp); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="441" endline="449">
+function logInitialReporterTransferred (IUniverse _universe, IMarket _market, address _from, address _to) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForMarket (_market)); require (msg.sender = = _market.getInitialReporterAddress ()); InitialReporterTransferred (_universe, _market, _from, _to); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="449" endline="457">
+function logMarketTransferred (IUniverse _universe, address _from, address _to) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); IMarket _market = IMarket (msg.sender); require (_universe.isContainerForMarket (_market)); MarketTransferred (_universe, _market, _from, _to); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="457" endline="465">
+function logMarketMailboxTransferred (IUniverse _universe, IMarket _market, address _from, address _to) public returns (bool)
+
+    {
+        require (isKnownUniverse (_universe)); require (_universe.isContainerForMarket (_market)); require (IMailbox (msg.sender) = = _market.getMarketCreatorMailbox ()); MarketMailboxTransferred (_universe, _market, msg.sender, _from, _to); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="465" endline="470">
+function logEscapeHatchChanged (bool _isOn) public returns (bool)
+
+    {
+        require (msg.sender = = address (controller)); EscapeHatchChanged (_isOn); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="473" endline="474">
+function assertIsWhitelisted (address _target) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="474" endline="475">
+function lookup (bytes32 _key) public view returns (address)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="475" endline="476">
+function stopInEmergency () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="476" endline="477">
+function onlyInEmergency () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="477" endline="478">
+function getAugur () public view returns (IAugur)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="478" endline="479">
+function getTimestamp () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="482" endline="488">
+function createUniverse (IController _controller, IUniverse _parentUniverse, bytes32 _parentPayoutDistributionHash) public returns (IUniverse)
+
+    {
+        Delegator _delegator = new Delegator (_controller, "Universe"); IUniverse _universe = IUniverse (_delegator); _universe.initialize (_parentUniverse, _parentPayoutDistributionHash); return _universe;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="495" endline="500">
+function Delegator (IController _controller, bytes32 _controllerLookupName) public
+
+    {
+        controller = _controller; controllerLookupName = _controllerLookupName;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="500" endline="534">
+function () external payable
+
+    {
+        if (controllerLookupName = = 0)
+        {
+            return;
+        }
+        address _target = controller.lookup (controllerLookupName); assembly {let _calldataMemoryOffset : = mload (0x40) let _size : = and (add (calldatasize, 0x1f), not (0x1f)) mstore (0x40, add (_calldataMemoryOffset, _size)) calldatacopy (
+          _calldataMemoryOffset, 0x0, calldatasize) let _retval : = delegatecall (gas, _target, _calldataMemoryOffset, calldatasize, 0, 0) switch _retval case 0 {revert (0, 0)} default {let _returndataMemoryOffset : = mload (0x40) mstore (0x40, add (
+          _returndataMemoryOffset, returndatasize)) returndatacopy (_returndataMemoryOffset, 0x0, returndatasize) return (_returndataMemoryOffset, returndatasize)}}
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="537" endline="538">
+function getOwner () public view returns (address)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="538" endline="539">
+function transferOwnership (address newOwner) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="542" endline="543">
+function getTypeName () public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="558" endline="563">
+function endInitialization () internal beforeInitialized returns (bool)
+
+    {
+        initialized = true; return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566">
+function getInitialized () public view returns (bool)
+
+    {
+        return initialized;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="569" endline="575">
+function mul (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        uint256 c = a * b; require (a = = 0 | | c / a = = b); return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="575" endline="582">
+function div (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        uint256 c = a / b; return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="582" endline="587">
+function sub (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        require (b < = a); return a - b;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="587" endline="593">
+function add (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        uint256 c = a + b; require (c > = a); return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="593" endline="601">
+function min (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        if (a < = b)
+        {
+            return a;
+        }
+        else
+        {
+            return b;
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="601" endline="609">
+function max (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        if (a > = b)
+        {
+            return a;
+        }
+        else
+        {
+            return b;
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="609" endline="613">
+function getUint256Min () internal pure returns (uint256)
+
+    {
+        return 0;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="613" endline="617">
+function getUint256Max () internal pure returns (uint256)
+
+    {
+        return 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="617" endline="622">
+function isMultipleOf (uint256 a, uint256 b) internal pure returns (bool)
+
+    {
+        return a % b = = 0;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="622" endline="626">
+function fxpMul (uint256 a, uint256 b, uint256 base) internal pure returns (uint256)
+
+    {
+        return div (mul (a, b), base);
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="626" endline="629">
+function fxpDiv (uint256 a, uint256 b, uint256 base) internal pure returns (uint256)
+
+    {
+        return div (mul (a, base), b);
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="634" endline="635">
+function balanceOf (address _who) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="635" endline="636">
+function transfer (address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="636" endline="637">
+function totalSupply () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="642" endline="643">
+function allowance (address _owner, address _spender) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="643" endline="644">
+function transferFrom (address _from, address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="644" endline="645">
+function approve (address _spender, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="648" endline="649">
+function initialize (IFeeWindow _feeWindow) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="649" endline="650">
+function getFeeWindow () public view returns (IFeeWindow)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="650" endline="651">
+function feeWindowBurn (address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="651" endline="652">
+function mintForReportingParticipant (address _target, uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="655" endline="656">
+function initialize (IUniverse _universe, uint256 _feeWindowId) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="656" endline="657">
+function getUniverse () public view returns (IUniverse)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="657" endline="658">
+function getReputationToken () public view returns (IReputationToken)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="658" endline="659">
+function getStartTime () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="659" endline="660">
+function getEndTime () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="660" endline="661">
+function getNumMarkets () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="661" endline="662">
+function getNumInvalidMarkets () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="662" endline="663">
+function getNumIncorrectDesignatedReportMarkets () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="663" endline="664">
+function getNumDesignatedReportNoShows () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="664" endline="665">
+function getFeeToken () public view returns (IFeeToken)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="665" endline="666">
+function isActive () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="666" endline="667">
+function isOver () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="667" endline="668">
+function onMarketFinalized () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="668" endline="669">
+function buy (uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="669" endline="670">
+function redeem (address _sender) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="670" endline="671">
+function redeemForReportingParticipant () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="671" endline="672">
+function mintFeeTokens (uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="672" endline="673">
+function trustedUniverseBuy (address _buyer, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="676" endline="677">
+function initialize (address _owner, IMarket _market) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="677" endline="678">
+function depositEther () public payable returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="687" endline="688">
+function initialize (IUniverse _universe, uint256 _endTime, uint256 _feePerEthInAttoeth, ICash _cash, address _designatedReporterAddress, address _creator, uint256 _numOutcomes, uint256 _numTicks) public payable returns (bool _success)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="688" endline="689">
+function derivePayoutDistributionHash (uint256 [] _payoutNumerators, bool _invalid) public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="689" endline="690">
+function getUniverse () public view returns (IUniverse)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="690" endline="691">
+function getFeeWindow () public view returns (IFeeWindow)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="691" endline="692">
+function getNumberOfOutcomes () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="692" endline="693">
+function getNumTicks () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="693" endline="694">
+function getDenominationToken () public view returns (ICash)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="694" endline="695">
+function getShareToken (uint256 _outcome) public view returns (IShareToken)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="695" endline="696">
+function getMarketCreatorSettlementFeeDivisor () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="696" endline="697">
+function getForkingMarket () public view returns (IMarket _market)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="697" endline="698">
+function getEndTime () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="698" endline="699">
+function getMarketCreatorMailbox () public view returns (IMailbox)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="699" endline="700">
+function getWinningPayoutDistributionHash () public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="700" endline="701">
+function getWinningPayoutNumerator (uint256 _outcome) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="701" endline="702">
+function getReputationToken () public view returns (IReputationToken)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="702" endline="703">
+function getFinalizationTime () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="703" endline="704">
+function getInitialReporterAddress () public view returns (address)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="704" endline="705">
+function deriveMarketCreatorFeeAmount (uint256 _amount) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="705" endline="706">
+function isContainerForShareToken (IShareToken _shadyTarget) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="706" endline="707">
+function isContainerForReportingParticipant (IReportingParticipant _reportingParticipant) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="707" endline="708">
+function isInvalid () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="708" endline="709">
+function finalize () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="709" endline="710">
+function designatedReporterWasCorrect () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="710" endline="711">
+function designatedReporterShowed () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="711" endline="712">
+function isFinalized () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="712" endline="713">
+function finalizeFork () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="713" endline="714">
+function assertBalances () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="717" endline="718">
+function getStake () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="718" endline="719">
+function getPayoutDistributionHash () public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="719" endline="720">
+function liquidateLosing () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="720" endline="721">
+function redeem (address _redeemer) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="721" endline="722">
+function isInvalid () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="722" endline="723">
+function isDisavowed () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="723" endline="724">
+function migrate () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="724" endline="725">
+function getPayoutNumerator (uint256 _outcome) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="725" endline="726">
+function getMarket () public view returns (IMarket)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="726" endline="727">
+function getSize () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="730" endline="731">
+function initialize (IMarket market, uint256 _size, bytes32 _payoutDistributionHash, uint256 [] _payoutNumerators, bool _invalid) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="731" endline="732">
+function contribute (address _participant, uint256 _amount) public returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="735" endline="736">
+function initialize (IMarket _market, address _designatedReporter) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="736" endline="737">
+function report (address _reporter, bytes32 _payoutDistributionHash, uint256 [] _payoutNumerators, bool _invalid) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="737" endline="738">
+function resetReportTimestamp () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="738" endline="739">
+function designatedReporterShowed () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="739" endline="740">
+function designatedReporterWasCorrect () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="740" endline="741">
+function getDesignatedReporter () public view returns (address)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="741" endline="742">
+function getReportTimestamp () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="742" endline="743">
+function migrateREP () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="746" endline="747">
+function initialize (IUniverse _universe) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="747" endline="748">
+function migrateOut (IReputationToken _destination, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="748" endline="749">
+function migrateIn (address _reporter, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="749" endline="750">
+function trustedReportingParticipantTransfer (address _source, address _destination, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="750" endline="751">
+function trustedMarketTransfer (address _source, address _destination, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="751" endline="752">
+function trustedFeeWindowTransfer (address _source, address _destination, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="752" endline="753">
+function trustedUniverseTransfer (address _source, address _destination, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="753" endline="754">
+function getUniverse () public view returns (IUniverse)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="754" endline="755">
+function getTotalMigrated () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="755" endline="756">
+function getTotalTheoreticalSupply () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="756" endline="757">
+function mintForReportingParticipant (uint256 _amountMigrated) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="760" endline="761">
+function initialize (IUniverse _parentUniverse, bytes32 _parentPayoutDistributionHash) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="761" endline="762">
+function fork () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="762" endline="763">
+function getParentUniverse () public view returns (IUniverse)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="763" endline="764">
+function createChildUniverse (uint256 [] _parentPayoutNumerators, bool _invalid) public returns (IUniverse)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="764" endline="765">
+function getChildUniverse (bytes32 _parentPayoutDistributionHash) public view returns (IUniverse)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="765" endline="766">
+function getReputationToken () public view returns (IReputationToken)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="766" endline="767">
+function getForkingMarket () public view returns (IMarket)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="767" endline="768">
+function getForkEndTime () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="768" endline="769">
+function getForkReputationGoal () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="769" endline="770">
+function getParentPayoutDistributionHash () public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="770" endline="771">
+function getDisputeRoundDurationInSeconds () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="771" endline="772">
+function getOrCreateFeeWindowByTimestamp (uint256 _timestamp) public returns (IFeeWindow)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="772" endline="773">
+function getOrCreateCurrentFeeWindow () public returns (IFeeWindow)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="773" endline="774">
+function getOrCreateNextFeeWindow () public returns (IFeeWindow)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="774" endline="775">
+function getOpenInterestInAttoEth () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="775" endline="776">
+function getRepMarketCapInAttoeth () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="776" endline="777">
+function getTargetRepMarketCapInAttoeth () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="777" endline="778">
+function getOrCacheValidityBond () public returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="778" endline="779">
+function getOrCacheDesignatedReportStake () public returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="779" endline="780">
+function getOrCacheDesignatedReportNoShowBond () public returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="780" endline="781">
+function getOrCacheReportingFeeDivisor () public returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="781" endline="782">
+function getDisputeThresholdForFork () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="782" endline="783">
+function getInitialReportMinValue () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="783" endline="784">
+function calculateFloatingValue (uint256 _badMarkets, uint256 _totalMarkets, uint256 _targetDivisor, uint256 _previousValue, uint256 _defaultValue, uint256 _floor) public pure returns (uint256 _newValue)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="784" endline="785">
+function getOrCacheMarketCreationCost () public returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="785" endline="786">
+function getCurrentFeeWindow () public view returns (IFeeWindow)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="786" endline="787">
+function getOrCreateFeeWindowBefore (IFeeWindow _feeWindow) public returns (IFeeWindow)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="787" endline="788">
+function isParentOf (IUniverse _shadyChild) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="788" endline="789">
+function updateTentativeWinningChildUniverse (bytes32 _parentPayoutDistributionHash) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="789" endline="790">
+function isContainerForFeeWindow (IFeeWindow _shadyTarget) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="790" endline="791">
+function isContainerForMarket (IMarket _shadyTarget) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="791" endline="792">
+function isContainerForReportingParticipant (IReportingParticipant _reportingParticipant) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="792" endline="793">
+function isContainerForShareToken (IShareToken _shadyTarget) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="793" endline="794">
+function isContainerForFeeToken (IFeeToken _shadyTarget) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="794" endline="795">
+function addMarketTo () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="795" endline="796">
+function removeMarketFrom () public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="796" endline="797">
+function decrementOpenInterest (uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="797" endline="798">
+function decrementOpenInterestFromMarket (uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="798" endline="799">
+function incrementOpenInterest (uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="799" endline="800">
+function incrementOpenInterestFromMarket (uint256 _amount) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="800" endline="801">
+function getWinningChildUniverse () public view returns (IUniverse)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="801" endline="802">
+function isForking () public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="805" endline="806">
+function depositEther () external payable returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="806" endline="807">
+function depositEtherFor (address _to) external payable returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="807" endline="808">
+function withdrawEther (uint256 _amount) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="808" endline="809">
+function withdrawEtherTo (address _to, uint256 _amount) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="809" endline="810">
+function withdrawEtherToIfPossible (address _to, uint256 _amount) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="813" endline="814">
+function saveOrder (Order.Types _type, IMarket _market, uint256 _fxpAmount, uint256 _price, address _sender, uint256 _outcome, uint256 _moneyEscrowed, uint256 _sharesEscrowed, bytes32 _betterOrderId, bytes32 _worseOrderId, bytes32 _tradeGroupId) public
+  returns (bytes32 _orderId)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="814" endline="815">
+function removeOrder (bytes32 _orderId) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="815" endline="816">
+function getMarket (bytes32 _orderId) public view returns (IMarket)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="816" endline="817">
+function getOrderType (bytes32 _orderId) public view returns (Order.Types)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="817" endline="818">
+function getOutcome (bytes32 _orderId) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="818" endline="819">
+function getAmount (bytes32 _orderId) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="819" endline="820">
+function getPrice (bytes32 _orderId) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="820" endline="821">
+function getOrderCreator (bytes32 _orderId) public view returns (address)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="821" endline="822">
+function getOrderSharesEscrowed (bytes32 _orderId) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="822" endline="823">
+function getOrderMoneyEscrowed (bytes32 _orderId) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="823" endline="824">
+function getBetterOrderId (bytes32 _orderId) public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="824" endline="825">
+function getWorseOrderId (bytes32 _orderId) public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="825" endline="826">
+function getBestOrderId (Order.Types _type, IMarket _market, uint256 _outcome) public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="826" endline="827">
+function getWorstOrderId (Order.Types _type, IMarket _market, uint256 _outcome) public view returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="827" endline="828">
+function getLastOutcomePrice (IMarket _market, uint256 _outcome) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="828" endline="829">
+function getOrderId (Order.Types _type, IMarket _market, uint256 _fxpAmount, uint256 _price, address _sender, uint256 _blockNumber, uint256 _outcome, uint256 _moneyEscrowed, uint256 _sharesEscrowed) public pure returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="829" endline="830">
+function getTotalEscrowed (IMarket _market) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="830" endline="831">
+function isBetterPrice (Order.Types _type, uint256 _price, bytes32 _orderId) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="831" endline="832">
+function isWorsePrice (Order.Types _type, uint256 _price, bytes32 _orderId) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="832" endline="833">
+function assertIsNotBetterPrice (Order.Types _type, uint256 _price, bytes32 _betterOrderId) public view returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="833" endline="834">
+function assertIsNotWorsePrice (Order.Types _type, uint256 _price, bytes32 _worseOrderId) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="834" endline="835">
+function recordFillOrder (bytes32 _orderId, uint256 _sharesFilled, uint256 _tokensFilled) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="835" endline="836">
+function setPrice (IMarket _market, uint256 _outcome, uint256 _price) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="836" endline="837">
+function incrementTotalEscrowed (IMarket _market, uint256 _amount) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="837" endline="838">
+function decrementTotalEscrowed (IMarket _market, uint256 _amount) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="841" endline="842">
+function initialize (IMarket _market, uint256 _outcome) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="842" endline="843">
+function createShares (address _owner, uint256 _amount) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="843" endline="844">
+function destroyShares (address, uint256 balance) external returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="844" endline="845">
+function getMarket () external view returns (IMarket)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="845" endline="846">
+function getOutcome () external view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="846" endline="847">
+function trustedOrderTransfer (address _source, address _destination, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="847" endline="848">
+function trustedFillOrderTransfer (address _source, address _destination, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="848" endline="849">
+function trustedCancelOrderTransfer (address _source, address _destination, uint256 _attotokens) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="886" endline="914">
+function create (IController _controller, address _creator, uint256 _outcome, Order.Types _type, uint256 _attoshares, uint256 _price, IMarket _market, bytes32 _betterOrderId, bytes32 _worseOrderId) internal view returns (Data)
+
+    {
+        require (_outcome < _market.getNumberOfOutcomes ()); require (_price < _market.getNumTicks ()); IOrders _orders = IOrders (_controller.lookup ("Orders")); IAugur _augur = _controller.getAugur (); return Data ({orders : _orders, market : _market,
+          augur : _augur, id : 0, creator : _creator, outcome : _outcome, orderType : _type, amount : _attoshares, price : _price, sharesEscrowed : 0, moneyEscrowed : 0, betterOrderId : _betterOrderId, worseOrderId : _worseOrderId});
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="914" endline="923">
+function getOrderId (Order.Data _orderData) internal view returns (bytes32)
+
+    {
+        if (_orderData.id = = bytes32 (0))
+        {
+            bytes32 _orderId = _orderData.orders.getOrderId (_orderData.orderType, _orderData.market, _orderData.amount, _orderData.price, _orderData.creator, block.number, _orderData.outcome, _orderData.moneyEscrowed, _orderData.sharesEscrowed); require (
+              _orderData.orders.getAmount (_orderId) = = 0); _orderData.id = _orderId;
+        }
+        return _orderData.id;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="923" endline="927">
+function getOrderTradingTypeFromMakerDirection (Order.TradeDirections _creatorDirection) internal pure returns (Order.Types)
+
+    {
+        return (_creatorDirection = = Order.TradeDirections.Long) ? Order.Types.Bid : Order.Types.Ask;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="927" endline="931">
+function getOrderTradingTypeFromFillerDirection (Order.TradeDirections _fillerDirection) internal pure returns (Order.Types)
+
+    {
+        return (_fillerDirection = = Order.TradeDirections.Long) ? Order.Types.Ask : Order.Types.Bid;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="931" endline="939">
+function escrowFunds (Order.Data _orderData) internal returns (bool)
+
+    {
+        if (_orderData.orderType = = Order.Types.Ask)
+        {
+            return escrowFundsForAsk (_orderData);
+        }
+        else if (_orderData.orderType = = Order.Types.Bid)
+        {
+            return escrowFundsForBid (_orderData);
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="939" endline="947">
+function saveOrder (Order.Data _orderData, bytes32 _tradeGroupId) internal returns (bytes32)
+
+    {
+        return _orderData.orders.saveOrder (_orderData.orderType, _orderData.market, _orderData.amount, _orderData.price, _orderData.creator, _orderData.outcome, _orderData.moneyEscrowed, _orderData.sharesEscrowed, _orderData.betterOrderId, _orderData.
+          worseOrderId, _tradeGroupId);
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="947" endline="981">
+function escrowFundsForBid (Order.Data _orderData) private returns (bool)
+
+    {
+        require (_orderData.moneyEscrowed = = 0); require (_orderData.sharesEscrowed = = 0); uint256 _attosharesToCover = _orderData.amount; uint256 _numberOfOutcomes = _orderData.market.getNumberOfOutcomes (); uint256 _attosharesHeld = 2 * * 254; for (
+          uint256 _i = 0; _i < _numberOfOutcomes; _i + +)
+        {
+            if (_i ! = _orderData.outcome)
+            {
+                uint256 _creatorShareTokenBalance = _orderData.market.getShareToken (_i).balanceOf (_orderData.creator); _attosharesHeld = SafeMathUint256.min (_creatorShareTokenBalance, _attosharesHeld);
+            }
+
+        }
+        if (_attosharesHeld > 0)
+        {
+            _orderData.sharesEscrowed = SafeMathUint256.min (_attosharesHeld, _attosharesToCover); _attosharesToCover - = _orderData.sharesEscrowed; for (_i = 0; _i < _numberOfOutcomes; _i + +)
+            {
+                if (_i ! = _orderData.outcome)
+                {
+                    _orderData.market.getShareToken (_i).trustedOrderTransfer (_orderData.creator, _orderData.market, _orderData.sharesEscrowed);
+                }
+
+            }
+
+        }
+        if (_attosharesToCover > 0)
+        {
+            _orderData.moneyEscrowed = _attosharesToCover.mul (_orderData.price); require (_orderData.augur.trustedTransfer (_orderData.market.getDenominationToken (), _orderData.creator, _orderData.market, _orderData.moneyEscrowed));
+        }
+        return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="981" endline="1005">
+function escrowFundsForAsk (Order.Data _orderData) private returns (bool)
+
+    {
+        require (_orderData.moneyEscrowed = = 0); require (_orderData.sharesEscrowed = = 0); IShareToken _shareToken = _orderData.market.getShareToken (_orderData.outcome); uint256 _attosharesToCover = _orderData.amount; uint256 _attosharesHeld =
+          _shareToken.balanceOf (_orderData.creator); if (_attosharesHeld > 0)
+        {
+            _orderData.sharesEscrowed = SafeMathUint256.min (_attosharesHeld, _attosharesToCover); _attosharesToCover - = _orderData.sharesEscrowed; _shareToken.trustedOrderTransfer (_orderData.creator, _orderData.market, _orderData.sharesEscrowed);
+        }
+        if (_attosharesToCover > 0)
+        {
+            _orderData.moneyEscrowed = _orderData.market.getNumTicks ().sub (_orderData.price).mul (_attosharesToCover); require (_orderData.augur.trustedTransfer (_orderData.market.getDenominationToken (), _orderData.creator, _orderData.market, _orderData
+              .moneyEscrowed));
+        }
+        return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="11" endline="12">
+function receiveApproval (address _from, uint256 _value, address _token, bytes calldata _extraData) external
+    ;
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="60" endline="68">
+function freezeAccount (address target, bool freeze) onlyOwner public
+
+    {
+        frozenAccount [target] = freeze; emit FrozenFunds (target, freeze);
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="68" endline="87">
+function _transfer (address _from, address _to, uint _value) internal
+
+    {
+        require (_to ! = address (0x0)); require (_from ! = address (0x0)); require (balanceOf [_from] > = _value); require (balanceOf [_to] + _value > = balanceOf [_to]); require (! frozenAccount [_from]); require (! frozenAccount [_to]); uint
+          previousBalances = balanceOf [_from] + balanceOf [_to]; balanceOf [_from] - = _value; balanceOf [_to] + = _value; emit Transfer (_from, _to, _value); assert (balanceOf [_from] + balanceOf [_to] = = previousBalances);
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="87" endline="95">
+function transfer (address _to, uint256 _value) public returns (bool success)
+
+    {
+        _transfer (msg.sender, _to, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="95" endline="107">
+function transferFrom (address _from, address _to, uint256 _value) public returns (bool success)
+
+    {
+        require (_value < = allowance [_from] [msg.sender]); allowance [_from] [msg.sender] - = _value; _transfer (_from, _to, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="107" endline="118">
+function approve (address _spender, uint256 _value) public returns (bool success)
+
+    {
+        allowance [msg.sender] [_spender] = _value; emit Approval (msg.sender, _spender, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="118" endline="130">
+function approveAndCall (address _spender, uint256 _value, bytes memory _extraData) public returns (bool success)
+
+    {
+        tokenRecipient spender = tokenRecipient (_spender); if (approve (_spender, _value))
+        {
+            spender.receiveApproval (msg.sender, _value, address (this), _extraData); return true;
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="130" endline="142">
+function burn (uint256 _value) onlyOwner public returns (bool success)
+
+    {
+        require (balanceOf [msg.sender] > = _value); balanceOf [msg.sender] - = _value; totalSupply - = _value; emit Burn (msg.sender, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="142" endline="155">
+function burnFrom (address _from, uint256 _value) onlyOwner public returns (bool success)
+
+    {
+        require (balanceOf [_from] > = _value); require (_value < = allowance [_from] [msg.sender]); balanceOf [_from] - = _value; allowance [_from] [msg.sender] - = _value; totalSupply - = _value; emit Burn (_from, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="155" endline="162">
+function mintToken (address target, uint256 mintedAmount) onlyOwner public
+
+    {
+        uint256 number = mintedAmount * 10 * uint256 (decimals); balanceOf [target] + = number; totalSupply + = number; emit Transfer (address (0x0), owner, mintedAmount); emit Transfer (owner, target, mintedAmount);
+    }
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="12" endline="13">
+function tokensOfOwner (address _owner) external view returns (uint256 [] ownerTokens)
+    ;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="13" endline="14">
+function ownerOf (uint256 _tokenId) external view returns (address owner)
+    ;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="14" endline="15">
+function balanceOf (address _owner) public view returns (uint256 count)
+    ;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="18" endline="19">
+function transferFrom (address _from, address _to, uint256 _tokenId) external
+    ;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="19" endline="20">
+function setTokenPrice (uint256 _tokenId, uint256 _price) external
+    ;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="20" endline="21">
+function CreateKittyToken (address _owner, uint256 _price, uint32 _kittyId) public
+    ;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="36" endline="39">
+function CaptainKitties () public
+
+    {
+        owner = msg.sender;
+    }
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="44" endline="48">
+function setKittyContractAddress (address _address) external onlyOwner
+
+    {
+        kittyContract = KittyInterface (_address);
+    }
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="48" endline="52">
+function setKittyTokenAddress (address _address) external onlyOwner
+
+    {
+        kittyToken = KittyTokenInterface (_address);
+    }
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="52" endline="69">
+function createKitties () external payable
+
+    {
+        uint256 kittycount = kittyContract.balanceOf (msg.sender); require (kittyGetOrNot [msg.sender] = = false); if (kittycount > = 9)
+        {
+            kittycount = 9;
+        }
+        if (kittycount > 0 & & kittyToCount [msg.sender] = = 0)
+        {
+            kittyToCount [msg.sender] = kittycount; kittyGetOrNot [msg.sender] = true; for (uint i = 0; i < kittycount; i + +)
+            {
+                kittyToken.CreateKittyToken (msg.sender, 0, 1);
+            }
+            CreateKitty (kittycount, msg.sender);
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="69" endline="75">
+function getKitties () external view returns (uint256 kittycnt, uint256 captaincnt, bool bGetOrNot)
+
+    {
+        kittycnt = kittyContract.balanceOf (msg.sender); captaincnt = kittyToCount [msg.sender]; bGetOrNot = kittyGetOrNot [msg.sender];
+    }
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="75" endline="79">
+function getKittyGetOrNot (address _addr) external view returns (bool)
+
+    {
+        return kittyGetOrNot [_addr];
+    }
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="79" endline="83">
+function getKittyCount (address _addr) external view returns (uint256)
+
+    {
+        return kittyToCount [_addr];
+    }
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="83" endline="86">
+function birthKitty () external
+
+    {
+
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="11" endline="17">
+function safeMul (uint256 a, uint256 b) internal returns (uint256)
+
+    {
+        uint256 c = a * b; assert (a = = 0 | | c / a = = b); return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="17" endline="24">
+function safeDiv (uint256 a, uint256 b) internal returns (uint256)
+
+    {
+        assert (b > 0); uint256 c = a / b; assert (a = = b * c + a % b); return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="24" endline="29">
+function safeSub (uint256 a, uint256 b) internal returns (uint256)
+
+    {
+        assert (b < = a); return a - b;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="29" endline="35">
+function safeAdd (uint256 a, uint256 b) internal returns (uint256)
+
+    {
+        uint256 c = a + b; assert (c > = a & & c > = b); return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="35" endline="40">
+function assert (bool assertion) internal
+
+    {
+        if (! assertion)
+        {
+            throw;
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="66" endline="81">
+function DAI (uint256 initialSupply, string tokenName, uint8 decimalUnits, string tokenSymbol)
+
+    {
+        balanceOf [msg.sender] = initialSupply; totalSupply = initialSupply; name = tokenName; symbol = tokenSymbol; decimals = decimalUnits; owner = msg.sender;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="81" endline="92">
+function transfer (address _to, uint256 _value)
+
+    {
+        if (_to = = 0x0) throw; if (_value < = 0) throw; if (balanceOf [msg.sender] < _value) throw; if (balanceOf [_to] + _value < balanceOf [_to]) throw; balanceOf [msg.sender] = SafeMath.safeSub (balanceOf [msg.sender], _value); balanceOf [_to] =
+          SafeMath.safeAdd (balanceOf [_to], _value); Transfer (msg.sender, _to, _value);
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="92" endline="101">
+function approve (address _spender, uint256 _value) returns (bool success)
+
+    {
+        if (_value < = 0) throw; allowance [msg.sender] [_spender] = _value; return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="101" endline="114">
+function transferFrom (address _from, address _to, uint256 _value) returns (bool success)
+
+    {
+        if (_to = = 0x0) throw; if (_value < = 0) throw; if (balanceOf [_from] < _value) throw; if (balanceOf [_to] + _value < balanceOf [_to]) throw; if (_value > allowance [_from] [msg.sender]) throw; balanceOf [_from] = SafeMath.safeSub (balanceOf [
+          _from], _value); balanceOf [_to] = SafeMath.safeAdd (balanceOf [_to], _value); allowance [_from] [msg.sender] = SafeMath.safeSub (allowance [_from] [msg.sender], _value); Transfer (_from, _to, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="114" endline="123">
+function burn (uint256 _value) returns (bool success)
+
+    {
+        if (balanceOf [msg.sender] < _value) throw; if (_value < = 0) throw; balanceOf [msg.sender] = SafeMath.safeSub (balanceOf [msg.sender], _value); totalSupply = SafeMath.safeSub (totalSupply, _value); Burn (msg.sender, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="123" endline="132">
+function freeze (uint256 _value) returns (bool success)
+
+    {
+        if (balanceOf [msg.sender] < _value) throw; if (_value < = 0) throw; balanceOf [msg.sender] = SafeMath.safeSub (balanceOf [msg.sender], _value); freezeOf [msg.sender] = SafeMath.safeAdd (freezeOf [msg.sender], _value); Freeze (msg.sender, _value);
+          return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="132" endline="142">
+function unfreeze (uint256 _value) returns (bool success)
+
+    {
+        if (freezeOf [msg.sender] < _value) throw; if (_value < = 0) throw; freezeOf [msg.sender] = SafeMath.safeSub (freezeOf [msg.sender], _value); balanceOf [msg.sender] = SafeMath.safeAdd (balanceOf [msg.sender], _value); Unfreeze (msg.sender, _value)
+          ; return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="142" endline="148">
+function withdrawEther (uint256 amount)
+
+    {
+        if (msg.sender ! = owner) throw; owner.transfer (amount);
+    }
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="148" endline="150">
+function () payable
+
+    {
+
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="8" endline="10">
+function totalSupply () public constant returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="10" endline="12">
+function balanceOf (address _who) public constant returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="12" endline="14">
+function allowance (address _owner, address _spender) public constant returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="14" endline="16">
+function transfer (address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="16" endline="18">
+function approve (address _spender, uint256 _fromValue, uint256 _toValue) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="18" endline="20">
+function transferFrom (address _from, address _to, uint256 _value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="40" endline="45">
+function renounceOwnership () public onlyOwner
+
+    {
+        emit OwnershipRenounced (owner); owner = address (0);
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="45" endline="52">
+function transferOwnership (address _newOwner) public onlyOwner
+
+    {
+        require (_newOwner ! = address (0)); emit OwnershipTransferred (owner, _newOwner); owner = _newOwner;
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="70" endline="75">
+function pause () public onlyOwner whenNotPaused
+
+    {
+        paused = true; emit Paused ();
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="75" endline="79">
+function unpause () public onlyOwner whenPaused
+
+    {
+        paused = false; emit Unpaused ();
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="83" endline="90">
+function sub (uint256 _a, uint256 _b) internal pure returns (uint256)
+
+    {
+        require (_b < = _a); uint256 c = _a - _b; return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="90" endline="98">
+function add (uint256 _a, uint256 _b) internal pure returns (uint256)
+
+    {
+        uint256 c = _a + _b; require (c > = _a); return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125">
+function totalSupply () public constant returns (uint256)
+
+    {
+        return _totalSupply;
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="125" endline="129">
+function balanceOf (address _owner) public constant returns (uint256)
+
+    {
+        return balances [_owner];
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="129" endline="133">
+function allowance (address _owner, address _spender) public constant returns (uint256)
+
+    {
+        return allowed [_owner] [_spender];
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="133" endline="143">
+function transfer (address _to, uint256 _value) public whenNotPaused returns (bool)
+
+    {
+        require (_value < = balances [msg.sender]); require (_to ! = address (0)); balances [msg.sender] = balances [msg.sender].sub (_value); balances [_to] = balances [_to].add (_value); emit Transfer (msg.sender, _to, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="143" endline="151">
+function approve (address _spender, uint256 _fromValue, uint256 _toValue) public whenNotPaused returns (bool)
+
+    {
+        require (_spender ! = address (0)); require (allowed [msg.sender] [_spender] = = _fromValue); allowed [msg.sender] [_spender] = _toValue; emit Approval (msg.sender, _spender, _toValue); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="151" endline="164">
+function transferFrom (address _from, address _to, uint256 _value) public whenNotPaused returns (bool)
+
+    {
+        require (_value < = balances [_from]); require (_value < = allowed [_from] [msg.sender]); require (_to ! = address (0)); balances [_from] = balances [_from].sub (_value); balances [_to] = balances [_to].add (_value); allowed [_from] [msg.sender] =
+          allowed [_from] [msg.sender].sub (_value); emit Transfer (_from, _to, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/test.sol" startline="2" endline="5">
+function sub (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        uint256 c = t + x;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="10" endline="11">
+function tokenFallback (address from, uint256 value) external
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="21" endline="22">
+function totalSupply () public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="22" endline="23">
+function balanceOf (address who) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="23" endline="24">
+function transfer (address to, uint256 value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="34" endline="35">
+function allowance (address owner, address spender) public view returns (uint256)
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="35" endline="36">
+function transferFrom (address from, address to, uint256 value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="36" endline="37">
+function approve (address spender, uint256 value) public returns (bool)
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="43" endline="44">
+function syncAttributeValue (address _who, bytes32 _attribute, uint256 _value) external
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="83" endline="88">
+function confirmWrite (bytes32 _attribute, address _admin) internal view returns (bool)
+
+    {
+        return (_admin = = owner | | hasAttribute (_admin, keccak256 (WRITE_PERMISSION ^ _attribute)));
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="88" endline="100">
+function setAttribute (address _who, bytes32 _attribute, uint256 _value, bytes32 _notes) public
+
+    {
+        require (confirmWrite (_attribute, msg.sender)); attributes [_who] [_attribute] = AttributeData (_value, _notes, msg.sender, block.timestamp); emit SetAttribute (_who, _attribute, _value, _notes, msg.sender); RegistryClone [] storage targets =
+          subscribers [_attribute]; uint256 index = targets.length; while (index - - > 0)
+        {
+            targets [index].syncAttributeValue (_who, _attribute, _value);
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="100" endline="105">
+function subscribe (bytes32 _attribute, RegistryClone _syncer) external onlyOwner
+
+    {
+        subscribers [_attribute].push (_syncer); emit StartSubscription (_attribute, _syncer);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="105" endline="113">
+function unsubscribe (bytes32 _attribute, uint256 _index) external onlyOwner
+
+    {
+        uint256 length = subscribers [_attribute].length; require (_index < length); emit StopSubscription (_attribute, subscribers [_attribute] [_index]); subscribers [_attribute] [_index] = subscribers [_attribute] [length - 1]; subscribers [_attribute]
+          .length = length - 1;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="113" endline="117">
+function subscriberCount (bytes32 _attribute) public view returns (uint256)
+
+    {
+        return subscribers [_attribute].length;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="117" endline="129">
+function setAttributeValue (address _who, bytes32 _attribute, uint256 _value) public
+
+    {
+        require (confirmWrite (_attribute, msg.sender)); attributes [_who] [_attribute] = AttributeData (_value, "", msg.sender, block.timestamp); emit SetAttribute (_who, _attribute, _value, "", msg.sender); RegistryClone [] storage targets = subscribers
+          [_attribute]; uint256 index = targets.length; while (index - - > 0)
+        {
+            targets [index].syncAttributeValue (_who, _attribute, _value);
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="129" endline="135">
+function hasAttribute (address _who, bytes32 _attribute) public view returns (bool)
+
+    {
+        return attributes [_who] [_attribute].value ! = 0;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="135" endline="140">
+function getAttribute (address _who, bytes32 _attribute) public view returns (uint256, bytes32, address, uint256)
+
+    {
+        AttributeData memory data = attributes [_who] [_attribute]; return (data.value, data.notes, data.adminAddr, data.timestamp);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="140" endline="144">
+function getAttributeValue (address _who, bytes32 _attribute) public view returns (uint256)
+
+    {
+        return attributes [_who] [_attribute].value;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="144" endline="148">
+function getAttributeAdminAddr (address _who, bytes32 _attribute) public view returns (address)
+
+    {
+        return attributes [_who] [_attribute].adminAddr;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="148" endline="152">
+function getAttributeTimestamp (address _who, bytes32 _attribute) public view returns (uint256)
+
+    {
+        return attributes [_who] [_attribute].timestamp;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="152" endline="164">
+function syncAttribute (bytes32 _attribute, uint256 _startIndex, address [] _addresses) external
+
+    {
+        RegistryClone [] storage targets = subscribers [_attribute]; uint256 index = targets.length; while (index - - > _startIndex)
+        {
+            RegistryClone target = targets [index]; for (uint256 i = _addresses.length; i - - > 0;)
+            {
+                address who = _addresses [i]; target.syncAttributeValue (who, _attribute, attributes [who] [_attribute].value);
+            }
+
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="164" endline="168">
+function reclaimEther (address _to) external onlyOwner
+
+    {
+        _to.transfer (address (this).balance);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="168" endline="176">
+function reclaimToken (ERC20 token, address _to) external onlyOwner
+
+    {
+        uint256 balance = token.balanceOf (this); token.transfer (_to, balance);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="193" endline="200">
+function transferOwnership (address newOwner) public onlyOwner
+
+    {
+        pendingOwner = newOwner;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="200" endline="205">
+function claimOwnership () public onlyPendingOwner
+
+    {
+        emit OwnershipTransferred (owner, pendingOwner); owner = pendingOwner; pendingOwner = address (0);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="225" endline="232">
+function Ownable () public
+
+    {
+        owner = msg.sender;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="241" endline="247">
+function transferOwnership (address newOwner) public onlyOwner
+
+    {
+        require (newOwner ! = address (0)); emit OwnershipTransferred (owner, newOwner); owner = newOwner;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="271" endline="278">
+function transferOwnership (address newOwner) onlyOwner public
+
+    {
+        pendingOwner = newOwner;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="278" endline="283">
+function claimOwnership () onlyPendingOwner public
+
+    {
+        emit OwnershipTransferred (owner, pendingOwner); owner = pendingOwner; pendingOwner = address (0);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="296" endline="308">
+function mul (uint256 a, uint256 b) internal pure returns (uint256 c)
+
+    {
+        if (a = = 0)
+        {
+            return 0;
+        }
+        c = a * b; assert (c / a = = b); return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="308" endline="318">
+function div (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        return a / b;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="318" endline="326">
+function sub (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        assert (b < = a); return a - b;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="326" endline="331">
+function add (uint256 a, uint256 b) internal pure returns (uint256 c)
+
+    {
+        c = a + b; assert (c > = a); return c;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="341" endline="345">
+function addBalance (address _addr, uint256 _value) public onlyOwner
+
+    {
+        balanceOf [_addr] = balanceOf [_addr].add (_value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="345" endline="349">
+function subBalance (address _addr, uint256 _value) public onlyOwner
+
+    {
+        balanceOf [_addr] = balanceOf [_addr].sub (_value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="349" endline="352">
+function setBalance (address _addr, uint256 _value) public onlyOwner
+
+    {
+        balanceOf [_addr] = _value;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="362" endline="366">
+function addAllowance (address _tokenHolder, address _spender, uint256 _value) public onlyOwner
+
+    {
+        allowanceOf [_tokenHolder] [_spender] = allowanceOf [_tokenHolder] [_spender].add (_value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="366" endline="370">
+function subAllowance (address _tokenHolder, address _spender, uint256 _value) public onlyOwner
+
+    {
+        allowanceOf [_tokenHolder] [_spender] = allowanceOf [_tokenHolder] [_spender].sub (_value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="370" endline="373">
+function setAllowance (address _tokenHolder, address _spender, uint256 _value) public onlyOwner
+
+    {
+        allowanceOf [_tokenHolder] [_spender] = _value;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="476" endline="483">
+function transferOwnership (address newOwner) public onlyOwner
+
+    {
+        pendingOwner = newOwner;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="483" endline="488">
+function claimOwnership () public onlyPendingOwner
+
+    {
+        emit OwnershipTransferred (owner, pendingOwner); owner = pendingOwner; pendingOwner = address (0);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="496" endline="504">
+function reclaimEther (address _to) external onlyOwner
+
+    {
+        _to.transfer (address (this).balance);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="504" endline="512">
+function reclaimToken (ERC20 token, address _to) external onlyOwner
+
+    {
+        uint256 balance = token.balanceOf (this); token.transfer (_to, balance);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="512" endline="516">
+function reclaimContract (Ownable _ownable) external onlyOwner
+
+    {
+        _ownable.transferOwnership (owner);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537">
+function totalSupply () public view returns (uint256)
+
+    {
+        return totalSupply_;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="537" endline="541">
+function balanceOf (address _who) public view returns (uint256)
+
+    {
+        return _getBalance (_who);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="541" endline="545">
+function _getBalance (address _who) internal view returns (uint256)
+
+    {
+        return _balanceOf [_who];
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="545" endline="550">
+function _addBalance (address _who, uint256 _value) internal returns (uint256 priorBalance)
+
+    {
+        priorBalance = _balanceOf [_who]; _balanceOf [_who] = priorBalance.add (_value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="550" endline="555">
+function _subBalance (address _who, uint256 _value) internal returns (uint256 result)
+
+    {
+        result = _balanceOf [_who].sub (_value); _balanceOf [_who] = result;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="555" endline="558">
+function _setBalance (address _who, uint256 _value) internal
+
+    {
+        _balanceOf [_who] = _value;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="584" endline="589">
+function approve (address _spender, uint256 _value) public returns (bool)
+
+    {
+        _approveAllArgs (_spender, _value, msg.sender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="589" endline="604">
+function _approveAllArgs (address _spender, uint256 _value, address _tokenHolder) internal
+
+    {
+        _setAllowance (_tokenHolder, _spender, _value); emit Approval (_tokenHolder, _spender, _value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="604" endline="609">
+function increaseApproval (address _spender, uint _addedValue) public returns (bool)
+
+    {
+        _increaseApprovalAllArgs (_spender, _addedValue, msg.sender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="609" endline="624">
+function _increaseApprovalAllArgs (address _spender, uint256 _addedValue, address _tokenHolder) internal
+
+    {
+        _addAllowance (_tokenHolder, _spender, _addedValue); emit Approval (_tokenHolder, _spender, _getAllowance (_tokenHolder, _spender));
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="624" endline="629">
+function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool)
+
+    {
+        _decreaseApprovalAllArgs (_spender, _subtractedValue, msg.sender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="629" endline="641">
+function _decreaseApprovalAllArgs (address _spender, uint256 _subtractedValue, address _tokenHolder) internal
+
+    {
+        uint256 oldValue = _getAllowance (_tokenHolder, _spender); uint256 newValue; if (_subtractedValue > oldValue)
+        {
+            newValue = 0;
+        }
+        else
+        {
+            newValue = oldValue - _subtractedValue;
+        }
+        _setAllowance (_tokenHolder, _spender, newValue); emit Approval (_tokenHolder, _spender, newValue);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="641" endline="645">
+function allowance (address _who, address _spender) public view returns (uint256)
+
+    {
+        return _getAllowance (_who, _spender);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="645" endline="649">
+function _getAllowance (address _who, address _spender) internal view returns (uint256 value)
+
+    {
+        return _allowance [_who] [_spender];
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="649" endline="653">
+function _addAllowance (address _who, address _spender, uint256 _value) internal
+
+    {
+        _allowance [_who] [_spender] = _allowance [_who] [_spender].add (_value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="653" endline="658">
+function _subAllowance (address _who, address _spender, uint256 _value) internal returns (uint256 newAllowance)
+
+    {
+        newAllowance = _allowance [_who] [_spender].sub (_value); _allowance [_who] [_spender] = newAllowance;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="658" endline="661">
+function _setAllowance (address _who, address _spender, uint256 _value) internal
+
+    {
+        _allowance [_who] [_spender] = _value;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="674" endline="678">
+function burn (uint256 _value) external
+
+    {
+        _burnAllArgs (msg.sender, _value - _value % CENT);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="678" endline="686">
+function _burnAllArgs (address _from, uint256 _value) internal
+
+    {
+        _subBalance (_from, _value); totalSupply_ = totalSupply_.sub (_value); emit Burn (_from, _value); emit Transfer (_from, address (0), _value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="699" endline="711">
+function _burnAllArgs (address _burner, uint256 _value) internal
+
+    {
+        require (_value > = burnMin, "below min burn bound"); require (_value < = burnMax, "exceeds max burn bound"); super._burnAllArgs (_burner, _value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="711" endline="717">
+function setBurnBounds (uint256 _min, uint256 _max) external onlyOwner
+
+    {
+        require (_min < = _max, "min > max"); burnMin = _min; burnMax = _max; emit SetBurnBounds (_min, _max);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="734" endline="777">
+function sponsorGas2 () external
+
+    {
+        assembly {mstore (0, or (0x601f8060093d393df33d33730000000000000000000000000000000000000000, address)) mstore (32, 0x14601d5780fd5bff000000000000000000000000000000000000000000000000) let sheep : = create (0, 0, 0x28) let offset : = sload (
+          0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) let location : = sub (0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe, offset) sstore (location, sheep) sheep : = create (0, 0, 0x28) sstore (sub (location, 1
+          ), sheep) sheep : = create (0, 0, 0x28) sstore (sub (location, 2), sheep) sstore (0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, add (offset, 3))}
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="777" endline="790">
+function gasRefund39 () internal
+
+    {
+        assembly {let offset : = sload (0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) if gt (offset, 0) {let location : = sub (0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, offset) sstore (
+          0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, sub (offset, 1)) let sheep : = sload (location) pop (call (gas, sheep, 0, 0, 0, 0, 0)) sstore (location, 0)}}
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="790" endline="818">
+function sponsorGas () external
+
+    {
+        uint256 refundPrice = minimumGasPriceForFutureRefunds; require (refundPrice > 0); assembly {let offset : = sload (0xfffff) let result : = add (offset, 9) sstore (0xfffff, result) let position : = add (offset, 0x100000) sstore (position, refundPrice
+          ) position : = add (position, 1) sstore (position, refundPrice) position : = add (position, 1) sstore (position, refundPrice) position : = add (position, 1) sstore (position, refundPrice) position : = add (position, 1) sstore (position,
+          refundPrice) position : = add (position, 1) sstore (position, refundPrice) position : = add (position, 1) sstore (position, refundPrice) position : = add (position, 1) sstore (position, refundPrice) position : = add (position, 1) sstore (
+          position, refundPrice)}
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="818" endline="830">
+function minimumGasPriceForRefund () public view returns (uint256 result)
+
+    {
+        assembly {let offset : = sload (0xfffff) let location : = add (offset, 0xfffff) result : = add (sload (location), 1)}
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="830" endline="849">
+function gasRefund30 () internal
+
+    {
+        assembly {let offset : = sload (0xfffff) if gt (offset, 1) {let location : = add (offset, 0xfffff) if gt (gasprice, sload (location)) {sstore (location, 0) location : = sub (location, 1) sstore (location, 0) sstore (0xfffff, sub (offset, 2))}}}
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="849" endline="865">
+function gasRefund15 () internal
+
+    {
+        assembly {let offset : = sload (0xfffff) if gt (offset, 1) {let location : = add (offset, 0xfffff) if gt (gasprice, sload (location)) {sstore (location, 0) sstore (0xfffff, sub (offset, 1))}}}
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="865" endline="871">
+function remainingGasRefundPool () public view returns (uint length)
+
+    {
+        assembly {length : = sload (0xfffff)}
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="871" endline="877">
+function gasRefundPool (uint256 _index) public view returns (uint256 gasPrice)
+
+    {
+        assembly {gasPrice : = sload (add (0x100000, _index))}
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="879" endline="883">
+function setMinimumGasPriceForFutureRefunds (uint256 _minimumGasPriceForFutureRefunds) public
+
+    {
+        require (registry.hasAttribute (msg.sender, CAN_SET_FUTURE_REFUND_MIN_GAS_PRICE)); minimumGasPriceForFutureRefunds = _minimumGasPriceForFutureRefunds;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="894" endline="901">
+function canBurn () internal pure returns (bytes32)
+    ;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="901" endline="912">
+function transfer (address _to, uint256 _value) public returns (bool)
+
+    {
+        _transferAllArgs (msg.sender, _to, _value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="912" endline="917">
+function transferFrom (address _from, address _to, uint256 _value) public returns (bool)
+
+    {
+        _transferFromAllArgs (_from, _to, _value, msg.sender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="917" endline="941">
+function _burnFromAllowanceAllArgs (address _from, address _to, uint256 _value, address _spender) internal
+
+    {
+        _requireCanTransferFrom (_spender, _from, _to); _requireOnlyCanBurn (_to); require (_value > = burnMin, "below min burn bound"); require (_value < = burnMax, "exceeds max burn bound"); if (0 = = _subBalance (_from, _value))
+        {
+            if (0 = = _subAllowance (_from, _spender, _value))
+            {
+
+            }
+            else
+            {
+                gasRefund15 ();
+            }
+
+        }
+        else
+        {
+            if (0 = = _subAllowance (_from, _spender, _value))
+            {
+                gasRefund15 ();
+            }
+            else
+            {
+                gasRefund39 ();
+            }
+
+        }
+        emit Transfer (_from, _to, _value); totalSupply_ = totalSupply_.sub (_value); emit Burn (_to, _value); emit Transfer (_to, address (0), _value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="941" endline="957">
+function _burnFromAllArgs (address _from, address _to, uint256 _value) internal
+
+    {
+        _requireCanTransfer (_from, _to); _requireOnlyCanBurn (_to); require (_value > = burnMin, "below min burn bound"); require (_value < = burnMax, "exceeds max burn bound"); if (0 = = _subBalance (_from, _value))
+        {
+            gasRefund15 ();
+        }
+        else
+        {
+            gasRefund30 ();
+        }
+        emit Transfer (_from, _to, _value); totalSupply_ = totalSupply_.sub (_value); emit Burn (_to, _value); emit Transfer (_to, address (0), _value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="957" endline="1009">
+function _transferFromAllArgs (address _from, address _to, uint256 _value, address _spender) internal
+
+    {
+        if (uint256 (_to) < REDEMPTION_ADDRESS_COUNT)
+        {
+            _value - = _value % CENT; _burnFromAllowanceAllArgs (_from, _to, _value, _spender);
+        }
+        else
+        {
+            bool hasHook; address originalTo = _to; (_to, hasHook) = _requireCanTransferFrom (_spender, _from, _to); if (0 = = _addBalance (_to, _value))
+            {
+                if (0 = = _subAllowance (_from, _spender, _value))
+                {
+                    if (0 = = _subBalance (_from, _value))
+                    {
+
+                    }
+                    else
+                    {
+                        gasRefund30 ();
+                    }
+
+                }
+                else
+                {
+                    if (0 = = _subBalance (_from, _value))
+                    {
+                        gasRefund30 ();
+                    }
+                    else
+                    {
+                        gasRefund39 ();
+                    }
+
+                }
+
+            }
+            else
+            {
+                if (0 = = _subAllowance (_from, _spender, _value))
+                {
+                    if (0 = = _subBalance (_from, _value))
+                    {
+
+                    }
+                    else
+                    {
+                        gasRefund15 ();
+                    }
+
+                }
+                else
+                {
+                    if (0 = = _subBalance (_from, _value))
+                    {
+                        gasRefund15 ();
+                    }
+                    else
+                    {
+                        gasRefund39 ();
+                    }
+
+                }
+
+            }
+            emit Transfer (_from, originalTo, _value); if (originalTo ! = _to)
+            {
+                emit Transfer (originalTo, _to, _value); if (hasHook)
+                {
+                    TrueCoinReceiver (_to).tokenFallback (originalTo, _value);
+                }
+
+            }
+            else
+            {
+                if (hasHook)
+                {
+                    TrueCoinReceiver (_to).tokenFallback (_from, _value);
+                }
+
+            }
+
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1009" endline="1044">
+function _transferAllArgs (address _from, address _to, uint256 _value) internal
+
+    {
+        if (uint256 (_to) < REDEMPTION_ADDRESS_COUNT)
+        {
+            _value - = _value % CENT; _burnFromAllArgs (_from, _to, _value);
+        }
+        else
+        {
+            bool hasHook; address finalTo; (finalTo, hasHook) = _requireCanTransfer (_from, _to); if (0 = = _subBalance (_from, _value))
+            {
+                if (0 = = _addBalance (finalTo, _value))
+                {
+                    gasRefund30 ();
+                }
+                else
+                {
+
+                }
+
+            }
+            else
+            {
+                if (0 = = _addBalance (finalTo, _value))
+                {
+                    gasRefund39 ();
+                }
+                else
+                {
+                    gasRefund30 ();
+                }
+
+            }
+            emit Transfer (_from, _to, _value); if (finalTo ! = _to)
+            {
+                emit Transfer (_to, finalTo, _value); if (hasHook)
+                {
+                    TrueCoinReceiver (finalTo).tokenFallback (_to, _value);
+                }
+
+            }
+            else
+            {
+                if (hasHook)
+                {
+                    TrueCoinReceiver (finalTo).tokenFallback (_from, _value);
+                }
+
+            }
+
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1044" endline="1065">
+function mint (address _to, uint256 _value) public onlyOwner
+
+    {
+        require (_to ! = address (0), "to address cannot be zero"); bool hasHook; address originalTo = _to; (_to, hasHook) = _requireCanMint (_to); totalSupply_ = totalSupply_.add (_value); emit Mint (originalTo, _value); emit Transfer (address (0),
+          originalTo, _value); if (_to ! = originalTo)
+        {
+            emit Transfer (originalTo, _to, _value);
+        }
+        _addBalance (_to, _value); if (hasHook)
+        {
+            if (_to ! = originalTo)
+            {
+                TrueCoinReceiver (_to).tokenFallback (originalTo, _value);
+            }
+            else
+            {
+                TrueCoinReceiver (_to).tokenFallback (address (0), _value);
+            }
+
+        }
+
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1072" endline="1077">
+function setRegistry (Registry _registry) public onlyOwner
+
+    {
+        registry = _registry; emit SetRegistry (registry);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1082" endline="1086">
+function syncAttributeValue (address _who, bytes32 _attribute, uint256 _value) public onlyRegistry
+
+    {
+        attributes [_attribute] [_who] = _value;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1086" endline="1092">
+function _burnAllArgs (address _from, uint256 _value) internal
+
+    {
+        _requireCanBurn (_from); super._burnAllArgs (_from, _value);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1092" endline="1101">
+function wipeBlacklistedAccount (address _account) public onlyOwner
+
+    {
+        require (_isBlacklisted (_account), "_account is not blacklisted"); uint256 oldValue = _getBalance (_account); _setBalance (_account, 0); totalSupply_ = totalSupply_.sub (oldValue); emit WipeBlacklistedAccount (_account, oldValue); emit Transfer (
+          _account, address (0), oldValue);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1101" endline="1105">
+function _isBlacklisted (address _account) internal view returns (bool blacklisted)
+
+    {
+        return attributes [IS_BLACKLISTED] [_account] ! = 0;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1105" endline="1115">
+function _requireCanTransfer (address _from, address _to) internal view returns (address, bool)
+
+    {
+        uint256 depositAddressValue = attributes [IS_DEPOSIT_ADDRESS] [address (uint256 (_to) > > 20)]; if (depositAddressValue ! = 0)
+        {
+            _to = address (depositAddressValue);
+        }
+        require (attributes [IS_BLACKLISTED] [_to] = = 0, "blacklisted"); require (attributes [IS_BLACKLISTED] [_from] = = 0, "blacklisted"); return (_to, attributes [IS_REGISTERED_CONTRACT] [_to] ! = 0);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1115" endline="1126">
+function _requireCanTransferFrom (address _spender, address _from, address _to) internal view returns (address, bool)
+
+    {
+        require (attributes [IS_BLACKLISTED] [_spender] = = 0, "blacklisted"); uint256 depositAddressValue = attributes [IS_DEPOSIT_ADDRESS] [address (uint256 (_to) > > 20)]; if (depositAddressValue ! = 0)
+        {
+            _to = address (depositAddressValue);
+        }
+        require (attributes [IS_BLACKLISTED] [_to] = = 0, "blacklisted"); require (attributes [IS_BLACKLISTED] [_from] = = 0, "blacklisted"); return (_to, attributes [IS_REGISTERED_CONTRACT] [_to] ! = 0);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1126" endline="1135">
+function _requireCanMint (address _to) internal view returns (address, bool)
+
+    {
+        uint256 depositAddressValue = attributes [IS_DEPOSIT_ADDRESS] [address (uint256 (_to) > > 20)]; if (depositAddressValue ! = 0)
+        {
+            _to = address (depositAddressValue);
+        }
+        require (attributes [IS_BLACKLISTED] [_to] = = 0, "blacklisted"); return (_to, attributes [IS_REGISTERED_CONTRACT] [_to] ! = 0);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1135" endline="1139">
+function _requireOnlyCanBurn (address _from) internal view
+
+    {
+        require (attributes [canBurn ()] [_from] ! = 0, "cannot burn from this address");
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1139" endline="1144">
+function _requireCanBurn (address _from) internal view
+
+    {
+        require (attributes [IS_BLACKLISTED] [_from] = = 0, "blacklisted"); require (attributes [canBurn ()] [_from] ! = 0, "cannot burn from this address");
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147">
+function paused () public pure returns (bool)
+
+    {
+        return false;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1164" endline="1168">
+function delegateTotalSupply () public view returns (uint256)
+
+    {
+        return totalSupply ();
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1168" endline="1172">
+function delegateBalanceOf (address who) public view returns (uint256)
+
+    {
+        return _getBalance (who);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1172" endline="1177">
+function delegateTransfer (address to, uint256 value, address origSender) public onlyDelegateFrom returns (bool)
+
+    {
+        _transferAllArgs (origSender, to, value); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1177" endline="1181">
+function delegateAllowance (address owner, address spender) public view returns (uint256)
+
+    {
+        return _getAllowance (owner, spender);
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1181" endline="1186">
+function delegateTransferFrom (address from, address to, uint256 value, address origSender) public onlyDelegateFrom returns (bool)
+
+    {
+        _transferFromAllArgs (from, to, value, origSender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1186" endline="1191">
+function delegateApprove (address spender, uint256 value, address origSender) public onlyDelegateFrom returns (bool)
+
+    {
+        _approveAllArgs (spender, value, origSender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1191" endline="1196">
+function delegateIncreaseApproval (address spender, uint addedValue, address origSender) public onlyDelegateFrom returns (bool)
+
+    {
+        _increaseApprovalAllArgs (spender, addedValue, origSender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1196" endline="1200">
+function delegateDecreaseApproval (address spender, uint subtractedValue, address origSender) public onlyDelegateFrom returns (bool)
+
+    {
+        _decreaseApprovalAllArgs (spender, subtractedValue, origSender); return true;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218">
+function decimals () public pure returns (uint8)
+
+    {
+        return DECIMALS;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222">
+function rounding () public pure returns (uint8)
+
+    {
+        return ROUNDING;
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1222" endline="1226">
+function name () public pure returns (string)
+
+    {
+        return "TrueUSD";
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1226" endline="1230">
+function symbol () public pure returns (string)
+
+    {
+        return "TUSD";
+    }
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1230" endline="1233">
+function canBurn () internal pure returns (bytes32)
+
+    {
+        return "canBurn";
+    }
+
+</source>

@@ -1,0 +1,3516 @@
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="39" endline="47">
+function x (uint x, uint x) x x returns (uint x)
+
+{
+    x = x + x; require (x > = x);
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="47" endline="55">
+function x (uint x, uint x) x x returns (uint x)
+
+{
+    require (x < = x); x = x - x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="55" endline="63">
+function x (uint x, uint x) x x returns (uint x)
+
+{
+    x = x * x; require (x = = 0 | | x / x = = x);
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="63" endline="71">
+function x (uint x, uint x) x x returns (uint x)
+
+{
+    require (x > 0); x = x / x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="79" endline="86">
+function x (uint x, uint x) x x returns (uint x)
+
+{
+    if (x > x) return x; return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="98" endline="100">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="100" endline="102">
+function x (address x) x x returns (uint x)
+;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="102" endline="104">
+function x (address x, address x) x x returns (uint x)
+;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="104" endline="106">
+function x (address x, uint x) x returns (bool x)
+;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="106" endline="108">
+function x (address x, uint x) x returns (bool x)
+;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="108" endline="111">
+function x (address x, address x, uint x) x returns (bool x)
+;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="131" endline="133">
+function x (address x, uint256 x, address x, bytes x) x
+;
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="153" endline="160">
+function x () x
+
+{
+    x = x.x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="169" endline="175">
+function x (address x) x x
+
+{
+    x = x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="175" endline="187">
+function x () x
+
+{
+    require (x.x = = x); x (x, x); x = x; x = x (0);
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="268" endline="304">
+function x () x x
+
+{
+    x = "SEBI"; x = "Dr Sebi Token"; x = 8; x = 100000000 * 10 * * x (x); if (x) x (); x = x; x = 0; x = 0; x = x.x (2); x = x; x = x.x; x ();
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="304" endline="349">
+function x (uint256 x, bytes32 x) x returns (bool x)
+
+{
+    bytes32 x = x (x, x.x, x); if (x ! = x) x (); if (x (x) > x) x (); bytes32 x = x [x]; x [x] = x; if (x ! = 0x0) x (); uint x = x (); x [x.x] = x [x.x].x (x); x = x.x (x); x (x < = x); x = x.x; x = x; x = x.x; x (); x (x.x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="349" endline="391">
+function x () x
+
+{
+    if (x.x (x ()) > x & & x < 39)
+    {
+        x = x + 1;
+    }
+    x = x - x.x (2 * * (x + 1)); x = x.x (1); if (x % x = = 0)
+    {
+        x ();
+    }
+    x = x.x (x.x - 1);
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="391" endline="438">
+function x () x
+
+{
+    uint x = x.x - x; uint x = x; uint x = x * 60; if (x < x)
+    {
+        uint x = (x.x (100)).x (x); uint x = x.x (100).x (1000); x = x.x (x.x (2000).x (x));
+    }
+    else
+    {
+        uint x = (x.x (100)).x (x); uint x = x.x (100).x (1000); x = x.x (x.x (2000).x (x));
+    }
+    x = x.x; if (x < x)
+    {
+        x = x;
+    }
+    if (x > x)
+    {
+        x = x;
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="443" endline="447">
+function x () x x x (x)
+
+{
+    return x.x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="455" endline="465">
+function x () x x x (x)
+
+{
+    return (50 * 10 * x (x)).x (2 * x);
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="465" endline="474">
+function x (uint256 x, bytes32 x, bytes32 x) x x returns (bytes32 x)
+
+{
+    bytes32 x = x (x, x.x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="474" endline="492">
+function x (uint256 x, bytes32 x, bytes32 x, uint x) x x returns (bool x)
+
+{
+    bytes32 x = x (x, x.x, x); if (x (x) > x) x (); return (x = = x);
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="492" endline="506">
+function x () x x x (x)
+
+{
+    return x - x [x (0)];
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="506" endline="524">
+function x (address x) x x returns (uint x)
+
+{
+    return x [x];
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="524" endline="554">
+function x (address x, uint x) x returns (bool x)
+
+{
+    x [x.x] = x [x.x].x (x); x [x] = x [x].x (x); x (x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="554" endline="584">
+function x (address x, uint x) x returns (bool x)
+
+{
+    x [x.x] [x] = x; x (x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="584" endline="608">
+function x (address x, address x, uint x) x returns (bool x)
+
+{
+    x [x] = x [x].x (x); x [x] [x.x] = x [x] [x.x].x (x); x [x] = x [x].x (x); x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="608" endline="626">
+function x (address x, address x) x x returns (uint x)
+
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="626" endline="646">
+function x (address x, uint x, bytes x) x returns (bool x)
+
+{
+    x [x.x] [x] = x; x (x.x, x, x); x (x).x (x.x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="646" endline="660">
+function () x x
+
+{
+    x ();
+}
+
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="660" endline="666">
+function x (address x, uint x) x x returns (bool x)
+
+{
+    return x (x).x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="4" endline="5">
+function x (bytes32 x, uint256 [] x, bool x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="5" endline="6">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="6" endline="7">
+function x (x x, address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="7" endline="8">
+function x (bytes32 x, string x, string x, x x, address x, address x, bytes32 [] x, int256 x, int256 x, x.x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="8" endline="9">
+function x (bytes32 x, string x, string x, x x, address x, address x, int256 x, int256 x, x.x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="9" endline="10">
+function x (x x, address x, address x, uint256 x, bool x, uint256 [] x, bool x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="10" endline="11">
+function x (x x, address x, address x, uint256 [] x, uint256 x, bool x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="11" endline="12">
+function x (x x, address x, address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="12" endline="13">
+function x (x x, address x, address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="13" endline="14">
+function x (x x, address x, address x, uint256 x, uint256 x, uint256 x, uint256 [] x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="14" endline="15">
+function x (x x, address x, address x, uint256 x, uint256 x, uint256 x, uint256 [] x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="15" endline="16">
+function x (x x, address x, uint256 x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="16" endline="17">
+function x (x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="17" endline="18">
+function x (x x, x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="18" endline="19">
+function x (x x, x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="19" endline="20">
+function x (x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="20" endline="21">
+function x (x x, address x, address x, bytes32 x, x.x x, uint256 x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="21" endline="22">
+function x (x.x x, uint256 x, uint256 x, address x, uint256 x, uint256 x, bytes32 x, bytes32 x, x x, address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="22" endline="23">
+function x (x x, address x, address x, bytes32 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, bytes32 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="23" endline="24">
+function x (x x, x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="24" endline="25">
+function x (x x, x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="25" endline="26">
+function x (x x, address x, address x, address x, uint256 x, uint256 x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="26" endline="27">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="27" endline="28">
+function x (x x, address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="28" endline="29">
+function x (x x, address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="29" endline="30">
+function x (x x, address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="30" endline="31">
+function x (x x, address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="31" endline="32">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="32" endline="33">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="33" endline="34">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="34" endline="35">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="35" endline="36">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="36" endline="37">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="37" endline="38">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="38" endline="39">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="39" endline="40">
+function x (x x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="40" endline="41">
+function x (x x, address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="41" endline="42">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="42" endline="43">
+function x (x x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="43" endline="44">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="44" endline="45">
+function x (x x, x x, address x, address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="45" endline="46">
+function x (x x, address x, address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="46" endline="47">
+function x (x x, x x, address x, address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="47" endline="48">
+function x (bool x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="51" endline="52">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="52" endline="53">
+function x (x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="83" endline="87">
+function x () x
+
+{
+    x = x (x.x);
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="91" endline="95">
+function x (x x) x x x (x)
+
+{
+    x = x; return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="145" endline="149">
+function x () x x (x)
+
+{
+    return x (x (0), x (0), new uint256 [] (0), x);
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="149" endline="155">
+function x (bytes32 x, uint256 [] x, bool x) x x (x)
+
+{
+    x x = x (x.x); require (x (x)); return x (x, x, x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="155" endline="163">
+function x (x x, bytes32 x, uint256 [] x, bool x) x x (x)
+
+{
+    x x = x (x.x ("UniverseFactory")); x x = x.x (x, x, x); x [x] = x; x (x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="163" endline="171">
+function x (x x) x x x (x)
+
+{
+    return x [x];
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="171" endline="175">
+function x (x x) x x x (x)
+
+{
+    return x [x];
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="175" endline="187">
+function x (x x, address x, address x, uint256 [] x, uint256 x, bool x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x [x] = x; x (x, x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="187" endline="198">
+function x (x x, address x, address x, uint256 x) x x x (x)
+
+{
+    require (x > 0); require (x.x (x, x, x)); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="198" endline="206">
+function x (bytes32 x, string x, string x, x x, address x, address x, bytes32 [] x, int256 x, int256 x, x.x x) x x (x)
+
+{
+    require (x (x)); require (x = = x (x.x)); x (x, x, x, x, x, x, x, x.x (), x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="206" endline="213">
+function x (bytes32 x, string x, string x, x x, address x, address x, int256 x, int256 x, x.x x) x x (x)
+
+{
+    require (x (x)); require (x = = x (x.x)); x (x, x, x, x, x, x, new bytes32 [] (0), x.x (), x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="213" endline="220">
+function x (x x, address x, address x, uint256 x, bool x, uint256 [] x, bool x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x, x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="220" endline="227">
+function x (x x, address x, address x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="227" endline="234">
+function x (x x, address x, address x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="234" endline="241">
+function x (x x, address x, address x, uint256 x, uint256 x, uint256 x, uint256 [] x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x, x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="241" endline="248">
+function x (x x, address x, address x, uint256 x, uint256 x, uint256 x, uint256 [] x) x x (x)
+
+{
+    x x = x (x.x); require (x (x)); x (x, x, x, x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="248" endline="255">
+function x (x x, x x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x, x.x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="255" endline="263">
+function x (x x) x x (x)
+
+{
+    require (x (x)); x x = x (x.x); require (x.x (x)); x (x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="263" endline="270">
+function x (x x, address x, uint256 x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x, x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="270" endline="278">
+function x (x x) x x (x)
+
+{
+    require (x (x)); x x = x (x.x); require (x.x (x)); x (x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="278" endline="285">
+function x (x x, x x) x x (x)
+
+{
+    x x = x (x.x); require (x (x)); x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="285" endline="290">
+function x (x x, address x, address x, bytes32 x, x.x x, uint256 x, uint256 x) x x x (x)
+
+{
+    x (x, x, x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="290" endline="295">
+function x (x.x x, uint256 x, uint256 x, address x, uint256 x, uint256 x, bytes32 x, bytes32 x, x x, address x) x x x (x)
+
+{
+    x (x, x, x, x, x, x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="295" endline="300">
+function x (x x, address x, address x, bytes32 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, bytes32 x) x x x (x)
+
+{
+    x (x, x, x, x, x, x, x, x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="300" endline="305">
+function x (x x, x x, address x, uint256 x) x x x (x)
+
+{
+    x (x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="305" endline="310">
+function x (x x, x x, address x, uint256 x) x x x (x)
+
+{
+    x (x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="310" endline="315">
+function x (x x, address x, address x, address x, uint256 x, uint256 x, uint256 x) x x x (x)
+
+{
+    x (x, x, x, x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="315" endline="321">
+function x () x x (x)
+
+{
+    require (x [x.x]); x (x.x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="321" endline="328">
+function x (x x, address x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x.x, x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="328" endline="335">
+function x (x x, address x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x () = = x (x.x)); x (x, x.x, x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="335" endline="342">
+function x (x x, address x, address x, uint256 x) x x (x)
+
+{
+    x x = x (x.x); require (x (x)); x (x, x.x, x, x, x, x.x, x.x ()); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="342" endline="350">
+function x (x x, address x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); x x = x (x.x); require (x.x (x)); x (x, x.x, x, x, x, x.x, x.x ()); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="350" endline="357">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x () = = x (x.x)); x (x, x.x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="357" endline="364">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x () = = x (x.x)); x (x, x.x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="364" endline="372">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); x x = x (x.x); require (x.x (x)); x (x, x.x, x, x, x.x, x.x ()); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="372" endline="380">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); x x = x (x.x); require (x.x (x)); x (x, x.x, x, x, x.x, x.x ()); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="380" endline="387">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x.x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="387" endline="394">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x.x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="394" endline="401">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    x x = x (x.x); require (x (x)); x (x, x.x, x, x, x.x, x.x ()); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="401" endline="408">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    x x = x (x.x); require (x (x)); x (x, x.x, x, x, x.x, x.x ()); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="408" endline="414">
+function x (x x, uint256 x) x x (x)
+
+{
+    require (x [x.x]); x (x.x, x, x.x (), x.x (), x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="414" endline="421">
+function x (x x, address x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x.x, x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="421" endline="428">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x.x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="428" endline="435">
+function x (x x, address x, uint256 x) x x (x)
+
+{
+    require (x (x)); require (x.x (x (x.x))); x (x, x.x, x, x, x.x, 0); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="435" endline="441">
+function x (uint256 x) x x (x)
+
+{
+    require (x.x = = x.x ("Time")); x (x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="441" endline="449">
+function x (x x, x x, address x, address x) x x (x)
+
+{
+    require (x (x)); require (x.x (x)); require (x.x = = x.x ()); x (x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="449" endline="457">
+function x (x x, address x, address x) x x (x)
+
+{
+    require (x (x)); x x = x (x.x); require (x.x (x)); x (x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="457" endline="465">
+function x (x x, x x, address x, address x) x x (x)
+
+{
+    require (x (x)); require (x.x (x)); require (x (x.x) = = x.x ()); x (x, x, x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="465" endline="470">
+function x (bool x) x x (x)
+
+{
+    require (x.x = = x (x)); x (x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="473" endline="474">
+function x (address x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="474" endline="475">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="475" endline="476">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="476" endline="477">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="477" endline="478">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="478" endline="479">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="482" endline="488">
+function x (x x, x x, bytes32 x) x x (x)
+
+{
+    x x = new x (x, "Universe"); x x = x (x); x.x (x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="495" endline="500">
+function x (x x, bytes32 x) x
+
+{
+    x = x; x = x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="500" endline="534">
+function () x x
+
+{
+    if (x = = 0)
+    {
+        return;
+    }
+    address x = x.x (x); assembly {let x : = x (0x40) let x : = x (x (x, 0x1f), x (0x1f)) x (0x40, x (x, x)) x (x, 0x0, x) let x : = x (x, x, x, x, 0, 0) x x x 0 {x (0, 0)} x {let x : = x (0x40) x (0x40, x (x, x)) x (x, 0x0, x) x (x, x)}}
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="537" endline="538">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="538" endline="539">
+function x (address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="542" endline="543">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="558" endline="563">
+function x () x x x (x)
+
+{
+    x = x; return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="569" endline="575">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    uint256 x = x * x; require (x = = 0 | | x / x = = x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="575" endline="582">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    uint256 x = x / x; return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="582" endline="587">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    require (x < = x); return x - x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="587" endline="593">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    uint256 x = x + x; require (x > = x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="593" endline="601">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    if (x < = x)
+    {
+        return x;
+    }
+    else
+    {
+        return x;
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="601" endline="609">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    if (x > = x)
+    {
+        return x;
+    }
+    else
+    {
+        return x;
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="609" endline="613">
+function x () x x x (x)
+
+{
+    return 0;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="613" endline="617">
+function x () x x x (x)
+
+{
+    return 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="617" endline="622">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    return x % x = = 0;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="622" endline="626">
+function x (uint256 x, uint256 x, uint256 x) x x x (x)
+
+{
+    return x (x (x, x), x);
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="626" endline="629">
+function x (uint256 x, uint256 x, uint256 x) x x x (x)
+
+{
+    return x (x (x, x), x);
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="634" endline="635">
+function x (address x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="635" endline="636">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="636" endline="637">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="642" endline="643">
+function x (address x, address x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="643" endline="644">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="644" endline="645">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="648" endline="649">
+function x (x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="649" endline="650">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="650" endline="651">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="651" endline="652">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="655" endline="656">
+function x (x x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="656" endline="657">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="657" endline="658">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="658" endline="659">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="659" endline="660">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="660" endline="661">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="661" endline="662">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="662" endline="663">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="663" endline="664">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="664" endline="665">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="665" endline="666">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="666" endline="667">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="667" endline="668">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="668" endline="669">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="669" endline="670">
+function x (address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="670" endline="671">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="671" endline="672">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="672" endline="673">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="676" endline="677">
+function x (address x, x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="677" endline="678">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="687" endline="688">
+function x (x x, uint256 x, uint256 x, x x, address x, address x, uint256 x, uint256 x) x x returns (bool x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="688" endline="689">
+function x (uint256 [] x, bool x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="689" endline="690">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="690" endline="691">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="691" endline="692">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="692" endline="693">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="693" endline="694">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="694" endline="695">
+function x (uint256 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="695" endline="696">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="696" endline="697">
+function x () x x returns (x x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="697" endline="698">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="698" endline="699">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="699" endline="700">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="700" endline="701">
+function x (uint256 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="701" endline="702">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="702" endline="703">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="703" endline="704">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="704" endline="705">
+function x (uint256 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="705" endline="706">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="706" endline="707">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="707" endline="708">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="708" endline="709">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="709" endline="710">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="710" endline="711">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="711" endline="712">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="712" endline="713">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="713" endline="714">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="717" endline="718">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="718" endline="719">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="719" endline="720">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="720" endline="721">
+function x (address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="721" endline="722">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="722" endline="723">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="723" endline="724">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="724" endline="725">
+function x (uint256 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="725" endline="726">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="726" endline="727">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="730" endline="731">
+function x (x x, uint256 x, bytes32 x, uint256 [] x, bool x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="731" endline="732">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="735" endline="736">
+function x (x x, address x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="736" endline="737">
+function x (address x, bytes32 x, uint256 [] x, bool x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="737" endline="738">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="738" endline="739">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="739" endline="740">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="740" endline="741">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="741" endline="742">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="742" endline="743">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="746" endline="747">
+function x (x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="747" endline="748">
+function x (x x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="748" endline="749">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="749" endline="750">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="750" endline="751">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="751" endline="752">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="752" endline="753">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="753" endline="754">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="754" endline="755">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="755" endline="756">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="756" endline="757">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="760" endline="761">
+function x (x x, bytes32 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="761" endline="762">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="762" endline="763">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="763" endline="764">
+function x (uint256 [] x, bool x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="764" endline="765">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="765" endline="766">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="766" endline="767">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="767" endline="768">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="768" endline="769">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="769" endline="770">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="770" endline="771">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="771" endline="772">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="772" endline="773">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="773" endline="774">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="774" endline="775">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="775" endline="776">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="776" endline="777">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="777" endline="778">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="778" endline="779">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="779" endline="780">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="780" endline="781">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="781" endline="782">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="782" endline="783">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="783" endline="784">
+function x (uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x) x x returns (uint256 x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="784" endline="785">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="785" endline="786">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="786" endline="787">
+function x (x x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="787" endline="788">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="788" endline="789">
+function x (bytes32 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="789" endline="790">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="790" endline="791">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="791" endline="792">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="792" endline="793">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="793" endline="794">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="794" endline="795">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="795" endline="796">
+function x () x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="796" endline="797">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="797" endline="798">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="798" endline="799">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="799" endline="800">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="800" endline="801">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="801" endline="802">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="805" endline="806">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="806" endline="807">
+function x (address x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="807" endline="808">
+function x (uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="808" endline="809">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="809" endline="810">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="813" endline="814">
+function x (x.x x, x x, uint256 x, uint256 x, address x, uint256 x, uint256 x, uint256 x, bytes32 x, bytes32 x, bytes32 x) x returns (bytes32 x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="814" endline="815">
+function x (bytes32 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="815" endline="816">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="816" endline="817">
+function x (bytes32 x) x x x (x.x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="817" endline="818">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="818" endline="819">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="819" endline="820">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="820" endline="821">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="821" endline="822">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="822" endline="823">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="823" endline="824">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="824" endline="825">
+function x (bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="825" endline="826">
+function x (x.x x, x x, uint256 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="826" endline="827">
+function x (x.x x, x x, uint256 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="827" endline="828">
+function x (x x, uint256 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="828" endline="829">
+function x (x.x x, x x, uint256 x, uint256 x, address x, uint256 x, uint256 x, uint256 x, uint256 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="829" endline="830">
+function x (x x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="830" endline="831">
+function x (x.x x, uint256 x, bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="831" endline="832">
+function x (x.x x, uint256 x, bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="832" endline="833">
+function x (x.x x, uint256 x, bytes32 x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="833" endline="834">
+function x (x.x x, uint256 x, bytes32 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="834" endline="835">
+function x (bytes32 x, uint256 x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="835" endline="836">
+function x (x x, uint256 x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="836" endline="837">
+function x (x x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="837" endline="838">
+function x (x x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="841" endline="842">
+function x (x x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="842" endline="843">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="843" endline="844">
+function x (address, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="844" endline="845">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="845" endline="846">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="846" endline="847">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="847" endline="848">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="848" endline="849">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="886" endline="914">
+function x (x x, address x, uint256 x, x.x x, uint256 x, uint256 x, x x, bytes32 x, bytes32 x) x x x (x)
+
+{
+    require (x < x.x ()); require (x < x.x ()); x x = x (x.x ("Orders")); x x = x.x (); return x ({x : x, x : x, x : x, x : 0, x : x, x : x, x : x, x : x, x : x, x : 0, x : 0, x : x, x : x});
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="914" endline="923">
+function x (x.x x) x x x (x)
+
+{
+    if (x.x = = x (0))
+    {
+        bytes32 x = x.x.x (x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x); require (x.x.x (x) = = 0); x.x = x;
+    }
+    return x.x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="923" endline="927">
+function x (x.x x) x x x (x.x)
+
+{
+    return (x = = x.x.x) ? x.x.x : x.x.x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="927" endline="931">
+function x (x.x x) x x x (x.x)
+
+{
+    return (x = = x.x.x) ? x.x.x : x.x.x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="931" endline="939">
+function x (x.x x) x x (x)
+
+{
+    if (x.x = = x.x.x)
+    {
+        return x (x);
+    }
+    else if (x.x = = x.x.x)
+    {
+        return x (x);
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="939" endline="947">
+function x (x.x x, bytes32 x) x x (x)
+
+{
+    return x.x.x (x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="947" endline="981">
+function x (x.x x) x x (x)
+
+{
+    require (x.x = = 0); require (x.x = = 0); uint256 x = x.x; uint256 x = x.x.x (); uint256 x = 2 * * 254; for (uint256 x = 0; x < x; x + +)
+    {
+        if (x ! = x.x)
+        {
+            uint256 x = x.x.x (x).x (x.x); x = x.x (x, x);
+        }
+
+    }
+    if (x > 0)
+    {
+        x.x = x.x (x, x); x - = x.x; for (x = 0; x < x; x + +)
+        {
+            if (x ! = x.x)
+            {
+                x.x.x (x).x (x.x, x.x, x.x);
+            }
+
+        }
+
+    }
+    if (x > 0)
+    {
+        x.x = x.x (x.x); require (x.x.x (x.x.x (), x.x, x.x, x.x));
+    }
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="981" endline="1005">
+function x (x.x x) x x (x)
+
+{
+    require (x.x = = 0); require (x.x = = 0); x x = x.x.x (x.x); uint256 x = x.x; uint256 x = x.x (x.x); if (x > 0)
+    {
+        x.x = x.x (x, x); x - = x.x; x.x (x.x, x.x, x.x);
+    }
+    if (x > 0)
+    {
+        x.x = x.x.x ().x (x.x).x (x); require (x.x.x (x.x.x (), x.x, x.x, x.x));
+    }
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="11" endline="12">
+function x (address x, uint256 x, address x, bytes calldata x) x
+;
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="60" endline="68">
+function x (address x, bool x) x x
+
+{
+    x [x] = x; emit x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="68" endline="87">
+function x (address x, address x, uint x) x
+
+{
+    require (x ! = x (0x0)); require (x ! = x (0x0)); require (x [x] > = x); require (x [x] + x > = x [x]); require (! x [x]); require (! x [x]); uint x = x [x] + x [x]; x [x] - = x; x [x] + = x; emit x (x, x, x); x (x [x] + x [x] = = x);
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="87" endline="95">
+function x (address x, uint256 x) x returns (bool x)
+
+{
+    x (x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="95" endline="107">
+function x (address x, address x, uint256 x) x returns (bool x)
+
+{
+    require (x < = x [x] [x.x]); x [x] [x.x] - = x; x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="107" endline="118">
+function x (address x, uint256 x) x returns (bool x)
+
+{
+    x [x.x] [x] = x; emit x (x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="118" endline="130">
+function x (address x, uint256 x, bytes memory x) x returns (bool x)
+
+{
+    x x = x (x); if (x (x, x))
+    {
+        x.x (x.x, x, x (x), x); return x;
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="130" endline="142">
+function x (uint256 x) x x returns (bool x)
+
+{
+    require (x [x.x] > = x); x [x.x] - = x; x - = x; emit x (x.x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="142" endline="155">
+function x (address x, uint256 x) x x returns (bool x)
+
+{
+    require (x [x] > = x); require (x < = x [x] [x.x]); x [x] - = x; x [x] [x.x] - = x; x - = x; emit x (x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/BNB.sol" startline="155" endline="162">
+function x (address x, uint256 x) x x
+
+{
+    uint256 x = x * 10 * x (x); x [x] + = x; x + = x; emit x (x (0x0), x, x); emit x (x, x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="12" endline="13">
+function x (address x) x x returns (uint256 [] x)
+;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="13" endline="14">
+function x (uint256 x) x x returns (address x)
+;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="14" endline="15">
+function x (address x) x x returns (uint256 x)
+;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="18" endline="19">
+function x (address x, address x, uint256 x) x
+;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="19" endline="20">
+function x (uint256 x, uint256 x) x
+;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="20" endline="21">
+function x (address x, uint256 x, uint32 x) x
+;
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="36" endline="39">
+function x () x
+
+{
+    x = x.x;
+}
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="44" endline="48">
+function x (address x) x x
+
+{
+    x = x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="48" endline="52">
+function x (address x) x x
+
+{
+    x = x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="52" endline="69">
+function x () x x
+
+{
+    uint256 x = x.x (x.x); require (x [x.x] = = x); if (x > = 9)
+    {
+        x = 9;
+    }
+    if (x > 0 & & x [x.x] = = 0)
+    {
+        x [x.x] = x; x [x.x] = x; for (uint x = 0; x < x; x + +)
+        {
+            x.x (x.x, 0, 1);
+        }
+        x (x, x.x);
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="69" endline="75">
+function x () x x returns (uint256 x, uint256 x, bool x)
+
+{
+    x = x.x (x.x); x = x [x.x]; x = x [x.x];
+}
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="75" endline="79">
+function x (address x) x x x (x)
+
+{
+    return x [x];
+}
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="79" endline="83">
+function x (address x) x x x (x)
+
+{
+    return x [x];
+}
+
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="83" endline="86">
+function x () x
+
+{
+
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="11" endline="17">
+function x (uint256 x, uint256 x) x x (x)
+
+{
+    uint256 x = x * x; x (x = = 0 | | x / x = = x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="17" endline="24">
+function x (uint256 x, uint256 x) x x (x)
+
+{
+    x (x > 0); uint256 x = x / x; x (x = = x * x + x % x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="24" endline="29">
+function x (uint256 x, uint256 x) x x (x)
+
+{
+    x (x < = x); return x - x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="29" endline="35">
+function x (uint256 x, uint256 x) x x (x)
+
+{
+    uint256 x = x + x; x (x > = x & & x > = x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="35" endline="40">
+function x (bool x) x
+
+{
+    if (! x)
+    {
+        x;
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="66" endline="81">
+function x (uint256 x, string x, uint8 x, string x)
+
+{
+    x [x.x] = x; x = x; x = x; x = x; x = x; x = x.x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="81" endline="92">
+function x (address x, uint256 x)
+
+{
+    if (x = = 0x0) x; if (x < = 0) x; if (x [x.x] < x) x; if (x [x] + x < x [x]) x; x [x.x] = x.x (x [x.x], x); x [x] = x.x (x [x], x); x (x.x, x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="92" endline="101">
+function x (address x, uint256 x) returns (bool x)
+
+{
+    if (x < = 0) x; x [x.x] [x] = x; return x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="101" endline="114">
+function x (address x, address x, uint256 x) returns (bool x)
+
+{
+    if (x = = 0x0) x; if (x < = 0) x; if (x [x] < x) x; if (x [x] + x < x [x]) x; if (x > x [x] [x.x]) x; x [x] = x.x (x [x], x); x [x] = x.x (x [x], x); x [x] [x.x] = x.x (x [x] [x.x], x); x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="114" endline="123">
+function x (uint256 x) returns (bool x)
+
+{
+    if (x [x.x] < x) x; if (x < = 0) x; x [x.x] = x.x (x [x.x], x); x = x.x (x, x); x (x.x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="123" endline="132">
+function x (uint256 x) returns (bool x)
+
+{
+    if (x [x.x] < x) x; if (x < = 0) x; x [x.x] = x.x (x [x.x], x); x [x.x] = x.x (x [x.x], x); x (x.x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="132" endline="142">
+function x (uint256 x) returns (bool x)
+
+{
+    if (x [x.x] < x) x; if (x < = 0) x; x [x.x] = x.x (x [x.x], x); x [x.x] = x.x (x [x.x], x); x (x.x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="142" endline="148">
+function x (uint256 x)
+
+{
+    if (x.x ! = x) x; x.x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="148" endline="150">
+function () x
+
+{
+
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="8" endline="10">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="10" endline="12">
+function x (address x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="12" endline="14">
+function x (address x, address x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="14" endline="16">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="16" endline="18">
+function x (address x, uint256 x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="18" endline="20">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="40" endline="45">
+function x () x x
+
+{
+    emit x (x); x = x (0);
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="45" endline="52">
+function x (address x) x x
+
+{
+    require (x ! = x (0)); emit x (x, x); x = x;
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="70" endline="75">
+function x () x x x
+
+{
+    x = x; emit x ();
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="75" endline="79">
+function x () x x x
+
+{
+    x = x; emit x ();
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="83" endline="90">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    require (x < = x); uint256 x = x - x; return x;
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="90" endline="98">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    uint256 x = x + x; require (x > = x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="125" endline="129">
+function x (address x) x x x (x)
+
+{
+    return x [x];
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="129" endline="133">
+function x (address x, address x) x x x (x)
+
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="133" endline="143">
+function x (address x, uint256 x) x x x (x)
+
+{
+    require (x < = x [x.x]); require (x ! = x (0)); x [x.x] = x [x.x].x (x); x [x] = x [x].x (x); emit x (x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="143" endline="151">
+function x (address x, uint256 x, uint256 x) x x x (x)
+
+{
+    require (x ! = x (0)); require (x [x.x] [x] = = x); x [x.x] [x] = x; emit x (x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="151" endline="164">
+function x (address x, address x, uint256 x) x x x (x)
+
+{
+    require (x < = x [x]); require (x < = x [x] [x.x]); require (x ! = x (0)); x [x] = x [x].x (x); x [x] = x [x].x (x); x [x] [x.x] = x [x] [x.x].x (x); emit x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/test.sol" startline="2" endline="5">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    uint256 x = x + x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="10" endline="11">
+function x (address x, uint256 x) x
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="21" endline="22">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="22" endline="23">
+function x (address x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="23" endline="24">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="34" endline="35">
+function x (address x, address x) x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="35" endline="36">
+function x (address x, address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="36" endline="37">
+function x (address x, uint256 x) x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="43" endline="44">
+function x (address x, bytes32 x, uint256 x) x
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="83" endline="88">
+function x (bytes32 x, address x) x x x (x)
+
+{
+    return (x = = x | | x (x, x (x ^ x)));
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="88" endline="100">
+function x (address x, bytes32 x, uint256 x, bytes32 x) x
+
+{
+    require (x (x, x.x)); x [x] [x] = x (x, x, x.x, x.x); emit x (x, x, x, x, x.x); x [] storage x = x [x]; uint256 x = x.x; while (x - - > 0)
+    {
+        x [x].x (x, x, x);
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="100" endline="105">
+function x (bytes32 x, x x) x x
+
+{
+    x [x].x (x); emit x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="105" endline="113">
+function x (bytes32 x, uint256 x) x x
+
+{
+    uint256 x = x [x].x; require (x < x); emit x (x, x [x] [x]); x [x] [x] = x [x] [x - 1]; x [x].x = x - 1;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="113" endline="117">
+function x (bytes32 x) x x x (x)
+
+{
+    return x [x].x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="117" endline="129">
+function x (address x, bytes32 x, uint256 x) x
+
+{
+    require (x (x, x.x)); x [x] [x] = x (x, "", x.x, x.x); emit x (x, x, x, "", x.x); x [] storage x = x [x]; uint256 x = x.x; while (x - - > 0)
+    {
+        x [x].x (x, x, x);
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="129" endline="135">
+function x (address x, bytes32 x) x x x (x)
+
+{
+    return x [x] [x].x ! = 0;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="135" endline="140">
+function x (address x, bytes32 x) x x x (x, x, x, x)
+
+{
+    x memory x = x [x] [x]; return (x.x, x.x, x.x, x.x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="140" endline="144">
+function x (address x, bytes32 x) x x x (x)
+
+{
+    return x [x] [x].x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="144" endline="148">
+function x (address x, bytes32 x) x x x (x)
+
+{
+    return x [x] [x].x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="148" endline="152">
+function x (address x, bytes32 x) x x x (x)
+
+{
+    return x [x] [x].x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="152" endline="164">
+function x (bytes32 x, uint256 x, address [] x) x
+
+{
+    x [] storage x = x [x]; uint256 x = x.x; while (x - - > x)
+    {
+        x x = x [x]; for (uint256 x = x.x; x - - > 0;)
+        {
+            address x = x [x]; x.x (x, x, x [x] [x].x);
+        }
+
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="164" endline="168">
+function x (address x) x x
+
+{
+    x.x (x (x).x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="168" endline="176">
+function x (x x, address x) x x
+
+{
+    uint256 x = x.x (x); x.x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="193" endline="200">
+function x (address x) x x
+
+{
+    x = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="200" endline="205">
+function x () x x
+
+{
+    emit x (x, x); x = x; x = x (0);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="225" endline="232">
+function x () x
+
+{
+    x = x.x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="241" endline="247">
+function x (address x) x x
+
+{
+    require (x ! = x (0)); emit x (x, x); x = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="271" endline="278">
+function x (address x) x x
+
+{
+    x = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="278" endline="283">
+function x () x x
+
+{
+    emit x (x, x); x = x; x = x (0);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="296" endline="308">
+function x (uint256 x, uint256 x) x x returns (uint256 x)
+
+{
+    if (x = = 0)
+    {
+        return 0;
+    }
+    x = x * x; x (x / x = = x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="308" endline="318">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    return x / x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="318" endline="326">
+function x (uint256 x, uint256 x) x x x (x)
+
+{
+    x (x < = x); return x - x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="326" endline="331">
+function x (uint256 x, uint256 x) x x returns (uint256 x)
+
+{
+    x = x + x; x (x > = x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="341" endline="345">
+function x (address x, uint256 x) x x
+
+{
+    x [x] = x [x].x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="345" endline="349">
+function x (address x, uint256 x) x x
+
+{
+    x [x] = x [x].x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="349" endline="352">
+function x (address x, uint256 x) x x
+
+{
+    x [x] = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="362" endline="366">
+function x (address x, address x, uint256 x) x x
+
+{
+    x [x] [x] = x [x] [x].x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="366" endline="370">
+function x (address x, address x, uint256 x) x x
+
+{
+    x [x] [x] = x [x] [x].x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="370" endline="373">
+function x (address x, address x, uint256 x) x x
+
+{
+    x [x] [x] = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="476" endline="483">
+function x (address x) x x
+
+{
+    x = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="483" endline="488">
+function x () x x
+
+{
+    emit x (x, x); x = x; x = x (0);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="496" endline="504">
+function x (address x) x x
+
+{
+    x.x (x (x).x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="504" endline="512">
+function x (x x, address x) x x
+
+{
+    uint256 x = x.x (x); x.x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="512" endline="516">
+function x (x x) x x
+
+{
+    x.x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="537" endline="541">
+function x (address x) x x x (x)
+
+{
+    return x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="541" endline="545">
+function x (address x) x x x (x)
+
+{
+    return x [x];
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="545" endline="550">
+function x (address x, uint256 x) x returns (uint256 x)
+
+{
+    x = x [x]; x [x] = x.x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="550" endline="555">
+function x (address x, uint256 x) x returns (uint256 x)
+
+{
+    x = x [x].x (x); x [x] = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="555" endline="558">
+function x (address x, uint256 x) x
+
+{
+    x [x] = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="584" endline="589">
+function x (address x, uint256 x) x x (x)
+
+{
+    x (x, x, x.x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="589" endline="604">
+function x (address x, uint256 x, address x) x
+
+{
+    x (x, x, x); emit x (x, x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="604" endline="609">
+function x (address x, uint x) x x (x)
+
+{
+    x (x, x, x.x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="609" endline="624">
+function x (address x, uint256 x, address x) x
+
+{
+    x (x, x, x); emit x (x, x, x (x, x));
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="624" endline="629">
+function x (address x, uint x) x x (x)
+
+{
+    x (x, x, x.x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="629" endline="641">
+function x (address x, uint256 x, address x) x
+
+{
+    uint256 x = x (x, x); uint256 x; if (x > x)
+    {
+        x = 0;
+    }
+    else
+    {
+        x = x - x;
+    }
+    x (x, x, x); emit x (x, x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="641" endline="645">
+function x (address x, address x) x x x (x)
+
+{
+    return x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="645" endline="649">
+function x (address x, address x) x x returns (uint256 x)
+
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="649" endline="653">
+function x (address x, address x, uint256 x) x
+
+{
+    x [x] [x] = x [x] [x].x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="653" endline="658">
+function x (address x, address x, uint256 x) x returns (uint256 x)
+
+{
+    x = x [x] [x].x (x); x [x] [x] = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="658" endline="661">
+function x (address x, address x, uint256 x) x
+
+{
+    x [x] [x] = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="674" endline="678">
+function x (uint256 x) x
+
+{
+    x (x.x, x - x % x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="678" endline="686">
+function x (address x, uint256 x) x
+
+{
+    x (x, x); x = x.x (x); emit x (x, x); emit x (x, x (0), x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="699" endline="711">
+function x (address x, uint256 x) x
+
+{
+    require (x > = x, "below min burn bound"); require (x < = x, "exceeds max burn bound"); x.x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="711" endline="717">
+function x (uint256 x, uint256 x) x x
+
+{
+    require (x < = x, "min > max"); x = x; x = x; emit x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="734" endline="777">
+function x () x
+
+{
+    assembly {x (0, x (0x601f8060093d393df33d33730000000000000000000000000000000000000000, x)) x (32, 0x14601d5780fd5bff000000000000000000000000000000000000000000000000) let x : = x (0, 0, 0x28) let x : = x (
+      0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) let x : = x (0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe, x) x (x, x) x : = x (0, 0, 0x28) x (x (x, 1), x) x : = x (0, 0, 0x28) x (x (x, 2), x) x (
+      0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, x (x, 3))}
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="777" endline="790">
+function x () x
+
+{
+    assembly {let x : = x (0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff) if x (x, 0) {let x : = x (0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, x) x (
+      0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff, x (x, 1)) let x : = x (x) x (x (x, x, 0, 0, 0, 0, 0)) x (x, 0)}}
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="790" endline="818">
+function x () x
+
+{
+    uint256 x = x; require (x > 0); assembly {let x : = x (0xfffff) let x : = x (x, 9) x (0xfffff, x) let x : = x (x, 0x100000) x (x, x) x : = x (x, 1) x (x, x) x : = x (x, 1) x (x, x) x : = x (x, 1) x (x, x) x : = x (x, 1) x (x, x) x : = x (x, 1) x (x, x
+      ) x : = x (x, 1) x (x, x) x : = x (x, 1) x (x, x) x : = x (x, 1) x (x, x)}
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="818" endline="830">
+function x () x x returns (uint256 x)
+
+{
+    assembly {let x : = x (0xfffff) let x : = x (x, 0xfffff) x : = x (x (x), 1)}
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="830" endline="849">
+function x () x
+
+{
+    assembly {let x : = x (0xfffff) if x (x, 1) {let x : = x (x, 0xfffff) if x (x, x (x)) {x (x, 0) x : = x (x, 1) x (x, 0) x (0xfffff, x (x, 2))}}}
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="849" endline="865">
+function x () x
+
+{
+    assembly {let x : = x (0xfffff) if x (x, 1) {let x : = x (x, 0xfffff) if x (x, x (x)) {x (x, 0) x (0xfffff, x (x, 1))}}}
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="865" endline="871">
+function x () x x returns (uint x)
+
+{
+    assembly {x : = x (0xfffff)}
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="871" endline="877">
+function x (uint256 x) x x returns (uint256 x)
+
+{
+    assembly {x : = x (x (0x100000, x))}
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="879" endline="883">
+function x (uint256 x) x
+
+{
+    require (x.x (x.x, x)); x = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="894" endline="901">
+function x () x x x (x)
+;
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="901" endline="912">
+function x (address x, uint256 x) x x (x)
+
+{
+    x (x.x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="912" endline="917">
+function x (address x, address x, uint256 x) x x (x)
+
+{
+    x (x, x, x, x.x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="917" endline="941">
+function x (address x, address x, uint256 x, address x) x
+
+{
+    x (x, x, x); x (x); require (x > = x, "below min burn bound"); require (x < = x, "exceeds max burn bound"); if (0 = = x (x, x))
+    {
+        if (0 = = x (x, x, x))
+        {
+
+        }
+        else
+        {
+            x ();
+        }
+
+    }
+    else
+    {
+        if (0 = = x (x, x, x))
+        {
+            x ();
+        }
+        else
+        {
+            x ();
+        }
+
+    }
+    emit x (x, x, x); x = x.x (x); emit x (x, x); emit x (x, x (0), x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="941" endline="957">
+function x (address x, address x, uint256 x) x
+
+{
+    x (x, x); x (x); require (x > = x, "below min burn bound"); require (x < = x, "exceeds max burn bound"); if (0 = = x (x, x))
+    {
+        x ();
+    }
+    else
+    {
+        x ();
+    }
+    emit x (x, x, x); x = x.x (x); emit x (x, x); emit x (x, x (0), x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="957" endline="1009">
+function x (address x, address x, uint256 x, address x) x
+
+{
+    if (x (x) < x)
+    {
+        x - = x % x; x (x, x, x, x);
+    }
+    else
+    {
+        bool x; address x = x; (x, x) = x (x, x, x); if (0 = = x (x, x))
+        {
+            if (0 = = x (x, x, x))
+            {
+                if (0 = = x (x, x))
+                {
+
+                }
+                else
+                {
+                    x ();
+                }
+
+            }
+            else
+            {
+                if (0 = = x (x, x))
+                {
+                    x ();
+                }
+                else
+                {
+                    x ();
+                }
+
+            }
+
+        }
+        else
+        {
+            if (0 = = x (x, x, x))
+            {
+                if (0 = = x (x, x))
+                {
+
+                }
+                else
+                {
+                    x ();
+                }
+
+            }
+            else
+            {
+                if (0 = = x (x, x))
+                {
+                    x ();
+                }
+                else
+                {
+                    x ();
+                }
+
+            }
+
+        }
+        emit x (x, x, x); if (x ! = x)
+        {
+            emit x (x, x, x); if (x)
+            {
+                x (x).x (x, x);
+            }
+
+        }
+        else
+        {
+            if (x)
+            {
+                x (x).x (x, x);
+            }
+
+        }
+
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1009" endline="1044">
+function x (address x, address x, uint256 x) x
+
+{
+    if (x (x) < x)
+    {
+        x - = x % x; x (x, x, x);
+    }
+    else
+    {
+        bool x; address x; (x, x) = x (x, x); if (0 = = x (x, x))
+        {
+            if (0 = = x (x, x))
+            {
+                x ();
+            }
+            else
+            {
+
+            }
+
+        }
+        else
+        {
+            if (0 = = x (x, x))
+            {
+                x ();
+            }
+            else
+            {
+                x ();
+            }
+
+        }
+        emit x (x, x, x); if (x ! = x)
+        {
+            emit x (x, x, x); if (x)
+            {
+                x (x).x (x, x);
+            }
+
+        }
+        else
+        {
+            if (x)
+            {
+                x (x).x (x, x);
+            }
+
+        }
+
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1044" endline="1065">
+function x (address x, uint256 x) x x
+
+{
+    require (x ! = x (0), "to address cannot be zero"); bool x; address x = x; (x, x) = x (x); x = x.x (x); emit x (x, x); emit x (x (0), x, x); if (x ! = x)
+    {
+        emit x (x, x, x);
+    }
+    x (x, x); if (x)
+    {
+        if (x ! = x)
+        {
+            x (x).x (x, x);
+        }
+        else
+        {
+            x (x).x (x (0), x);
+        }
+
+    }
+
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1072" endline="1077">
+function x (x x) x x
+
+{
+    x = x; emit x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1082" endline="1086">
+function x (address x, bytes32 x, uint256 x) x x
+
+{
+    x [x] [x] = x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1086" endline="1092">
+function x (address x, uint256 x) x
+
+{
+    x (x); x.x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1092" endline="1101">
+function x (address x) x x
+
+{
+    require (x (x), "_account is not blacklisted"); uint256 x = x (x); x (x, 0); x = x.x (x); emit x (x, x); emit x (x, x (0), x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1101" endline="1105">
+function x (address x) x x returns (bool x)
+
+{
+    return x [x] [x] ! = 0;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1105" endline="1115">
+function x (address x, address x) x x x (x, x)
+
+{
+    uint256 x = x [x] [x (x (x) > > 20)]; if (x ! = 0)
+    {
+        x = x (x);
+    }
+    require (x [x] [x] = = 0, "blacklisted"); require (x [x] [x] = = 0, "blacklisted"); return (x, x [x] [x] ! = 0);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1115" endline="1126">
+function x (address x, address x, address x) x x x (x, x)
+
+{
+    require (x [x] [x] = = 0, "blacklisted"); uint256 x = x [x] [x (x (x) > > 20)]; if (x ! = 0)
+    {
+        x = x (x);
+    }
+    require (x [x] [x] = = 0, "blacklisted"); require (x [x] [x] = = 0, "blacklisted"); return (x, x [x] [x] ! = 0);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1126" endline="1135">
+function x (address x) x x x (x, x)
+
+{
+    uint256 x = x [x] [x (x (x) > > 20)]; if (x ! = 0)
+    {
+        x = x (x);
+    }
+    require (x [x] [x] = = 0, "blacklisted"); return (x, x [x] [x] ! = 0);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1135" endline="1139">
+function x (address x) x x
+
+{
+    require (x [x ()] [x] ! = 0, "cannot burn from this address");
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1139" endline="1144">
+function x (address x) x x
+
+{
+    require (x [x] [x] = = 0, "blacklisted"); require (x [x ()] [x] ! = 0, "cannot burn from this address");
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1164" endline="1168">
+function x () x x x (x)
+
+{
+    return x ();
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1168" endline="1172">
+function x (address x) x x x (x)
+
+{
+    return x (x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1172" endline="1177">
+function x (address x, uint256 x, address x) x x x (x)
+
+{
+    x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1177" endline="1181">
+function x (address x, address x) x x x (x)
+
+{
+    return x (x, x);
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1181" endline="1186">
+function x (address x, address x, uint256 x, address x) x x x (x)
+
+{
+    x (x, x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1186" endline="1191">
+function x (address x, uint256 x, address x) x x x (x)
+
+{
+    x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1191" endline="1196">
+function x (address x, uint x, address x) x x x (x)
+
+{
+    x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1196" endline="1200">
+function x (address x, uint x, address x) x x x (x)
+
+{
+    x (x, x, x); return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222">
+function x () x x x (x)
+
+{
+    return x;
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1222" endline="1226">
+function x () x x x (x)
+
+{
+    return "TrueUSD";
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1226" endline="1230">
+function x () x x x (x)
+
+{
+    return "TUSD";
+}
+
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1230" endline="1233">
+function x () x x x (x)
+
+{
+    return "canBurn";
+}
+
+</source>

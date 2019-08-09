@@ -1,0 +1,29 @@
+Changes from NiCad 3.6 to 4.0
+
+1. Replaced n**2 pruning algorithm with efficient m*log m 
+   pruning for embedded clone pairs, dramatically improving 
+   performance on systems with a large number of clones.
+
+2. Replaced n**2 clustering algorithm with efficient m*log m 
+   clustering for clone classes, dramatically improving performance
+   on systems with very large numbers of clones.
+
+3. Increased max clone pairs limit to handle larger evolution experiments.
+
+4. Fixed minor bug in Java grammar related to enum keyword.
+
+5. Fixed Ubuntu error code 139 crash bug.
+
+6. Added "include" and "exclude" config parameters for file path screening.
+   In both cases, a grep regular expression pattern selects the source
+   files to be analyzed.
+
+   "include='Gui'" includes only source files matching "Gui" in the file name
+   or file folder path as the set to be processed.
+
+   "exclude='[Tt]est'" excludes all source files with "test" or "Test" 
+   in the file name or file folder path from the set to be processed.
+
+7. Changed reporting to create source reports for only clone classes
+   when "report=yes" is specified.  To get source reports for clone pairs
+   as well, use "report=pairs".

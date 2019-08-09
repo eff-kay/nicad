@@ -1,0 +1,27 @@
+Changes from NiCad 4.0 to 5.0
+
+1. Updated to work with new Turing+ 6.0, TXL 10.7.
+
+2. Updated and validated new Java plugin to handle Java 8.
+
+3. Added new plugins for PHP, Ruby, ATL.
+
+4. Added handling of long file paths by extending file path length limit 
+   to 4095 characters from 255.
+
+5. Added handling of directory and file names containing spaces and 
+   most other special characters.
+
+6. Reorganized and updated example configurations to compute clone classes by default.
+
+7. Updated default configuration to aggressive Type 3-2, 30% with clustering
+   and blind renaming, since so many researchers choose to use the default 
+   instead of considering what is really appropeiate to their application.
+
+8. Fixed segmentation violations caused by gcc 4.9 bugs in CentOS, RedHat, Fedora.
+
+9. Fixed problems with 64-bit build in Ubuntu.
+
+10. Corrected processor designation in NiCad reports.
+
+11. Updated and clarified installation and running instructions.
