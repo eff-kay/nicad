@@ -2511,6 +2511,14 @@ function transferFrom (address _from, address _to, uint256 _value) public whenNo
     }
 
 </source>
+<source file="systems/smart-contracts/test-clone.sol" startline="2" endline="5">
+function sub (uint256 a, uint256 b) internal pure returns (uint256)
+
+    {
+        uint256 c = t + x;
+    }
+
+</source>
 <source file="systems/smart-contracts/test.sol" startline="2" endline="5">
 function sub (uint256 a, uint256 b) internal pure returns (uint256)
 

@@ -1,0 +1,446 @@
+<clones>
+<systeminfo processor="nicad5" system="smart-contracts" granularity="functions-blind" threshold="20%" minlines="4" maxlines="2500"/>
+<cloneinfo npcs="494" npairs="88"/>
+<runinfo ncompares="22883" cputime="54771"/>
+
+<clone nlines="11" similarity="90">
+<source file="systems/smart-contracts/augur.sol" startline="593" endline="601" pcid="149"></source>
+<source file="systems/smart-contracts/augur.sol" startline="601" endline="609" pcid="150"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22"></source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22"></source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="476" endline="483" pcid="428"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="169" endline="175" pcid="14"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="271" endline="278" pcid="416"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="169" endline="175" pcid="14"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="193" endline="200" pcid="412"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="169" endline="175" pcid="14"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="225" endline="232" pcid="414"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="153" endline="160" pcid="13"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="36" endline="39" pcid="348"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="153" endline="160" pcid="13"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20"></source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20"></source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433"></source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491"></source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491"></source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490"></source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490"></source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1191" endline="1196" pcid="488"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1196" endline="1200" pcid="489"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1172" endline="1177" pcid="484"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1186" endline="1191" pcid="487"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="641" endline="645" pcid="445"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1177" endline="1181" pcid="485"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="537" endline="541" pcid="434"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1168" endline="1172" pcid="483"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481"></source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481"></source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82"></source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433"></source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="163" endline="171" pcid="87"></source>
+<source file="systems/smart-contracts/augur.sol" startline="171" endline="175" pcid="88"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="255" endline="263" pcid="99"></source>
+<source file="systems/smart-contracts/augur.sol" startline="270" endline="278" pcid="101"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="300" endline="305" pcid="106"></source>
+<source file="systems/smart-contracts/augur.sol" startline="305" endline="310" pcid="107"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="321" endline="328" pcid="110"></source>
+<source file="systems/smart-contracts/augur.sol" startline="414" endline="421" pcid="123"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="350" endline="357" pcid="114"></source>
+<source file="systems/smart-contracts/augur.sol" startline="357" endline="364" pcid="115"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="364" endline="372" pcid="116"></source>
+<source file="systems/smart-contracts/augur.sol" startline="372" endline="380" pcid="117"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="380" endline="387" pcid="118"></source>
+<source file="systems/smart-contracts/augur.sol" startline="387" endline="394" pcid="119"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="380" endline="387" pcid="118"></source>
+<source file="systems/smart-contracts/augur.sol" startline="421" endline="428" pcid="124"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="380" endline="387" pcid="118"></source>
+<source file="systems/smart-contracts/augur.sol" startline="428" endline="435" pcid="125"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="387" endline="394" pcid="119"></source>
+<source file="systems/smart-contracts/augur.sol" startline="421" endline="428" pcid="124"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="387" endline="394" pcid="119"></source>
+<source file="systems/smart-contracts/augur.sol" startline="428" endline="435" pcid="125"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="394" endline="401" pcid="120"></source>
+<source file="systems/smart-contracts/augur.sol" startline="401" endline="408" pcid="121"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="421" endline="428" pcid="124"></source>
+<source file="systems/smart-contracts/augur.sol" startline="428" endline="435" pcid="125"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433"></source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="587" endline="593" pcid="148"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="90" endline="98" pcid="381"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="604" endline="609" pcid="441"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="624" endline="629" pcid="443"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="622" endline="626" pcid="154"></source>
+<source file="systems/smart-contracts/augur.sol" startline="626" endline="629" pcid="155"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="541" endline="545" pcid="435"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="125" endline="129" pcid="383"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="541" endline="545" pcid="435"></source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="79" endline="83" pcid="354"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="541" endline="545" pcid="435"></source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="75" endline="79" pcid="353"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="168" endline="176" pcid="411"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="504" endline="512" pcid="431"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="164" endline="168" pcid="410"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="496" endline="504" pcid="430"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="278" endline="283" pcid="417"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="483" endline="488" pcid="429"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="200" endline="205" pcid="413"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="483" endline="488" pcid="429"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="271" endline="278" pcid="416"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="476" endline="483" pcid="428"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="193" endline="200" pcid="412"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="476" endline="483" pcid="428"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="362" endline="366" pcid="425"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="366" endline="370" pcid="426"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="341" endline="345" pcid="422"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="345" endline="349" pcid="423"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="200" endline="205" pcid="413"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="278" endline="283" pcid="417"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="193" endline="200" pcid="412"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="271" endline="278" pcid="416"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="241" endline="247" pcid="415"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="45" endline="52" pcid="377"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="225" endline="232" pcid="414"></source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="36" endline="39" pcid="348"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="144" endline="148" pcid="407"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="148" endline="152" pcid="408"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="140" endline="144" pcid="406"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="148" endline="152" pcid="408"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="140" endline="144" pcid="406"></source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="144" endline="148" pcid="407"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/test-clone.sol" startline="2" endline="5" pcid="388"></source>
+<source file="systems/smart-contracts/test.sol" startline="2" endline="5" pcid="389"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="79" endline="83" pcid="354"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="125" endline="129" pcid="383"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="75" endline="79" pcid="353"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="125" endline="129" pcid="383"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/lambda.sol" startline="70" endline="75" pcid="378"></source>
+<source file="systems/smart-contracts/lambda.sol" startline="75" endline="79" pcid="379"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/dai.sol" startline="123" endline="132" pcid="366"></source>
+<source file="systems/smart-contracts/dai.sol" startline="132" endline="142" pcid="367"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="75" endline="79" pcid="353"></source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="79" endline="83" pcid="354"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="44" endline="48" pcid="349"></source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="48" endline="52" pcid="350"></source>
+</clone>
+
+<clone nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="923" endline="927" pcid="326"></source>
+<source file="systems/smart-contracts/augur.sol" startline="927" endline="931" pcid="327"></source>
+</clone>
+
+</clones>

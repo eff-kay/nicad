@@ -1,0 +1,782 @@
+<clones>
+<systeminfo processor="nicad5" system="smart-contracts" granularity="functions-blind" threshold="20%" minlines="4" maxlines="2500"/>
+<cloneinfo npcs="494" npairs="88"/>
+<runinfo ncompares="22883" cputime="54771"/>
+<classinfo nclasses="32"/>
+
+<class classid="1" nclones="3" nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="153" endline="160" pcid="13">
+    function Owned() public {
+
+        owner = msg.sender;
+
+    }
+
+
+    modifier onlyOwner {
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="36" endline="39" pcid="348">
+  function CaptainKitties() public {
+    owner = msg.sender;
+  }  
+  modifier onlyOwner() {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="225" endline="232" pcid="414">
+  function Ownable() public {
+    owner = msg.sender;
+  }
+
+  /**
+   * @dev Throws if called by any account other than the owner.
+   */
+  modifier onlyOwner() {
+</source>
+</class>
+
+<class classid="2" nclones="4" nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="169" endline="175" pcid="14">
+    function transferOwnership(address _newOwner) public onlyOwner {
+
+        newOwner = _newOwner;
+
+    }
+
+    function acceptOwnership() public {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="193" endline="200" pcid="412">
+    function transferOwnership(address newOwner) public onlyOwner {
+        pendingOwner = newOwner;
+    }
+
+    /**
+    * @dev Allows the pendingOwner address to finalize the transfer.
+    */
+    function claimOwnership() public onlyPendingOwner {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="271" endline="278" pcid="416">
+  function transferOwnership(address newOwner) onlyOwner public {
+    pendingOwner = newOwner;
+  }
+
+  /**
+   * @dev Allows the pendingOwner address to finalize the transfer.
+   */
+  function claimOwnership() onlyPendingOwner public {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="476" endline="483" pcid="428">
+    function transferOwnership(address newOwner) public onlyOwner {
+        pendingOwner = newOwner;
+    }
+
+    /**
+    * @dev Allows the pendingOwner address to finalize the transfer.
+    */
+    function claimOwnership() public onlyPendingOwner {
+</source>
+</class>
+
+<class classid="3" nclones="9" nlines="4" similarity="100">
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="438" endline="443" pcid="20">
+    function getChallengeNumber() public constant returns (bytes32) {
+        return challengeNumber;
+    }
+
+    //the number of zeroes the digest of the PoW solution requires.  Auto adjusts
+     function getMiningDifficulty() public constant returns (uint) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="533" endline="537" pcid="433">
+    function totalSupply() public view returns (uint256) {
+        return totalSupply_;
+    }
+
+    function balanceOf(address _who) public view returns (uint256) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="563" endline="566" pcid="144">
+    function getInitialized() public view returns (bool) {
+        return initialized;
+    }
+}
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="121" endline="125" pcid="382">
+  function totalSupply() public  constant returns (uint256) {
+    return _totalSupply;
+  }
+
+  function balanceOf(address _owner) public  constant returns (uint256) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="87" endline="91" pcid="82">
+    function getController() public view returns(IController) {
+        return controller;
+    }
+
+    function setController(IController _controller) public onlyControllerCaller returns(bool) {
+</source>
+<source file="systems/smart-contracts/_DrSerbiToken.sol" startline="447" endline="455" pcid="22">
+    function getMiningTarget() public constant returns (uint) {
+       return miningTarget;
+   }
+
+
+
+    //21m coins total
+    //reward begins at 50 and is cut in half every reward era (as tokens are mined)
+    function getMiningReward() public constant returns (uint) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1218" endline="1222" pcid="491">
+    function rounding() public pure returns (uint8) {
+        return ROUNDING;
+    }
+
+    function name() public pure returns (string) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1214" endline="1218" pcid="490">
+    function decimals() public pure returns (uint8) {
+        return DECIMALS;
+    }
+
+    function rounding() public pure returns (uint8) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1144" endline="1147" pcid="481">
+    function paused() public pure returns (bool) {
+        return false;
+    }
+}
+</source>
+</class>
+
+<class classid="4" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="163" endline="171" pcid="87">
+    function isKnownUniverse(IUniverse _universe) public view returns (bool) {
+        return universes[_universe];
+    }
+
+    //
+    // Crowdsourcers
+    //
+
+    function isKnownCrowdsourcer(IDisputeCrowdsourcer _crowdsourcer) public view returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="171" endline="175" pcid="88">
+    function isKnownCrowdsourcer(IDisputeCrowdsourcer _crowdsourcer) public view returns (bool) {
+        return crowdsourcers[_crowdsourcer];
+    }
+
+    function disputeCrowdsourcerCreated(IUniverse _universe, address _market, address _disputeCrowdsourcer, uint256[] _payoutNumerators, uint256 _size, bool _invalid) public returns (bool) {
+</source>
+</class>
+
+<class classid="5" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="255" endline="263" pcid="99">
+    function logMarketParticipantsDisavowed(IUniverse _universe) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        IMarket _market = IMarket(msg.sender);
+        require(_universe.isContainerForMarket(_market));
+        MarketParticipantsDisavowed(_universe, _market);
+        return true;
+    }
+
+    function logFeeWindowRedeemed(IUniverse _universe, address _reporter, uint256 _amountRedeemed, uint256 _reportingFeesReceived) public returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="270" endline="278" pcid="101">
+    function logMarketFinalized(IUniverse _universe) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        IMarket _market = IMarket(msg.sender);
+        require(_universe.isContainerForMarket(_market));
+        MarketFinalized(_universe, _market);
+        return true;
+    }
+
+    function logMarketMigrated(IMarket _market, IUniverse _originalUniverse) public returns (bool) {
+</source>
+</class>
+
+<class classid="6" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="300" endline="305" pcid="106">
+    function logCompleteSetsPurchased(IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets) public onlyWhitelistedCallers returns (bool) {
+        CompleteSetsPurchased(_universe, _market, _account, _numCompleteSets);
+        return true;
+    }
+
+    function logCompleteSetsSold(IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets) public onlyWhitelistedCallers returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="305" endline="310" pcid="107">
+    function logCompleteSetsSold(IUniverse _universe, IMarket _market, address _account, uint256 _numCompleteSets) public onlyWhitelistedCallers returns (bool) {
+        CompleteSetsSold(_universe, _market, _account, _numCompleteSets);
+        return true;
+    }
+
+    function logTradingProceedsClaimed(IUniverse _universe, address _shareToken, address _sender, address _market, uint256 _numShares, uint256 _numPayoutTokens, uint256 _finalTokenBalance) public onlyWhitelistedCallers returns (bool) {
+</source>
+</class>
+
+<class classid="7" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="321" endline="328" pcid="110">
+    function logFeeWindowTransferred(IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        require(_universe.isContainerForFeeWindow(IFeeWindow(msg.sender)));
+        TokensTransferred(_universe, msg.sender, _from, _to, _value, TokenType.FeeWindow, 0);
+        return true;
+    }
+
+    function logReputationTokensTransferred(IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="414" endline="421" pcid="123">
+    function logFeeTokenTransferred(IUniverse _universe, address _from, address _to, uint256 _value) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        require(_universe.isContainerForFeeToken(IFeeToken(msg.sender)));
+        TokensTransferred(_universe, msg.sender, _from, _to, _value, TokenType.FeeToken, 0);
+        return true;
+    }
+
+    function logFeeTokenBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+</class>
+
+<class classid="8" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="350" endline="357" pcid="114">
+    function logReputationTokenBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        require(_universe.getReputationToken() == IReputationToken(msg.sender));
+        TokensBurned(_universe, msg.sender, _target, _amount, TokenType.ReputationToken, 0);
+        return true;
+    }
+
+    function logReputationTokenMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="357" endline="364" pcid="115">
+    function logReputationTokenMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        require(_universe.getReputationToken() == IReputationToken(msg.sender));
+        TokensMinted(_universe, msg.sender, _target, _amount, TokenType.ReputationToken, 0);
+        return true;
+    }
+
+    function logShareTokenBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+</class>
+
+<class classid="9" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="364" endline="372" pcid="116">
+    function logShareTokenBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        IShareToken _shareToken = IShareToken(msg.sender);
+        require(_universe.isContainerForShareToken(_shareToken));
+        TokensBurned(_universe, msg.sender, _target, _amount, TokenType.ShareToken, _shareToken.getMarket());
+        return true;
+    }
+
+    function logShareTokenMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="372" endline="380" pcid="117">
+    function logShareTokenMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        IShareToken _shareToken = IShareToken(msg.sender);
+        require(_universe.isContainerForShareToken(_shareToken));
+        TokensMinted(_universe, msg.sender, _target, _amount, TokenType.ShareToken, _shareToken.getMarket());
+        return true;
+    }
+
+    function logFeeWindowBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+</class>
+
+<class classid="10" nclones="4" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="380" endline="387" pcid="118">
+    function logFeeWindowBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        require(_universe.isContainerForFeeWindow(IFeeWindow(msg.sender)));
+        TokensBurned(_universe, msg.sender, _target, _amount, TokenType.FeeWindow, 0);
+        return true;
+    }
+
+    function logFeeWindowMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="428" endline="435" pcid="125">
+    function logFeeTokenMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        require(_universe.isContainerForFeeToken(IFeeToken(msg.sender)));
+        TokensMinted(_universe, msg.sender, _target, _amount, TokenType.FeeToken, 0);
+        return true;
+    }
+
+    function logTimestampSet(uint256 _newTimestamp) public returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="421" endline="428" pcid="124">
+    function logFeeTokenBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        require(_universe.isContainerForFeeToken(IFeeToken(msg.sender)));
+        TokensBurned(_universe, msg.sender, _target, _amount, TokenType.FeeToken, 0);
+        return true;
+    }
+
+    function logFeeTokenMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="387" endline="394" pcid="119">
+    function logFeeWindowMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        require(isKnownUniverse(_universe));
+        require(_universe.isContainerForFeeWindow(IFeeWindow(msg.sender)));
+        TokensMinted(_universe, msg.sender, _target, _amount, TokenType.FeeWindow, 0);
+        return true;
+    }
+
+    function logDisputeCrowdsourcerTokensBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+</class>
+
+<class classid="11" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="394" endline="401" pcid="120">
+    function logDisputeCrowdsourcerTokensBurned(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer(msg.sender);
+        require(isKnownCrowdsourcer(_disputeCrowdsourcer));
+        TokensBurned(_universe, msg.sender, _target, _amount, TokenType.DisputeCrowdsourcer, _disputeCrowdsourcer.getMarket());
+        return true;
+    }
+
+    function logDisputeCrowdsourcerTokensMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="401" endline="408" pcid="121">
+    function logDisputeCrowdsourcerTokensMinted(IUniverse _universe, address _target, uint256 _amount) public returns (bool) {
+        IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer(msg.sender);
+        require(isKnownCrowdsourcer(_disputeCrowdsourcer));
+        TokensMinted(_universe, msg.sender, _target, _amount, TokenType.DisputeCrowdsourcer, _disputeCrowdsourcer.getMarket());
+        return true;
+    }
+
+    function logFeeWindowCreated(IFeeWindow _feeWindow, uint256 _id) public returns (bool) {
+</source>
+</class>
+
+<class classid="12" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="587" endline="593" pcid="148">
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = a + b;
+        require(c >= a);
+        return c;
+    }
+
+    function min(uint256 a, uint256 b) internal pure returns (uint256) {
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="90" endline="98" pcid="381">
+  function add(uint256 _a, uint256 _b) internal pure returns (uint256) {
+    uint256 c = _a + _b;
+    require(c >= _a);
+
+    return c;
+  }
+
+  
+}
+</source>
+</class>
+
+<class classid="13" nclones="2" nlines="11" similarity="90">
+<source file="systems/smart-contracts/augur.sol" startline="593" endline="601" pcid="149">
+    function min(uint256 a, uint256 b) internal pure returns (uint256) {
+        if (a <= b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    function max(uint256 a, uint256 b) internal pure returns (uint256) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="601" endline="609" pcid="150">
+    function max(uint256 a, uint256 b) internal pure returns (uint256) {
+        if (a >= b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    function getUint256Min() internal pure returns (uint256) {
+</source>
+</class>
+
+<class classid="14" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="622" endline="626" pcid="154">
+    function fxpMul(uint256 a, uint256 b, uint256 base) internal pure returns (uint256) {
+        return div(mul(a, b), base);
+    }
+
+    function fxpDiv(uint256 a, uint256 b, uint256 base) internal pure returns (uint256) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="626" endline="629" pcid="155">
+    function fxpDiv(uint256 a, uint256 b, uint256 base) internal pure returns (uint256) {
+        return div(mul(a, base), b);
+    }
+}
+</source>
+</class>
+
+<class classid="15" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/augur.sol" startline="923" endline="927" pcid="326">
+    function getOrderTradingTypeFromMakerDirection(Order.TradeDirections _creatorDirection) internal pure returns (Order.Types) {
+        return (_creatorDirection == Order.TradeDirections.Long) ? Order.Types.Bid : Order.Types.Ask;
+    }
+
+    function getOrderTradingTypeFromFillerDirection(Order.TradeDirections _fillerDirection) internal pure returns (Order.Types) {
+</source>
+<source file="systems/smart-contracts/augur.sol" startline="927" endline="931" pcid="327">
+    function getOrderTradingTypeFromFillerDirection(Order.TradeDirections _fillerDirection) internal pure returns (Order.Types) {
+        return (_fillerDirection == Order.TradeDirections.Long) ? Order.Types.Ask : Order.Types.Bid;
+    }
+
+    function escrowFunds(Order.Data _orderData) internal returns (bool) {
+</source>
+</class>
+
+<class classid="16" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="44" endline="48" pcid="349">
+  function setKittyContractAddress(address _address) external onlyOwner {
+    kittyContract = KittyInterface(_address);
+  }
+
+  function setKittyTokenAddress(address _address) external onlyOwner {
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="48" endline="52" pcid="350">
+  function setKittyTokenAddress(address _address) external onlyOwner {
+    kittyToken = KittyTokenInterface(_address);
+  }
+
+  function createKitties() external payable {
+</source>
+</class>
+
+<class classid="17" nclones="4" nlines="4" similarity="100">
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="75" endline="79" pcid="353">
+  function getKittyGetOrNot(address _addr) external view returns (bool) {
+    return kittyGetOrNot[_addr];
+  }
+
+  function getKittyCount(address _addr) external view returns (uint256) {
+</source>
+<source file="systems/smart-contracts/CaptainKitties.sol" startline="79" endline="83" pcid="354">
+  function getKittyCount(address _addr) external view returns (uint256) {
+    return kittyToCount[_addr];
+  }
+
+  function birthKitty() external {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="541" endline="545" pcid="435">
+    function _getBalance(address _who) internal view returns (uint256) {
+        return _balanceOf[_who];
+    }
+
+    function _addBalance(address _who, uint256 _value) internal returns (uint256 priorBalance) {
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="125" endline="129" pcid="383">
+  function balanceOf(address _owner) public  constant returns (uint256) {
+    return balances[_owner];
+  }
+
+  function allowance(address _owner, address _spender) public  constant returns (uint256) {
+</source>
+</class>
+
+<class classid="18" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/dai.sol" startline="123" endline="132" pcid="366">
+	function freeze(uint256 _value) returns (bool success) {
+        if (balanceOf[msg.sender] < _value) throw;            // Check if the sender has enough
+		if (_value <= 0) throw; 
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                      // Subtract from the sender
+        freezeOf[msg.sender] = SafeMath.safeAdd(freezeOf[msg.sender], _value);                                // Updates totalSupply
+        Freeze(msg.sender, _value);
+        return true;
+    }
+	
+	function unfreeze(uint256 _value) returns (bool success) {
+</source>
+<source file="systems/smart-contracts/dai.sol" startline="132" endline="142" pcid="367">
+	function unfreeze(uint256 _value) returns (bool success) {
+        if (freezeOf[msg.sender] < _value) throw;            // Check if the sender has enough
+		if (_value <= 0) throw; 
+        freezeOf[msg.sender] = SafeMath.safeSub(freezeOf[msg.sender], _value);                      // Subtract from the sender
+		balanceOf[msg.sender] = SafeMath.safeAdd(balanceOf[msg.sender], _value);
+        Unfreeze(msg.sender, _value);
+        return true;
+    }
+	
+	// transfer balance to owner
+	function withdrawEther(uint256 amount) {
+</source>
+</class>
+
+<class classid="19" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/lambda.sol" startline="45" endline="52" pcid="377">
+  function transferOwnership(address _newOwner) public onlyOwner {
+    require(_newOwner != address(0));
+    emit OwnershipTransferred(owner, _newOwner);
+    owner = _newOwner;
+  }
+
+  
+}
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="241" endline="247" pcid="415">
+  function transferOwnership(address newOwner) public onlyOwner {
+    require(newOwner != address(0));
+    emit OwnershipTransferred(owner, newOwner);
+    owner = newOwner;
+  }
+
+}
+</source>
+</class>
+
+<class classid="20" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/lambda.sol" startline="70" endline="75" pcid="378">
+  function pause() public onlyOwner whenNotPaused {
+    paused = true;
+    emit Paused();
+  }
+
+  function unpause() public onlyOwner whenPaused {
+</source>
+<source file="systems/smart-contracts/lambda.sol" startline="75" endline="79" pcid="379">
+  function unpause() public onlyOwner whenPaused {
+    paused = false;
+    emit Unpaused();
+  }
+}
+</source>
+</class>
+
+<class classid="21" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/test-clone.sol" startline="2" endline="5" pcid="388">
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = t + x;
+    }
+}
+</source>
+<source file="systems/smart-contracts/test.sol" startline="2" endline="5" pcid="389">
+    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+        uint256 c = t + x;
+    }
+}
+</source>
+</class>
+
+<class classid="22" nclones="3" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="140" endline="144" pcid="406">
+    function getAttributeValue(address _who, bytes32 _attribute) public view returns (uint256) {
+        return attributes[_who][_attribute].value;
+    }
+
+    function getAttributeAdminAddr(address _who, bytes32 _attribute) public view returns (address) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="148" endline="152" pcid="408">
+    function getAttributeTimestamp(address _who, bytes32 _attribute) public view returns (uint256) {
+        return attributes[_who][_attribute].timestamp;
+    }
+
+    function syncAttribute(bytes32 _attribute, uint256 _startIndex, address[] _addresses) external {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="144" endline="148" pcid="407">
+    function getAttributeAdminAddr(address _who, bytes32 _attribute) public view returns (address) {
+        return attributes[_who][_attribute].adminAddr;
+    }
+
+    function getAttributeTimestamp(address _who, bytes32 _attribute) public view returns (uint256) {
+</source>
+</class>
+
+<class classid="23" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="164" endline="168" pcid="410">
+    function reclaimEther(address _to) external onlyOwner {
+        _to.transfer(address(this).balance);
+    }
+
+    function reclaimToken(ERC20 token, address _to) external onlyOwner {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="496" endline="504" pcid="430">
+    function reclaimEther(address _to) external onlyOwner {
+        _to.transfer(address(this).balance);
+    }
+
+    /**  
+    *@dev send all token balance of an arbitary erc20 token
+    in the contract to another address
+    */
+    function reclaimToken(ERC20 token, address _to) external onlyOwner {
+</source>
+</class>
+
+<class classid="24" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="168" endline="176" pcid="411">
+    function reclaimToken(ERC20 token, address _to) external onlyOwner {
+        uint256 balance = token.balanceOf(this);
+        token.transfer(_to, balance);
+    }
+
+   /**
+    * @dev Throws if called by any account other than the owner.
+    */
+    modifier onlyOwner() {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="504" endline="512" pcid="431">
+    function reclaimToken(ERC20 token, address _to) external onlyOwner {
+        uint256 balance = token.balanceOf(this);
+        token.transfer(_to, balance);
+    }
+
+    /**  
+    *@dev allows owner of the contract to gain ownership of any contract that the contract currently owns
+    */
+    function reclaimContract(Ownable _ownable) external onlyOwner {
+</source>
+</class>
+
+<class classid="25" nclones="3" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="200" endline="205" pcid="413">
+    function claimOwnership() public onlyPendingOwner {
+        emit OwnershipTransferred(owner, pendingOwner);
+        owner = pendingOwner;
+        pendingOwner = address(0);
+    }
+}
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="483" endline="488" pcid="429">
+    function claimOwnership() public onlyPendingOwner {
+        emit OwnershipTransferred(owner, pendingOwner);
+        owner = pendingOwner;
+        pendingOwner = address(0);
+    }
+}
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="278" endline="283" pcid="417">
+  function claimOwnership() onlyPendingOwner public {
+    emit OwnershipTransferred(owner, pendingOwner);
+    owner = pendingOwner;
+    pendingOwner = address(0);
+  }
+}
+</source>
+</class>
+
+<class classid="26" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="341" endline="345" pcid="422">
+    function addBalance(address _addr, uint256 _value) public onlyOwner {
+        balanceOf[_addr] = balanceOf[_addr].add(_value);
+    }
+
+    function subBalance(address _addr, uint256 _value) public onlyOwner {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="345" endline="349" pcid="423">
+    function subBalance(address _addr, uint256 _value) public onlyOwner {
+        balanceOf[_addr] = balanceOf[_addr].sub(_value);
+    }
+
+    function setBalance(address _addr, uint256 _value) public onlyOwner {
+</source>
+</class>
+
+<class classid="27" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="362" endline="366" pcid="425">
+    function addAllowance(address _tokenHolder, address _spender, uint256 _value) public onlyOwner {
+        allowanceOf[_tokenHolder][_spender] = allowanceOf[_tokenHolder][_spender].add(_value);
+    }
+
+    function subAllowance(address _tokenHolder, address _spender, uint256 _value) public onlyOwner {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="366" endline="370" pcid="426">
+    function subAllowance(address _tokenHolder, address _spender, uint256 _value) public onlyOwner {
+        allowanceOf[_tokenHolder][_spender] = allowanceOf[_tokenHolder][_spender].sub(_value);
+    }
+
+    function setAllowance(address _tokenHolder, address _spender, uint256 _value) public onlyOwner {
+</source>
+</class>
+
+<class classid="28" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="537" endline="541" pcid="434">
+    function balanceOf(address _who) public view returns (uint256) {
+        return _getBalance(_who);
+    }
+
+    function _getBalance(address _who) internal view returns (uint256) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1168" endline="1172" pcid="483">
+    function delegateBalanceOf(address who) public view returns (uint256) {
+        return _getBalance(who);
+    }
+
+    function delegateTransfer(address to, uint256 value, address origSender) public onlyDelegateFrom returns (bool) {
+</source>
+</class>
+
+<class classid="29" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="604" endline="609" pcid="441">
+    function increaseApproval(address _spender, uint _addedValue) public returns (bool) {
+        _increaseApprovalAllArgs(_spender, _addedValue, msg.sender);
+        return true;
+    }
+
+    function _increaseApprovalAllArgs(address _spender, uint256 _addedValue, address _tokenHolder) internal {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="624" endline="629" pcid="443">
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+        _decreaseApprovalAllArgs(_spender, _subtractedValue, msg.sender);
+        return true;
+    }
+
+    function _decreaseApprovalAllArgs(address _spender, uint256 _subtractedValue, address _tokenHolder) internal {
+</source>
+</class>
+
+<class classid="30" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="641" endline="645" pcid="445">
+    function allowance(address _who, address _spender) public view returns (uint256) {
+        return _getAllowance(_who, _spender);
+    }
+
+    function _getAllowance(address _who, address _spender) internal view returns (uint256 value) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1177" endline="1181" pcid="485">
+    function delegateAllowance(address owner, address spender) public view returns (uint256) {
+        return _getAllowance(owner, spender);
+    }
+
+    function delegateTransferFrom(address from, address to, uint256 value, address origSender) public onlyDelegateFrom returns (bool) {
+</source>
+</class>
+
+<class classid="31" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1172" endline="1177" pcid="484">
+    function delegateTransfer(address to, uint256 value, address origSender) public onlyDelegateFrom returns (bool) {
+        _transferAllArgs(origSender, to, value);
+        return true;
+    }
+
+    function delegateAllowance(address owner, address spender) public view returns (uint256) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1186" endline="1191" pcid="487">
+    function delegateApprove(address spender, uint256 value, address origSender) public onlyDelegateFrom returns (bool) {
+        _approveAllArgs(spender, value, origSender);
+        return true;
+    }
+
+    function delegateIncreaseApproval(address spender, uint addedValue, address origSender) public onlyDelegateFrom returns (bool) {
+</source>
+</class>
+
+<class classid="32" nclones="2" nlines="4" similarity="100">
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1191" endline="1196" pcid="488">
+    function delegateIncreaseApproval(address spender, uint addedValue, address origSender) public onlyDelegateFrom returns (bool) {
+        _increaseApprovalAllArgs(spender, addedValue, origSender);
+        return true;
+    }
+
+    function delegateDecreaseApproval(address spender, uint subtractedValue, address origSender) public onlyDelegateFrom returns (bool) {
+</source>
+<source file="systems/smart-contracts/TrueUSD.sol" startline="1196" endline="1200" pcid="489">
+    function delegateDecreaseApproval(address spender, uint subtractedValue, address origSender) public onlyDelegateFrom returns (bool) {
+        _decreaseApprovalAllArgs(spender, subtractedValue, origSender);
+        return true;
+    }
+}
+</source>
+</class>
+
+</clones>
