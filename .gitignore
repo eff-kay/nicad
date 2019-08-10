@@ -3,3 +3,6 @@
 .*out
 /examples
 /systems/
+lib
+bin
+pyvenv.cfg
