@@ -7,3 +7,4 @@ lib
 bin
 pyvenv.cfg
 include
+python_scripts/smart_contracts/
