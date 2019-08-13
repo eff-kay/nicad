@@ -5,12 +5,11 @@
 include "bom.grm"        % don't ever edit that file!
 
 tokens
-    % this is very fragile - in reality Javascript regexps are context-dependent - JRC
-    solidity_regexp     "/[(\\/)(\\^)(\\)(^/)#[/\n]]*/[(gi)(ig)gi]?m?g?\:[.,;}\)\]( \))        \n]"  
-                | "/[(\\/)(\\^)(\\\\)(^/)#[/\n]]*/[(gi)(ig)gi]?m?g?\:[.,;}\)\]  \n]"  
+    % this is very fragile - in reality Javascript regexps are context-dependent - JRC 
     solidity_hex_number "0[xX][0123456789abcdefABCDEF]+"
     number        "\d+(.\d*)?([eE][+-]?\d+)?" 
                 | ".\d+([eE][+-]?\d+)?"
+    id  "[$\u][$\i]*"
 end tokens
 
 comments
@@ -167,7 +166,7 @@ define AndExpression
 end define 
 
 define LogicalOrExpression
-		[Expression] '|| [Expression]
+		[Expression] '|'| [Expression]
 end define
 
 
@@ -404,7 +403,7 @@ define StructDefinition
 end define
 
 define ConstructorDefinition
-  'constructor [ParameterList] [FunctionalDefinitionInternalModifiers] [Block]
+  'constructor [ParameterList] [FunctionalDefinitionInternalModifiers*] [Block]
 end define
 
 define VariableDeclarationMeta

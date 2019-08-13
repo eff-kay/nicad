@@ -1,0 +1,16 @@
+import subprocess
+import os
+
+
+err_smart_contract = ['$martFund.sol', '_0xSatoshi.sol', '_HashPayToken.sol', 'ABCToken.sol', 'AdminUpgradeabilityProxy.sol', 'Airdrop.sol', 'AkropolisTimeLock.sol', 'AkropolisTokenVesting.sol', 'ALBToken.sol', 'AMAToken.sol', 'ankara.sol', 'ArtificialIntelligenceCoin.sol', 'ATestnetConsumer.sol', 'Authorization.sol', 'BANG.sol', 'BetDeEx.sol', 'BlackJack.sol', 'BlockbidLiquidity.sol', 'BOMBv3.sol', 'Bridge.sol', 'BRZE.sol', 'Burner.sol', 'BvesToken.sol', 'Byte.sol', 'CALLIA.sol', 'CAME.sol', 'CarStickerAd.sol', 'ChequeOperator.sol', 'CMRPDCrowdsale.sol', 'CNEXToken.sol', 'CoinDDC.sol', 'COMASD.sol', 'Comet.sol', 'Controller.sol', 'CouncilVesting.sol', 'Crowdsale.sol', 'CrowdsaleTokenExt.sol', 'CRUSH.sol', 'CryptoBinar.sol', 'DABANKING_SWAP.sol', 'DaiSwap.sol', 'DcorpDissolvementProposal.sol', 'Deflacoin.sol', 'DepositRegistry.sol', 'DiamondChain.sol', 'DICCrowdsale.sol', 'DigitalBitsToken.sol', 'EJackpot.sol', 'ERC20.sol', 'ERC20TOKEN.sol', 'EstateRegistry.sol', 'ESTATERO.sol', 'EtheleToken.sol', 'etherstar.sol', 'Exchange.sol', 'ExchangeV3.sol', 'Faireum.sol', 'FastExitHandler.sol', 'femich.sol', 'FogCoin.sol', 'Fortune999.sol', 'FRSPToken.sol', 'Fuelcoin.sol', 'GachaDrop.sol', 'GFNX.sol', 'Governance.sol', 'Heap.sol', 'HOSTOKEN.sol', 'ICBB.sol', 'ICOImplementation.sol', 'Inflationary.sol', 'InstaCompSaveUsdc.sol', 'IOTF.sol', 'KongERC20.sol', 'LANDRegistry.sol', 'LanToken.sol', 'LockDrop.sol', 'LuckyAdvcedWoken.sol', 'LuckyStrike.sol', 'LUNEL.sol', 'MACOStrategyManager.sol', 'MAdvcedWoken.sol', 'MALTOKEN.sol', 'Margintradingtoken.sol', 'MBA.sol', 'MBFToken.sol', 'MinGov.sol', 'MLTKTOKEN.sol', 'MLTOKEN.sol', 'Mobilio.sol', 'Moshlink.sol', 'MULTIFOMO.sol', 'MultipleArbitrableTokenTransaction.sol', 'MultiSigWallet.sol', 'NewVoken.sol', 'NibiruGovernanceToken.sol', 'OASChain.sol', 'Oracle.sol', 'PCCSStandardToken.sol', 'Pets.sol', 'PoaOperator.sol', 'PositionTokenLogic.sol', 'PositionTokenLogic_WBTCShort.sol', 'PositionTokenLogicV2.sol', 'PrivatixServiceContract.sol', 'PropertyToken.sol', 'ProxyERC20.sol', 'QTChain.sol', 'RaffleTokenExchange.sol', 'RDTv1.sol', 'ReservedTokensFinalizeAgent.sol', 'ResolverContenthashSignerENS.sol', 'ROCKEX.sol', 'SAMPLE.sol', 'SBC.sol', 'SecurityToken.sol', 'SeedDex.sol', 'SellableToken.sol', 'ShuffleToken.sol', 'SparksterTokenSwap.sol', 'Specie.sol', 'StarEthRate.sol', 'Swap.sol', 'Synthetix.sol', 'TAIHUITOKEN.sol', 'ThpToken.sol', 'TigerCash.sol', 'Tokeniso.sol', 'TokenSwap.sol', 'TradeEth2DAI.sol', 'TRT_Token.sol', 'Types.sol', 'UIDStandardToken.sol', 'UsersManager.sol', 'VantaToken.sol', 'Vyper_contract.sol', 'WalletConnector.sol', 'WalletLogic5.sol', 'WalletV3Builder.sol', 'WantMarketplacesUtilityTokenCrowdsale.sol', 'Wisdom.sol', 'XBOOMBLOCKCHAIN.sol', 'XJY.sol', 'YottaBytes.sol', 'ZDRToken.sol', 'ZPayToken.sol']
+smart_contracts = os.listdir("../data/smart_contracts")
+
+# smart_contract = "../data/smart_contracts/ZPayToken.sol"
+count=0
+for smart_contract in err_smart_contract[:1]:
+	command_run = subprocess.call(["txl", "../data/smart_contracts/{}".format(smart_contract)])
+	if command_run !=0:
+		print("smart contract {} had issue".format(smart_contract))
+	print("smart contract {} done".format(count))
+	count+=1
+
