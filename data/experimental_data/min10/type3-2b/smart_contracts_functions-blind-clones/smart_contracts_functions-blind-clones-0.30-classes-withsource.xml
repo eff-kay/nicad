@@ -1,0 +1,4078 @@
+<clones>
+<systeminfo processor="nicad5" system="smart_contracts" granularity="functions-blind" threshold="30%" minlines="10" maxlines="2500"/>
+<cloneinfo npcs="8259" npairs="854"/>
+<runinfo ncompares="29579" cputime="81174"/>
+<classinfo nclasses="37"/>
+
+<class classid="1" nclones="2" nlines="12" similarity="91">
+<source file="systems/smart_contracts/_0xSatoshi.sol" startline="209" endline="231" pcid="235">
+    function _startNewMiningEpoch() internal {
+        //if max supply for the era will be exceeded next reward round then enter the new era before that happens
+        //40 is the final reward era, almost all tokens minted
+        //once the final era is reached, more tokens will not be given out because the assert function
+        if (tokensMinted.add(getMiningReward()) > maxSupplyForEra && rewardEra < 39) {
+            rewardEra = rewardEra + 1;
+        }
+        //set the next minted supply at which the era will change
+        // total supply is 2100000000000  because of 8 decimal places
+        maxSupplyForEra = _totalSupply - _totalSupply.div(2 ** (rewardEra + 1));
+        epochCount = epochCount.add(1);
+        //every so often, readjust difficulty. Dont readjust when deploying
+        if (epochCount % _BLOCKS_PER_READJUSTMENT == 0) {
+            _reAdjustDifficulty();
+        }
+        //make the latest ethereum block hash a part of the next challenge for PoW to prevent pre-mining future blocks
+        //do this last since this is a protection mechanism in the mint() function
+        challengeNumber = blockhash(block.number - 1);
+    }
+    //https://en.bitcoin.it/wiki/Difficulty#What_is_the_formula_for_difficulty.3F
+    //as of 2017 the bitcoin difficulty was up to 17 zeroes, it was only 8 in the early days
+    //readjust the target by 5 percent
+    function _reAdjustDifficulty() internal {
+</source>
+<source file="systems/smart_contracts/_DrSebiToken.sol" startline="357" endline="399" pcid="269">
+    function _startNewMiningEpoch() internal {
+
+      //if max supply for the era will be exceeded next reward round then enter the new era before that happens
+
+      //40 is the final reward era, almost all tokens minted
+      //once the final era is reached, more tokens will not be given out because the assert function
+      if( tokensMinted.add(getMiningReward()) > maxSupplyForEra && rewardEra < 39)
+      {
+        rewardEra = rewardEra + 1;
+      }
+
+      //set the next minted supply at which the era will change
+      // total supply is 10000000000000000  because of 8 decimal places
+      maxSupplyForEra = _totalSupply - _totalSupply.div( 2**(rewardEra + 1));
+
+      epochCount = epochCount.add(1);
+
+      //every so often, readjust difficulty. Dont readjust when deploying
+      if(epochCount % _BLOCKS_PER_READJUSTMENT == 0)
+      {
+        _reAdjustDifficulty();
+      }
+
+
+      //make the latest ethereum block hash a part of the next challenge for PoW to prevent pre-mining future blocks
+      //do this last since this is a protection mechanism in the mint() function
+      challengeNumber = block.blockhash(block.number - 1);
+
+
+
+
+
+
+    }
+
+
+
+
+    //https://en.Litecoin.it/wiki/Difficulty#What_is_the_formula_for_difficulty.3F
+    //as of 2017 the Litecoin difficulty was up to 17 zeroes, it was only 8 in the early days
+
+    //readjust the target by 5 percent
+    function _reAdjustDifficulty() internal {
+</source>
+</class>
+
+<class classid="2" nclones="2" nlines="19" similarity="100">
+<source file="systems/smart_contracts/_0xSatoshi.sol" startline="231" endline="262" pcid="236">
+    function _reAdjustDifficulty() internal {
+        uint ethBlocksSinceLastDifficultyPeriod = block.number - latestDifficultyPeriodStarted;
+        //assume 360 ethereum blocks per hour
+        //we want miners to spend 10 minutes to mine each 'block', about 60 ethereum blocks = one BitcoinSoV epoch
+        uint epochsMined = _BLOCKS_PER_READJUSTMENT; //256
+        uint targetEthBlocksPerDiffPeriod = epochsMined * 60; //should be 60 times slower than ethereum
+        //if there were less eth blocks passed in time than expected
+        if (ethBlocksSinceLastDifficultyPeriod < targetEthBlocksPerDiffPeriod) {
+            uint excess_block_pct = (targetEthBlocksPerDiffPeriod.mul(100)).div(ethBlocksSinceLastDifficultyPeriod);
+            uint excess_block_pct_extra = excess_block_pct.sub(100).limitLessThan(1000);
+            // If there were 5% more blocks mined than expected then this is 5.  If there were 100% more blocks mined than expected then this is 100.
+            //make it harder
+            miningTarget = miningTarget.sub(miningTarget.div(2000).mul(excess_block_pct_extra)); //by up to 50 %
+        } else {
+            uint shortage_block_pct = (ethBlocksSinceLastDifficultyPeriod.mul(100)).div(targetEthBlocksPerDiffPeriod);
+            uint shortage_block_pct_extra = shortage_block_pct.sub(100).limitLessThan(1000); //always between 0 and 1000
+            //make it easier
+            miningTarget = miningTarget.add(miningTarget.div(2000).mul(shortage_block_pct_extra)); //by up to 50 %
+        }
+        latestDifficultyPeriodStarted = block.number;
+        if (miningTarget < _MINIMUM_TARGET) //very difficult
+        {
+            miningTarget = _MINIMUM_TARGET;
+        }
+        if (miningTarget > _MAXIMUM_TARGET) //very easy
+        {
+            miningTarget = _MAXIMUM_TARGET;
+        }
+    }
+
+    //this is a recent ethereum block hash, used to prevent pre-mining future blocks
+    function getChallengeNumber() public view returns(bytes32) {
+</source>
+<source file="systems/smart_contracts/_DrSebiToken.sol" startline="399" endline="446" pcid="270">
+    function _reAdjustDifficulty() internal {
+
+
+        uint ethBlocksSinceLastDifficultyPeriod = block.number - latestDifficultyPeriodStarted;
+        //assume 360 ethereum blocks per hour
+
+        //we want miners to spend 10 minutes to mine each 'block', about 60 ethereum blocks = one 0xLitecoin epoch
+        uint epochsMined = _BLOCKS_PER_READJUSTMENT; //256
+
+        uint targetEthBlocksPerDiffPeriod = epochsMined * 60; //should be 60 times slower than ethereum
+
+        //if there were less eth blocks passed in time than expected
+        if( ethBlocksSinceLastDifficultyPeriod < targetEthBlocksPerDiffPeriod )
+        {
+          uint excess_block_pct = (targetEthBlocksPerDiffPeriod.mul(100)).div( ethBlocksSinceLastDifficultyPeriod );
+
+          uint excess_block_pct_extra = excess_block_pct.sub(100).limitLessThan(1000);
+          // If there were 5% more blocks mined than expected then this is 5.  If there were 100% more blocks mined than expected then this is 100.
+
+          //make it harder
+          miningTarget = miningTarget.sub(miningTarget.div(2000).mul(excess_block_pct_extra));   //by up to 50 %
+        }else{
+          uint shortage_block_pct = (ethBlocksSinceLastDifficultyPeriod.mul(100)).div( targetEthBlocksPerDiffPeriod );
+
+          uint shortage_block_pct_extra = shortage_block_pct.sub(100).limitLessThan(1000); //always between 0 and 1000
+
+          //make it easier
+          miningTarget = miningTarget.add(miningTarget.div(2000).mul(shortage_block_pct_extra));   //by up to 50 %
+        }
+
+
+
+        latestDifficultyPeriodStarted = block.number;
+
+        if(miningTarget < _MINIMUM_TARGET) //very difficult
+        {
+          miningTarget = _MINIMUM_TARGET;
+        }
+
+        if(miningTarget > _MAXIMUM_TARGET) //very easy
+        {
+          miningTarget = _MAXIMUM_TARGET;
+        }
+    }
+
+
+    //this is a recent ethereum block hash, used to prevent pre-mining future blocks
+    function getChallengeNumber() public constant returns (bytes32) {
+</source>
+</class>
+
+<class classid="3" nclones="2" nlines="14" similarity="100">
+<source file="systems/smart_contracts/againstTokenRegister.sol" startline="219" endline="234" pcid="386">
+	function tokenLike(address _token) public {	
+        require(exists[_token], "Token not listed");    
+        if (!tokens[_token].voteStatus[msg.sender].like) {
+	      tokens[_token].likesCount = tokens[_token].likesCount+1;
+          tokens[_token].voteStatus[msg.sender].like = true;
+          if (tokens[_token].voteStatus[msg.sender].dislike) {
+	          tokens[_token].dislikesCount = tokens[_token].dislikesCount-1;
+              tokens[_token].voteStatus[msg.sender].dislike = false;
+          }
+        } else {
+          tokens[_token].likesCount = tokens[_token].likesCount-1;
+          tokens[_token].voteStatus[msg.sender].like = false;
+        }	   
+	}
+	
+	function tokenDislike(address _token) public {
+</source>
+<source file="systems/smart_contracts/againstTokenRegister.sol" startline="234" endline="249" pcid="387">
+	function tokenDislike(address _token) public {
+        require(exists[_token],"Token not listed");
+   	    if (!tokens[_token].voteStatus[msg.sender].dislike) {
+	      tokens[_token].dislikesCount = tokens[_token].dislikesCount+1;
+          tokens[_token].voteStatus[msg.sender].dislike = true;
+          if (tokens[_token].voteStatus[msg.sender].like) {
+            tokens[_token].likesCount = tokens[_token].likesCount-1;
+            tokens[_token].voteStatus[msg.sender].like = false;
+          }	   
+        } else {
+	      tokens[_token].dislikesCount = tokens[_token].dislikesCount-1;
+          tokens[_token].voteStatus[msg.sender].dislike = false;
+        }	   
+	}		
+	
+	function changeRegisterFee(uint _registerFee) public {
+</source>
+</class>
+
+<class classid="4" nclones="5" nlines="11" similarity="90">
+<source file="systems/smart_contracts/Aigopay.sol" startline="189" endline="208" pcid="460">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+    }
+
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/Stakeo.sol" startline="206" endline="227" pcid="6696">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        // minimum contribution
+        require( msg.value >= minInvest );
+
+        require( msg.value > 0 );
+        
+        // get baseline number of tokens
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+    }
+
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/bitforedex.sol" startline="177" endline="196" pcid="1285">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+    }
+
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/XGP.sol" startline="189" endline="208" pcid="8117">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+            distr(investor, tokens);
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+    }
+
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/MonereumNetwork.sol" startline="171" endline="191" pcid="4969">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+
+        require( msg.value >= minContribution );
+
+        require( msg.value > 0 );
+        
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+        
+        if (tokens > 0) {
+      owner.transfer(msg.value);
+            distr(investor, tokens);
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+    }
+
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+</class>
+
+<class classid="5" nclones="2" nlines="11" similarity="100">
+<source file="systems/smart_contracts/AkropolisTimeLock.sol" startline="434" endline="456" pcid="502">
+    function _cancelAllPending() internal {
+        for (uint i = 0; i < allOperations.length; i++) {
+            delete(allOperationsIndicies[allOperations[i]]);
+            delete(votesMaskByOperation[allOperations[i]]);
+            delete(votesCountByOperation[allOperations[i]]);
+            //delete operation->beneficiaryIndex
+            delete(operationsByBeneficiaryIndex[allOperations[i]]);
+        }
+
+        allOperations.length = 0;
+        //delete operations count for beneficiary
+        for (uint8 j = 0; j < beneficiaries.length; j++) {
+            operationsCountByBeneficiaryIndex[j] = 0;
+        }
+    }
+
+
+    // MODIFIERS
+
+    /**
+    * @dev Allows to perform method by any of the beneficiaries
+    */
+    modifier onlyAnyBeneficiary {
+</source>
+<source file="systems/smart_contracts/AkropolisTokenVesting.sol" startline="619" endline="641" pcid="554">
+    function _cancelAllPending() internal {
+        for (uint i = 0; i < allOperations.length; i++) {
+            delete(allOperationsIndicies[allOperations[i]]);
+            delete(votesMaskByOperation[allOperations[i]]);
+            delete(votesCountByOperation[allOperations[i]]);
+            //delete operation->beneficiaryIndex
+            delete(operationsByBeneficiaryIndex[allOperations[i]]);
+        }
+
+        allOperations.length = 0;
+        //delete operations count for beneficiary
+        for (uint8 j = 0; j < beneficiaries.length; j++) {
+            operationsCountByBeneficiaryIndex[j] = 0;
+        }
+    }
+
+
+    // MODIFIERS
+
+    /**
+    * @dev Allows to perform method by any of the beneficiaries
+    */
+    modifier onlyAnyBeneficiary {
+</source>
+</class>
+
+<class classid="6" nclones="2" nlines="17" similarity="100">
+<source file="systems/smart_contracts/AkropolisTimeLock.sol" startline="541" endline="590" pcid="503">
+    function checkHowManyBeneficiaries(uint howMany) internal returns(bool) {
+        if (insideCallSender == msg.sender) {
+            require(howMany <= insideCallCount, "checkHowManyBeneficiaries: nested beneficiaries modifier check require more beneficiarys");
+            return true;
+        }
+        
+        
+        require((isExistBeneficiary(msg.sender) && (beneficiariesIndices[msg.sender] <= beneficiaries.length)), "checkHowManyBeneficiaries: msg.sender is not an beneficiary");
+
+        uint beneficiaryIndex = beneficiariesIndices[msg.sender].sub(1);
+        
+        bytes32 operation = keccak256(abi.encodePacked(msg.data, beneficiariesGeneration));
+
+        require((votesMaskByOperation[operation] & (2 ** beneficiaryIndex)) == 0, "checkHowManyBeneficiaries: beneficiary already voted for the operation");
+        //check limit for operation
+        require(_operationLimitByBeneficiaryIndex(uint8(beneficiaryIndex)), "checkHowManyBeneficiaries: operation limit is reached for this beneficiary");
+
+        votesMaskByOperation[operation] |= (2 ** beneficiaryIndex);
+        uint operationVotesCount = votesCountByOperation[operation].add(1);
+        votesCountByOperation[operation] = operationVotesCount;
+
+        if (operationVotesCount == 1) {
+            allOperationsIndicies[operation] = allOperations.length;
+            
+            operationsByBeneficiaryIndex[operation] = uint8(beneficiaryIndex);
+            
+            operationsCountByBeneficiaryIndex[uint8(beneficiaryIndex)] = uint8(operationsCountByBeneficiaryIndex[uint8(beneficiaryIndex)].add(1));
+            
+            allOperations.push(operation);
+            
+            
+            emit OperationCreated(operation, howMany, beneficiaries.length, msg.sender);
+        }
+        emit OperationUpvoted(operation, operationVotesCount, howMany, beneficiaries.length, msg.sender);
+
+        // If enough beneficiaries confirmed the same operation
+        if (votesCountByOperation[operation] == howMany) {
+            deleteOperation(operation);
+            emit OperationPerformed(operation, howMany, beneficiaries.length, msg.sender);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+    * @dev Used to delete cancelled or performed operation
+    * @param operation defines which operation to delete
+    */
+    function deleteOperation(bytes32 operation) internal {
+</source>
+<source file="systems/smart_contracts/AkropolisTokenVesting.sol" startline="726" endline="775" pcid="555">
+    function checkHowManyBeneficiaries(uint howMany) internal returns(bool) {
+        if (insideCallSender == msg.sender) {
+            require(howMany <= insideCallCount, "checkHowManyBeneficiaries: nested beneficiaries modifier check require more beneficiarys");
+            return true;
+        }
+        
+        
+        require((isExistBeneficiary(msg.sender) && (beneficiariesIndices[msg.sender] <= beneficiaries.length)), "checkHowManyBeneficiaries: msg.sender is not an beneficiary");
+
+        uint beneficiaryIndex = beneficiariesIndices[msg.sender].sub(1);
+        
+        bytes32 operation = keccak256(abi.encodePacked(msg.data, beneficiariesGeneration));
+
+        require((votesMaskByOperation[operation] & (2 ** beneficiaryIndex)) == 0, "checkHowManyBeneficiaries: beneficiary already voted for the operation");
+        //check limit for operation
+        require(_operationLimitByBeneficiaryIndex(uint8(beneficiaryIndex)), "checkHowManyBeneficiaries: operation limit is reached for this beneficiary");
+
+        votesMaskByOperation[operation] |= (2 ** beneficiaryIndex);
+        uint operationVotesCount = votesCountByOperation[operation].add(1);
+        votesCountByOperation[operation] = operationVotesCount;
+
+        if (operationVotesCount == 1) {
+            allOperationsIndicies[operation] = allOperations.length;
+            
+            operationsByBeneficiaryIndex[operation] = uint8(beneficiaryIndex);
+            
+            operationsCountByBeneficiaryIndex[uint8(beneficiaryIndex)] = uint8(operationsCountByBeneficiaryIndex[uint8(beneficiaryIndex)].add(1));
+            
+            allOperations.push(operation);
+            
+            
+            emit OperationCreated(operation, howMany, beneficiaries.length, msg.sender);
+        }
+        emit OperationUpvoted(operation, operationVotesCount, howMany, beneficiaries.length, msg.sender);
+
+        // If enough beneficiaries confirmed the same operation
+        if (votesCountByOperation[operation] == howMany) {
+            deleteOperation(operation);
+            emit OperationPerformed(operation, howMany, beneficiaries.length, msg.sender);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+    * @dev Used to delete cancelled or performed operation
+    * @param operation defines which operation to delete
+    */
+    function deleteOperation(bytes32 operation) internal {
+</source>
+</class>
+
+<class classid="7" nclones="2" nlines="13" similarity="100">
+<source file="systems/smart_contracts/AkropolisTimeLock.sol" startline="654" endline="678" pcid="508">
+    function transferBeneficiaryShipWithHowMany(address[] memory newBeneficiaries, uint256 newHowManyBeneficiariesDecide) public onlyManyBeneficiaries {
+        require(newBeneficiaries.length > 0, "transferBeneficiaryShipWithHowMany: beneficiaries array is empty");
+        require(newBeneficiaries.length < 256, "transferBeneficiaryshipWithHowMany: beneficiaries count is greater then 255");
+        require(newHowManyBeneficiariesDecide > 0, "transferBeneficiaryshipWithHowMany: newHowManybeneficiarysDecide equal to 0");
+        require(newHowManyBeneficiariesDecide <= newBeneficiaries.length, "transferBeneficiaryShipWithHowMany: newHowManybeneficiarysDecide exceeds the number of beneficiarys");
+
+        // Reset beneficiaries reverse lookup table
+        for (uint j = 0; j < beneficiaries.length; j++) {
+            delete beneficiariesIndices[beneficiaries[j]];
+        }
+        for (uint i = 0; i < newBeneficiaries.length; i++) {
+            require(newBeneficiaries[i] != address(0), "transferBeneficiaryShipWithHowMany: beneficiaries array contains zero");
+            require(beneficiariesIndices[newBeneficiaries[i]] == 0, "transferBeneficiaryShipWithHowMany: beneficiaries array contains duplicates");
+            beneficiariesIndices[newBeneficiaries[i]] = uint8(i.add(1));
+        }
+        
+        emit BeneficiaryshipTransferred(beneficiaries, howManyBeneficiariesDecide, newBeneficiaries, newHowManyBeneficiariesDecide);
+        beneficiaries = newBeneficiaries;
+        howManyBeneficiariesDecide = newHowManyBeneficiariesDecide;
+
+        _cancelAllPending();
+       
+        beneficiariesGeneration++;
+    }
+}
+</source>
+<source file="systems/smart_contracts/AkropolisTokenVesting.sol" startline="839" endline="863" pcid="560">
+    function transferBeneficiaryShipWithHowMany(address[] memory newBeneficiaries, uint256 newHowManyBeneficiariesDecide) public onlyManyBeneficiaries {
+        require(newBeneficiaries.length > 0, "transferBeneficiaryShipWithHowMany: beneficiaries array is empty");
+        require(newBeneficiaries.length < 256, "transferBeneficiaryshipWithHowMany: beneficiaries count is greater then 255");
+        require(newHowManyBeneficiariesDecide > 0, "transferBeneficiaryshipWithHowMany: newHowManybeneficiarysDecide equal to 0");
+        require(newHowManyBeneficiariesDecide <= newBeneficiaries.length, "transferBeneficiaryShipWithHowMany: newHowManybeneficiarysDecide exceeds the number of beneficiarys");
+
+        // Reset beneficiaries reverse lookup table
+        for (uint j = 0; j < beneficiaries.length; j++) {
+            delete beneficiariesIndices[beneficiaries[j]];
+        }
+        for (uint i = 0; i < newBeneficiaries.length; i++) {
+            require(newBeneficiaries[i] != address(0), "transferBeneficiaryShipWithHowMany: beneficiaries array contains zero");
+            require(beneficiariesIndices[newBeneficiaries[i]] == 0, "transferBeneficiaryShipWithHowMany: beneficiaries array contains duplicates");
+            beneficiariesIndices[newBeneficiaries[i]] = uint8(i.add(1));
+        }
+        
+        emit BeneficiaryshipTransferred(beneficiaries, howManyBeneficiariesDecide, newBeneficiaries, newHowManyBeneficiariesDecide);
+        beneficiaries = newBeneficiaries;
+        howManyBeneficiariesDecide = newHowManyBeneficiariesDecide;
+
+        _cancelAllPending();
+       
+        beneficiariesGeneration++;
+    }
+}
+</source>
+</class>
+
+<class classid="8" nclones="2" nlines="15" similarity="86">
+<source file="systems/smart_contracts/AkropolisTokenVesting.sol" startline="529" endline="546" pcid="548">
+    function _vestedAmount(IERC20 token) private view returns (uint256) {
+        uint256 currentBalance = token.balanceOf(address(this));
+        uint256 totalBalance = currentBalance.add(_released[address(token)]);
+
+        if (block.timestamp < _cliff) {
+            return 0;
+        } else if (block.timestamp >= _start.add(_duration) || _revoked[address(token)]) {
+            return totalBalance;
+        } else {
+            return totalBalance.mul(block.timestamp.sub(_start)).div(_duration);
+        }
+    }
+
+     /**
+     * @return change the beneficiary of tokens
+     */
+
+    function _changeBeneficiary(address _newBeneficiary) internal {
+</source>
+<source file="systems/smart_contracts/TRT_Token.sol" startline="340" endline="352" pcid="7472">
+    function vestedAmount(ERC20Basic token) public view returns (uint256) {
+        uint256 currentBalance = token.balanceOf(this);
+        uint256 totalBalance = currentBalance.add(released[token]);
+
+        if (block.timestamp < cliff) {
+            return 0;
+        } else if (block.timestamp >= start.add(duration) || revoked[token]) {
+            return totalBalance;
+        } else {
+            return totalBalance.mul(block.timestamp.sub(start)).div(duration);
+        }
+    }
+}
+</source>
+</class>
+
+<class classid="9" nclones="2" nlines="11" similarity="90">
+<source file="systems/smart_contracts/ALBToken.sol" startline="779" endline="797" pcid="629">
+    function getFreezing(address _addr, uint _index) public view returns (uint64 _release, uint _balance) {
+        for (uint i = 0; i < _index + 1; i++) {
+            _release = chains[toKey(_addr, _release)];
+            if (_release == 0) {
+                return(0, 0);
+            }
+        }
+        _balance = freezings[toKey(_addr, _release)];
+    }
+
+    /**
+     * @dev freeze your tokens to the specified address.
+     *      Be careful, gas usage is not deterministic,
+     *      and depends on how many freezes _to address already has.
+     * @param _to Address to which token will be freeze.
+     * @param _amount Amount of token to freeze.
+     * @param _until Release date, must be in future.
+     */
+    function freezeTo(address _to, uint _amount, uint64 _until) public {
+</source>
+<source file="systems/smart_contracts/MainToken.sol" startline="255" endline="265" pcid="4665">
+    function getFreezing(address _addr, uint _index) public view returns (uint64 _release, uint _balance) {
+        for (uint i = 0; i < _index + 1; i++) {
+            _release = chains[toKey(_addr, _release)];
+            if (_release == 0) {
+                return;
+            }
+        }
+        _balance = freezings[toKey(_addr, _release)];
+    }
+
+    function freezeTo(address _to, uint _amount, uint64 _until) public {
+</source>
+</class>
+
+<class classid="10" nclones="2" nlines="12" similarity="100">
+<source file="systems/smart_contracts/ALBToken.sol" startline="819" endline="847" pcid="632">
+    function releaseOnce() public {
+        bytes32 headKey = toKey(msg.sender, 0);
+        uint64 head = chains[headKey];
+        require(head != 0);
+        require(uint64(block.timestamp) > head);
+        bytes32 currentKey = toKey(msg.sender, head);
+
+        uint64 next = chains[currentKey];
+
+        uint amount = freezings[currentKey];
+        delete freezings[currentKey];
+
+        _balances[msg.sender] = _balances[msg.sender].add(amount);
+        freezingBalance[msg.sender] = freezingBalance[msg.sender].sub(amount);
+
+        if (next == 0) {
+            delete chains[headKey];
+        } else {
+            chains[headKey] = next;
+            delete chains[currentKey];
+        }
+        emit Released(msg.sender, amount);
+    }
+
+    /**
+     * @dev release all available for release freezing tokens. Gas usage is not deterministic!
+     * @return how many tokens was released
+     */
+    function releaseAll() public returns (uint tokens) {
+</source>
+<source file="systems/smart_contracts/MainToken.sol" startline="280" endline="304" pcid="4667">
+    function releaseOnce() public {
+        bytes32 headKey = toKey(msg.sender, 0);
+        uint64 head = chains[headKey];
+        require(head != 0);
+        require(uint64(block.timestamp) > head);
+        bytes32 currentKey = toKey(msg.sender, head);
+
+        uint64 next = chains[currentKey];
+
+        uint amount = freezings[currentKey];
+        delete freezings[currentKey];
+
+        balances[msg.sender] = balances[msg.sender].add(amount);
+        freezingBalance[msg.sender] = freezingBalance[msg.sender].sub(amount);
+
+        if (next == 0) {
+            delete chains[headKey];
+        } else {
+            chains[headKey] = next;
+            delete chains[currentKey];
+        }
+        emit Released(msg.sender, amount);
+    }
+
+    function releaseAll() public returns (uint tokens) {
+</source>
+</class>
+
+<class classid="11" nclones="2" nlines="20" similarity="100">
+<source file="systems/smart_contracts/ALBToken.sol" startline="867" endline="903" pcid="635">
+    function freeze(address _to, uint64 _until) internal {
+        require(_until > block.timestamp);
+        bytes32 key = toKey(_to, _until);
+        bytes32 parentKey = toKey(_to, uint64(0));
+        uint64 next = chains[parentKey];
+
+        if (next == 0) {
+            chains[parentKey] = _until;
+            return;
+        }
+
+        bytes32 nextKey = toKey(_to, next);
+        uint parent;
+
+        while (next != 0 && _until > next) {
+            parent = next;
+            parentKey = nextKey;
+
+            next = chains[nextKey];
+            nextKey = toKey(_to, next);
+        }
+
+        if (_until == next) {
+            return;
+        }
+
+        if (next != 0) {
+            chains[key] = next;
+        }
+
+        chains[parentKey] = _until;
+    }
+
+    // ------------------------------------------------------------------------
+    // Owner can transfer out any accidentally sent ERC20 tokens
+    // ------------------------------------------------------------------------
+    function transferAnyERC20Token(address _token, address _to, uint _value) public onlyOwner returns (bool) {
+</source>
+<source file="systems/smart_contracts/MainToken.sol" startline="323" endline="355" pcid="4670">
+    function freeze(address _to, uint64 _until) internal {
+        require(_until > block.timestamp);
+        bytes32 key = toKey(_to, _until);
+        bytes32 parentKey = toKey(_to, uint64(0));
+        uint64 next = chains[parentKey];
+
+        if (next == 0) {
+            chains[parentKey] = _until;
+            return;
+        }
+
+        bytes32 nextKey = toKey(_to, next);
+        uint parent;
+
+        while (next != 0 && _until > next) {
+            parent = next;
+            parentKey = nextKey;
+
+            next = chains[nextKey];
+            nextKey = toKey(_to, next);
+        }
+
+        if (_until == next) {
+            return;
+        }
+
+        if (next != 0) {
+            chains[key] = next;
+        }
+
+        chains[parentKey] = _until;
+    }
+}
+</source>
+</class>
+
+<class classid="12" nclones="28" nlines="12" similarity="75">
+<source file="systems/smart_contracts/AronCoin.sol" startline="169" endline="180" pcid="771">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/customIcoToken.sol" startline="106" endline="117" pcid="2218">
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue > oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } else {
+            allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+  }
+
+    function transfer(address _to, uint256 _value) public returns (bool) {
+</source>
+<source file="systems/smart_contracts/BlockPoolToken.sol" startline="233" endline="243" pcid="1425">
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue > oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } else {
+            allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+}
+</source>
+<source file="systems/smart_contracts/FMT.sol" startline="139" endline="150" pcid="3658">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/NaorisToken.sol" startline="188" endline="198" pcid="5294">
+    function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue > oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } else {
+            allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+}
+</source>
+<source file="systems/smart_contracts/LBBT.sol" startline="116" endline="133" pcid="4547">
+  function decreaseApproval(
+    address _spender,
+    uint256 _subtractedValue
+  )
+    public
+    returns (bool)
+  {
+    uint256 oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/UTC.sol" startline="212" endline="223" pcid="7588">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/SistContract.sol" startline="183" endline="194" pcid="6528">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/CDS.sol" startline="282" endline="303" pcid="1668">
+  function decreaseApproval(
+    address _spender,
+    uint256 _subtractedValue
+  )
+    public
+    returns (bool)
+  {
+    uint256 oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue >= oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+  /**
+   * @dev Burns a specific amount of tokens.
+   * @param _value The amount of token to be burned.
+   */
+  function burn(uint256 _value) public {
+</source>
+<source file="systems/smart_contracts/TRT_Token.sol" startline="188" endline="198" pcid="7465">
+    function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue > oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } else {
+            allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+}
+</source>
+<source file="systems/smart_contracts/MBA.sol" startline="327" endline="344" pcid="4724">
+  function decreaseApproval(
+    address _spender,
+    uint256 _subtractedValue
+  )
+    public
+    returns (bool)
+  {
+    uint256 oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/CRYPTOMZ.sol" startline="205" endline="216" pcid="2189">
+  function decreaseApproval (address _spender, uint _subtractedValue) public
+    returns (bool success) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+}
+</source>
+<source file="systems/smart_contracts/SellableToken.sol" startline="100" endline="111" pcid="6470">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/BFGToken.sol" startline="136" endline="147" pcid="1194">
+  function decreaseApproval(address agent, uint value) public returns (bool) {
+    uint allowanceValue = _allowances[msg.sender][agent];
+    if (value > allowanceValue) {
+      _allowances[msg.sender][agent] = 0;
+    } else {
+      _allowances[msg.sender][agent] = allowanceValue.sub(value);
+    }
+    emit Approval(msg.sender, agent, _allowances[msg.sender][agent]);
+    return true;
+  }
+  // internal functions
+}
+</source>
+<source file="systems/smart_contracts/XCToken.sol" startline="323" endline="339" pcid="8091">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = _allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      _allowed[msg.sender][_spender] = 0;
+    } else {
+      _allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, _allowed[msg.sender][_spender]);
+    return true;
+  }
+
+
+  /**
+   * @dev Function to toggle token actions
+   * 
+   */
+  function toggleActions()  onlyOwner public {
+</source>
+<source file="systems/smart_contracts/Crowdsale.sol" startline="179" endline="196" pcid="2057">
+    function decreaseApproval(
+        address _spender,
+        uint _subtractedValue
+    )
+        public
+        returns (bool)
+    {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue > oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } else {
+            allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+
+}
+</source>
+<source file="systems/smart_contracts/NBToken.sol" startline="231" endline="241" pcid="5314">
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue > oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } else {
+            allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+}
+</source>
+<source file="systems/smart_contracts/Ownable.sol" startline="141" endline="153" pcid="5576">
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue > oldValue) {
+          allowed[msg.sender][_spender] = 0;
+        } else {
+          allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+     }
+    
+
+    function getBalance(address _a) internal constant returns(uint256)
+</source>
+<source file="systems/smart_contracts/BDAM.sol" startline="253" endline="264" pcid="1129">
+  function decreaseApproval (address _spender, uint _subtractedValue)
+    returns (bool success) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+}
+</source>
+<source file="systems/smart_contracts/VisionBitcoinCash.sol" startline="169" endline="180" pcid="7755">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/MainToken.sol" startline="136" endline="153" pcid="4655">
+  function decreaseApproval(
+    address _spender,
+    uint _subtractedValue
+  )
+    public
+    returns (bool)
+  {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/CST_TOKEN.sol" startline="108" endline="118" pcid="2207">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+}
+</source>
+<source file="systems/smart_contracts/Cholyz.sol" startline="149" endline="160" pcid="1724">
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool success) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue > oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } else {
+            allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+
+}
+</source>
+<source file="systems/smart_contracts/GoldenRings.sol" startline="143" endline="155" pcid="4181">
+    function decreaseApproval(address _spender, uint256 _subtractedValue) public returns (bool success) {
+        uint256 oldValue = allowed[msg.sender][_spender];
+
+        if (_subtractedValue > oldValue) {
+          allowed[msg.sender][_spender] = 0;
+        } else {
+          allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+}
+</source>
+<source file="systems/smart_contracts/SuperPointsToken.sol" startline="253" endline="264" pcid="6789">
+  function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/TorexToken.sol" startline="275" endline="292" pcid="7422">
+  function decreaseApproval(
+    address _spender,
+    uint _subtractedValue
+  )
+    public
+    returns (bool)
+  {
+    uint oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue > oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+
+}
+</source>
+<source file="systems/smart_contracts/SparksterTokenSwap.sol" startline="643" endline="660" pcid="6629">
+	function decreaseApproval(
+		address _spender,
+		uint256 _subtractedValue
+	)
+	public
+	returns (bool)
+	{
+		uint256 oldValue = allowed[msg.sender][_spender];
+		if (_subtractedValue > oldValue) {
+			allowed[msg.sender][_spender] = 0;
+		} else {
+			allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+		}
+		emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+		return true;
+	}
+
+}
+</source>
+<source file="systems/smart_contracts/CoinDDC.sol" startline="123" endline="150" pcid="1869">
+    function decreaseApproval(
+        address _spender,
+        uint256 _subtractedValue
+    )
+    public
+    returns (bool)
+    {
+        uint256 oldValue = allowed[msg.sender][_spender];
+
+        if (_subtractedValue > oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } 
+        else 
+        {
+            allowed[msg.sender][_spender] = sub(oldValue, _subtractedValue);
+        }
+        
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+
+    
+    
+
+     
+    
+
+    modifier admin_only()
+</source>
+</class>
+
+<class classid="13" nclones="38" nlines="11" similarity="72">
+<source file="systems/smart_contracts/AzurToken.sol" startline="56" endline="69" pcid="1005">
+  function transfer(address _to, uint256 _value) public returns (bool success) {
+    //Default assumes totalSupply can't be over max (2^256 - 1).
+    //If your token leaves out totalSupply and can issue more tokens as time goes on, you need to check if it doesn't wrap.
+    //Replace the if with this one instead.
+    //if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+    if (balances[msg.sender] >= _value && _value > 0) {
+      balances[msg.sender] -= _value;
+      balances[_to] += _value;
+      emit Transfer(msg.sender, _to, _value);
+      return true;
+    } else { return false; }
+  }
+
+  function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+</source>
+<source file="systems/smart_contracts/TrueProfileLogic.sol" startline="242" endline="257" pcid="7519">
+    function isValidSignatureTrueProof(bytes32 _key) external view returns (bool) {
+        uint8 v;
+        bytes32 r;
+        bytes32 s;
+        uint8 revocationReasonId;
+        (v, r, s, revocationReasonId) = trueProfileStorage.getSignature(_key);
+
+        // needs to have a valid signature
+        if (accessAllowed[ecrecover(_key, v, r, s)]) {
+            return true;
+        } else {
+            return false;   
+        }
+    }
+
+    function isNotRevokedTrueProof(bytes32 _key) external view returns (bool) {
+</source>
+<source file="systems/smart_contracts/PropertyToken.sol" startline="473" endline="487" pcid="5864">
+    function transfer(address to, uint256 value) public returns (bool) {
+        if (_check(msg.sender, to, value)) {
+            //            _buyBack(to,value);
+            return super.transfer(to,value);
+        } else {
+            return false;
+        }
+    }
+    /**
+       * @dev Transfer tokens from one address to another
+       * @param from address The address which you want to send tokens from
+       * @param to address The address which you want to transfer to
+       * @param value uint256 the amount of tokens to be transferred
+       */
+    function transferFrom(address from,address to,uint256 value) public returns (bool)
+</source>
+<source file="systems/smart_contracts/PropertyToken.sol" startline="487" endline="505" pcid="5865">
+    function transferFrom(address from,address to,uint256 value) public returns (bool)
+    {
+        if (_check(from,to,value)) {
+            //            _buyBack(to,value);
+            return super.transferFrom(from,to,value);
+        } else {
+            return false;
+        }
+    }
+    /**
+     * @dev Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
+     * Beware that changing an allowance with this method brings the risk that someone may use both the old
+     * and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this
+     * race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards:
+     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+     * @param spender The address which will spend the funds.
+     * @param value The amount of tokens to be spent.
+     */
+    function approve(address spender, uint256 value) public returns (bool) {
+</source>
+<source file="systems/smart_contracts/BermToken.sol" startline="70" endline="82" pcid="1142">
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+      if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
+        balances[_to] += _value;
+        balances[_from] -= _value;
+        allowed[_from][msg.sender] -= _value;
+        Transfer(_from, _to, _value);
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function balanceOf(address _owner) constant returns (uint256 balance) {
+</source>
+<source file="systems/smart_contracts/PropertyToken.sol" startline="522" endline="540" pcid="5867">
+    function increaseAllowance(address spender, uint256 addedValue) public returns (bool)
+    {
+        if (_check(msg.sender,spender,addedValue)) {
+            return super.increaseAllowance(spender,addedValue);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * @dev Decrease the amount of tokens that an owner allowed to a spender.
+     * approve should be called when allowed_[_spender] == 0. To decrement
+     * allowed value is better to use this function to avoid 2 calls (and wait until
+     * the first transaction is mined)
+     * From MonolithDAO Token.sol
+     * @param spender The address which will spend the funds.
+     * @param subtractedValue The amount of tokens to decrease the allowance by.
+     */
+    function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool)
+</source>
+<source file="systems/smart_contracts/P21.sol" startline="56" endline="66" pcid="5586">
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value >= balances[_to]) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else { return false; }
+    }
+
+    function balanceOf(address _owner) constant returns (uint) {
+</source>
+<source file="systems/smart_contracts/BEX.sol" startline="45" endline="60" pcid="1168">
+	function transferFrom(address from, address to, uint tokens)public returns (bool success) {
+		if (balances[from] >= tokens && allowed[from][msg.sender] >= tokens && tokens > 0 && balances[to] + tokens > balances[to]) {
+           
+            
+			balances[from] -= tokens;
+			allowed[from][msg.sender] -= tokens;
+			balances[to] += tokens;
+			emit Transfer(from, to, tokens);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	
+	function approve(address spender, uint tokens)public returns (bool success) {
+</source>
+<source file="systems/smart_contracts/TrueProfileLogic.sol" startline="257" endline="272" pcid="7520">
+    function isNotRevokedTrueProof(bytes32 _key) external view returns (bool) {
+        uint8 v;
+        bytes32 r;
+        bytes32 s;
+        uint8 revocationReasonId;
+        (v, r, s, revocationReasonId) = trueProfileStorage.getSignature(_key);
+
+        // needs to be not revoked
+        if (revocationReasonId == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function getSignature(bytes32 _key) external view returns (uint8 v, bytes32 r, bytes32 s, uint8 revocationReasonId) {
+</source>
+<source file="systems/smart_contracts/TrueProfileLogic.sol" startline="233" endline="242" pcid="7518">
+    function isValidTrueProof(bytes32 _key) external view returns (bool) {
+        // needs to be not revoked AND needs to have a valid signature
+        if (this.isValidSignatureTrueProof(_key) && this.isNotRevokedTrueProof(_key)) {
+            return true;
+        } else {
+            return false;   
+        }
+    }
+
+    function isValidSignatureTrueProof(bytes32 _key) external view returns (bool) {
+</source>
+<source file="systems/smart_contracts/PropertyToken.sol" startline="505" endline="522" pcid="5866">
+    function approve(address spender, uint256 value) public returns (bool) {
+        if (_check(msg.sender,spender,value)) {
+            return super.approve(spender,value);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+   * @dev Increase the amount of tokens that an owner allowed to a spender.
+   * approve should be called when allowed_[_spender] == 0. To increment
+   * allowed value is better to use this function to avoid 2 calls (and wait until
+   * the first transaction is mined)
+   * From MonolithDAO Token.sol
+   * @param spender The address which will spend the funds.
+   * @param addedValue The amount of tokens to increase the allowance by.
+   */
+    function increaseAllowance(address spender, uint256 addedValue) public returns (bool)
+</source>
+<source file="systems/smart_contracts/P21.sol" startline="46" endline="56" pcid="5585">
+    function transfer(address _to, uint _value) returns (bool) {
+        //Default assumes totalSupply can't be over max (2^256 - 1).
+        if (balances[msg.sender] >= _value && balances[_to] + _value >= balances[_to]) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else { return false; }
+    }
+
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+</source>
+<source file="systems/smart_contracts/PropertyToken.sol" startline="540" endline="549" pcid="5868">
+    function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool)
+    {
+        if (_check(msg.sender,spender,subtractedValue)) {
+            return  super.decreaseAllowance(spender,subtractedValue);
+        } else {
+            return false;
+        }
+    }
+
+    function destory(address _adrs) public onlyOwner returns(bool){
+</source>
+<source file="systems/smart_contracts/BEX.sol" startline="32" endline="45" pcid="1167">
+	function transfer(address to, uint tokens)public returns (bool success) {
+		if (balances[msg.sender] >= tokens && tokens > 0 && balances[to] + tokens > balances[to]) {
+            
+			balances[msg.sender] -= tokens;
+			balances[to] += tokens;
+			emit Transfer(msg.sender, to, tokens);
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+
+	function transferFrom(address from, address to, uint tokens)public returns (bool success) {
+</source>
+<source file="systems/smart_contracts/TECToken.sol" startline="56" endline="66" pcid="7134">
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value >= balances[_to]) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else { return false; }
+    }
+
+    function balanceOf(address _owner) constant returns (uint) {
+</source>
+<source file="systems/smart_contracts/WFCToken.sol" startline="66" endline="78" pcid="7961">
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+ 
+    function balanceOf(address _owner) constant returns (uint256 balance) {
+</source>
+<source file="systems/smart_contracts/TECToken.sol" startline="46" endline="56" pcid="7133">
+    function transfer(address _to, uint _value) returns (bool) {
+        //Default assumes totalSupply can't be over max (2^256 - 1).
+        if (balances[msg.sender] >= _value && balances[_to] + _value >= balances[_to]) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else { return false; }
+    }
+
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+</source>
+<source file="systems/smart_contracts/BTGS.sol" startline="146" endline="170" pcid="1548">
+    function transferFrom(
+        address _from,
+        address _to,
+        uint256 _amount
+    )
+    public
+
+    returns (bool success) {
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        require(_amount >= 0);
+        if (balances[_from] >= _amount && _amount > 0 && allowed[_from][msg.sender] >= _amount) {
+            balances[_from] -= _amount;
+            allowed[_from][msg.sender] -= _amount;
+            balances[_to] += _amount;
+            Transfer(_from, _to, _amount);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Allow _spender to withdraw from your account, multiple times, up to the _value amount.
+    // If this function is called again it overwrites the current allowance with _value.
+    function approve(address _spender, uint256 _amount)
+</source>
+<source file="systems/smart_contracts/BTToken.sol" startline="50" endline="60" pcid="1558">
+    function transfer(address _to, uint _value) returns (bool) {
+        //Default assumes totalSupply can't be over max (2^256 - 1).
+        if (balances[msg.sender] >= _value && balances[_to] + _value >= balances[_to]) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else { return false; }
+    }
+
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+</source>
+<source file="systems/smart_contracts/BermToken.sol" startline="59" endline="70" pcid="1141">
+    function transfer(address _to, uint256 _value) returns (bool success) {
+      if (balances[msg.sender] >= _value && _value > 0) {
+        balances[msg.sender] -= _value;
+        balances[_to] += _value;
+        Transfer(msg.sender, _to, _value);
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+</source>
+<source file="systems/smart_contracts/AzurToken.sol" startline="69" endline="81" pcid="1006">
+  function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+    //same as above. Replace this line with the following if you want to protect against wrapping uints.
+    //if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+    if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
+      balances[_to] += _value;
+      balances[_from] -= _value;
+      allowed[_from][msg.sender] -= _value;
+      emit Transfer(_from, _to, _value);
+      return true;
+    } else { return false; }
+  }
+
+  function balanceOf(address _owner) public view returns (uint256 balance) {
+</source>
+<source file="systems/smart_contracts/WFCToken.sol" startline="55" endline="66" pcid="7960">
+    function transfer(address _to, uint256 _value) returns (bool success) {
+        if (balances[msg.sender] >= _value && _value > 0) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+ 
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+</source>
+<source file="systems/smart_contracts/BTGS.sol" startline="116" endline="146" pcid="1547">
+    function transfer(address _to, uint256 _amount)
+        public
+
+        returns (bool) {
+        // if sender's balance has enough unit and amount >= 0,
+        //      and the sum is not overflow,
+        // then do transfer
+        
+        require(_to != address(0));
+        require(_amount <= balances[msg.sender]);
+        require(_amount >= 0);
+        if ( (balances[msg.sender] >= _amount) &&
+             (_amount >= 0) &&
+             (balances[_to] + _amount > balances[_to]) ) {
+
+            balances[msg.sender] -= _amount;
+            balances[_to] += _amount;
+            Transfer(msg.sender, _to, _amount);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Send _value amount of tokens from address _from to address _to
+    // The transferFrom method is used for a withdraw workflow, allowing contracts to send
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
+    // fees in sub-currencies; the command should fail unless the _from account has
+    // deliberately authorized the sender of the message via some mechanism; we propose
+    // these standardized APIs for approval:
+    function transferFrom(
+</source>
+<source file="systems/smart_contracts/BTToken.sol" startline="60" endline="70" pcid="1559">
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value >= balances[_to]) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else { return false; }
+    }
+
+    function balanceOf(address _owner) constant returns (uint) {
+</source>
+<source file="systems/smart_contracts/GENEToken.sol" startline="49" endline="60" pcid="4074">
+    function transfer(address _to, uint256 _value) returns (bool success) {
+        if (balances[msg.sender] >= _value && _value > 0) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+ 
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+</source>
+<source file="systems/smart_contracts/GENEToken.sol" startline="60" endline="72" pcid="4075">
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+ 
+    function balanceOf(address _owner) constant returns (uint256 balance) {
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="453" endline="466" pcid="7813">
+    function _pageNumber(uint256 pageNumber) internal view returns (uint256) {
+        if (pageNumber > 0) {
+            return pageNumber;
+        }
+
+        else {
+            return _page;
+        }
+    }
+
+    /**
+     * @dev Returns the amount of VOKEN holding by all shareholders at `pageNumber`.
+     */
+    function pageVokens(uint256 pageNumber) public view returns (uint256) {
+</source>
+<source file="systems/smart_contracts/tharDex.sol" startline="171" endline="180" pcid="7155">
+    function hashCompareWithLengthCheck(string memory a) private view returns (bool) {
+        if(bytes(a).length != code.length) {
+            
+            return false;
+        } else {
+            return keccak256(bytes(a)) == keccak256(code);
+        }
+    }
+    
+}
+</source>
+<source file="systems/smart_contracts/Byte.sol" startline="117" endline="150" pcid="1582">
+  function transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _ByteBalances[msg.sender]);
+    require(to != address(0));
+	
+	if (_totalSupply >= _minimumSupply){
+	    
+        uint256 ByteDecay = value.div(50);
+        uint256 tokensToTransfer = value.sub(ByteDecay);
+
+        _ByteBalances[msg.sender] = _ByteBalances[msg.sender].sub(value);
+        _ByteBalances[to] = _ByteBalances[to].add(tokensToTransfer);
+
+    
+        _totalSupply = _totalSupply.sub(ByteDecay);
+        emit Transfer(msg.sender, to, tokensToTransfer);
+        emit Transfer(msg.sender, address(0), ByteDecay);
+        return true;
+    }
+    else {
+        
+        uint256 tokensToTransfer = value;
+
+        _ByteBalances[msg.sender] = _ByteBalances[msg.sender].sub(value);
+        _ByteBalances[to] = _ByteBalances[to].add(tokensToTransfer);
+
+    
+        _totalSupply = _totalSupply;
+        emit Transfer(msg.sender, to, tokensToTransfer);
+        return true;
+    }
+    
+  }
+
+  function multiTransfer(address[] memory receivers, uint256[] memory amounts) public {
+</source>
+<source file="systems/smart_contracts/Byte.sol" startline="163" endline="204" pcid="1585">
+  function transferFrom(address from, address to, uint256 value) public returns (bool) {
+    require(value <= _ByteBalances[from]);
+    require(value <= _allowed[from][msg.sender]);
+    require(to != address(0));
+    
+    if (_totalSupply >= _minimumSupply){
+
+        _ByteBalances[from] = _ByteBalances[from].sub(value);
+
+        uint256 ByteDecay = value.div(50);
+        uint256 tokensToTransfer = value.sub(ByteDecay);
+
+        _ByteBalances[to] = _ByteBalances[to].add(tokensToTransfer);
+        _totalSupply = _totalSupply.sub(ByteDecay);
+
+        _allowed[from][msg.sender] = _allowed[from][msg.sender].sub(value);
+
+        emit Transfer(from, to, tokensToTransfer);
+        emit Transfer(from, address(0), ByteDecay);
+
+        return true;
+    }
+    else {
+        
+         _ByteBalances[from] = _ByteBalances[from].sub(value);
+
+    
+        uint256 tokensToTransfer = value;
+
+        _ByteBalances[to] = _ByteBalances[to].add(tokensToTransfer);
+        _totalSupply = _totalSupply;
+
+        _allowed[from][msg.sender] = _allowed[from][msg.sender].sub(value);
+
+        emit Transfer(from, to, tokensToTransfer);
+        
+        return true;
+    }
+    
+  }
+
+  function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
+</source>
+<source file="systems/smart_contracts/CouncilVesting.sol" startline="89" endline="99" pcid="2032">
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else { throw; }
+    }
+
+    function balanceOf(address _owner) constant returns (uint256 balance) {
+</source>
+<source file="systems/smart_contracts/CouncilVesting.sol" startline="80" endline="89" pcid="2031">
+    function transfer(address _to, uint256 _value) returns (bool success) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else { throw; }
+    }
+
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+</source>
+<source file="systems/smart_contracts/TimeLockedTokenStorage.sol" startline="390" endline="401" pcid="7246">
+    function getAvailableTokens(uint256 _lockSlotId) public view returns(uint256) {
+        if (now < uint256(lockTokenStorage[getAddressToId(_lockSlotId)][_lockSlotId].periods[0])) {
+            return 0;
+        } else {
+            return _getAvailableTokens(getAddressToId(_lockSlotId), _lockSlotId);
+        }
+    }
+
+    /**
+    * @dev Returned total holders
+    */
+    function getHoldersQuantity() public view returns(uint256) {
+</source>
+<source file="systems/smart_contracts/Synthetix.sol" startline="3607" endline="3632" pcid="6963">
+    function transferableSynthetix(address account)
+        public
+        view
+        rateNotStale("SNX")
+        returns (uint)
+    {
+        // How many SNX do they have, excluding escrow?
+        // Note: We're excluding escrow here because we're interested in their transferable amount
+        // and escrowed SNX are not transferable.
+        uint balance = tokenState.balanceOf(account);
+
+        // How many of those will be locked by the amount they've issued?
+        // Assuming issuance ratio is 20%, then issuing 20 SNX of value would require
+        // 100 SNX to be locked in their wallet to maintain their collateralisation ratio
+        // The locked synthetix value can exceed their balance.
+        uint lockedSynthetixValue = debtBalanceOf(account, "SNX").divideDecimalRound(synthetixState.issuanceRatio());
+
+        // If we exceed the balance, no SNX are transferable, otherwise the difference is.
+        if (lockedSynthetixValue >= balance) {
+            return 0;
+        } else {
+            return balance.sub(lockedSynthetixValue);
+        }
+    }
+
+    function mint()
+</source>
+<source file="systems/smart_contracts/Synthetix.sol" startline="3561" endline="3583" pcid="6961">
+    function remainingIssuableSynths(address issuer, bytes4 currencyKey)
+        public
+        view
+        // Don't need to check for synth existing or stale rates because maxIssuableSynths will do it for us.
+        returns (uint)
+    {
+        uint alreadyIssued = debtBalanceOf(issuer, currencyKey);
+        uint max = maxIssuableSynths(issuer, currencyKey);
+
+        if (alreadyIssued >= max) {
+            return 0;
+        } else {
+            return max.sub(alreadyIssued);
+        }
+    }
+
+    /**
+     * @notice The total SNX owned by this account, both escrowed and unescrowed,
+     * against which synths can be issued.
+     * This includes those already being used as collateral (locked), and those
+     * available for further issuance (unlocked).
+     */
+    function collateral(address account)
+</source>
+<source file="systems/smart_contracts/TRT_Token.sol" startline="549" endline="559" pcid="7487">
+    function releaseableBalanceOf(address _owner) public view returns (uint256) {
+        if (vestingOf[_owner] == address(0) ) {
+            return 0;
+        } else {
+            return TokenVesting(vestingOf[_owner]).releasableAmount(this);
+        }
+    }
+
+    /// @dev revoke vested tokens for the specified address.
+    /// Tokens already vested remain in the contract, the rest are returned to the owner.
+    function revokeVestedTokensFor(address _owner) public onlyOwner {
+</source>
+<source file="systems/smart_contracts/MBA.sol" startline="452" endline="461" pcid="4727">
+	function balanceOf(address who) public view returns (uint256) {
+	    if (hasTranfered[who]) {
+	        return balances[who];
+	    } else {
+	        return balances[who].add(mbaccToken.balanceOf(who))
+	                .add(mbasToken.balanceOf(who));
+	    }
+	}
+	
+	function transfer(address to, uint256 value) public returns (bool) {
+</source>
+<source file="systems/smart_contracts/Ownable.sol" startline="153" endline="166" pcid="5577">
+    function getBalance(address _a) internal constant returns(uint256)
+    {
+        if( currentTotalSupply < totalSupply ){
+            if( touched[_a] )
+                return balances[_a];
+            else
+                return balances[_a].add( startBalance );
+        } else {
+            return balances[_a];
+        }
+    }
+    
+
+    function balanceOf(address _owner) public view returns (uint256 balance) {
+</source>
+</class>
+
+<class classid="14" nclones="8" nlines="11" similarity="72">
+<source file="systems/smart_contracts/BEX.sol" startline="96" endline="105" pcid="1171">
+	function safeToNextIdx() internal{
+        if (sendToIdx >= MAX_UINT32){
+			sendToIdx = 1;
+		}
+        else{
+			sendToIdx += 1;
+		}
+    }
+
+    function BEX() public {
+</source>
+<source file="systems/smart_contracts/BEX.sol" startline="150" endline="161" pcid="1175">
+	function destruct() public {
+		if (msg.sender != owner) 
+		{
+		    revert();
+		}
+		else
+		{
+			selfdestruct(owner);
+		}
+    }
+	
+	function setOperater(address op) public {
+</source>
+<source file="systems/smart_contracts/BEX.sol" startline="139" endline="150" pcid="1174">
+	function changeOwner(address newOwner) public {
+		if (msg.sender != owner) 
+		{
+		    revert();
+		}
+		else
+		{
+			owner = newOwner;
+		}
+    }
+	
+	function destruct() public {
+</source>
+<source file="systems/smart_contracts/BEX.sol" startline="161" endline="171" pcid="1176">
+	function setOperater(address op) public {
+		if (msg.sender != owner && msg.sender != operater) 
+		{
+		    revert();
+		}
+		else
+		{
+			operater = op;
+		}
+    }
+}
+</source>
+<source file="systems/smart_contracts/XCToken.sol" startline="339" endline="353" pcid="8092">
+  function toggleActions()  onlyOwner public {
+    if(_enbaleActions){
+      _enbaleActions = false; 
+    }else{
+      _enbaleActions = true; 
+    }     
+  }
+
+  /**
+   * @dev Function to mint tokens
+   * @param _account The address that will receive the minted tokens.
+   * @param _value The amount of tokens to mint.
+   * @return A boolean that indicates if the operation was successful.
+   */
+  function mint(address _account, uint256 _value) onlyOwner public {
+</source>
+<source file="systems/smart_contracts/Synthetix.sol" startline="780" endline="816" pcid="6853">
+    function()
+        external
+        payable
+    {
+        if (useDELEGATECALL) {
+            assembly {
+                /* Copy call data into free memory region. */
+                let free_ptr := mload(0x40)
+                calldatacopy(free_ptr, 0, calldatasize)
+
+                /* Forward all gas and call data to the target contract. */
+                let result := delegatecall(gas, sload(target_slot), free_ptr, calldatasize, 0, 0)
+                returndatacopy(free_ptr, 0, returndatasize)
+
+                /* Revert if the call failed, otherwise return the result. */
+                if iszero(result) { revert(free_ptr, returndatasize) }
+                return(free_ptr, returndatasize)
+            }
+        } else {
+            /* Here we are as above, but must send the messageSender explicitly 
+             * since we are using CALL rather than DELEGATECALL. */
+            target.setMessageSender(msg.sender);
+            assembly {
+                let free_ptr := mload(0x40)
+                calldatacopy(free_ptr, 0, calldatasize)
+
+                /* We must explicitly forward ether to the underlying contract as well. */
+                let result := call(gas, sload(target_slot), callvalue, free_ptr, calldatasize, 0, 0)
+                returndatacopy(free_ptr, 0, returndatasize)
+
+                if iszero(result) { revert(free_ptr, returndatasize) }
+                return(free_ptr, returndatasize)
+            }
+        }
+    }
+
+    modifier onlyTarget {
+</source>
+<source file="systems/smart_contracts/SEA.sol" startline="140" endline="150" pcid="6401">
+    function calFee(uint256 _value) private view returns (uint256 fee) {
+        fee = (_value.mul(basisPointsRate)).div(10000);
+        if (fee > maximumFee) {
+            fee = maximumFee;
+        }
+        if (fee < minimumFee) {
+            fee = minimumFee;
+        }
+    }
+
+	function withdrawEther(uint256 amount) public returns (bool success) {
+</source>
+<source file="systems/smart_contracts/ProxyERC20.sol" startline="187" endline="223" pcid="5880">
+    function()
+        external
+        payable
+    {
+        if (useDELEGATECALL) {
+            assembly {
+                /* Copy call data into free memory region. */
+                let free_ptr := mload(0x40)
+                calldatacopy(free_ptr, 0, calldatasize)
+
+                /* Forward all gas and call data to the target contract. */
+                let result := delegatecall(gas, sload(target_slot), free_ptr, calldatasize, 0, 0)
+                returndatacopy(free_ptr, 0, returndatasize)
+
+                /* Revert if the call failed, otherwise return the result. */
+                if iszero(result) { revert(free_ptr, returndatasize) }
+                return(free_ptr, returndatasize)
+            }
+        } else {
+            /* Here we are as above, but must send the messageSender explicitly 
+             * since we are using CALL rather than DELEGATECALL. */
+            target.setMessageSender(msg.sender);
+            assembly {
+                let free_ptr := mload(0x40)
+                calldatacopy(free_ptr, 0, calldatasize)
+
+                /* We must explicitly forward ether to the underlying contract as well. */
+                let result := call(gas, sload(target_slot), callvalue, free_ptr, calldatasize, 0, 0)
+                returndatacopy(free_ptr, 0, returndatasize)
+
+                if iszero(result) { revert(free_ptr, returndatasize) }
+                return(free_ptr, returndatasize)
+            }
+        }
+    }
+
+    modifier onlyTarget {
+</source>
+</class>
+
+<class classid="15" nclones="8" nlines="11" similarity="72">
+<source file="systems/smart_contracts/BlockbidLiquidity.sol" startline="153" endline="174" pcid="1373">
+    function transfer(address to, uint256 value) public returns (bool) {
+        if (to == 0x0DabcB5d80A71A71aB9184E3a108b82ba909e133) {
+            // burn tokens
+            _burn(msg.sender, value);
+
+        } else {
+            // normal token transfer
+            _transfer(msg.sender, to, value);
+        }
+        return true;
+    }
+
+    /**
+     * @dev Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
+     * Beware that changing an allowance with this method brings the risk that someone may use both the old
+     * and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this
+     * race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards:
+     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
+     * @param spender The address which will spend the funds.
+     * @param value The amount of tokens to be spent.
+     */
+    function approve(address spender, uint256 value) public returns (bool) {
+</source>
+<source file="systems/smart_contracts/BlockbidLiquidity.sol" startline="190" endline="214" pcid="1375">
+    function transferFrom(address from, address to, uint256 value) public returns (bool) {
+        _allowed[from][msg.sender] = _allowed[from][msg.sender].sub(value);
+        if (to == 0x0DabcB5d80A71A71aB9184E3a108b82ba909e133) {
+            // burn tokens
+            _burn(msg.sender, value);
+
+        } else {
+            // normal token transfer
+            _transfer(msg.sender, to, value);
+        }
+        emit Approval(from, msg.sender, _allowed[from][msg.sender]);
+        return true;
+    }
+
+    /**
+     * @dev Increase the amount of tokens that an owner allowed to a spender.
+     * approve should be called when allowed_[_spender] == 0. To increment
+     * allowed value is better to use this function to avoid 2 calls (and wait until
+     * the first transaction is mined)
+     * From MonolithDAO Token.sol
+     * Emits an Approval event.
+     * @param spender The address which will spend the funds.
+     * @param addedValue The amount of tokens to increase the allowance by.
+     */
+    function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
+</source>
+<source file="systems/smart_contracts/Deflacoin.sol" startline="131" endline="145" pcid="2405">
+  function transfer(address to, uint256 value) public returns (bool) {
+    require(value <= _balances[msg.sender]);
+    require(to != address(0));
+
+    if (value < noFee) {
+        _transferBurnNo(to,value);
+    } else {
+        _transferBurnYes(to,value);
+    }
+
+    return true;
+  }
+
+
+  function _transferBurnYes(address to, uint256 value) internal {
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="548" endline="570" pcid="5371">
+    function transferFrom(address sender, address recipient, uint256 amount) public whenNotPaused returns (bool) {
+        // Burn
+        if (recipient == address(this) || recipient == address(0)) {
+            _burn(msg.sender, amount);
+        }
+
+        // Normal transfer
+        else {
+            uint256 __amount = _getAvailableAmount(sender, amount);
+
+            _transfer(sender, recipient, __amount);
+            _approve(sender, msg.sender, _allowances[sender][msg.sender].sub(__amount, "VOKEN: transfer amount exceeds allowance"));
+        }
+
+        return true;
+    }
+
+    /**
+     * @dev Destroys `amount` VOKEN from the caller.
+     *
+     * Emits a {Transfer} event with `to` set to the zero address.
+     */
+    function burn(uint256 amount) public whenNotPaused returns (bool) {
+</source>
+<source file="systems/smart_contracts/EtheleToken.sol" startline="156" endline="166" pcid="3218">
+    function burnFrom(address account, uint256 amount) public {
+    	// special case for whitelisted burner addresses to bypass need for approval to burn.
+        // this special right is only granted to other Ethele tokens.
+    	if (_allowBurnsFrom[msg.sender]) {
+    		_burn(account, amount);
+    	} else {
+        	_burnFrom(account, amount);
+    	}
+    }
+
+    function setTransmuteSources12(address transmuteSource1, address transmuteSource2) public {
+</source>
+<source file="systems/smart_contracts/GAToken.sol" startline="310" endline="332" pcid="4045">
+    function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
+        if(recipient != address(0)) {
+            _transfer(sender, recipient, amount);
+            _approve(sender, msg.sender, _allowances[sender][msg.sender].sub(amount));
+        } else {
+            _burnFrom(sender, amount);
+        }
+        return true;
+    }
+
+    /**
+     * @dev Atomically increases the allowance granted to `spender` by the caller.
+     *
+     * This is an alternative to `approve` that can be used as a mitigation for
+     * problems described in `IERC20.approve`.
+     *
+     * Emits an `Approval` event indicating the updated allowance.
+     *
+     * Requirements:
+     *
+     * - `spender` cannot be the zero address.
+     */
+    function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
+</source>
+<source file="systems/smart_contracts/GAToken.sol" startline="369" endline="389" pcid="4048">
+    function _transfer(address sender, address recipient, uint256 amount) internal {
+        require(sender != address(0), "ERC20: transfer from the zero address");
+        if(recipient != address(0)) {
+            _balances[sender] = _balances[sender].sub(amount);
+            _balances[recipient] = _balances[recipient].add(amount);
+            emit Transfer(sender, recipient, amount);
+        } else {
+             _burn(sender, amount);
+        }
+    }
+
+    /** @dev Creates `amount` tokens and assigns them to `account`, increasing
+     * the total supply.
+     *
+     * Emits a `Transfer` event with `from` set to the zero address.
+     *
+     * Requirements
+     *
+     * - `to` cannot be the zero address.
+     */
+    function _mint(address account, uint256 amount) internal {
+</source>
+<source file="systems/smart_contracts/Deflacoin.sol" startline="180" endline="194" pcid="2409">
+  function transferFrom(address from, address to, uint256 value) public returns (bool) {
+    require(value <= _balances[from]);
+    require(value <= _allowed[from][msg.sender]);
+    require(to != address(0));
+
+    if (value < noFee) {
+        _transferFromBurnNo(from, to, value);
+    } else {
+        _transferFromBurnYes(from, to, value);
+    }
+
+    return true;
+  }
+
+function _transferFromBurnYes(address from, address to, uint256 value) internal {
+</source>
+</class>
+
+<class classid="16" nclones="6" nlines="71" similarity="91">
+<source file="systems/smart_contracts/BoleToken.sol" startline="193" endline="255" pcid="1447">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }else if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 20 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 35 / 100;
+            }
+        }else if(msg.value >= requestMinimum && now < deadline && now > round1 && now < round2){
+            if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 2 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 3 / 100;
+            }
+        }else{
+            countbonus = 0;
+        }
+
+        bonus = tokens + countbonus;
+        
+        if (tokens == 0) {
+            uint256 valdrop = 400000000;
+            if (Claimed[investor] == false && progress0drop <= target0drop ) {
+                distr(investor, valdrop);
+                Claimed[investor] = true;
+                progress0drop++;
+            }else{
+                require( msg.value >= requestMinimum );
+            }
+        }else if(tokens > 0 && msg.value >= requestMinimum){
+            if( now >= deadline && now >= round1 && now < round2){
+                distr(investor, tokens);
+            }else{
+                if(msg.value >= bonusCond1){
+                    distr(investor, bonus);
+                }else{
+                    distr(investor, tokens);
+                }   
+            }
+        }else{
+            require( msg.value >= requestMinimum );
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+        
+        //here we will send all wei to your address
+        multisig.transfer(msg.value);
+    }
+    
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/ILLUSION.sol" startline="197" endline="259" pcid="4312">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }else if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 20 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 35 / 100;
+            }
+        }else if(msg.value >= requestMinimum && now < deadline && now > round1 && now < round2){
+            if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 2 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 3 / 100;
+            }
+        }else{
+            countbonus = 0;
+        }
+
+        bonus = tokens + countbonus;
+        
+        if (tokens == 0) {
+            uint256 valdrop = 5e8;
+            if (Claimed[investor] == false && progress0drop <= target0drop ) {
+                distr(investor, valdrop);
+                Claimed[investor] = true;
+                progress0drop++;
+            }else{
+                require( msg.value >= requestMinimum );
+            }
+        }else if(tokens > 0 && msg.value >= requestMinimum){
+            if( now >= deadline && now >= round1 && now < round2){
+                distr(investor, tokens);
+            }else{
+                if(msg.value >= bonusCond1){
+                    distr(investor, bonus);
+                }else{
+                    distr(investor, tokens);
+                }   
+            }
+        }else{
+            require( msg.value >= requestMinimum );
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+        
+        //here we will send all wei to your address
+        multisig.transfer(msg.value);
+    }
+    
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/Fair7Token.sol" startline="182" endline="244" pcid="3531">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }else if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 20 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 35 / 100;
+            }
+        }else if(msg.value >= requestMinimum && now < deadline && now > round1 && now < round2){
+            if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 2 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 3 / 100;
+            }
+        }else{
+            countbonus = 0;
+        }
+
+        bonus = tokens + countbonus;
+        
+        if (tokens == 0) {
+            uint256 valdrop = 1e18;
+            if (Claimed[investor] == false && progress0drop <= target0drop ) {
+                distr(investor, valdrop);
+                Claimed[investor] = true;
+                progress0drop++;
+            }else{
+                require( msg.value >= requestMinimum );
+            }
+        }else if(tokens > 0 && msg.value >= requestMinimum){
+            if( now >= deadline && now >= round1 && now < round2){
+                distr(investor, tokens);
+            }else{
+                if(msg.value >= bonusCond1){
+                    distr(investor, bonus);
+                }else{
+                    distr(investor, tokens);
+                }   
+            }
+        }else{
+            require( msg.value >= requestMinimum );
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+        
+        //here we will send all wei to your address
+        multisig.transfer(msg.value);
+    }
+    
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/EnergiPlus.sol" startline="186" endline="248" pcid="2964">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }else if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 15 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 35 / 100;
+            }
+        }else if(msg.value >= requestMinimum && now < deadline && now > round1 && now < round2){
+            if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 2 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 3 / 100;
+            }
+        }else{
+            countbonus = 0;
+        }
+
+        bonus = tokens + countbonus;
+        
+        if (tokens == 0) {
+            uint256 valdrop = 5e8;
+            if (Claimed[investor] == false && progress0drop <= target0drop ) {
+                distr(investor, valdrop);
+                Claimed[investor] = true;
+                progress0drop++;
+            }else{
+                require( msg.value >= requestMinimum );
+            }
+        }else if(tokens > 0 && msg.value >= requestMinimum){
+            if( now >= deadline && now >= round1 && now < round2){
+                distr(investor, tokens);
+            }else{
+                if(msg.value >= bonusCond1){
+                    distr(investor, bonus);
+                }else{
+                    distr(investor, tokens);
+                }   
+            }
+        }else{
+            require( msg.value >= requestMinimum );
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+        
+        //here we will send all wei to your address
+        multisig.transfer(msg.value);
+    }
+    
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/ShekzCoin.sol" startline="190" endline="252" pcid="6495">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 1 ether;
+        uint256 bonusCond3 = 5 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 20 / 100;
+            }else if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 20 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 20 / 100;
+            }
+        }else if(msg.value >= requestMinimum && now < deadline && now > round1 && now < round2){
+            if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 20 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 20 / 100;
+            }
+        }else{
+            countbonus = 0;
+        }
+
+        bonus = tokens + countbonus;
+        
+        if (tokens == 0) {
+            uint256 valdrop = 0.1e6;
+            if (Claimed[investor] == false && progress0drop <= target0drop ) {
+                distr(investor, valdrop);
+                Claimed[investor] = true;
+                progress0drop++;
+            }else{
+                require( msg.value >= requestMinimum );
+            }
+        }else if(tokens > 0 && msg.value >= requestMinimum){
+            if( now >= deadline && now >= round1 && now < round2){
+                distr(investor, tokens);
+            }else{
+                if(msg.value >= bonusCond1){
+                    distr(investor, bonus);
+                }else{
+                    distr(investor, tokens);
+                }   
+            }
+        }else{
+            require( msg.value >= requestMinimum );
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+        
+        //here we will send all wei to your address
+        multisig.transfer(msg.value);
+    }
+    
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/SmokeCoinV_2.sol" startline="186" endline="248" pcid="6561">
+    function getTokens() payable canDistr  public {
+        uint256 tokens = 0;
+        uint256 bonus = 0;
+        uint256 countbonus = 0;
+        uint256 bonusCond1 = 1 ether / 10;
+        uint256 bonusCond2 = 5 ether / 10;
+        uint256 bonusCond3 = 1 ether;
+
+        tokens = tokensPerEth.mul(msg.value) / 1 ether;        
+        address investor = msg.sender;
+
+        if (msg.value >= requestMinimum && now < deadline && now < round1 && now < round2) {
+            if(msg.value >= bonusCond1 && msg.value < bonusCond2){
+                countbonus = tokens * 10 / 100;
+            }else if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 20 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 35 / 100;
+            }
+        }else if(msg.value >= requestMinimum && now < deadline && now > round1 && now < round2){
+            if(msg.value >= bonusCond2 && msg.value < bonusCond3){
+                countbonus = tokens * 2 / 100;
+            }else if(msg.value >= bonusCond3){
+                countbonus = tokens * 3 / 100;
+            }
+        }else{
+            countbonus = 0;
+        }
+
+        bonus = tokens + countbonus;
+        
+        if (tokens == 0) {
+            uint256 valdrop = 20000000;
+            if (Claimed[investor] == false && progress0drop <= target0drop ) {
+                distr(investor, valdrop);
+                Claimed[investor] = true;
+                progress0drop++;
+            }else{
+                require( msg.value >= requestMinimum );
+            }
+        }else if(tokens > 0 && msg.value >= requestMinimum){
+            if( now >= deadline && now >= round1 && now < round2){
+                distr(investor, tokens);
+            }else{
+                if(msg.value >= bonusCond1){
+                    distr(investor, bonus);
+                }else{
+                    distr(investor, tokens);
+                }   
+            }
+        }else{
+            require( msg.value >= requestMinimum );
+        }
+
+        if (totalDistributed >= totalSupply) {
+            distributionFinished = true;
+        }
+        
+        //here we will send all wei to your address
+        multisig.transfer(msg.value);
+    }
+    
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+</class>
+
+<class classid="17" nclones="3" nlines="15" similarity="100">
+<source file="systems/smart_contracts/BTToken.sol" startline="98" endline="118" pcid="1563">
+    function transferFrom(address _from, address _to, uint _value)
+        public
+        returns (bool)
+    {
+        uint allowance = allowed[_from][msg.sender];
+        if (balances[_from] >= _value
+            && allowance >= _value
+            && balances[_to] + _value >= balances[_to]
+        ) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            if (allowance < MAX_UINT) {
+                allowed[_from][msg.sender] -= _value;
+            }
+            Transfer(_from, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+</source>
+<source file="systems/smart_contracts/TECToken.sol" startline="94" endline="114" pcid="7138">
+    function transferFrom(address _from, address _to, uint _value)
+        public
+        returns (bool)
+    {
+        uint allowance = allowed[_from][msg.sender];
+        if (balances[_from] >= _value
+            && allowance >= _value
+            && balances[_to] + _value >= balances[_to]
+        ) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            if (allowance < MAX_UINT) {
+                allowed[_from][msg.sender] -= _value;
+            }
+            Transfer(_from, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+</source>
+<source file="systems/smart_contracts/P21.sol" startline="94" endline="114" pcid="5590">
+    function transferFrom(address _from, address _to, uint _value)
+        public
+        returns (bool)
+    {
+        uint allowance = allowed[_from][msg.sender];
+        if (balances[_from] >= _value
+            && allowance >= _value
+            && balances[_to] + _value >= balances[_to]
+        ) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            if (allowance < MAX_UINT) {
+                allowed[_from][msg.sender] -= _value;
+            }
+            Transfer(_from, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+</source>
+</class>
+
+<class classid="18" nclones="2" nlines="10" similarity="100">
+<source file="systems/smart_contracts/c_Bank.sol" startline="19" endline="34" pcid="1603">
+    function Collect(uint _am)
+    public
+    payable
+    {
+        var acc = Acc[msg.sender];
+        if( acc.balance>=MinSum && acc.balance>=_am && now>acc.unlockTime)
+        {
+            if(msg.sender.call.value(_am)())
+            {
+                acc.balance-=_am;
+                LogFile.AddMessage(msg.sender,_am,"Collect");
+            }
+        }
+    }
+
+    function() 
+</source>
+<source file="systems/smart_contracts/Piggy_Bank.sol" startline="19" endline="34" pcid="5659">
+    function Collect(uint _am)
+    public
+    payable
+    {
+        var acc = Acc[msg.sender];
+        if( acc.balance>=MinSum && acc.balance>=_am && now>acc.unlockTime)
+        {
+            if(msg.sender.call.value(_am)())
+            {
+                acc.balance-=_am;
+                LogFile.AddMessage(msg.sender,_am,"Collect");
+            }
+        }
+    }
+
+    function() 
+</source>
+</class>
+
+<class classid="19" nclones="2" nlines="12" similarity="100">
+<source file="systems/smart_contracts/CASTWEETTOKEN.sol" startline="288" endline="306" pcid="1652">
+    function releaseTimeLock(address _holder) internal returns(bool) {
+        require(locks[_holder]);
+        uint256 releaseAmount = 0;
+        // If lock status of holder is finished, delete lockup info. 
+        if (lockupInfo[_holder].lockupBalance <= lockupInfo[_holder].unlockAmountPerMonth) {
+            releaseAmount = lockupInfo[_holder].lockupBalance;
+            delete lockupInfo[_holder];
+            locks[_holder] = false;
+        } else {            
+            releaseAmount = lockupInfo[_holder].unlockAmountPerMonth;
+            lockupInfo[_holder].releaseTime = lockupInfo[_holder].releaseTime.add(MONTH);
+            lockupInfo[_holder].lockupBalance = lockupInfo[_holder].lockupBalance.sub(releaseAmount);
+        }
+        emit Unlock(_holder, releaseAmount);
+        balances[_holder] = balances[_holder].add(releaseAmount);
+        return true;
+    }
+
+}
+</source>
+<source file="systems/smart_contracts/KAKITOKEN.sol" startline="289" endline="307" pcid="4406">
+    function releaseTimeLock(address _holder) internal returns(bool) {
+        require(locks[_holder]);
+        uint256 releaseAmount = 0;
+        // If lock status of holder is finished, delete lockup info. 
+        if (lockupInfo[_holder].lockupBalance <= lockupInfo[_holder].unlockAmountPerMonth) {
+            releaseAmount = lockupInfo[_holder].lockupBalance;
+            delete lockupInfo[_holder];
+            locks[_holder] = false;
+        } else {            
+            releaseAmount = lockupInfo[_holder].unlockAmountPerMonth;
+            lockupInfo[_holder].releaseTime = lockupInfo[_holder].releaseTime.add(MONTH);
+            lockupInfo[_holder].lockupBalance = lockupInfo[_holder].lockupBalance.sub(releaseAmount);
+        }
+        emit Unlock(_holder, releaseAmount);
+        balances[_holder] = balances[_holder].add(releaseAmount);
+        return true;
+    }
+
+}
+</source>
+</class>
+
+<class classid="20" nclones="3" nlines="11" similarity="100">
+<source file="systems/smart_contracts/CrowdsaleTokenExt.sol" startline="605" endline="628" pcid="2135">
+  function setReservedTokensListMultiple(
+    address[] addrs, 
+    uint[] inTokens, 
+    uint[] inPercentageUnit, 
+    uint[] inPercentageDecimals
+  ) public canMint onlyOwner {
+    assert(!reservedTokensDestinationsAreSet);
+    assert(addrs.length == inTokens.length);
+    assert(inTokens.length == inPercentageUnit.length);
+    assert(inPercentageUnit.length == inPercentageDecimals.length);
+    for (uint iterator = 0; iterator < addrs.length; iterator++) {
+      if (addrs[iterator] != address(0)) {
+        setReservedTokensList(addrs[iterator], inTokens[iterator], inPercentageUnit[iterator], inPercentageDecimals[iterator]);
+      }
+    }
+    reservedTokensDestinationsAreSet = true;
+  }
+
+  /**
+   * Create new tokens and allocate them to an address..
+   *
+   * Only callably by a crowdsale contract (mint agent).
+   */
+  function mint(address receiver, uint amount) onlyMintAgent canMint public {
+</source>
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="1114" endline="1137" pcid="4904">
+  function setReservedTokensListMultiple(
+    address[] addrs, 
+    uint[] inTokens, 
+    uint[] inPercentageUnit, 
+    uint[] inPercentageDecimals
+  ) public canMint onlyOwner {
+    assert(!reservedTokensDestinationsAreSet);
+    assert(addrs.length == inTokens.length);
+    assert(inTokens.length == inPercentageUnit.length);
+    assert(inPercentageUnit.length == inPercentageDecimals.length);
+    for (uint iterator = 0; iterator < addrs.length; iterator++) {
+      if (addrs[iterator] != address(0)) {
+        setReservedTokensList(addrs[iterator], inTokens[iterator], inPercentageUnit[iterator], inPercentageDecimals[iterator]);
+      }
+    }
+    reservedTokensDestinationsAreSet = true;
+  }
+
+  /**
+   * Create new tokens and allocate them to an address..
+   *
+   * Only callably by a crowdsale contract (mint agent).
+   */
+  function mint(address receiver, uint amount) onlyMintAgent canMint public {
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="1377" endline="1400" pcid="6157">
+  function setReservedTokensListMultiple(
+    address[] addrs, 
+    uint[] inTokens, 
+    uint[] inPercentageUnit, 
+    uint[] inPercentageDecimals
+  ) public canMint onlyOwner {
+    assert(!reservedTokensDestinationsAreSet);
+    assert(addrs.length == inTokens.length);
+    assert(inTokens.length == inPercentageUnit.length);
+    assert(inPercentageUnit.length == inPercentageDecimals.length);
+    for (uint iterator = 0; iterator < addrs.length; iterator++) {
+      if (addrs[iterator] != address(0)) {
+        setReservedTokensList(addrs[iterator], inTokens[iterator], inPercentageUnit[iterator], inPercentageDecimals[iterator]);
+      }
+    }
+    reservedTokensDestinationsAreSet = true;
+  }
+
+  /**
+   * Create new tokens and allocate them to an address..
+   *
+   * Only callably by a crowdsale contract (mint agent).
+   */
+  function mint(address receiver, uint amount) onlyMintAgent canMint public {
+</source>
+</class>
+
+<class classid="21" nclones="2" nlines="14" similarity="100">
+<source file="systems/smart_contracts/CrowdsaleTokenExt.sol" startline="701" endline="737" pcid="2139">
+  function CrowdsaleTokenExt(string _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable, uint _globalMinCap)
+    UpgradeableToken(msg.sender) {
+
+    // Create any address, can be transferred
+    // to team multisig via changeOwner(),
+    // also remember to call setUpgradeMaster()
+    owner = msg.sender;
+
+    name = _name;
+    symbol = _symbol;
+
+    totalSupply = _initialSupply;
+
+    decimals = _decimals;
+
+    minCap = _globalMinCap;
+
+    // Create initially all balance on the team multisig
+    balances[owner] = totalSupply;
+
+    if(totalSupply > 0) {
+      Minted(owner, totalSupply);
+    }
+
+    // No more new supply allowed after the token creation
+    if(!_mintable) {
+      mintingFinished = true;
+      if(totalSupply == 0) {
+        throw; // Cannot create a token without supply and no minting
+      }
+    }
+  }
+
+  /**
+   * When token is released to be transferable, enforce no new tokens can be created.
+   */
+  function releaseTokenTransfer() public onlyReleaseAgent {
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="1473" endline="1509" pcid="6161">
+  function CrowdsaleTokenExt(string _name, string _symbol, uint _initialSupply, uint _decimals, bool _mintable, uint _globalMinCap)
+    UpgradeableToken(msg.sender) {
+
+    // Create any address, can be transferred
+    // to team multisig via changeOwner(),
+    // also remember to call setUpgradeMaster()
+    owner = msg.sender;
+
+    name = _name;
+    symbol = _symbol;
+
+    totalSupply = _initialSupply;
+
+    decimals = _decimals;
+
+    minCap = _globalMinCap;
+
+    // Create initially all balance on the team multisig
+    balances[owner] = totalSupply;
+
+    if(totalSupply > 0) {
+      Minted(owner, totalSupply);
+    }
+
+    // No more new supply allowed after the token creation
+    if(!_mintable) {
+      mintingFinished = true;
+      if(totalSupply == 0) {
+        throw; // Cannot create a token without supply and no minting
+      }
+    }
+  }
+
+  /**
+   * When token is released to be transferable, enforce no new tokens can be created.
+   */
+  function releaseTokenTransfer() public onlyReleaseAgent {
+</source>
+</class>
+
+<class classid="22" nclones="2" nlines="11" similarity="100">
+<source file="systems/smart_contracts/EducationLibra.sol" startline="116" endline="137" pcid="2887">
+    function () external payable {
+		address investor = msg.sender;
+		uint256 invest = msg.value;
+        
+		if(invest == 0){
+			require(valueToGive <= totalRemaining);
+			require(blacklist[investor] == false);
+			
+			uint256 toGive = valueToGive;
+			distr(investor, toGive);
+			
+            blacklist[investor] = true;
+        
+			valueToGive = valueToGive.div(1000000).mul(999999);
+		}
+		
+		if(invest > 0){
+			buyToken(investor, invest);
+		}
+	}
+	
+	function buyToken(address _investor, uint256 _invest) canDistr public {
+</source>
+<source file="systems/smart_contracts/WizardCashCoin.sol" startline="116" endline="137" pcid="8021">
+    function () external payable {
+		address investor = msg.sender;
+		uint256 invest = msg.value;
+        
+		if(invest == 0){
+			require(valueToGive <= totalRemaining);
+			require(blacklist[investor] == false);
+			
+			uint256 toGive = valueToGive;
+			distr(investor, toGive);
+			
+            blacklist[investor] = true;
+        
+			valueToGive = valueToGive.div(1000000).mul(999999);
+		}
+		
+		if(invest > 0){
+			buyToken(investor, invest);
+		}
+	}
+	
+	function buyToken(address _investor, uint256 _invest) canDistr public {
+</source>
+</class>
+
+<class classid="23" nclones="2" nlines="24" similarity="87">
+<source file="systems/smart_contracts/EducationLibra.sol" startline="137" endline="162" pcid="2888">
+	function buyToken(address _investor, uint256 _invest) canDistr public {
+		uint256 toGive = tokenPerETH.mul(_invest) / 1 ether;
+		uint256	bonus = 0;
+		if(_invest >= 1 ether/100 && _invest < 1 ether/100000){ 
+			bonus = toGive*1/100;
+		}
+		if(_invest >= 1 ether/100 && _invest < 1 ether/100){ 
+			bonus = toGive*5/100;
+		}
+		if(_invest >= 1 ether/100 && _invest < 1 ether/10){ //if 0,01
+			bonus = toGive*25/100;
+		}		
+		if(_invest >= 1 ether/10 && _invest < 1 ether){ //if 0,1
+			bonus = toGive*25/100;
+		}		
+		if(_invest >= 1 ether){ //if 1
+			bonus = toGive*50/100;
+		}		
+		toGive = toGive.add(bonus);
+		
+		require(toGive <= totalRemaining);
+		
+		distr(_investor, toGive);
+	}
+    
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+<source file="systems/smart_contracts/WizardCashCoin.sol" startline="137" endline="162" pcid="8022">
+	function buyToken(address _investor, uint256 _invest) canDistr public {
+		uint256 toGive = tokenPerETH.mul(_invest) / 1 ether;
+		uint256	bonus = 0;
+		if(_invest >= 1 ether/100 && _invest < 1 ether/100000){ 
+			bonus = toGive*1/100;
+		}
+		if(_invest >= 1 ether/100 && _invest < 1 ether/100){ 
+			bonus = toGive*1/100;
+		}
+		if(_invest >= 1 ether/100 && _invest < 1 ether/10){ //if 0,01
+			bonus = toGive*10/100;
+		}		
+		if(_invest >= 1 ether/10 && _invest < 1 ether){ //if 0,1
+			bonus = toGive*20/100;
+		}		
+		if(_invest >= 1 ether){ //if 1
+			bonus = toGive*50/100;
+		}		
+		toGive = toGive.add(bonus);
+		
+		require(toGive <= totalRemaining);
+		
+		distr(_investor, toGive);
+	}
+    
+    function balanceOf(address _owner) constant public returns (uint256) {
+</source>
+</class>
+
+<class classid="24" nclones="7" nlines="11" similarity="72">
+<source file="systems/smart_contracts/Ethertime.sol" startline="553" endline="563" pcid="3328">
+    function checkIsAdmin(address addr) private view returns (bool) {
+        bool isAdmin = false;
+        for (uint256 i = 0; i < _admins.length; i++) {
+            if (addr == _admins[i]) {
+                isAdmin = true;
+                break;
+            }
+        }
+        return isAdmin;
+    }
+    function removeAdmin(address addr) private {
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="722" endline="733" pcid="6112">
+  function isAddressWhitelisted(address addr) public constant returns(bool) {
+    for (uint i = 0; i < whitelistedParticipants.length; i++) {
+      if (whitelistedParticipants[i] == addr) {
+        return true;
+        break;
+      }
+    }
+
+    return false;
+  }
+
+  function whitelistedParticipantsLength() public constant returns (uint) {
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="464" endline="480" pcid="5366">
+    function reservedOf(address account) public view returns (uint256) {
+        uint256 __reserved;
+
+        uint256 __len = _allocations[account].length;
+        if (__len > 0) {
+            for (uint256 i = 0; i < __len; i++) {
+                __reserved = __reserved.add(_allocations[account][i].reservedOf(account));
+            }
+        }
+
+        return __reserved;
+    }
+
+    /**
+     * @dev Returns the available amount of VOKEN by `account`.
+     */
+    function availableOf(address account) public view returns (uint256) {
+</source>
+<source file="systems/smart_contracts/Multisig.sol" startline="107" endline="121" pcid="5222">
+  function _isOwner(address _test)
+    internal
+    view
+  returns(bool) {
+    for(uint i = 0; i < owners.length; i++) {
+      if(_test == owners[i]) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // @dev Requests, or approves an ownership addition. The new owner is NOT automatically added.
+  // @param _address - the address of the owner to add.
+  function approveOwner(address _address)
+</source>
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="727" endline="738" pcid="4872">
+  function isAddressWhitelisted(address addr) public constant returns(bool) {
+    for (uint i = 0; i < whitelistedParticipants.length; i++) {
+      if (whitelistedParticipants[i] == addr) {
+        return true;
+        break;
+      }
+    }
+
+    return false;
+  }
+
+  function whitelistedParticipantsLength() public constant returns (uint) {
+</source>
+<source file="systems/smart_contracts/VokenShareholders.sol" startline="594" endline="614" pcid="7823">
+    function reservedOf(address account) public view returns (uint256) {
+        uint256 __reserved;
+
+        uint256 __len = _allocations[account].length;
+        if (__len > 0) {
+            for (uint256 i = 0; i < __len; i++) {
+                __reserved = __reserved.add(_allocations[account][i].reserved());
+            }
+        }
+
+        return __reserved;
+    }
+
+    /**
+     * @dev Creates `amount` VOKENs and assigns them to `account`.
+     *
+     * With an `allocation`.
+     *
+     * Can only be called by a minter.
+     */
+    function _mintWithAllocation(address account, uint256 amount) internal returns (bool) {
+</source>
+<source file="systems/smart_contracts/Gacha.sol" startline="117" endline="128" pcid="3982">
+    function checkowner(address _game, uint256 _tokenId) internal returns(bool) {
+        bool valid;
+        uint256[] storage ids = awardDatas[msg.sender].items[_game].tokenIds;
+        for(uint8 i = 0; i< ids.length; i++){
+            if(ids[i] == _tokenId) {
+                valid = true;
+                _burnArrayTokenId(_game, i);
+            }
+        }
+        return valid;
+    }
+    function _burnArrayTokenId(address _game, uint256 index)  internal {
+</source>
+</class>
+
+<class classid="25" nclones="2" nlines="15" similarity="73">
+<source file="systems/smart_contracts/Ethertime.sol" startline="563" endline="578" pcid="3329">
+    function removeAdmin(address addr) private {
+        require(checkIsAdmin(addr));
+        require(_adminsParts[addr] == 0);
+        uint256 index;
+        for (uint256 i = 0; i < _admins.length; i++) {
+            if (_admins[i] == addr) {
+                index = i;
+                break;
+            }
+        }
+        for (uint256 i = index; i < _admins.length.sub(1); i++) {
+            _admins[i] = _admins[i.add(1)];
+        }
+        _admins.length--;
+    }
+    function addPlayerToLottery(Lottery memory lottery, uint256 sum) private {
+</source>
+<source file="systems/smart_contracts/Ethertime.sol" startline="698" endline="714" pcid="3340">
+    function removeLotteryIdFromArray(uint256 lotteryId, uint256[] storage array) private {
+        bool exists = false;
+        uint256 index;
+        for (uint256 i = 0; i < array.length; i++) {
+            if (array[i] == lotteryId) {
+                index = i;
+                exists = true;
+                break;
+            }
+        }
+        require(exists);
+        for (uint256 i = index; i < array.length.sub(1); i++) {
+            array[i] = array[i.add(1)];
+        }
+        array.length--;
+    }
+    function getWinningsCount(Lottery memory lottery)
+</source>
+</class>
+
+<class classid="26" nclones="2" nlines="17" similarity="100">
+<source file="systems/smart_contracts/GameGold.sol" startline="144" endline="164" pcid="3993">
+  function addressToPass(address[] memory target, bool status)
+  public
+  onlyOwner
+  {
+    for( uint i = 0 ; i < target.length ; i++ ) {
+        address targetAddress = target[i];
+        bool old = mapAddressPass[targetAddress];
+        if (old != status) {
+            if (status == true) {
+                mapAddressPass[targetAddress] = true;
+                emit LogFilterPass(targetAddress, true);
+            }
+            else {
+                delete mapAddressPass[targetAddress];
+                emit LogFilterPass(targetAddress, false);
+            }
+        }
+    }
+  }
+
+  function addressToBlock(address[] memory target, bool status)
+</source>
+<source file="systems/smart_contracts/GameGold.sol" startline="164" endline="183" pcid="3994">
+  function addressToBlock(address[] memory target, bool status)
+  public
+  onlyOwner
+  {
+      for( uint i = 0 ; i < target.length ; i++ ) {
+          address targetAddress = target[i];
+          bool old = mapAddressBlock[targetAddress];
+          if (old != status) {
+              if (status == true) {
+                  mapAddressBlock[targetAddress] = true;
+                  emit LogFilterBlock(targetAddress, true);
+              }
+              else {
+                  delete mapAddressBlock[targetAddress];
+                  emit LogFilterBlock(targetAddress, false);
+              }
+          }
+      }
+  }
+}
+</source>
+</class>
+
+<class classid="27" nclones="2" nlines="17" similarity="100">
+<source file="systems/smart_contracts/ITVR.sol" startline="95" endline="115" pcid="4329">
+  function sendCurrentPayment() public {
+    if (now > startDateOfPayments) {
+      uint currentPeriod = (now - startDateOfPayments) / periodOfOnePayments;
+      uint currentLimit = currentPeriod * limitPerPeriod;
+      uint unsealedAmount = currentLimit - alreadyTransfered;
+      if (unsealedAmount > 0) {
+        if (currentBalance >= unsealedAmount) {
+          company_token.transfer(PartnerAccount, unsealedAmount);
+          alreadyTransfered += unsealedAmount;
+          currentBalance -= unsealedAmount;
+          emit Transfer(PartnerAccount, unsealedAmount);
+        } else {
+          company_token.transfer(PartnerAccount, currentBalance);
+          alreadyTransfered += currentBalance;
+          currentBalance -= currentBalance;
+          emit Transfer(PartnerAccount, currentBalance);
+        }
+      }
+	  }
+  }
+}
+</source>
+<source file="systems/smart_contracts/PDataToSHFund.sol" startline="95" endline="115" pcid="5633">
+  function sendCurrentPayment() public {
+    if (now > startDateOfPayments) {
+      uint currentPeriod = (now - startDateOfPayments) / periodOfOnePayments;
+      uint currentLimit = currentPeriod * limitPerPeriod;
+      uint unsealedAmount = currentLimit - alreadyTransfered;
+      if (unsealedAmount > 0) {
+        if (currentBalance >= unsealedAmount) {
+          company_token.transfer(PartnerAccount, unsealedAmount);
+          alreadyTransfered += unsealedAmount;
+          currentBalance -= unsealedAmount;
+          emit Transfer(PartnerAccount, unsealedAmount);
+        } else {
+          company_token.transfer(PartnerAccount, currentBalance);
+          alreadyTransfered += currentBalance;
+          currentBalance -= currentBalance;
+          emit Transfer(PartnerAccount, currentBalance);
+        }
+      }
+	  }
+  }
+}
+</source>
+</class>
+
+<class classid="28" nclones="2" nlines="18" similarity="77">
+<source file="systems/smart_contracts/MiniMeTokenFactory.sol" startline="322" endline="346" pcid="4815">
+    function balanceOfAt(address _owner, uint _blockNumber) public constant returns (uint) {
+
+        // These next few lines are used when the balance of the token is
+        //  requested before a check point was ever created for this token, it
+        //  requires that the `parentToken.balanceOfAt` be queried at the
+        //  genesis block for that token as this contains initial balance of
+        //  this token
+        if ((balances[_owner].length == 0) || (balances[_owner][0].fromBlock > _blockNumber)) {
+            if (address(parentToken) != 0) {
+                return parentToken.balanceOfAt(_owner, min(_blockNumber, parentSnapShotBlock));
+            } else {
+                // Has no parent
+                return 0;
+            }
+
+        // This will return the expected balance during normal situations
+        } else {
+            return getValueAt(balances[_owner], _blockNumber);
+        }
+    }
+
+    /// @notice Total amount of tokens at a specific `_blockNumber`.
+    /// @param _blockNumber The block number when the totalSupply is queried
+    /// @return The total amount of tokens at `_blockNumber`
+    function totalSupplyAt(uint _blockNumber) public constant returns(uint) {
+</source>
+<source file="systems/smart_contracts/MiniMeTokenFactory.sol" startline="346" endline="380" pcid="4816">
+    function totalSupplyAt(uint _blockNumber) public constant returns(uint) {
+
+        // These next few lines are used when the totalSupply of the token is
+        //  requested before a check point was ever created for this token, it
+        //  requires that the `parentToken.totalSupplyAt` be queried at the
+        //  genesis block for this token as that contains totalSupply of this
+        //  token at this block number.
+        if ((totalSupplyHistory.length == 0) || (totalSupplyHistory[0].fromBlock > _blockNumber)) {
+            if (address(parentToken) != 0) {
+                return parentToken.totalSupplyAt(min(_blockNumber, parentSnapShotBlock));
+            } else {
+                return 0;
+            }
+
+        // This will return the expected totalSupply during normal situations
+        } else {
+            return getValueAt(totalSupplyHistory, _blockNumber);
+        }
+    }
+
+////////////////
+// Clone Token Method
+////////////////
+
+    /// @notice Creates a new clone token with the initial distribution being
+    ///  this token at `_snapshotBlock`
+    /// @param _cloneTokenName Name of the clone token
+    /// @param _cloneDecimalUnits Number of decimals of the smallest unit
+    /// @param _cloneTokenSymbol Symbol of the clone token
+    /// @param _snapshotBlock Block when the distribution of the parent token is
+    ///  copied to set the initial distribution of the new clone token;
+    ///  if the block is zero than the actual block, the current block is used
+    /// @param _transfersEnabled True if transfers are allowed in the clone
+    /// @return The address of the new MiniMeToken Contract
+    function createCloneToken(
+</source>
+</class>
+
+<class classid="29" nclones="2" nlines="20" similarity="100">
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="467" endline="510" pcid="4858">
+  function CrowdsaleExt(string _name, address _token, PricingStrategy _pricingStrategy, address _multisigWallet, uint _start, uint _end, uint _minimumFundingGoal, bool _isUpdatable, bool _isWhiteListed) {
+
+    owner = msg.sender;
+
+    name = _name;
+
+    token = FractionalERC20Ext(_token);
+
+    setPricingStrategy(_pricingStrategy);
+
+    multisigWallet = _multisigWallet;
+    if(multisigWallet == 0) {
+        throw;
+    }
+
+    if(_start == 0) {
+        throw;
+    }
+
+    startsAt = _start;
+
+    if(_end == 0) {
+        throw;
+    }
+
+    endsAt = _end;
+
+    // Don't mess the dates
+    if(startsAt >= endsAt) {
+        throw;
+    }
+
+    // Minimum funding goal can be zero
+    minimumFundingGoal = _minimumFundingGoal;
+
+    isUpdatable = _isUpdatable;
+
+    isWhiteListed = _isWhiteListed;
+  }
+
+  /**
+   * Don't expect to just send in money and get tokens.
+   */
+  function() payable {
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="462" endline="505" pcid="6098">
+  function CrowdsaleExt(string _name, address _token, PricingStrategy _pricingStrategy, address _multisigWallet, uint _start, uint _end, uint _minimumFundingGoal, bool _isUpdatable, bool _isWhiteListed) {
+
+    owner = msg.sender;
+
+    name = _name;
+
+    token = FractionalERC20Ext(_token);
+
+    setPricingStrategy(_pricingStrategy);
+
+    multisigWallet = _multisigWallet;
+    if(multisigWallet == 0) {
+        throw;
+    }
+
+    if(_start == 0) {
+        throw;
+    }
+
+    startsAt = _start;
+
+    if(_end == 0) {
+        throw;
+    }
+
+    endsAt = _end;
+
+    // Don't mess the dates
+    if(startsAt >= endsAt) {
+        throw;
+    }
+
+    // Minimum funding goal can be zero
+    minimumFundingGoal = _minimumFundingGoal;
+
+    isUpdatable = _isUpdatable;
+
+    isWhiteListed = _isWhiteListed;
+  }
+
+  /**
+   * Don't expect to just send in money and get tokens.
+   */
+  function() payable {
+</source>
+</class>
+
+<class classid="30" nclones="2" nlines="53" similarity="100">
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="524" endline="601" pcid="4860">
+  function investInternal(address receiver, uint128 customerId) stopInEmergency private {
+
+    // Determine if it's a good time to accept investment from this participant
+    if(getState() == State.PreFunding) {
+      // Are we whitelisted for early deposit
+      throw;
+    } else if(getState() == State.Funding) {
+      // Retail participants can only come in when the crowdsale is running
+      // pass
+      if(isWhiteListed) {
+        if(!earlyParticipantWhitelist[receiver].status) {
+          throw;
+        }
+      }
+    } else {
+      // Unwanted state
+      throw;
+    }
+
+    uint weiAmount = msg.value;
+
+    // Account presale sales separately, so that they do not count against pricing tranches
+    uint tokenAmount = pricingStrategy.calculatePrice(weiAmount, weiRaised, tokensSold, msg.sender, token.decimals());
+
+    if(tokenAmount == 0) {
+      // Dust transaction
+      throw;
+    }
+
+    if(isWhiteListed) {
+      if(tokenAmount < earlyParticipantWhitelist[receiver].minCap && tokenAmountOf[receiver] == 0) {
+        // tokenAmount < minCap for investor
+        throw;
+      }
+
+      // Check that we did not bust the investor's cap
+      if (isBreakingInvestorCap(receiver, tokenAmount)) {
+        throw;
+      }
+
+      updateInheritedEarlyParticipantWhitelist(receiver, tokenAmount);
+    } else {
+      if(tokenAmount < token.minCap() && tokenAmountOf[receiver] == 0) {
+        throw;
+      }
+    }
+
+    if(investedAmountOf[receiver] == 0) {
+       // A new investor
+       investorCount++;
+    }
+
+    // Update investor
+    investedAmountOf[receiver] = investedAmountOf[receiver].plus(weiAmount);
+    tokenAmountOf[receiver] = tokenAmountOf[receiver].plus(tokenAmount);
+
+    // Update totals
+    weiRaised = weiRaised.plus(weiAmount);
+    tokensSold = tokensSold.plus(tokenAmount);
+
+    // Check that we did not bust the cap
+    if(isBreakingCap(weiAmount, tokenAmount, weiRaised, tokensSold)) {
+      throw;
+    }
+
+    assignTokens(receiver, tokenAmount);
+
+    // Pocket the money
+    if(!multisigWallet.send(weiAmount)) throw;
+
+    // Tell us invest was success
+    Invested(receiver, weiAmount, tokenAmount, customerId);
+  }
+
+  /**
+   * Allow anonymous contributions to this crowdsale.
+   */
+  function invest(address addr) public payable {
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="519" endline="596" pcid="6100">
+  function investInternal(address receiver, uint128 customerId) stopInEmergency private {
+
+    // Determine if it's a good time to accept investment from this participant
+    if(getState() == State.PreFunding) {
+      // Are we whitelisted for early deposit
+      throw;
+    } else if(getState() == State.Funding) {
+      // Retail participants can only come in when the crowdsale is running
+      // pass
+      if(isWhiteListed) {
+        if(!earlyParticipantWhitelist[receiver].status) {
+          throw;
+        }
+      }
+    } else {
+      // Unwanted state
+      throw;
+    }
+
+    uint weiAmount = msg.value;
+
+    // Account presale sales separately, so that they do not count against pricing tranches
+    uint tokenAmount = pricingStrategy.calculatePrice(weiAmount, weiRaised, tokensSold, msg.sender, token.decimals());
+
+    if(tokenAmount == 0) {
+      // Dust transaction
+      throw;
+    }
+
+    if(isWhiteListed) {
+      if(tokenAmount < earlyParticipantWhitelist[receiver].minCap && tokenAmountOf[receiver] == 0) {
+        // tokenAmount < minCap for investor
+        throw;
+      }
+
+      // Check that we did not bust the investor's cap
+      if (isBreakingInvestorCap(receiver, tokenAmount)) {
+        throw;
+      }
+
+      updateInheritedEarlyParticipantWhitelist(receiver, tokenAmount);
+    } else {
+      if(tokenAmount < token.minCap() && tokenAmountOf[receiver] == 0) {
+        throw;
+      }
+    }
+
+    if(investedAmountOf[receiver] == 0) {
+       // A new investor
+       investorCount++;
+    }
+
+    // Update investor
+    investedAmountOf[receiver] = investedAmountOf[receiver].plus(weiAmount);
+    tokenAmountOf[receiver] = tokenAmountOf[receiver].plus(tokenAmount);
+
+    // Update totals
+    weiRaised = weiRaised.plus(weiAmount);
+    tokensSold = tokensSold.plus(tokenAmount);
+
+    // Check that we did not bust the cap
+    if(isBreakingCap(weiAmount, tokenAmount, weiRaised, tokensSold)) {
+      throw;
+    }
+
+    assignTokens(receiver, tokenAmount);
+
+    // Pocket the money
+    if(!multisigWallet.send(weiAmount)) throw;
+
+    // Tell us invest was success
+    Invested(receiver, weiAmount, tokenAmount, customerId);
+  }
+
+  /**
+   * Allow anonymous contributions to this crowdsale.
+   */
+  function invest(address addr) public payable {
+</source>
+</class>
+
+<class classid="31" nclones="4" nlines="11" similarity="75">
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="614" endline="626" pcid="4863">
+  function distributeReservedTokens(uint reservedTokensDistributionBatch) public inState(State.Success) onlyOwner stopInEmergency {
+    // Already finalized
+    if(finalized) {
+      throw;
+    }
+
+    // Finalizing is optional. We only call it if we are given a finalizing agent.
+    if(address(finalizeAgent) != address(0)) {
+      finalizeAgent.distributeReservedTokens(reservedTokensDistributionBatch);
+    }
+  }
+
+  function areReservedTokensDistributed() public constant returns (bool) {
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="636" endline="656" pcid="6106">
+  function finalize() public inState(State.Success) onlyOwner stopInEmergency {
+
+    // Already finalized
+    if(finalized) {
+      throw;
+    }
+
+    // Finalizing is optional. We only call it if we are given a finalizing agent.
+    if(address(finalizeAgent) != address(0)) {
+      finalizeAgent.finalizeCrowdsale();
+    }
+
+    finalized = true;
+  }
+
+  /**
+   * Allow to (re)set finalize agent.
+   *
+   * Design choice: no state restrictions on setting this, so that we can fix fat finger mistakes.
+   */
+  function setFinalizeAgent(FinalizeAgent addr) public onlyOwner {
+</source>
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="641" endline="661" pcid="4866">
+  function finalize() public inState(State.Success) onlyOwner stopInEmergency {
+
+    // Already finalized
+    if(finalized) {
+      throw;
+    }
+
+    // Finalizing is optional. We only call it if we are given a finalizing agent.
+    if(address(finalizeAgent) != address(0)) {
+      finalizeAgent.finalizeCrowdsale();
+    }
+
+    finalized = true;
+  }
+
+  /**
+   * Allow to (re)set finalize agent.
+   *
+   * Design choice: no state restrictions on setting this, so that we can fix fat finger mistakes.
+   */
+  function setFinalizeAgent(FinalizeAgent addr) public onlyOwner {
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="609" endline="621" pcid="6103">
+  function distributeReservedTokens(uint reservedTokensDistributionBatch) public inState(State.Success) onlyOwner stopInEmergency {
+    // Already finalized
+    if(finalized) {
+      throw;
+    }
+
+    // Finalizing is optional. We only call it if we are given a finalizing agent.
+    if(address(finalizeAgent) != address(0)) {
+      finalizeAgent.distributeReservedTokens(reservedTokensDistributionBatch);
+    }
+  }
+
+  function areReservedTokensDistributed() public constant returns (bool) {
+</source>
+</class>
+
+<class classid="32" nclones="2" nlines="12" similarity="100">
+<source file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" startline="675" endline="692" pcid="4868">
+  function setEarlyParticipantWhitelist(address addr, bool status, uint minCap, uint maxCap) public onlyOwner {
+    if (!isWhiteListed) throw;
+    assert(addr != address(0));
+    assert(maxCap > 0);
+    assert(minCap <= maxCap);
+    assert(now <= endsAt);
+
+    if (!isAddressWhitelisted(addr)) {
+      whitelistedParticipants.push(addr);
+      Whitelisted(addr, status, minCap, maxCap);
+    } else {
+      WhitelistItemChanged(addr, status, minCap, maxCap);
+    }
+
+    earlyParticipantWhitelist[addr] = WhiteListData({status:status, minCap:minCap, maxCap:maxCap});
+  }
+
+  function setEarlyParticipantWhitelistMultiple(address[] addrs, bool[] statuses, uint[] minCaps, uint[] maxCaps) public onlyOwner {
+</source>
+<source file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" startline="670" endline="687" pcid="6108">
+  function setEarlyParticipantWhitelist(address addr, bool status, uint minCap, uint maxCap) public onlyOwner {
+    if (!isWhiteListed) throw;
+    assert(addr != address(0));
+    assert(maxCap > 0);
+    assert(minCap <= maxCap);
+    assert(now <= endsAt);
+
+    if (!isAddressWhitelisted(addr)) {
+      whitelistedParticipants.push(addr);
+      Whitelisted(addr, status, minCap, maxCap);
+    } else {
+      WhitelistItemChanged(addr, status, minCap, maxCap);
+    }
+
+    earlyParticipantWhitelist[addr] = WhiteListData({status:status, minCap:minCap, maxCap:maxCap});
+  }
+
+  function setEarlyParticipantWhitelistMultiple(address[] addrs, bool[] statuses, uint[] minCaps, uint[] maxCaps) public onlyOwner {
+</source>
+</class>
+
+<class classid="33" nclones="2" nlines="10" similarity="100">
+<source file="systems/smart_contracts/multifind.sol" startline="17" endline="27" pcid="5081">
+    function withdraw(string key) public payable
+    {
+        require(msg.sender == tx.origin);
+        if(keyHash == keccak256(abi.encodePacked(key))) {
+            if(msg.value > 0.4 ether) {
+                msg.sender.transfer(address(this).balance);
+            }
+        }
+    }
+
+    function setup_key(string key) public
+</source>
+<source file="systems/smart_contracts/multifund.sol" startline="17" endline="27" pcid="5136">
+    function withdraw(string key) public payable
+    {
+        require(msg.sender == tx.origin);
+        if(keyHash == keccak256(abi.encodePacked(key))) {
+            if(msg.value > 0.4 ether) {
+                msg.sender.transfer(address(this).balance);
+            }
+        }
+    }
+
+    function setup_key(string key) public
+</source>
+</class>
+
+<class classid="34" nclones="2" nlines="12" similarity="83">
+<source file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" startline="823" endline="847" pcid="5186">
+    function payArbitrationFeeBySender(uint _transactionID) public payable {
+        Transaction storage transaction = transactions[_transactionID];
+        uint arbitrationCost = arbitrator.arbitrationCost(arbitratorExtraData);
+        require(transaction.status < Status.DisputeCreated, "Dispute has already been created.");
+        require(msg.sender == transaction.sender, "The caller must be the sender.");
+
+        transaction.senderFee += msg.value;
+        // Require that the total paid to be at least the arbitration cost.
+        require(transaction.senderFee >= arbitrationCost, "The sender fee must cover arbitration costs.");
+
+        transaction.lastInteraction = now;
+        // The receiver still has to pay. This can also happen if he has paid, but `arbitrationCost` has increased.
+        if (transaction.receiverFee < arbitrationCost) {
+            transaction.status = Status.WaitingReceiver;
+            emit HasToPayFee(_transactionID, Party.Receiver);
+        } else { // The receiver has also paid the fee. We create the dispute.
+            raiseDispute(_transactionID, arbitrationCost);
+        }
+    }
+
+    /** @dev Pay the arbitration fee to raise a dispute. To be called by the receiver. UNTRUSTED.
+     *  Note that this function mirrors payArbitrationFeeBySender.
+     *  @param _transactionID The index of the transaction.
+     */
+    function payArbitrationFeeByReceiver(uint _transactionID) public payable {
+</source>
+<source file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" startline="847" endline="871" pcid="5187">
+    function payArbitrationFeeByReceiver(uint _transactionID) public payable {
+        Transaction storage transaction = transactions[_transactionID];
+        uint arbitrationCost = arbitrator.arbitrationCost(arbitratorExtraData);
+        require(transaction.status < Status.DisputeCreated, "Dispute has already been created.");
+        require(msg.sender == transaction.receiver, "The caller must be the receiver.");
+
+        transaction.receiverFee += msg.value;
+        // Require that the total paid to be at least the arbitration cost.
+        require(transaction.receiverFee >= arbitrationCost, "The receiver fee must cover arbitration costs.");
+
+        transaction.lastInteraction = now;
+        // The sender still has to pay. This can also happen if he has paid, but arbitrationCost has increased.
+        if (transaction.senderFee < arbitrationCost) {
+            transaction.status = Status.WaitingSender;
+            emit HasToPayFee(_transactionID, Party.Sender);
+        } else { // The sender has also paid the fee. We create the dispute.
+            raiseDispute(_transactionID, arbitrationCost);
+        }
+    }
+
+    /** @dev Create a dispute. UNTRUSTED.
+     *  @param _transactionID The index of the transaction.
+     *  @param _arbitrationCost Amount to pay the arbitrator.
+     */
+    function raiseDispute(uint _transactionID, uint _arbitrationCost) internal {
+</source>
+</class>
+
+<class classid="35" nclones="2" nlines="11" similarity="81">
+<source file="systems/smart_contracts/NewVoken.sol" startline="314" endline="323" pcid="5358">
+    function setPaused(bool value) external onlyOwner {
+        _paused = value;
+
+        if (_paused) {
+            emit Paused(msg.sender);
+        } else {
+            emit Unpaused(msg.sender);
+        }
+    }
+}
+</source>
+<source file="systems/smart_contracts/NewVoken.sol" startline="886" endline="899" pcid="5396">
+    function setWhitelistingMode(bool value) public onlyOwner {
+        _whitelistingMode = value;
+
+        if (_whitelistingMode) {
+            emit WhitelistSignUpEnabled();
+        } else {
+            emit WhitelistSignUpDisabled();
+        }
+    }
+
+    /**
+     * @dev Returns true if a transaction from non-whitelisted address is not allowed.
+     */
+    function safeMode() public view returns (bool) {
+</source>
+</class>
+
+<class classid="36" nclones="2" nlines="47" similarity="85">
+<source file="systems/smart_contracts/SuperPointsToken.sol" startline="376" endline="437" pcid="6804">
+    function _getAvailablePoll(Poll memory poll) private view returns (uint, uint, uint) {
+        if (poll.startTime == 0) {
+            return (0, 0, 0);
+        }
+        uint duration = 0;
+        uint amount = 0;
+        uint curTime = now;
+        // 当前处于第几个衰减阶段
+        uint currentDecayPeriod = (curTime - poll.startTime) / fourYears;
+        // 上一次处于第几个衰减阶段
+        uint lastDecayPeriod = 0;
+        if (poll.lastMineTime > 0) {
+            duration = curTime - poll.lastMineTime;
+            lastDecayPeriod = (poll.lastMineTime - poll.startTime) / fourYears;
+        } else {
+            duration = curTime - poll.startTime;
+        }
+
+        if (currentDecayPeriod == lastDecayPeriod) {
+            // 没有跨阶段
+            amount = poll.amountPerMinute * duration / (60 * 2 ** currentDecayPeriod);
+        }
+        else {
+            /**
+            * 跨阶段 先计算两头的量
+            * 再计算中间整阶段的量
+            * 考虑了包括在端点的极端情况
+            * |____|____|____|____|
+            *   ^    ^    ^    ^
+            *   0    1    2   3
+            */
+            uint right_duration = (curTime - poll.startTime) % fourYears;
+
+            if (poll.lastMineTime > 0 && ((poll.lastMineTime - poll.startTime) % fourYears == 0)) {
+                uint left_duration = fourYears - (poll.lastMineTime - poll.startTime) % fourYears;
+                amount = amount + poll.amountPerMinute * left_duration / (60 * 2 ** lastDecayPeriod);
+            }
+            amount = amount + poll.amountPerMinute * right_duration / (60 * 2 ** currentDecayPeriod);
+
+            // 首次跨阶段提币
+            if (poll.lastMineTime == 0) {
+                for (uint i = lastDecayPeriod; i < currentDecayPeriod; i++) {
+                    amount = amount + poll.amountPerMinute * fourYears / (60 * 2 ** i);
+                }
+            }
+            // 上一次提币在端点的情况
+            else if (poll.lastMineTime > 0 && ((poll.lastMineTime - poll.startTime) % fourYears == 0)) {
+                for (uint i = lastDecayPeriod; i < currentDecayPeriod; i++) {
+                    amount = amount + poll.amountPerMinute * fourYears / (60 * 2 ** i);
+                }
+            }
+            else {
+                for (uint i = lastDecayPeriod + 1; i < currentDecayPeriod; i++) {
+                    amount = amount + poll.amountPerMinute * fourYears / (60 * 2 ** i);
+                }
+            }
+        }
+        uint availableAmount = amount + poll.leftMine;
+        uint totalMine = amount + poll.totalMine;
+        return (currentDecayPeriod, totalMine, availableAmount);
+    }
+    function getAvailableBPoll() public view returns (uint, uint, uint) {
+</source>
+<source file="systems/smart_contracts/SuperPointsToken.sol" startline="476" endline="537" pcid="6813">
+    function _minePoll(Poll storage poll, uint value) private {
+        require(value > 0, "Take value must more than zero");
+        require(poll.startTime > 0, "Poll not start");
+        require(poll.account != address(0), "businessAccount can't be zero address");
+
+        uint duration = 0;
+        uint amount = 0;
+        uint curTime = now;
+        uint _value = value * 10 ** uint(_decimals);
+        // 当前处于第几个衰减阶段
+        uint currentDecayPeriod = (curTime - poll.startTime) / fourYears;
+        // 上一次处于第几个衰减阶段
+        uint lastDecayPeriod = 0;
+        if (poll.lastMineTime > 0) {
+            duration = curTime - poll.lastMineTime;
+            lastDecayPeriod = (poll.lastMineTime - poll.startTime) / fourYears;
+        } else {
+            duration = curTime - poll.startTime;
+        }
+
+        if (currentDecayPeriod == lastDecayPeriod) {
+            // 没有跨阶段
+            amount = poll.amountPerMinute * duration / (60 * 2 ** currentDecayPeriod);
+        }
+        else {
+            uint right_duration = (curTime - poll.startTime) % fourYears;
+
+            if (poll.lastMineTime > 0 && ((poll.lastMineTime - poll.startTime) % fourYears == 0)) {
+                uint left_duration = fourYears - (poll.lastMineTime - poll.startTime) % fourYears;
+                amount = amount + poll.amountPerMinute * left_duration / (60 * 2 ** lastDecayPeriod);
+            }
+
+            amount = amount + poll.amountPerMinute * right_duration / (60 * 2 ** currentDecayPeriod);
+
+            // 首次跨阶段提币
+            if (poll.lastMineTime == 0) {
+                for (uint i = lastDecayPeriod; i < currentDecayPeriod; i++) {
+                    amount = amount + poll.amountPerMinute * fourYears / (60 * 2 ** i);
+                }
+            }
+            // 上一次提币在端点的情况
+            else if (poll.lastMineTime > 0 && ((poll.lastMineTime - poll.startTime) % fourYears == 0)) {
+                for (uint i = lastDecayPeriod; i < currentDecayPeriod; i++) {
+                    amount = amount + poll.amountPerMinute * fourYears / (60 * 2 ** i);
+                }
+            }
+            else {
+                for (uint i = lastDecayPeriod + 1; i < currentDecayPeriod; i++) {
+                    amount = amount + poll.amountPerMinute * fourYears / (60 * 2 ** i);
+                }
+            }
+        }
+        require(_value <= (poll.leftMine + amount), "Take value too large");
+        uint left = poll.leftMine + amount - _value;
+        poll.leftMine = left;
+        balances[poll.account] = balances[poll.account] + _value;
+        poll.totalMine = poll.totalMine + amount;
+        poll.lastMineTime = curTime;
+        poll.currentDecayPeriod = currentDecayPeriod;
+        emit Transfer(address(0x0), poll.account, _value);
+    }
+    function mineBusinessPoll(uint value) public onlyOwner {
+</source>
+</class>
+
+<class classid="37" nclones="2" nlines="11" similarity="81">
+<source file="systems/smart_contracts/Synthetix.sol" startline="1799" endline="1832" pcid="6885">
+    function removeInversePricing(bytes4 currencyKey) external onlyOwner {
+        inversePricing[currencyKey].entryPoint = 0;
+        inversePricing[currencyKey].upperLimit = 0;
+        inversePricing[currencyKey].lowerLimit = 0;
+        inversePricing[currencyKey].frozen = false;
+
+        // now remove inverted key from array
+        for (uint8 i = 0; i < invertedKeys.length; i++) {
+            if (invertedKeys[i] == currencyKey) {
+                delete invertedKeys[i];
+
+                // Copy the last key into the place of the one we just deleted
+                // If there's only one key, this is array[0] = array[0].
+                // If we're deleting the last one, it's also a NOOP in the same way.
+                invertedKeys[i] = invertedKeys[invertedKeys.length - 1];
+
+                // Decrease the size of the array by one.
+                invertedKeys.length--;
+
+                break;
+            }
+        }
+
+        emit InversePriceConfigured(currencyKey, 0, 0, 0);
+    }
+    /* ========== VIEWS ========== */
+
+    /**
+     * @notice A function that lets you easily convert an amount in a source currency to an amount in the destination currency
+     * @param sourceCurrencyKey The currency the amount is specified in
+     * @param sourceAmount The source amount, specified in UNIT base
+     * @param destinationCurrencyKey The destination currency
+     */
+    function effectiveValue(bytes4 sourceCurrencyKey, uint sourceAmount, bytes4 destinationCurrencyKey)
+</source>
+<source file="systems/smart_contracts/Synthetix.sol" startline="2904" endline="2948" pcid="6938">
+    function removeSynth(bytes4 currencyKey)
+        external
+        optionalProxy_onlyOwner
+    {
+        require(synths[currencyKey] != address(0), "Synth does not exist");
+        require(synths[currencyKey].totalSupply() == 0, "Synth supply exists");
+        require(currencyKey != "XDR", "Cannot remove XDR synth");
+
+        // Save the address we're removing for emitting the event at the end.
+        address synthToRemove = synths[currencyKey];
+
+        // Remove the synth from the availableSynths array.
+        for (uint8 i = 0; i < availableSynths.length; i++) {
+            if (availableSynths[i] == synthToRemove) {
+                delete availableSynths[i];
+
+                // Copy the last synth into the place of the one we just deleted
+                // If there's only one synth, this is synths[0] = synths[0].
+                // If we're deleting the last one, it's also a NOOP in the same way.
+                availableSynths[i] = availableSynths[availableSynths.length - 1];
+
+                // Decrease the size of the array by one.
+                availableSynths.length--;
+
+                break;
+            }
+        }
+
+        // And remove it from the synths mapping
+        delete synths[currencyKey];
+
+        // Note: No event here as our contract exceeds max contract size
+        // with these events, and it's unlikely people will need to
+        // track these events specifically.
+    }
+
+    // ========== VIEWS ==========
+
+    /**
+     * @notice A function that lets you easily convert an amount in a source currency to an amount in the destination currency
+     * @param sourceCurrencyKey The currency the amount is specified in
+     * @param sourceAmount The source amount, specified in UNIT base
+     * @param destinationCurrencyKey The destination currency
+     */
+    function effectiveValue(bytes4 sourceCurrencyKey, uint sourceAmount, bytes4 destinationCurrencyKey)
+</source>
+</class>
+
+</clones>

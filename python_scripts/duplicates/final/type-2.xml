@@ -1,0 +1,54 @@
+<clones>
+<systeminfo granularity="functions-blind" maxlines="2500" minlines="4" processor="nicad5" system="smart_contracts" threshold="0%" />
+<cloneinfo npairs="113570" npcs="8259" />
+<runinfo cputime="616479" ncompares="14999755" />
+<classinfo nclasses="590" />
+
+<class classid="10" nclones="3" nlines="4" similarity="100">
+<source endline="870" file="systems/smart_contracts/$martFund.sol" pcid="191" startline="866" />
+</class>
+
+<class classid="93" nclones="13" nlines="4" similarity="100">
+<source endline="1760" file="systems/smart_contracts/Synthetix.sol" pcid="6882" startline="1748" />
+</class>
+
+<class classid="156" nclones="4" nlines="4" similarity="100">
+<source endline="386" file="systems/smart_contracts/TDCToken.sol" pcid="7006" startline="374" />
+</class>
+
+<class classid="268" nclones="8" nlines="4" similarity="100">
+<source endline="1748" file="systems/smart_contracts/Synthetix.sol" pcid="6881" startline="1736" />
+</class>
+
+<class classid="316" nclones="8" nlines="4" similarity="100">
+<source endline="50" file="systems/smart_contracts/ESCHToken.sol" pcid="3042" startline="46" />
+</class>
+
+<class classid="415" nclones="2" nlines="4" similarity="100">
+<source endline="111" file="systems/smart_contracts/DNP.sol" pcid="2792" startline="105" />
+<source endline="120" file="systems/smart_contracts/DNP.sol" pcid="2793" startline="111" />
+</class>
+
+<class classid="417" nclones="2" nlines="4" similarity="100">
+<source endline="190" file="systems/smart_contracts/DummyToken.sol" pcid="2862" startline="186" />
+<source endline="1104" file="systems/smart_contracts/Synthetix.sol" pcid="6858" startline="1093" />
+</class>
+
+<class classid="448" nclones="3" nlines="4" similarity="100">
+<source endline="303" file="systems/smart_contracts/Exchange.sol" pcid="3385" startline="296" />
+</class>
+
+<class classid="451" nclones="3" nlines="4" similarity="100">
+<source endline="363" file="systems/smart_contracts/Factory.sol" pcid="3498" startline="350" />
+</class>
+
+<class classid="553" nclones="2" nlines="4" similarity="100">
+<source endline="317" file="systems/smart_contracts/OMGToken.sol" pcid="5502" startline="308" />
+<source endline="322" file="systems/smart_contracts/OMGToken.sol" pcid="5503" startline="317" />
+</class>
+
+<class classid="558" nclones="3" nlines="4" similarity="100">
+<source endline="88" file="systems/smart_contracts/UtilityTokenFactory.sol" pcid="7597" startline="85" />
+</class>
+
+</clones>

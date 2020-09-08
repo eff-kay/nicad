@@ -1,0 +1,152 @@
+<clones>
+<systeminfo granularity="functions-blind" maxlines="2500" minlines="4" processor="nicad5" system="smart_contracts" threshold="30%" />
+<cloneinfo npairs="633440" npcs="8259" />
+<runinfo cputime="8431808" ncompares="15359990" />
+<classinfo nclasses="178" />
+
+<class classid="1" nclones="3648" nlines="4" similarity="75">
+<source endline="869" file="systems/smart_contracts/DcorpDissolvementProposal.sol" pcid="2373" startline="859" />
+<source endline="276" file="systems/smart_contracts/TrueProfileLogic.sol" pcid="7521" startline="272" />
+<source endline="73" file="systems/smart_contracts/ParkingResolver.sol" pcid="5600" startline="69" />
+<source endline="623" file="systems/smart_contracts/Fortune999.sol" pcid="3750" startline="616" />
+<source endline="1335" file="systems/smart_contracts/EstateRegistry.sol" pcid="3142" startline="1316" />
+<source endline="801" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6631" startline="786" />
+<source endline="3662" file="systems/smart_contracts/Synthetix.sol" pcid="6964" startline="3632" />
+<source endline="505" file="systems/smart_contracts/Factory.sol" pcid="3511" startline="501" />
+<source endline="1198" file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" pcid="4908" startline="1183" />
+<source endline="38" file="systems/smart_contracts/RestrictedTransferAgent.sol" pcid="6172" startline="26" />
+<source endline="1207" file="systems/smart_contracts/MintedTokenCappedCrowdsaleExt.sol" pcid="4909" startline="1203" />
+<source endline="1024" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6650" startline="1019" />
+<source endline="82" file="systems/smart_contracts/UTRAToken.sol" pcid="7600" startline="75" />
+<source endline="1156" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6662" startline="1150" />
+<source endline="79" file="systems/smart_contracts/ParkingResolver.sol" pcid="5601" startline="73" />
+<source endline="315" file="systems/smart_contracts/TimeLockedTokenStorage.sol" pcid="7240" startline="296" />
+<source endline="521" file="systems/smart_contracts/AkropolisTokenVesting.sol" pcid="546" startline="501" />
+<source endline="71" file="systems/smart_contracts/RegulatedToken.sol" pcid="6065" startline="61" />
+<source endline="407" file="systems/smart_contracts/Oracle.sol" pcid="5540" startline="393" />
+<source endline="200" file="systems/smart_contracts/ICOImplementation.sol" pcid="4277" startline="182" />
+<source endline="61" file="systems/smart_contracts/RegulatedToken.sol" pcid="6064" startline="51" />
+<source endline="407" file="systems/smart_contracts/MULTIFOMO.sol" pcid="5107" startline="393" />
+<source endline="95" file="systems/smart_contracts/RegulatedToken.sol" pcid="6067" startline="79" />
+<source endline="791" file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" pcid="5183" startline="775" />
+<source endline="296" file="systems/smart_contracts/BlackJack.sol" pcid="1349" startline="279" />
+<source endline="162" file="systems/smart_contracts/Deflacoin.sol" pcid="2406" startline="145" />
+<source endline="261" file="systems/smart_contracts/GoaToken.sol" pcid="4161" startline="244" />
+<source endline="193" file="systems/smart_contracts/MultiSigWallet.sol" pcid="5246" startline="179" />
+<source endline="1242" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6672" startline="1238" />
+<source endline="1497" file="systems/smart_contracts/CMRPDCrowdsale.sol" pcid="1833" startline="1494" />
+<source endline="244" file="systems/smart_contracts/SeedDex.sol" pcid="6442" startline="229" />
+</class>
+
+<class classid="2" nclones="646" nlines="4" similarity="75">
+<source endline="1603" file="systems/smart_contracts/Synthetix.sol" pcid="6876" startline="1587" />
+<source endline="871" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6637" startline="863" />
+</class>
+
+<class classid="5" nclones="210" nlines="4" similarity="75">
+<source endline="215" file="systems/smart_contracts/DNP.sol" pcid="2801" startline="192" />
+<source endline="96" file="systems/smart_contracts/CST_TOKEN.sol" pcid="2204" startline="83" />
+<source endline="589" file="systems/smart_contracts/SparksterTokenSwap.sol" pcid="6625" startline="561" />
+<source endline="277" file="systems/smart_contracts/XCToken.sol" pcid="8087" startline="252" />
+</class>
+
+<class classid="7" nclones="17" nlines="4" similarity="75">
+<source endline="199" file="systems/smart_contracts/LuckyStrikeTokens.sol" pcid="4576" startline="177" />
+<source endline="263" file="systems/smart_contracts/DNP.sol" pcid="2805" startline="247" />
+</class>
+
+<class classid="14" nclones="37" nlines="4" similarity="75">
+<source endline="377" file="systems/smart_contracts/_0xSatoshi.sol" pcid="247" startline="360" />
+</class>
+
+<class classid="24" nclones="51" nlines="7" similarity="71">
+<source endline="173" file="systems/smart_contracts/KingToken.sol" pcid="4496" startline="166" />
+</class>
+
+<class classid="31" nclones="15" nlines="8" similarity="75">
+<source endline="283" file="systems/smart_contracts/MiniMeTokenFactory.sol" pcid="4811" startline="258" />
+</class>
+
+<class classid="55" nclones="12" nlines="4" similarity="75">
+<source endline="200" file="systems/smart_contracts/NewVoken.sol" pcid="5350" startline="192" />
+<source endline="1573" file="systems/smart_contracts/ReservedTokensFinalizeAgent.sol" pcid="6166" startline="1567" />
+</class>
+
+<class classid="68" nclones="2" nlines="8" similarity="75">
+<source endline="125" file="systems/smart_contracts/BACD.sol" pcid="1021" startline="103" />
+<source endline="82" file="systems/smart_contracts/SEA.sol" pcid="6395" startline="66" />
+</class>
+
+<class classid="71" nclones="8" nlines="7" similarity="71">
+<source endline="146" file="systems/smart_contracts/BANG.sol" pcid="1055" startline="138" />
+<source endline="1256" file="systems/smart_contracts/EstateRegistry.sol" pcid="3138" startline="1239" />
+<source endline="483" file="systems/smart_contracts/Exchange.sol" pcid="3399" startline="456" />
+<source endline="18" file="systems/smart_contracts/PackPurchaser.sol" pcid="5593" startline="13" />
+<source endline="1408" file="systems/smart_contracts/EstateRegistry.sol" pcid="3146" startline="1384" />
+<source endline="785" file="systems/smart_contracts/Exchange.sol" pcid="3403" startline="767" />
+</class>
+
+<class classid="75" nclones="3" nlines="7" similarity="71">
+<source endline="34" file="systems/smart_contracts/BatchTransfer.sol" pcid="1087" startline="23" />
+</class>
+
+<class classid="77" nclones="8" nlines="11" similarity="72">
+<source endline="353" file="systems/smart_contracts/XCToken.sol" pcid="8092" startline="339" />
+<source endline="150" file="systems/smart_contracts/SEA.sol" pcid="6401" startline="140" />
+</class>
+
+<class classid="79" nclones="8" nlines="11" similarity="72">
+<source endline="570" file="systems/smart_contracts/NewVoken.sol" pcid="5371" startline="548" />
+<source endline="166" file="systems/smart_contracts/EtheleToken.sol" pcid="3218" startline="156" />
+<source endline="332" file="systems/smart_contracts/GAToken.sol" pcid="4045" startline="310" />
+<source endline="389" file="systems/smart_contracts/GAToken.sol" pcid="4048" startline="369" />
+<source endline="194" file="systems/smart_contracts/Deflacoin.sol" pcid="2409" startline="180" />
+</class>
+
+<class classid="93" nclones="9" nlines="8" similarity="75">
+<source endline="50" file="systems/smart_contracts/Fortune999.sol" pcid="3693" startline="44" />
+</class>
+
+<class classid="101" nclones="7" nlines="7" similarity="71">
+<source endline="233" file="systems/smart_contracts/DummyToken.sol" pcid="2870" startline="228" />
+</class>
+
+<class classid="116" nclones="4" nlines="4" similarity="75">
+<source endline="501" file="systems/smart_contracts/EstateRegistry.sol" pcid="3090" startline="480" />
+</class>
+
+<class classid="119" nclones="2" nlines="4" similarity="75">
+<source endline="1499" file="systems/smart_contracts/EstateRegistry.sol" pcid="3154" startline="1479" />
+<source endline="214" file="systems/smart_contracts/Exchange.sol" pcid="3373" startline="202" />
+</class>
+
+<class classid="127" nclones="7" nlines="11" similarity="72">
+<source endline="128" file="systems/smart_contracts/Gacha.sol" pcid="3982" startline="117" />
+</class>
+
+<class classid="128" nclones="2" nlines="15" similarity="73">
+<source endline="578" file="systems/smart_contracts/Ethertime.sol" pcid="3329" startline="563" />
+<source endline="714" file="systems/smart_contracts/Ethertime.sol" pcid="3340" startline="698" />
+</class>
+
+<class classid="135" nclones="2" nlines="4" similarity="75">
+<source endline="1040" file="systems/smart_contracts/FPDeployer.sol" pcid="3897" startline="1033" />
+<source endline="250" file="systems/smart_contracts/VokenShareholders.sol" pcid="7797" startline="243" />
+</class>
+
+<class classid="140" nclones="2" nlines="8" similarity="75">
+<source endline="302" file="systems/smart_contracts/LuckyStrikeTokens.sol" pcid="4581" startline="284" />
+<source endline="327" file="systems/smart_contracts/LuckyStrikeTokens.sol" pcid="4583" startline="313" />
+</class>
+
+<class classid="157" nclones="2" nlines="12" similarity="83">
+<source endline="847" file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" pcid="5186" startline="823" />
+<source endline="871" file="systems/smart_contracts/MultipleArbitrableTokenTransaction.sol" pcid="5187" startline="847" />
+</class>
+
+<class classid="167" nclones="2" nlines="11" similarity="81">
+<source endline="1832" file="systems/smart_contracts/Synthetix.sol" pcid="6885" startline="1799" />
+<source endline="2948" file="systems/smart_contracts/Synthetix.sol" pcid="6938" startline="2904" />
+</class>
+
+</clones>

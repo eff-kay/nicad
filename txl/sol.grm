@@ -5,12 +5,11 @@
 include "bom.grm"        % don't ever edit that file!
 
 tokens
-    % this is very fragile - in reality Javascript regexps are context-dependent - JRC
-    solidity_regexp     "/[(\\/)(\\^)(\\)(^/)#[/\n]]*/[(gi)(ig)gi]?m?g?\:[.,;}\)\]( \))        \n]"  
-                | "/[(\\/)(\\^)(\\\\)(^/)#[/\n]]*/[(gi)(ig)gi]?m?g?\:[.,;}\)\]  \n]"  
+    % this is very fragile - in reality Javascript regexps are context-dependent - JRC 
     solidity_hex_number "0[xX][0123456789abcdefABCDEF]+"
     number        "\d+(.\d*)?([eE][+-]?\d+)?" 
                 | ".\d+([eE][+-]?\d+)?"
+    id  "[$\u][$\i]*"
 end tokens
 
 comments
@@ -19,7 +18,7 @@ comments
 end comments
 
 define program
-	[sourceUnit*]
+  [sourceUnit*]
 end define
 
 define sourceUnit
@@ -59,36 +58,36 @@ define ImportDirective
 end define
 
 define ImportLine1
-	'import [stringlit] [opt asIdentifier] ';
+  'import [stringlit] [opt asIdentifier] ';
 end define
 
 define ImportLine2
-	'import [stericIdentifier] [opt OptionalIdentifer] 'from [stringlit] ';
+  'import [stericIdentifier] [opt OptionalIdentifer] 'from [stringlit] ';
 end define
 
 define ImportLine3
-	'import '{ [IdOptAsIdentifier,+] '} 'from [stringlit] ';
+  'import '{ [IdOptAsIdentifier,+] '} 'from [stringlit] ';
 end define
 
 define IdOptAsIdentifier
-	[id] [opt asIdentifier]
+  [id] [opt asIdentifier]
 end define
 define asIdentifier
-	'as [id]
+  'as [id]
 end define
 
 
 define stericIdentifier
-	'* | [id]
+  '* | [id]
 end define
 
 define OptionalIdentifer
-	'as [id]
+  'as [id]
 end define
 
 
 define ContractDefinition
-	[ContractKeywords] [id] [opt IsInheritenceSpecifier] '{ [ContractBody*] '}
+  [ContractKeywords] [id] [opt IsInheritenceSpecifier] '{ [ContractBody*] '}
 end define
 
 define ContractKeywords
@@ -96,7 +95,7 @@ define ContractKeywords
 end define
 
 define IsInheritenceSpecifier
-	'is [InheritanceSpecifier,+]
+  'is [InheritanceSpecifier,+]
 end define
 
 define InheritanceSpecifier
@@ -119,55 +118,55 @@ end define
 define Expression
 [PrimaryExpression] |
   [ExpressionPostIncrement] 
-		| [NewExpression] 
-		|	[IndexAccess] 
-		|	[MemberAccess] 
-		|	[FunctionCall] 
-		|	[ExpressionWithParenthesis]
-		|	[UnaryExpression] 
-		|	[DoublePointerExpression]
-		|	[MultiplicationDivision]
-		|	[PlusMinusExpression] 
-		|	[ShiftLeftShiftRight]
-		|	[AndExpression] 
-		|	[XorExpression]
-		|	[OrExpression]
-		|	[LessThanGreaterThan]
-		|	[BooleanEqualNotEqualExpression]
-		|	[LogicalAndExpression]
-		|	[LogicalOrExpression]
-		|	[QuestionSelectExpression]
-		|	[AssignmentOptions]
+    | [NewExpression] 
+    | [IndexAccess] 
+    | [MemberAccess] 
+    | [FunctionCall] 
+    | [ExpressionWithParenthesis]
+    | [UnaryExpression] 
+    | [DoublePointerExpression]
+    | [MultiplicationDivision]
+    | [PlusMinusExpression] 
+    | [ShiftLeftShiftRight]
+    | [AndExpression] 
+    | [XorExpression]
+    | [OrExpression]
+    | [LessThanGreaterThan]
+    | [BooleanEqualNotEqualExpression]
+    | [LogicalAndExpression]
+    | [LogicalOrExpression]
+    | [QuestionSelectExpression]
+    | [AssignmentOptions]
 end define
 
 
 define NewExpression
-		'new [TypeName]
+    'new [TypeName]
 end define
 
 
 define QuestionSelectExpression
-		[Expression] '? [Expression] ': [Expression]
+    [Expression] '? [Expression] ': [Expression]
 end define
 
 define LogicalAndExpression
-		[Expression] '&& [Expression]
+    [Expression] '&& [Expression]
 end define
 
 define OrExpression
-		[Expression] '| [Expression]
+    [Expression] '| [Expression]
 end define
 
 define XorExpression
-		[Expression] '^ [Expression]
+    [Expression] '^ [Expression]
 end define
 
 define AndExpression
-		[Expression] '& [Expression]
+    [Expression] '& [Expression]
 end define 
 
 define LogicalOrExpression
-		[Expression] '|| [Expression]
+    [Expression] '|'| [Expression]
 end define
 
 
@@ -404,7 +403,7 @@ define StructDefinition
 end define
 
 define ConstructorDefinition
-  'constructor [ParameterList] [FunctionalDefinitionInternalModifiers] [Block]
+  'constructor [ParameterList] [FunctionalDefinitionInternalModifiers*] [Block]
 end define
 
 define VariableDeclarationMeta
@@ -490,11 +489,11 @@ define Statement
 end define
 
 define CombineSemicolon
-	[StatementThatNeedSemicolon] ';
+  [StatementThatNeedSemicolon] ';
 end define
 
 define StatementThatNeedSemicolon
-	  [Require] | [DoWhileStatement] | [PlaceholderStatement] | [Continue] | [Break] | [Return] |
+    [Require] | [DoWhileStatement] | [PlaceholderStatement] | [Continue] | [Break] | [Return] |
               [EmitStatement] | [SimpleStatement] | [Throw]
 end define
 
@@ -527,11 +526,11 @@ define ExpressionWithEqualSign
 end define
 
 define InternatlVariableDefinition
-  [VariableDeclaration] |	[VariableDeclarationWithParenthesis]
+  [VariableDeclaration] | [VariableDeclarationWithParenthesis]
 end define
 
 define VariableDeclarationWithParenthesis
-		'( [VariableDeclaration,] ')
+    '( [VariableDeclaration,] ')
 end define
 
 define ExpressionStatement
@@ -585,7 +584,7 @@ define FunctionCallArguments
 end define
 
 define NamedValueWithBraces
-	'{ [opt NameValueList] '} 
+  '{ [opt NameValueList] '} 
 end define
 
 define NameValueList
@@ -689,7 +688,7 @@ end define
 
 
 define Literal
-	[NumberLiteral]
+  [NumberLiteral]
                  | [HexLiteral]
                   | [stringlit]
 end define

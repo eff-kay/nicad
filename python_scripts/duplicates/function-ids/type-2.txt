@@ -1,0 +1,17 @@
+function getBBU(bytes32 _key, bytes32 _id) internal view returns(uint256) 
+function updateTokensPerEth(uint _tokensPerEth) public onlyOwner 
+function _approve(address owner, address spender, uint256 value) internal 
+function setOperator(address _operator) public ifAdmin 
+function transfer(address _to, uint256 _value) public 
+function lockAccount(address _addr) public onlyOwner returns (bool)
+    
+function allowance(address _from, address _spender) public view returns (uint256)
+function subBalanceAddReserve(address token, address user, uint256 subBalance, uint256 addReserve) onlyFuturesContract returns (bool)
+    
+function changeATFactoryAddress(address _newATD) external onlyOwner 
+function pause() onlyOwner whenNotPaused returns (bool) 
+function totalSupply()
+        public
+        view
+        returns (uint256)
+    
