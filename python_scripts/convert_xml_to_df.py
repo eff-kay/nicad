@@ -21,7 +21,7 @@ def convert_file_with_subelem(clone_type, xml_file, df_file):
             d={}
             d['classid'] = elem.attrib['classid']
             d['nclones'] = int(len(elem[:]))
-            # d['nlines'] = elem.attrib('nlines')
+            # d['nlines'] = int(elem.attrib['nlines'].replace('"',''))
             d['nlines'] = 0
             d['nlines'] += int(source.attrib['endline']) - int(source.attrib['startline'])
             d['similarity'] = elem.attrib['similarity']

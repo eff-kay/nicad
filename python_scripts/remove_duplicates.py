@@ -39,7 +39,7 @@ def remove_type1(type1_path, dirty_path, new_path):
     head=4 
     for i, elem in enumerate(dirty_root[4:], 4):
         if len(elem[:])==0:
-            print(i,head, dirty_root[head].attrib['classid'])
+            # print(i,head, dirty_root[head].attrib['classid'])
             dirty_root.remove(dirty_root[head])
         else:
             head+=1

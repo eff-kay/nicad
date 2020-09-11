@@ -1,7 +1,7 @@
 <clones>
 <systeminfo processor="nicad5" system="smart_contracts" granularity="functions-consistent" threshold="0%" minlines="5" maxlines="2500"/>
 <cloneinfo npcs="8259" npairs="2717"/>
-<runinfo ncompares="72348" cputime="90028"/>
+<runinfo ncompares="72348" cputime="85890"/>
 <classinfo nclasses="94"/>
 
 <class classid="1" nclones="2" nlines="7" similarity="100">
