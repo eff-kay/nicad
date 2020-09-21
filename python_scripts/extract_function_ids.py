@@ -23,21 +23,21 @@ def extract_function_defs(functions, file_path, classids, save_path:str):
                 print('still not caught', cs[0])
 
         if len(all_fs)>=1:
-            print(all_fs[0])
+            # print(all_fs[0])
             if all_fs[0] in functions:
                 p = r'^<source[\s\S]*?function (%s\([\s\S]*?\{[\s\S]*?\})[\s\S]*?<\/source>$'%(all_fs[0])
                 func_def = re.findall(p, pre_cs[0], re.MULTILINE)
                 save_list[all_fs[0]] += func_def
         else:
-            print(all_fs)
+            # print(all_fs)
             if all_fs=="'symbol'":
                 p = r'^<source[\s\S]*?function[ ]?symbol\([\s\S]*?(\{[\s\S]*?\})<\/source>$'
                 func_def = re.findall(p, pre_cs, re.MULTILINE)
-                print(func_def)
-        print(f'class id {i} done')
-    
+                # print(func_def)
+        # print(f'class id {i} done')
+    os.makedirs(f'{save_path}/function-defs/', exist_ok=True) 
     for k,v in save_list.items():
-        save_path_ob = open(save_path+f'/{k}.txt', 'w')
+        save_path_ob = open(f'{save_path}/function-defs/{k}.txt', 'a+')
         [save_path_ob.write(w+'\n') for w in v]
 
 def extrac_code(file_path, classids, save_path):
@@ -110,13 +110,32 @@ def extract_function_bodies(functions, config):
     for filepath in original_paths:
         print(f'starting {filepath}')
         classids = get_classids('duplicates/final/'+filepath+".xml")
-        print(f'classsids {len(classids)}')
+        print(f'classsids {len(classids)} ')
         complete_file_path = 'data/{}/withsource/{}'.format(config, filepath+'.xml')
         save_path = 'duplicates/function-ids'
-        extract_function_defs(functions, complete_file_path, classids[300:], save_path)
+        extract_function_defs(functions, complete_file_path, classids, save_path)
+
+def get_top_function_ids(path):
+    original_paths = ['type-1', 'type-2', 'type-2c', 'type-3-1', 'type-3-2', 'type-3-2c']
+
+    save_path = open(f'{path}/function-ids/all-ids.txt', 'w')
+    for file in original_paths:
+        # ids = file.read().split('\n')
+        file_data = open(f'{path}/function-ids/{file}.txt').read()
+        save_path.write(file_data)
+
+    top20_functions = pd.Series(open(f'{path}/function-ids/all-ids.txt', 'r').read().split('\n')).value_counts()[:20]
+    print(top20_functions.to_latex(),pd.Series(open(f'{path}/function-ids/all-ids.txt', 'r').read().split('\n')).value_counts().shape)
+    top20_path = open(f'{path}/function-ids/top20.txt', 'w')
+    
+    [top20_path.write(f'{x}\n') for x in top20_functions.index]
+    return top20_functions
 
 if __name__ == "__main__":
-    extract_function_bodies(['transferFrom', 'symbol'], 'min4')
+    print(get_top_function_ids('min1-4_duplicates'))
+    # top20_fids = open(f'duplicates/function-ids/top20.txt', 'r').read()
+    # fids:list = [l for l in top20_fids.split('\n')]
+    # extract_function_bodies(fids, 'min5')
     # extract_functions_ids('min4')
     # convert_to_combined_csv()
     # print('done')

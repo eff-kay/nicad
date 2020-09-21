@@ -3,7 +3,7 @@ import subprocess as sp
 import os
 import shutil
 from remove_duplicates import remove_all_duplicates
-from extract_function_ids import extract_functions_ids
+from extract_function_ids import extract_functions_ids, get_top_function_ids
 
 REPORT_NAMES = ['type1-report', 'type2-report', 'type2c-report', 'type3-1-report', 'type3-2-report', 'type3-2c-report']
 folder_names = ['smart_contracts_functions-clones', 'smart_contracts_functions-blind-clones', 'smart_contracts_functions-consistent-clones']
@@ -48,6 +48,7 @@ if __name__=='__main__':
     remove_all_duplicates(config)
     print("EXTRACTING FUNCTION IDS")
     extract_functions_ids(config)
+    get_top_function_ids('duplicates')
     # take_diff('systems/baseline', 'systems/min5')
     print('done')
 

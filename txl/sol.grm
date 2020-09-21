@@ -489,7 +489,7 @@ define Statement
 end define
 
 define CombineSemicolon
-  [StatementThatNeedSemicolon] ';
+  [StatementThatNeedSemicolon] '; [NL]
 end define
 
 define StatementThatNeedSemicolon
