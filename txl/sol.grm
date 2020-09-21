@@ -1,5 +1,7 @@
 %  Copyright 2020 Faizan Khan <faizan10114@gmail.com>
 %  Licensed under the MIT license. See LICENSE file in the project root for details.
+%  This grammer mostly uses the same abstractions as the ones defined in the Solidity grammar for Antlr written by Federico Bond <federicobond@gmail.com> 
+%  https://github.com/solidityj/solidity-antlr4
 
 % handling of BOM headers
 include "bom.grm"        % don't ever edit that file!
