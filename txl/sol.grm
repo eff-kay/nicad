@@ -1,11 +1,11 @@
-%  Copyright 2016-2019 Federico Bond <federicobond@gmail.com>
+%  Copyright 2020 Faizan Khan <faizan10114@gmail.com>
 %  Licensed under the MIT license. See LICENSE file in the project root for details.
 
 % handling of BOM headers
 include "bom.grm"        % don't ever edit that file!
 
 tokens
-    % this is very fragile - in reality Javascript regexps are context-dependent - JRC 
+    % this is very fragile - inspired from Javascript regex, which are context-dependent - JRC 
     solidity_hex_number "0[xX][0123456789abcdefABCDEF]+"
     number        "\d+(.\d*)?([eE][+-]?\d+)?" 
                 | ".\d+([eE][+-]?\d+)?"
