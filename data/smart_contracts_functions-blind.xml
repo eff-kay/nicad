@@ -1,0 +1,7021 @@
+<source file="data/smart_contracts/Alfa_quiz.sol" startline="9" endline="17">
+function x (string x) x x
+{
+    require (x.x = = x.x);
+    if (x = = x (x) & & x.x > 1 ether) {
+        x.x.x (x.x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Alfa_quiz.sol" startline="25" endline="30">
+function x (string x, string x) x x x
+{
+    if (x = = 0x0) {
+        x = x (x);
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Alfa_quiz.sol" startline="32" endline="34">
+function x () x x x
+{
+    x.x.x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Alfa_quiz.sol" startline="36" endline="39">
+function x (string x, bytes32 x) x x x
+{
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/Alfa_quiz.sol" startline="52" endline="52">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="11" endline="15">
+function x (uint256 x, uint256 x) x x (x)
+{
+    uint256 x = x * x;
+    x (x = = 0 | | x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="17" endline="22">
+function x (uint256 x, uint256 x) x x (x)
+{
+    x (x > 0);
+    uint256 x = x / x;
+    x (x = = x * x + x % x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="24" endline="27">
+function x (uint256 x, uint256 x) x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="29" endline="33">
+function x (uint256 x, uint256 x) x x (x)
+{
+    uint256 x = x + x;
+    x (x > = x & & x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="35" endline="39">
+function x (bool x) x
+{
+    if (! x) {
+        x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="66" endline="78">
+function x (uint256 x, string x, uint8 x, string x)
+{
+    x [x.x] = x;
+    x = x;
+    x = x;
+    x = x;
+    x = x;
+    x = x.x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="81" endline="89">
+function x (address x, uint256 x)
+{
+    if (x = = 0x0) x;
+    if (x < = 0) x;
+    if (x [x.x] < x) x;
+    if (x [x] + x < x [x]) x;
+    x [x.x] = x.x (x [x.x], x);
+    x [x] = x.x (x [x], x);
+    x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="92" endline="97">
+function x (address x, uint256 x) returns (bool x)
+{
+    if (x < = 0) x;
+    x [x.x] [x] = x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="101" endline="112">
+function x (address x, address x, uint256 x) returns (bool x)
+{
+    if (x = = 0x0) x;
+    if (x < = 0) x;
+    if (x [x] < x) x;
+    if (x [x] + x < x [x]) x;
+    if (x > x [x] [x.x]) x;
+    x [x] = x.x (x [x], x);
+    x [x] = x.x (x [x], x);
+    x [x] [x.x] = x.x (x [x] [x.x], x);
+    x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="114" endline="121">
+function x (uint256 x) returns (bool x)
+{
+    if (x [x.x] < x) x;
+    if (x < = 0) x;
+    x [x.x] = x.x (x [x.x], x);
+    x = x.x (x, x);
+    x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="123" endline="130">
+function x (uint256 x) returns (bool x)
+{
+    if (x [x.x] < x) x;
+    if (x < = 0) x;
+    x [x.x] = x.x (x [x.x], x);
+    x [x.x] = x.x (x [x.x], x);
+    x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="132" endline="139">
+function x (uint256 x) returns (bool x)
+{
+    if (x [x.x] < x) x;
+    if (x < = 0) x;
+    x [x.x] = x.x (x [x.x], x);
+    x [x.x] = x.x (x [x.x], x);
+    x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="141" endline="144">
+function x (uint256 x)
+{
+    if (x.x ! = x) x;
+    x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/AT.sol" startline="146" endline="147">
+function () x
+{
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="55" endline="57">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="62" endline="64">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="74" endline="77">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="82" endline="84">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="93" endline="96">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="110" endline="114">
+function x (address x, address x, uint256 x) x x (x)
+{
+    x (x, x, x);
+    x (x, x.x, x [x] [x.x].x (x, "ERC20: transfer amount exceeds allowance"));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="128" endline="131">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x [x.x] [x].x (x));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="147" endline="150">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x [x.x] [x].x (x, "ERC20: decreased allowance below zero"));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="157" endline="159">
+function x (uint256 x) x
+{
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="175" endline="183">
+function x (address x, address x, uint256 x) x
+{
+    require (x ! = x (0), "ERC20: transfer from the zero address");
+    require (x ! = x (0), "ERC20: transfer to the zero address");
+    require (x ! = x (x), "ERC20: transfer to the smart contract address");
+    x [x] = x [x].x (x, "ERC20: transfer amount exceeds balance");
+    x [x] = x [x].x (x);
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="194" endline="200">
+function x (address x, uint256 x) x
+{
+    require (x ! = x (0), "ERC20: mint to the zero address");
+    x = x.x (x);
+    x [x] = x [x].x (x);
+    emit x (x (0), x, x);
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="213" endline="219">
+function x (address x, uint256 x) x
+{
+    require (x ! = x (0), "ERC20: burn from the zero address");
+    x [x] = x [x].x (x, "ERC20: burn amount exceeds balance");
+    x = x.x (x);
+    emit x (x, x (0), x);
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="234" endline="240">
+function x (address x, address x, uint256 x) x
+{
+    require (x ! = x (0), "ERC20: approve from the zero address");
+    require (x ! = x (0), "ERC20: approve to the zero address");
+    x [x] [x] = x;
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="248" endline="251">
+function x (address x, uint256 x) x
+{
+    x (x, x);
+    x (x, x.x, x [x] [x.x].x (x, "ERC20: burn amount exceeds allowance"));
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="256" endline="258">
+function x () x x returns (string memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="264" endline="266">
+function x () x x returns (string memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BCCT.sol" startline="280" endline="282">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="71" endline="75">
+function () x x
+{
+    if (! x (x.x)) {
+        x (x.x, x.x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="81" endline="83">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="90" endline="92">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="99" endline="101">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="108" endline="110">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="117" endline="119">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="132" endline="141">
+function x (address x, uint256 x, uint128 x, uint8 x, uint8 x, bytes32 x, bytes32 x) x x
+{
+    bytes32 x = x (x.x (x, x, x));
+    require (x = = x (x, x, x, x), "ECDSA signature is not valid.");
+    x (x, x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="155" endline="190">
+function x (uint256 x, uint256 x, bytes11 x, bool x, uint128 x) x x
+{
+    uint x = x (x (x.x (x, x)));
+    x storage x = x [x];
+    address x = x.x;
+    uint256 x = x (x.x);
+    require (x ! = x (0) & & x > 0, "Bet should be in 'active' state.");
+    require (x.x > x.x, "Settle in the same block as placeBet, or before.");
+    require (x.x < = x (x.x).x (x), "Bet expired.");
+    x.x = x;
+    x.x = 0;
+    uint256 x = x.x (x).x (x);
+    x [x] = x [x].x (x);
+    if (x) {
+        x [x] = x [x].x (x (x));
+        x = x.x (x (x));
+    }
+    else {
+        x [x] = x [x].x (x (x));
+        x = x.x (x (x));
+    }
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="196" endline="213">
+function x (uint256 x) x x
+{
+    x storage x = x [x];
+    uint256 x = x (x.x);
+    address x = x.x;
+    require (x ! = x (0) & & x > 0, "Bet should be in 'active' state.");
+    require (x.x > x (x.x).x (x), "Bet not yet expired.");
+    uint256 x = x.x (x).x (x);
+    x [x] = x [x].x (x);
+    x.x = 0;
+    emit x (x, x (x));
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="218" endline="221">
+function x () x x x (x)
+{
+    x (x.x, x.x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="227" endline="235">
+function x (uint256 x) x x (x)
+{
+    require (x < = x [x.x].x (x [x.x]), "Not enough balance.");
+    x [x.x] = x;
+    x [x.x] = x;
+    emit x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="240" endline="248">
+function x () x x (x)
+{
+    require (x [x.x] > 0, "");
+    require (x > = x [x.x].x (x), "");
+    x (x.x, x [x.x]);
+    x [x.x] = 0;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="254" endline="258">
+function x (address x) x x x (x)
+{
+    uint256 x = x (x);
+    x (x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="265" endline="271">
+function x (address x, uint256 x) x
+{
+    require (x ! = x (0), "Invalid address.");
+    x [x] = x [x].x (x);
+    x = x.x (x);
+    emit x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="279" endline="291">
+function x (address x, uint256 x) x
+{
+    require (x ! = x (0), "Invalid address.");
+    require (x < = x [x].x (x [x]), "Not enough balance.");
+    x [x] = x [x].x (x);
+    x = x.x (x);
+    uint256 x = x.x (x).x (x);
+    require (x.x (x) < = x (x).x, "Can't afford.");
+    x.x (x.x (x));
+    emit x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="296" endline="299">
+function x (uint256 x, uint128 x) x x x (x)
+{
+    require (x = = x (x) & & x (x) = = x, "Not safe type conversion.");
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="304" endline="330">
+function x (address x, uint256 x, uint128 x, uint8 x) x
+{
+    x storage x = x [x];
+    require (x.x = = x (0), "Bet should be in 'clean' state.");
+    require (x < = x, "Cut card position is not valid.");
+    uint256 x = x (x);
+    require (x (x, x), "Not safe type conversion");
+    require (x > = x & & x < = x, "Bet amount is out of range.");
+    uint256 x = x.x (x).x (x);
+    require (x < = x (x).x (x (x)), "Balance is not enough for locked.");
+    x [x] = x [x].x (x);
+    x.x = x;
+    x.x = x;
+    x.x = x;
+    x.x = x (x.x);
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="336" endline="338">
+function x (uint256 x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="344" endline="346">
+function x (uint256 x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="352" endline="354">
+function x (uint256 x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="360" endline="362">
+function x (uint256 x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="368" endline="370">
+function x (uint256 x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="376" endline="379">
+function x (uint256 x) x x
+{
+    require (x < = x (x).x.x (x), "Not enough funds.");
+    x.x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/BlackJack.sol" startline="384" endline="387">
+function x () x x
+{
+    require (x = = 0, "All of gambler's balances need to be withdrawn.");
+    x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/BlocklogyCertificate.sol" startline="50" endline="52">
+function x (address x) x x
+{
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/BlocklogyCertificate.sol" startline="56" endline="58">
+function x (address x) x x
+{
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/BlocklogyCertificate.sol" startline="62" endline="64">
+function x () x x x (x)
+{
+    return x.x - 1;
+}
+
+</source>
+<source file="data/smart_contracts/BlocklogyCertificate.sol" startline="68" endline="70">
+function x () x x x (x)
+{
+    return x.x;
+}
+
+</source>
+<source file="data/smart_contracts/BlocklogyCertificate.sol" startline="79" endline="104">
+function x (uint256 x, string memory x, string memory x, uint256 x, uint256 x) x x x (x)
+{
+    x.x (x ({x : x, x : x, x : x, x : x, x : x}));
+    emit x (x.x - 1, x, x, x, x, x);
+    return x.x - 1;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="24" endline="36">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    require (x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="41" endline="48">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x > 0);
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="53" endline="58">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x < = x);
+    uint256 x = x - x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="63" endline="68">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    require (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="74" endline="77">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x ! = 0);
+    return x % x;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="128" endline="137">
+function x () x x x (x)
+{
+    uint256 x;
+    assembly {x : = x (x)} return x = = 0;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="173" endline="175">
+function x () x x x (x)
+{
+    return x ();
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="177" endline="182">
+function x () x x returns (address x)
+{
+    bytes32 x = 0x7050c9e0f4ca769c69bd3a8ef740bc37934f8e2c036e5a723fd8ee048ed3f8c3;
+    assembly {x : = x (x)}}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="187" endline="192">
+function x () x x returns (address x)
+{
+    bytes32 x = x;
+    assembly {x : = x (x)}}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="223" endline="236">
+function x (uint256 x) x x
+{
+    x memory x = x ({x : 1, x : x (x.x), x : x (x.x), x : x (x.x - 1)});
+    x = x;
+    x [x] = x;
+    x = x.x;
+    x = x;
+    x = x.x;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="238" endline="241">
+function x (address x) x x
+{
+    x = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="243" endline="245">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="247" endline="249">
+function x (uint256 x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/Bridge.sol" startline="251" endline="282">
+function x (bytes32 x, bytes32 x) x x returns (uint256 x)
+{
+    require (x [x].x > 0, "Parent node should exist");
+    require (x [x].x = = 0, "Trying to submit the same root twice");
+    x = x [x].x + 1;
+    if (x > x [x].x) {
+        require (x.x > = x + x, "Tried to submit new period too soon");
+        x = x;
+        x = x.x;
+    }
+    emit x (x, x);
+    x memory x = x ({x : x (x), x : x (x.x), x : x (x.x), x : x (x.x - 1)});
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="14" endline="14">
+function x () x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="18" endline="18">
+function x (address x) x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="24" endline="24">
+function x (address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="31" endline="31">
+function x (address x, address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="37" endline="37">
+function x (address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="42" endline="42">
+function x (address x, address x) x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="50" endline="58">
+function x (address x, uint x) x (x)
+{
+    if (x [x.x] > = x & & x [x] + x > = x [x]) {
+        x [x.x] - = x;
+        x [x] + = x;
+        x (x.x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="60" endline="68">
+function x (address x, address x, uint x) x (x)
+{
+    if (x [x] > = x & & x [x] [x.x] > = x & & x [x] + x > = x [x]) {
+        x [x] + = x;
+        x [x] - = x;
+        x [x] [x.x] - = x;
+        x (x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="70" endline="72">
+function x (address x) x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="74" endline="78">
+function x (address x, uint x) x (x)
+{
+    x [x.x] [x] = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="80" endline="82">
+function x (address x, address x) x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="98" endline="117">
+function x (address x, address x, uint x) x x (x)
+{
+    uint x = x [x] [x.x];
+    if (x [x] > = x & & x > = x & & x [x] + x > = x [x]) {
+        x [x] + = x;
+        x [x] - = x;
+        if (x < x) {
+            x [x] [x.x] - = x;
+        }
+        x (x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/BTToken.sol" startline="127" endline="130">
+function x ()
+{
+    x [x.x] = x;
+    x (x (0), x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/c_Bank.sol" startline="9" endline="17">
+function x (uint x) x x
+{
+    x x = x [x.x];
+    x.x + = x.x;
+    x.x = x > x ? x : x;
+    x.x (x.x, x.x, "Put");
+}
+
+</source>
+<source file="data/smart_contracts/c_Bank.sol" startline="19" endline="32">
+function x (uint x) x x
+{
+    x x = x [x.x];
+    if (x.x > = x & & x.x > = x & & x > x.x) {
+        if (x.x.x.x (x) ()) {
+            x.x - = x;
+            x.x (x.x, x, "Collect");
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/c_Bank.sol" startline="34" endline="39">
+function () x x
+{
+    x (0);
+}
+
+</source>
+<source file="data/smart_contracts/c_Bank.sol" startline="53" endline="55">
+function x (address x) x
+{
+    x = x (x);
+}
+
+</source>
+<source file="data/smart_contracts/c_Bank.sol" startline="73" endline="81">
+function x (address x, uint x, string x) x
+{
+    x.x = x;
+    x.x = x;
+    x.x = x;
+    x.x = x;
+    x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="11" endline="22">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    require (x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="27" endline="33">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x > 0);
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="38" endline="42">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x < = x);
+    uint256 x = x - x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="47" endline="51">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    require (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="83" endline="85">
+function x (address x) x x
+{
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="91" endline="95">
+function x (address x) x
+{
+    require (x ! = x (0));
+    emit x (x, x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="124" endline="127">
+function x () x x x
+{
+    x = x;
+    emit x ();
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="132" endline="135">
+function x () x x x
+{
+    x = x;
+    emit x ();
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="167" endline="169">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="176" endline="178">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="186" endline="195">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="202" endline="210">
+function x (address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x.x]);
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="221" endline="225">
+function x (address x, uint256 x) x x (x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="233" endline="250">
+function x (address x, address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x]);
+    require (x < = x [x] [x.x]);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="261" endline="271">
+function x (address x, uint256 x) x x (x)
+{
+    x [x.x] [x] = x [x.x] [x].x (x);
+    emit x (x.x, x, x [x.x] [x]);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="282" endline="297">
+function x (address x, uint256 x) x x (x)
+{
+    uint256 x = x [x.x] [x];
+    if (x > = x) {
+        x [x.x] [x] = 0;
+    }
+    else {
+        x [x.x] [x] = x.x (x);
+    }
+    emit x (x.x, x, x [x.x] [x]);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="303" endline="309">
+function x (uint256 x) x
+{
+    require (x [x.x] > = x);
+    x [x.x] = x [x.x].x (x);
+    x = x.x (x);
+    emit x (x.x, x (0x00), x);
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="316" endline="325">
+function x (address x, uint256 x) x
+{
+    require (x [x] [x.x] > = x);
+    require (x [x] > = x);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    x [x] = x [x].x (x);
+    x = x.x (x);
+    emit x (x, x (0x00), x);
+    emit x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="334" endline="343">
+function x (address x, uint256 x) x x x (x)
+{
+    return x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="345" endline="355">
+function x (address x, address x, uint256 x) x x x (x)
+{
+    return x.x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="357" endline="366">
+function x (address x, uint256 x) x x x (x)
+{
+    return x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="368" endline="377">
+function x (address x, uint x) x x returns (bool x)
+{
+    return x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="379" endline="388">
+function x (address x, uint x) x x returns (bool x)
+{
+    return x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="395" endline="397">
+function x (address x) x x
+{
+    require (! x [x]);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="399" endline="402">
+function x (address x, bool x) x x
+{
+    x [x] = x;
+    emit x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="404" endline="414">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x);
+    x (x);
+    return x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="416" endline="428">
+function x (address x, address x, uint256 x) x x x (x)
+{
+    x (x);
+    x (x);
+    return x.x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CDS.sol" startline="449" endline="452">
+function x (string memory x) x
+{
+    x [x.x] = x;
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="29" endline="32">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="40" endline="57">
+function x (address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x.x]);
+    x [x.x] = x (x [x.x], x);
+    x [x] = x (x [x], x);
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="67" endline="86">
+function x (address x, address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x]);
+    require (x < = x [x] [x.x]);
+    x [x] = x (x [x], x);
+    x [x] = x (x [x], x);
+    x [x] [x.x] = x (x [x] [x.x], x);
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="88" endline="98">
+function x (address x, uint256 x) x x (x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="100" endline="109">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="111" endline="121">
+function x (address x, uint256 x) x x (x)
+{
+    x [x.x] [x] = x (x [x.x] [x], x);
+    emit x (x.x, x, x [x.x] [x]);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="123" endline="142">
+function x (address x, uint256 x) x x (x)
+{
+    uint256 x = x [x.x] [x];
+    if (x > x) {
+        x [x.x] [x] = 0;
+    }
+    else {
+        x [x.x] [x] = x (x, x);
+    }
+    emit x (x.x, x, x [x.x] [x]);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="156" endline="164">
+function x (address x) x x x (x)
+{
+    require (x ! = x (0));
+    x = x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="167" endline="173">
+function x () x x
+{
+    require (x (x).x > 0);
+    x.x (x (x).x);
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="175" endline="181">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="184" endline="194">
+function x (uint256 x, uint256 x) x x returns (uint256 x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    x = x * x;
+    x (x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="196" endline="199">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    return x / x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="201" endline="205">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/CoinDDC.sol" startline="207" endline="212">
+function x (uint256 x, uint256 x) x x returns (uint256 x)
+{
+    x = x + x;
+    x (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CommunityChest.sol" startline="22" endline="25">
+function x (address payable x, uint256 x) x x
+{
+    x.x (x);
+    emit x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CommunityChest.sol" startline="27" endline="29">
+function () x x
+{
+    emit x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/CommunityChest.sol" startline="31" endline="33">
+function x () x x x (x)
+{
+    return x (x).x;
+}
+
+</source>
+<source file="data/smart_contracts/ComplianceRegistry.sol" startline="27" endline="29">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ComplianceRegistry.sol" startline="42" endline="44">
+function x () x x x (x)
+{
+    return x.x = = x;
+}
+
+</source>
+<source file="data/smart_contracts/ComplianceRegistry.sol" startline="52" endline="55">
+function x () x x
+{
+    emit x (x, x (0));
+    x = x (0);
+}
+
+</source>
+<source file="data/smart_contracts/ComplianceRegistry.sol" startline="61" endline="63">
+function x (address x) x x
+{
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/ComplianceRegistry.sol" startline="69" endline="73">
+function x (address x) x
+{
+    require (x ! = x (0));
+    emit x (x, x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ComplianceRegistry.sol" startline="94" endline="98">
+function x (address x) x x (x) x
+{
+    address x = x;
+    x = x;
+    emit x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="12" endline="16">
+function x (uint x, uint x) x x (x)
+{
+    uint x = x * x;
+    x (x = = 0 | | x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="18" endline="21">
+function x (uint x, uint x) x x (x)
+{
+    uint x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="23" endline="26">
+function x (uint x, uint x) x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="28" endline="32">
+function x (uint x, uint x) x x (x)
+{
+    uint x = x + x;
+    x (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="34" endline="36">
+function x (uint64 x, uint64 x) x x x (x)
+{
+    return x > = x ? x : x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="38" endline="40">
+function x (uint64 x, uint64 x) x x x (x)
+{
+    return x < x ? x : x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="42" endline="44">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    return x > = x ? x : x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="46" endline="48">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    return x < x ? x : x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="63" endline="63">
+function x () x returns (uint256 x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="64" endline="64">
+function x (address x) x returns (uint256 x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="65" endline="65">
+function x (address x, address x) x returns (uint256 x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="69" endline="69">
+function x (address x, uint256 x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="70" endline="70">
+function x (address x, address x, uint256 x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="71" endline="71">
+function x (address x, uint256 x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="80" endline="87">
+function x (address x, uint256 x) returns (bool x)
+{
+    if (x [x.x] > = x & & x [x] + x > x [x]) {
+        x [x.x] - = x;
+        x [x] + = x;
+        x (x.x, x, x);
+        return x;
+    }
+    else {
+        x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="89" endline="97">
+function x (address x, address x, uint256 x) returns (bool x)
+{
+    if (x [x] > = x & & x [x] [x.x] > = x & & x [x] + x > x [x]) {
+        x [x] + = x;
+        x [x] - = x;
+        x [x] [x.x] - = x;
+        x (x, x, x);
+        return x;
+    }
+    else {
+        x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="99" endline="101">
+function x (address x) x returns (uint256 x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="103" endline="111">
+function x (address x, uint256 x) returns (bool x)
+{
+    if (x > 0) {
+        require (x [x.x] [x] = = 0);
+    }
+    x [x.x] [x] = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="113" endline="115">
+function x (address x, address x) x returns (uint256 x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="187" endline="196">
+function x () x x returns (uint x)
+{
+    uint x = x.x.x (x);
+    if (x < x) {
+        uint x = x.x (x).x (x);
+        x = x.x (x);
+    }
+    else {
+        x = x.x (x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="209" endline="229">
+function x (address x, uint x, uint x) x x x x
+{
+    require (x > 0, "Must vest some MLN");
+    require (x.x (x.x, x, x), "MLN deposit failed");
+    x = x;
+    x = x.x;
+    x = x;
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="232" endline="244">
+function x () x x x x
+{
+    uint x = x ();
+    x = x.x (x);
+    require (x.x (x, x), "Transfer to beneficiary failed");
+}
+
+</source>
+<source file="data/smart_contracts/CouncilVesting.sol" startline="249" endline="268">
+function x () x x x x
+{
+    x = x;
+    uint x = x ();
+    uint x = x.x (x);
+    uint x = x.x (x);
+    x = x;
+    require (x.x (x, x), "Transfer to beneficiary failed");
+    require (x.x (x, x), "Transfer to owner failed");
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="9" endline="17">
+function x (uint256 x, uint256 x) x x returns (uint256 x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    x = x * x;
+    x (x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="19" endline="21">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    return x / x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="23" endline="26">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="28" endline="32">
+function x (uint256 x, uint256 x) x x returns (uint256 x)
+{
+    x = x + x;
+    x (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="69" endline="71">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="73" endline="75">
+function x (address x) x x returns (uint256 x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="77" endline="79">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="82" endline="92">
+function x (address x, address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x]);
+    require (x < = x [x] [x.x]);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="94" endline="98">
+function x (address x, uint256 x) x x (x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="100" endline="104">
+function x (address x, uint x) x x (x)
+{
+    x [x.x] [x] = x [x.x] [x].x (x);
+    emit x (x.x, x, x [x.x] [x]);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="106" endline="115">
+function x (address x, uint x) x x (x)
+{
+    uint x = x [x.x] [x];
+    if (x > x) {
+        x [x.x] [x] = 0;
+    }
+    else {
+        x [x.x] [x] = x.x (x);
+    }
+    emit x (x.x, x, x [x.x] [x]);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="117" endline="126">
+function x (address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x.x]);
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="131" endline="146">
+function x () x x
+{
+    require (x = = x);
+    require (x.x > x);
+    require (x.x < x);
+    require (x.x > 0);
+    uint256 x = x.x.x (x);
+    uint256 x = x.x (x);
+    require (x > = x);
+    x = x;
+    x [x.x] + = x;
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="149" endline="157">
+function x () x
+{
+    require (x = = x);
+    require (x.x = = x);
+    require (x > x);
+    require (x.x > x | | x = = x);
+    x = x;
+    x (x.x (x (x).x));
+}
+
+</source>
+<source file="data/smart_contracts/customIcoToken.sol" startline="160" endline="172">
+function x () x
+{
+    require (x = = x);
+    require (x.x > x);
+    require (x < x);
+    require (x.x ! = x);
+    uint256 x = x [x.x];
+    require (x > 0);
+    x [x.x] = 0;
+    x = x.x (x);
+    uint256 x = x / x;
+    emit x (x.x, x);
+    x (x.x.x (x));
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="8" endline="12">
+function x (uint x, uint x) x x x (x)
+{
+    uint x = x * x;
+    x (x = = 0 | | x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="13" endline="16">
+function x (uint x, uint x) x x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="17" endline="21">
+function x (uint x, uint x) x x x (x)
+{
+    uint x = x + x;
+    x (x > = x & & x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="25" endline="25">
+function x (address x) x x returns (uint256 x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="26" endline="26">
+function x (address x, uint256 x) x returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="28" endline="28">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="45" endline="49">
+function x (uint x) x x x (x)
+{
+    if (x = = 0) return x;
+    uint x = x.x (x (x));
+    return x (x, x) / x;
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="51" endline="55">
+function x (uint x) x x x (x)
+{
+    if (x = = 0) return x / x;
+    uint x = x (x.x (x (x)), x);
+    return (x (x, x) / x) / x;
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="57" endline="59">
+function x (uint x) x x x (x)
+{
+    return x (x (x));
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="61" endline="68">
+function x (uint x) x
+{
+    uint x = x (x);
+    uint x = x (x);
+    x [x.x] = x (x [x.x], x);
+    x = x (x, x);
+    x.x (x.x, x (x), x);
+    x.x (x.x, x (x), x);
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="70" endline="77">
+function x () x
+{
+    uint x = x (x [x.x], x.x (x (x))) / x;
+    uint x = x (x [x.x], x.x (x (x))) / x;
+    x = x (x, x [x.x]);
+    x [x.x] = 0;
+    x.x (x.x, x);
+    x.x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="79" endline="86">
+function x (uint x) x x x (x)
+{
+    uint x = x (x, x);
+    uint x = x.x (x (x));
+    uint x = x (x.x (x (x)), x);
+    uint x = x (x (x, x), (x (x (x, x), x (x, x)) / x (x (x, x), x)));
+    x = x / x;
+    return x (x, x) / 1000;
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="88" endline="92">
+function x (uint x) x
+{
+    uint x = x (x);
+    x.x (x.x, x (x), x);
+    x.x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="94" endline="100">
+function x (uint x) x x x (x)
+{
+    uint x = x (x, x);
+    uint x = x.x (x (x));
+    uint x = x (x.x (x (x)), x);
+    uint x = x (x (x, x), (x (x (x, x), x (x, x)) / x (x (x, x), x (x, x))));
+    return x (x, x) / 1000;
+}
+
+</source>
+<source file="data/smart_contracts/DaiSwap.sol" startline="102" endline="106">
+function x (uint x) x
+{
+    uint x = x (x);
+    x.x (x.x, x (x), x);
+    x.x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/DENARIO.sol" startline="26" endline="37">
+function x (uint256 x, string x, uint8 x, string x) x
+{
+    x [x.x] = x;
+    x = x;
+    x = x;
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/DENARIO.sol" startline="39" endline="45">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [x] + = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/DENARIO.sol" startline="47" endline="57">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    uint256 x = x [x] [x.x];
+    require (x [x] > = x & & x > = x);
+    x [x] + = x;
+    x [x] - = x;
+    if (x < x) {
+        x [x] [x.x] - = x;
+    }
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/DENARIO.sol" startline="59" endline="61">
+function x (address x) x x returns (uint256 x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/DENARIO.sol" startline="63" endline="67">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/DENARIO.sol" startline="69" endline="71">
+function x (address x, address x) x x returns (uint256 x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/Digital_QUIZ.sol" startline="9" endline="17">
+function x (string x) x x
+{
+    require (x.x = = x.x);
+    if (x = = x (x) & & x.x > 1 ether) {
+        x.x.x (x.x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Digital_QUIZ.sol" startline="25" endline="30">
+function x (string x, string x) x x x
+{
+    if (x = = 0x0) {
+        x = x (x);
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Digital_QUIZ.sol" startline="32" endline="34">
+function x () x x x
+{
+    x.x.x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Digital_QUIZ.sol" startline="36" endline="39">
+function x (string x, bytes32 x) x x x
+{
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/Digital_QUIZ.sol" startline="52" endline="52">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="74" endline="80">
+function x (uint x) x x
+{
+    emit x (x, x);
+    x = x;
+    x = x.x (x).x (x);
+    x = x (77).x (x).x (100);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="88" endline="94">
+function x (bytes32 x, uint x, bytes32 x) x
+{
+    x (x.x, x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="101" endline="103">
+function x (bytes32 x, uint x) x
+{
+    x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="110" endline="112">
+function x (bytes32 x, uint x) x
+{
+    x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="120" endline="123">
+function x (bytes32 x) x x x (x)
+{
+    x storage x = x (x);
+    return x.x;
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="131" endline="167">
+function x (bytes32 x, uint x) x
+{
+    x storage x = x (x);
+    uint256 x = x.x (1 ether);
+    require (x.x = = x.x, "Only the developer can withdraw SNT staked on this data");
+    require (x < = x.x, "You can only withdraw a percentage of the SNT staked, less what you have already received");
+    uint x;
+    uint x;
+    x.x = x.x.x (x);
+    x.x = x.x (x.x.x (x).x (x));
+    x.x = x.x.x (x.x);
+    (x, x) = x.x (x.x, x, x (x), x (x.x));
+    x.x = x > > x;
+    if (x.x > x.x) {
+        x.x = x.x;
+    }
+    uint x = x.x.x (x.x).x (x.x);
+    uint x = x.x.x (x).x (x);
+    uint x = x.x (x);
+    x.x = x.x.x (x);
+    require (x.x (x.x, x), "Transfer failed");
+    emit x (x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="174" endline="180">
+function x (bytes32 x, bytes32 x) x
+{
+    uint x = x [x];
+    x storage x = x [x];
+    require (x.x = = x.x, "Only the developer can update the metadata");
+    x.x = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="186" endline="188">
+function x () x x x (x)
+{
+    return x.x;
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="197" endline="230">
+function x (address x, uint256 x, address x, bytes calldata x) x
+{
+    require (x = = x (x), "Wrong token");
+    require (x = = x (x.x), "Wrong account");
+    require (x.x < = 196, "Incorrect data");
+    bytes4 x;
+    bytes32 x;
+    uint256 x;
+    bytes32 x;
+    (x, x, x, x) = x (x);
+    require (x = = x, "Wrong amount");
+    if (x = = x (0x7e38d973)) {
+        x (x, x, x, x);
+    }
+    else if (x = = x (0xac769090)) {
+        x (x, x, x);
+    }
+    else if (x = = x (0x2b3df690)) {
+        x (x, x, x);
+    }
+    else {
+        x ("Wrong method selector");
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="238" endline="269">
+function x (bytes32 x, uint x) x x returns (uint x)
+{
+    x memory x = x (x);
+    require (x.x.x (x) < = x, "You cannot upvote by this much, try with a lower amount");
+    if (x.x = = 0) {
+        return x;
+    }
+    uint x;
+    uint x;
+    uint x = x.x.x (x);
+    uint x = x.x (x.x (x).x (x));
+    uint x = x.x (x);
+    (x, x) = x.x (x, x, x (x), x (x));
+    uint x = x > > x;
+    uint x = x.x.x (x).x (x);
+    uint x = x.x (x).x (x);
+    uint x = x.x (x);
+    uint x = x.x (x);
+    return (x.x (x.x));
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="276" endline="279">
+function x (bytes32 x) x x returns (uint x, uint x, uint x)
+{
+    x memory x = x (x);
+    return x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="281" endline="328">
+function x (address x, bytes32 x, uint x, bytes32 x) x
+{
+    require (! x [x], "You must submit a unique ID");
+    uint256 x = x.x (1 ether);
+    require (x > 0, "You must spend some SNT to submit a ranking in order to avoid spam");
+    require (x < = x, "You cannot stake more SNT than the ceiling dictates");
+    uint x = x.x;
+    x.x + +;
+    x storage x = x [x];
+    x.x = x;
+    x.x = x;
+    x.x = x;
+    uint x;
+    uint x;
+    x.x = x;
+    x.x = x.x ((x.x).x (x).x (x));
+    x.x = x.x.x (x.x);
+    (x, x) = x.x (x.x, x, x (x), x (x.x));
+    x.x = x > > x;
+    x.x = 0;
+    x.x = x;
+    x [x] = x;
+    x [x] = x;
+    require (x.x (x, x (x), x), "Transfer failed");
+    emit x (x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="330" endline="362">
+function x (address x, bytes32 x, uint x) x
+{
+    uint256 x = x.x (1 ether);
+    require (x > 0, "You must send some SNT in order to upvote");
+    x storage x = x (x);
+    require (x.x.x (x) < = x, "You cannot upvote by this much, try with a lower amount");
+    uint x;
+    uint x;
+    x.x = x.x.x (x);
+    x.x = x.x ((x.x).x (x).x (x));
+    x.x = x.x.x (x.x);
+    (x, x) = x.x (x.x, x, x (x), x (x.x));
+    x.x = x > > x;
+    uint x = x.x.x (x.x).x (x.x);
+    uint x = x.x.x (x).x (x);
+    uint x = x.x (x);
+    x.x = x.x.x (x);
+    require (x.x (x, x (x), x), "Transfer failed");
+    emit x (x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="364" endline="378">
+function x (address x, bytes32 x, uint x) x
+{
+    uint256 x = x.x (1 ether);
+    x storage x = x (x);
+    (uint x, uint x, uint x) = x (x);
+    require (x = = x, "Incorrect amount: valid iff effect on ranking is 1%");
+    x.x = x.x.x (x);
+    x.x = x.x.x (x);
+    x.x = x.x.x (x);
+    require (x.x (x, x.x, x), "Transfer failed");
+    emit x (x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="380" endline="387">
+function x (x memory x) x x returns (uint x, uint x, uint x)
+{
+    uint x = (x.x.x (100));
+    uint x = (x.x (x.x).x (x.x)).x (x.x);
+    uint x = x.x.x (x.x).x (x);
+    uint x = (x.x.x (x)).x (x);
+    uint x = x.x (x);
+    return (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="393" endline="397">
+function x (bytes32 x) x x returns (x storage x)
+{
+    uint x = x [x];
+    x = x [x];
+    require (x.x = = x, "Error fetching correct data");
+}
+
+</source>
+<source file="data/smart_contracts/Discover.sol" startline="404" endline="422">
+function x (bytes memory x) x x returns (bytes4 x, bytes32 x, uint256 x, bytes32 x)
+{
+    assembly {x : = x (x (x, x (0x20, 0))) x : = x (x (x, 36)) x : = x (x (x, 68)) x : = x (x (x, 100))}}
+
+</source>
+<source file="data/smart_contracts/Dividends.sol" startline="51" endline="53">
+function x (address x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/Dividends.sol" startline="58" endline="62">
+function x () x x
+{
+    emit x (x, x);
+    x = x;
+    x = x (0);
+}
+
+</source>
+<source file="data/smart_contracts/Dividends.sol" startline="69" endline="71">
+function x (uint256 x) x x
+{
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Dwke.sol" startline="24" endline="32">
+function x (address x, uint256 x) x
+{
+    require (x [x.x] > = x & & x [x] + x > = x [x]);
+    emit x (x.x, x, x);
+    x [x.x] - = x;
+    x [x] + = x;
+}
+
+</source>
+<source file="data/smart_contracts/En_GAME.sol" startline="9" endline="17">
+function x (string x) x x
+{
+    require (x.x = = x.x);
+    if (x = = x (x) & & x.x > 0.4 ether) {
+        x.x.x (x.x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/En_GAME.sol" startline="25" endline="30">
+function x (string x, string x) x x x
+{
+    if (x = = 0x0) {
+        x = x (x);
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/En_GAME.sol" startline="32" endline="34">
+function x () x x x
+{
+    x.x.x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/En_GAME.sol" startline="36" endline="39">
+function x (string x, bytes32 x) x x x
+{
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/En_GAME.sol" startline="52" endline="52">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/ERC20Detailed.sol" startline="32" endline="34">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ERC20Detailed.sol" startline="39" endline="41">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ERC20Detailed.sol" startline="46" endline="48">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ERC20Detailed.sol" startline="55" endline="58">
+function x (address x, uint256 x) x x (x)
+{
+    require (x, "Token is not mintable");
+    x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/ERC20Detailed.sol" startline="64" endline="67">
+function x (uint256 x) x x (x)
+{
+    require (x, "Token is not burnable");
+    x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="27" endline="33">
+function x () x
+{
+    x = 10200000 ether;
+    x [x.x] = x;
+    x = x.x;
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="35" endline="44">
+function x (address x, address x, uint x) x
+{
+    require (x ! = 0x0);
+    require (x [x] > = x);
+    require (x [x] + x > x [x]);
+    uint x = x [x] + x [x];
+    x [x] - = x;
+    x [x] + = x;
+    x (x, x, x);
+    x (x [x] + x [x] = = x);
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="46" endline="48">
+function x (address x, uint256 x) x
+{
+    x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="50" endline="55">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    require (x < = x [x] [x.x]);
+    x [x] [x.x] - = x;
+    x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="57" endline="61">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="64" endline="70">
+function x (uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x - = x;
+    x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="72" endline="80">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x] > = x);
+    require (x < = x [x] [x.x]);
+    x [x] - = x;
+    x [x] [x.x] - = x;
+    x - = x;
+    x (x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="82" endline="85">
+function x (address x) x
+{
+    require (x [x.x] = = x);
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="88" endline="93">
+function x (address x, uint256 x) x
+{
+    require (x [x.x] = = x);
+    x [x] + = x;
+    x + = x;
+    x (0, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="96" endline="98">
+function x (address x) x x returns (uint256 x)
+{
+    return (x [x]);
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="100" endline="103">
+function x (address x) x
+{
+    x (x [x.x] = = x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="105" endline="108">
+function x (uint32 x) x
+{
+    x (x [x.x] = = x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="111" endline="116">
+function x () x x
+{
+    require (x [x] > = x * x.x);
+    require (x.x > = 0.1 ether);
+    x (x, x.x, x * x.x);
+    x.x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="118" endline="128">
+function x (address x, address x, uint x) x
+{
+    x (x [x.x] = = x);
+    require (x ! = 0x0);
+    require (x [x] > = x);
+    require (x [x] + x > x [x]);
+    uint x = x [x] + x [x];
+    x [x] - = x;
+    x [x] + = x;
+    x (x, x, x);
+    x (x [x] + x [x] = = x);
+}
+
+</source>
+<source file="data/smart_contracts/ESCHToken.sol" startline="130" endline="137">
+function x (address x, uint x) x
+{
+    x (x [x.x] = = x);
+    require (x < 100000000 ether);
+    require (x [x] + x > x [x]);
+    x + = x;
+    x [x] + = x;
+    x (0, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="56" endline="58">
+function x () x x returns (string memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="59" endline="61">
+function x () x x returns (string memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="62" endline="64">
+function x () x x x (x)
+{
+    return 18;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="65" endline="67">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="69" endline="71">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="72" endline="74">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="75" endline="77">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="78" endline="80">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="81" endline="83">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="85" endline="87">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="88" endline="90">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="91" endline="93">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="94" endline="96">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="99" endline="134">
+function x (address x) x x x (x)
+{
+    uint256 x = (x.x).x (x).x (x).x (1);
+    uint256 x = x [x];
+    uint256 x = x [x];
+    if (x > = x.x (1) | | x = = 0) {
+        return 0;
+    }
+    else {
+        uint256 x = x.x (1 ether).x (x);
+        uint256 x;
+        if (x = = x) {
+            uint256 x = x.x (1).x (x);
+            x = x.x (x).x (x).x (1 ether);
+        }
+        else {
+            uint256 x = x.x (x);
+            uint256 x = x.x (x);
+            x = x.x (x [x.x (1)]).x (x [x]).x (x).x (1 ether);
+        }
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="136" endline="138">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="139" endline="141">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="142" endline="144">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="145" endline="147">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="148" endline="150">
+function x (uint256 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="153" endline="155">
+function x (uint256 x) x
+{
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="156" endline="164">
+function x (address x, uint256 x) x
+{
+    if (x [x.x]) {
+        x (x, x);
+    }
+    else {
+        x (x, x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="166" endline="170">
+function x (address x, address x) x
+{
+    require (x.x = = x);
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="172" endline="176">
+function x (address x, address x) x
+{
+    require (x.x = = x);
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="178" endline="181">
+function x (address x) x
+{
+    require (x.x = = x);
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="185" endline="198">
+function x (uint256 x, uint256 x) x
+{
+    require (x = = 0 | | x = = 1, "EtheleToken: Transmute type should be 0 or 1.");
+    if (x = = 0) {
+        require (x ! = x (0) & & x ! = x (0), "EtheleToken: Cannot transmute this.");
+        x (x).x (x.x, x);
+        x (x).x (x.x, x);
+        x (x.x, x);
+    }
+    else if (x = = 1) {
+        require (x ! = x (0) & & x ! = x (0), "EtheleToken: Cannot transmute this.");
+        x (x).x (x.x, x);
+        x (x).x (x.x, x);
+        x (x.x, x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="202" endline="219">
+function x (int256 x) x
+{
+    uint256 x = (x.x).x (x).x (x).x (1);
+    if (x < x) {
+        uint256 x;
+        if (x = = 0) {
+            x = 0;
+        }
+        else {
+            x = x.x (1 ether).x (x);
+        }
+        while (x < x & & x ! = 0) {
+            x.x (x [x - 1].x (x));
+            x + = 1;
+            x - = 1;
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="225" endline="233">
+function x () x x
+{
+    require (x [x.x] = = 0, "EtheleToken: To lock, you must not have any existing locked ETH.");
+    x (- 1);
+    x = x.x (x.x);
+    x [x.x] = x.x;
+    x [x.x] = x;
+    x [x.x] = x.x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="235" endline="246">
+function x () x
+{
+    require (x [x.x] > 0, "EtheleToken: Require locked balance to harvest.");
+    x (- 1);
+    require (x [x.x] < x - 1, "EtheleToken: Nothing to harvest - Lock start period should be before previous currentPeriod.");
+    uint256 x = x [x - 1].x (x [x [x.x]]).x (x [x.x]).x (1 ether);
+    x [x.x] = x - 1;
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/EtheleToken.sol" startline="248" endline="257">
+function x () x
+{
+    require (x [x.x] > 0, "EtheleToken: Require locked balance to unlock.");
+    x (- 1);
+    require (x [x.x] < x.x, "EtheleToken: Minimum lock time not yet reached.");
+    uint256 x = x [x.x];
+    x [x.x] = 0;
+    x = x.x (x);
+    x.x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="7" endline="14">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    require (x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="15" endline="19">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x > 0);
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="20" endline="24">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x < = x);
+    uint256 x = x - x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="25" endline="29">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    require (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="30" endline="33">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x ! = 0);
+    return x % x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="158" endline="161">
+function x (address x) x x
+{
+    x = x;
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="162" endline="177">
+function x (address x, uint256 x) x x
+{
+    require (x < = x [x.x]);
+    x ();
+    if (! x (x)) {
+        x.x (x);
+    }
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    if (x [x.x] = = 0) {
+        x (x.x);
+    }
+    emit x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="178" endline="191">
+function x () x x
+{
+    if (x = = 0) return;
+    uint256 x = x;
+    for (uint256 x = 0; x < x.x; x + +) {
+        address payable x = x (x (x [x]));
+        uint256 x = x.x (x [x]).x (x);
+        if (x > 0) {
+            x = x.x (x);
+            x.x (x);
+            emit x (x, x);
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="192" endline="230">
+function x (string memory x, uint256 x, uint256 x, uint256 x, x x, bool x) x x
+{
+    require (x < x);
+    x = x.x (1);
+    x [x] = x ({x : x, x : x, x : x.x, x : x, x : x, x : x, x : 1, x : 0, x : x.x, x : x, x : x, x : x, x : x, x : 0, x : 0, x : 0x0, x : x, x : x, x : x, x : 0, x : 0});
+    x.x (x);
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="231" endline="248">
+function x (uint256 x) x x
+{
+    require (x < = x);
+    x ();
+    uint256 x = x (x);
+    require (x ! = x);
+    x storage x = x [x];
+    uint256 x = x (x);
+    require (x.x > = x);
+    x (x.x, x.x);
+    x (x, x);
+    uint256 x = x.x (x).x (x);
+    x.x = x.x.x (x.x (x));
+    x [x.x] = x [x.x].x (x);
+    uint256 x = x.x.x (x);
+    if (x > 0) x.x.x (x);
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="249" endline="263">
+function x () x
+{
+    for (uint256 x = 0; x < x.x; x + +) {
+        uint256 x = x [x];
+        if (x [x].x < x) {
+            if (x [x].x > 0) {
+                uint256 x = x [x].x.x (1);
+                uint256 x = x [x] [x].x;
+                if (x.x.x (x) = = 1) {
+                    continue;
+                }
+            }
+            x (x [x]);
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="264" endline="302">
+function x (uint256 x) x
+{
+    x storage x = x [x];
+    require (x.x = = x.x & & x.x = = x);
+    uint256 [] memory x;
+    if (x.x = = x.x) {
+        x = x (x.x);
+    }
+    else {
+        x = x (x.x);
+    }
+    uint256 x = x (x.x, x.x);
+    for (uint256 x = x.x; x < x.x.x (x); x + +) {
+        uint256 x = x.x.x (x);
+        if (x > = x [x.x].x) x = x.x (x [x.x].x);
+        uint256 x = x [x].x (x.x).x (x);
+        if (x > 0) {
+            x.x = x.x.x (x);
+            address payable x = x (x (x [x.x] [x].x));
+            x [x.x] [x].x = x;
+            x.x (x);
+            emit x (x, x, x.x);
+        }
+    }
+    x.x = x.x.x (x);
+    emit x (x.x, x.x.x (x.x));
+    if (x.x = = x.x) {
+        if (x.x > 0) {
+            x = x.x (x.x);
+        }
+        x.x = 0;
+        x = x.x (x [x.x]);
+        x [x.x] = 0;
+        x.x = x;
+        x (x.x, x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="303" endline="310">
+function x (uint256 x) x x
+{
+    require (x < = x);
+    x storage x = x [x];
+    require (x.x = = x.x);
+    require (x.x);
+    x.x = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="311" endline="333">
+function x (address x, uint256 x, uint256 x, uint256 x) x x
+{
+    require (x [x.x] > = x);
+    require (x > x);
+    x = x.x (1);
+    x [x] = x ({x : x, x : x.x, x : x, x : x, x : x, x : x, x : x.x});
+    emit x (x, x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="334" endline="358">
+function x (uint256 x) x x
+{
+    require (x < = x);
+    x storage x = x [x];
+    require (x.x = = x.x);
+    require (x.x > x);
+    require (x.x = = x.x);
+    require (x.x > = x.x);
+    require (x.x < = x [x.x]);
+    if (! x (x.x)) {
+        x.x (x.x);
+    }
+    x ();
+    x [x.x] = x [x.x].x (x.x);
+    x [x.x] = x [x.x].x (x.x);
+    if (x [x.x] = = 0) {
+        x (x.x);
+    }
+    address payable x = x (x (x.x));
+    x.x (x.x);
+    uint256 x = x.x.x (x.x);
+    if (x > 0) x.x.x (x);
+    x.x = x.x;
+    emit x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="359" endline="375">
+function () x x
+{
+    uint256 x = x;
+    uint256 x = 0;
+    for (uint256 x = 0; x < x.x; x + +) {
+        uint256 x = x [x];
+        uint256 x = x [x].x;
+        if (x.x > = x & & x > x) {
+            x = x;
+            x = x;
+        }
+    }
+    if (x ! = x) {
+        x (x);
+    }
+    else {
+        x ();
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="376" endline="378">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="379" endline="381">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="382" endline="384">
+function x () x x returns (address [] memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="385" endline="387">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="388" endline="421">
+function x (uint256 x) x x returns (uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, uint256 x, string memory x, x x, x x, bool x, bool x)
+{
+    x memory x = x [x];
+    return (x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="422" endline="446">
+function x (uint256 x) x x returns (uint256 x, uint256 x, bytes32 x, uint256 x, uint256 x, uint256 x, bool x)
+{
+    x memory x = x [x];
+    require (x.x = = x.x);
+    return (x.x, x.x, x.x, x [x].x, x.x, x.x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="447" endline="467">
+function x (uint256 x) x x returns (address [] memory x, uint256 [] memory x, uint256 [] memory x)
+{
+    require (x < = x);
+    x [] memory x = x [x];
+    x = new address [] (x.x);
+    x = new uint256 [] (x.x);
+    x = new uint256 [] (x.x);
+    for (uint256 x = 0; x < x.x; x + +) {
+        x [x] = x [x].x;
+        x [x] = x [x].x;
+        x [x] = x [x].x;
+    }
+    return (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="468" endline="487">
+function x (uint256 x) x x returns (address [] memory x, uint256 [] memory x)
+{
+    x memory x = x [x];
+    require (x.x = = x.x & & x.x = = x);
+    x [] memory x = x [x];
+    x = new address [] (x.x);
+    x = new uint256 [] (x.x);
+    uint256 x = 0;
+    for (uint256 x = 0; x < x.x; x + +) {
+        if (x [x].x > 0) {
+            x [x] = x [x].x;
+            x [x] = x [x].x;
+            x + +;
+        }
+    }
+    return (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="488" endline="507">
+function x (uint256 x) x x x (x)
+{
+    require (x < = x);
+    uint256 x = x;
+    bool x = x;
+    x memory x = x [x];
+    while (x.x = = x.x) {
+        if (x.x = = x) {
+            x = x;
+            break;
+        }
+        x = x [x.x];
+    }
+    if (! x) x = x.x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="508" endline="514">
+function x () x x returns (uint256 [] memory)
+{
+    uint256 [] memory x = new uint256 [] (x.x);
+    for (uint256 x = 0; x < x.x; x + +) {
+        x [x] = x [x];
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="515" endline="521">
+function x () x x returns (uint256 [] memory)
+{
+    uint256 [] memory x = new uint256 [] (x.x);
+    for (uint256 x = 0; x < x.x; x + +) {
+        x [x] = x [x];
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="522" endline="530">
+function x (uint256 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="531" endline="552">
+function x (uint256 x) x x returns (address x, address x, uint256 x, uint256 x, uint256 x, x x)
+{
+    x memory x = x [x];
+    return (x.x, x.x, x.x, x.x, x.x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="553" endline="562">
+function x (address x) x x x (x)
+{
+    bool x = x;
+    for (uint256 x = 0; x < x.x; x + +) {
+        if (x = = x [x]) {
+            x = x;
+            break;
+        }
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="563" endline="577">
+function x (address x) x
+{
+    require (x (x));
+    require (x [x] = = 0);
+    uint256 x;
+    for (uint256 x = 0; x < x.x; x + +) {
+        if (x [x] = = x) {
+            x = x;
+            break;
+        }
+    }
+    for (uint256 x = x; x < x.x.x (1); x + +) {
+        x [x] = x [x.x (1)];
+    }
+    x.x - -;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="578" endline="588">
+function x (x memory x, uint256 x) x
+{
+    require (x.x < = x & & x.x > = x);
+    require (x.x = = x.x);
+    x memory x = x ({x : x.x, x : x.x, x : x, x : 0});
+    x [x.x].x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="589" endline="624">
+function x (x storage x) x
+{
+    if (! x.x) return;
+    uint256 x = x.x.x (x.x);
+    uint256 x = x.x;
+    uint256 x = x.x (x);
+    if (x < x) (x, x) = x (x, x, x);
+    x = x.x (1);
+    x [x] = x ({x : x, x : x.x, x : x.x, x : x.x, x : x, x : x, x : x.x.x (1), x : 0, x : x.x, x : x.x, x : x.x, x : x, x : x.x, x : 0, x : 0, x : 0x0, x : x.x, x : x, x : x, x : 0, x : 0});
+    x.x = x;
+    x.x (x);
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="625" endline="640">
+function x (uint256 x, uint256 x, uint256 x) x x x (x, x)
+{
+    if (x < x) {
+        uint256 x = x.x (x);
+        uint256 x = x.x (x);
+        x = x.x (x);
+        x = x.x (1);
+        uint256 x = x.x (x);
+        x = x.x (x);
+        x = x.x (x);
+    }
+    return (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="641" endline="652">
+function x (x storage x) x
+{
+    x (x);
+    uint256 x = x [x.x];
+    if (x = = 0) {
+        x (x);
+    }
+    else if (x = = 1) {
+        x (x);
+    }
+    else {
+        x (x);
+    }
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="653" endline="656">
+function x (x storage x) x
+{
+    x.x = x.x;
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="657" endline="661">
+function x (x storage x) x
+{
+    emit x (x.x);
+    if (x.x) x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="662" endline="663">
+function x (x storage x) x
+{
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="664" endline="672">
+function x (x storage x) x
+{
+    require (x [x.x].x > 0);
+    uint256 x = 0;
+    x = x.x (x.x);
+    x = x.x (x [x.x]);
+    x [x.x] = 0;
+    address payable x = x (x (x [x.x] [0].x));
+    x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="673" endline="686">
+function x (x storage x) x
+{
+    (x.x, x.x, x.x) = x (x);
+    if (x.x = = x.x) {
+        x.x = x (x);
+    }
+    else {
+        x.x = x (x);
+    }
+    x.x = x.x;
+    x.x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="687" endline="697">
+function x (uint256 x, address x) x
+{
+    bool x = x;
+    for (uint256 x = 0; x < x [x].x; x + +) {
+        if (x = = x [x] [x].x) {
+            x = x;
+            break;
+        }
+    }
+    if (x) x [x] = x [x].x (1);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="698" endline="713">
+function x (uint256 x, uint256 [] storage x) x
+{
+    bool x = x;
+    uint256 x;
+    for (uint256 x = 0; x < x.x; x + +) {
+        if (x [x] = = x) {
+            x = x;
+            x = x;
+            break;
+        }
+    }
+    require (x);
+    for (uint256 x = x; x < x.x.x (1); x + +) {
+        x [x] = x [x.x (1)];
+    }
+    x.x - -;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="714" endline="745">
+function x (x memory x) x x x (x)
+{
+    require (x [x.x].x > 0);
+    uint256 x;
+    uint256 x = 0;
+    uint256 x = x [x.x].x;
+    if (x.x = = x.x) {
+        x = 1;
+    }
+    else if (x.x = = x.x) {
+        x = x [x.x].x;
+    }
+    else if (x.x = = x.x) {
+        x = x.x (10);
+        x = x.x (10);
+    }
+    else if (x.x = = x.x) {
+        x = x.x (30);
+        x = x.x (100);
+        x = x.x (100);
+    }
+    else if (x.x = = x.x) {
+        x = x.x (50);
+        x = x.x (100);
+        x = x.x (100);
+    }
+    else {
+        x ();
+    }
+    if (x > 0 & & x < x) {
+        x = x.x (1);
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="746" endline="757">
+function x (x memory x) x x x (x)
+{
+    uint256 x;
+    if (x [x.x].x < 3) x = 1;
+    else x = 3;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="758" endline="773">
+function x (x memory x) x x x (x, x, x)
+{
+    require (x.x < x);
+    require (x [x.x].x > 0);
+    uint256 x = x [x.x].x.x (1);
+    uint256 x = x [x.x] [x].x;
+    if (x.x.x (x) > x) x = x.x.x (x);
+    else x = x.x (1);
+    bytes32 x = x (x);
+    return (x (x, x [x.x].x), x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="774" endline="780">
+function x (bytes32 x, uint256 x) x x x (x)
+{
+    return x (x (x.x (x))).x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="781" endline="800">
+function x (x memory x) x x x (x)
+{
+    if (! x.x) return x.x;
+    uint256 x = 0;
+    uint256 x = 0;
+    (uint256 x, uint256 x, uint256 x) = x (x.x, x.x);
+    if (x.x < = x & & x < x) {
+        x = 300;
+    }
+    else if (x < = x & & x < x) {
+        x = 200;
+    }
+    else if (x < = x & & x < x) {
+        x = 100;
+    }
+    x = x.x.x (x).x (x);
+    return x.x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="801" endline="812">
+function x (uint256 x, uint256 x) x x x (x, x, x)
+{
+    require (x < x);
+    uint256 x = (x.x (x)).x (4);
+    uint256 x = x.x (x);
+    uint256 x = x.x (x);
+    uint256 x = x.x (x);
+    return (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="813" endline="826">
+function x (uint256 x) x x returns (uint256 [] memory)
+{
+    uint256 [] memory x = new uint256 [] (x);
+    uint256 x = x.x (x.x (1));
+    for (uint256 x = 0; x < x; x + +) {
+        uint256 x = (x.x (x)).x (20000);
+        x = x.x (x);
+        x [x] = x;
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="827" endline="842">
+function x (uint256 x) x x returns (uint256 [] memory)
+{
+    require (x = = 1 | | x = = 3);
+    uint256 [] memory x = new uint256 [] (x);
+    if (x = = 1) {
+        x [0] = 10000;
+    }
+    else {
+        x [0] = 5000;
+        x [1] = 3500;
+        x [2] = 1500;
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ethertime.sol" startline="843" endline="856">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = 0;
+    if (x.x (x) < = x) {
+        x = x.x (x);
+    }
+    else {
+        x = x;
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EthNote.sol" startline="21" endline="23">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/EthNote.sol" startline="36" endline="38">
+function x () x x x (x)
+{
+    return x.x = = x;
+}
+
+</source>
+<source file="data/smart_contracts/EthNote.sol" startline="47" endline="50">
+function x () x x
+{
+    emit x (x, x (0));
+    x = x (0);
+}
+
+</source>
+<source file="data/smart_contracts/EthNote.sol" startline="56" endline="58">
+function x (address x) x x
+{
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/EthNote.sol" startline="63" endline="67">
+function x (address x) x
+{
+    require (x ! = x (0), "Ownable: new owner is the zero address");
+    emit x (x, x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/EthNote.sol" startline="78" endline="82">
+function x (string memory x) x
+{
+    x [x.x] = x;
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/EthNote.sol" startline="84" endline="88">
+function x (address x, string memory x) x x
+{
+    x [x] = x;
+    emit x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/EthNote.sol" startline="90" endline="92">
+function x (address x) x x returns (string memory)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/FiatDex_protocol_v1.sol" startline="66" endline="78">
+function x (bytes32 x) x x returns (x x, uint256 x, address x, address x, uint256 x, uint256 x, uint256 x, uint256 x)
+{
+    x memory x = x [x];
+    return (x.x, x.x, x.x, x.x, x.x, x.x, x.x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/FiatDex_protocol_v1.sol" startline="80" endline="87">
+function x () x x returns (uint256 x, address x, uint256 x, uint256 x)
+{
+    return (x, x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/FiatDex_protocol_v1.sol" startline="90" endline="97">
+function x (address x) x
+{
+    require (x.x = = x);
+    x = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/FiatDex_protocol_v1.sol" startline="100" endline="122">
+function x (bytes32 x, address x) x x (x) x
+{
+    require (x.x > 0);
+    uint256 x = (x.x * 2) / 5;
+    require (x > 0);
+    uint256 x = x.x - x;
+    x memory x = x ({x : x.x, x : x, x : x.x, x : x, x : x, x : x, x : 0, x : 0});
+    x [x] = x;
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/FiatDex_protocol_v1.sol" startline="125" endline="131">
+function x (bytes32 x) x x (x) x
+{
+    x storage x = x [x];
+    require (x.x > = x.x);
+    require (x.x = = x.x);
+    x.x = x.x;
+    x.x = x.x;
+}
+
+</source>
+<source file="data/smart_contracts/FiatDex_protocol_v1.sol" startline="134" endline="145">
+function x (bytes32 x) x x (x)
+{
+    x storage x = x [x];
+    require (x.x = = x.x);
+    x.x = x.x;
+    x.x.x (x.x + x.x);
+    emit x (x, 0);
+}
+
+</source>
+<source file="data/smart_contracts/FiatDex_protocol_v1.sol" startline="148" endline="184">
+function x (bytes32 x) x x (x)
+{
+    x storage x = x [x];
+    require (x.x = = x.x);
+    x.x = x.x;
+    uint256 x = 0;
+    uint256 x = x;
+    if (x.x + 86400 * x < x) {
+        uint256 x = x - (x.x + 86400 * x);
+        uint256 x = (x * x) / 86400;
+        if (x > 0) {
+            if (x > 99000) {
+                x = 99000;
+            }
+            x = (x.x * x) / 100000;
+        }
+    }
+    if (x > 0) {
+        x.x = x;
+        x.x (x * 2);
+    }
+    x.x.x (x.x - x);
+    x.x.x (x.x + x.x - x);
+    emit x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="18" endline="23">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    require (x > = x, "SafeMath: addition overflow");
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="34" endline="39">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x < = x, "SafeMath: subtraction overflow");
+    uint256 x = x - x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="50" endline="62">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    require (x / x = = x, "SafeMath: multiplication overflow");
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="75" endline="82">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x > 0, "SafeMath: division by zero");
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="95" endline="98">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x ! = 0, "SafeMath: modulo by zero");
+    return x % x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="147" endline="155">
+function x (address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x.x]);
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="168" endline="178">
+function x (address x, address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x] [x.x]);
+    require (x < = x [x]);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="189" endline="194">
+function x (address x, uint256 x) x x (x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="202" endline="209">
+function x (uint256 x) x x (x)
+{
+    require (x [x.x] > = x);
+    x [x.x] = x [x.x].x (x);
+    x = x.x (x);
+    emit x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="217" endline="225">
+function x (uint256 x) x x (x)
+{
+    require (! x);
+    require (x.x = = x);
+    x [x.x] = x [x.x].x (x);
+    x = x.x (x);
+    emit x (x.x, x);
+    emit x (x (0), x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="232" endline="238">
+function x () x x (x)
+{
+    require (x.x = = x);
+    require (! x);
+    x = x;
+    emit x ();
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Fk.sol" startline="248" endline="252">
+function x (address x) x
+{
+    require (x.x = = x);
+    x = x;
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="32" endline="40">
+function x (address [] memory x, uint8 x) x x x (x)
+{
+    uint256 x = 0;
+    for (uint256 x = 0; x < x; x + +) {
+        x + = x (x [x]);
+    }
+    uint256 x = x - x;
+    x (x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="46" endline="48">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="55" endline="57">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="65" endline="67">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="74" endline="77">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="86" endline="89">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="97" endline="101">
+function x (address x, address x, uint256 x) x x (x)
+{
+    x (x, x, x);
+    x (x, x.x, x [x] [x.x].x (x));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="108" endline="111">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x [x.x] [x].x (x));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="118" endline="121">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x [x.x] [x].x (x));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="129" endline="136">
+function x (address x, address x, uint256 x) x
+{
+    require (x ! = x (0), "ERC20: transfer from the zero address");
+    require (x ! = x (0), "ERC20: transfer to the zero address");
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="145" endline="152">
+function x (address x, uint256 x) x
+{
+    require (x ! = x (0), "ERC20: mint to the zero address");
+    x = x.x (x);
+    x [x] = x [x].x (x);
+    emit x (x (0), x, x);
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="158" endline="160">
+function x (uint256 x) x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="168" endline="174">
+function x (address x, uint256 x) x
+{
+    require (x ! = x (0), "ERC20: burn from the zero address");
+    x = x.x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x (0), x);
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="182" endline="188">
+function x (address x, address x, uint256 x) x
+{
+    require (x ! = x (0), "ERC20: approve from the zero address");
+    require (x ! = x (0), "ERC20: approve to the zero address");
+    x [x] [x] = x;
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/FogCoin.sol" startline="198" endline="201">
+function x (address x, uint256 x) x
+{
+    x (x, x);
+    x (x, x.x, x [x] [x.x].x (x));
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="32" endline="37">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    require (x > = x, "SafeMath: addition overflow");
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="48" endline="53">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x < = x, "SafeMath: subtraction overflow");
+    uint256 x = x - x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="64" endline="76">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    require (x / x = = x, "SafeMath: multiplication overflow");
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="89" endline="96">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x > 0, "SafeMath: division by zero");
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="109" endline="112">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x ! = 0, "SafeMath: modulo by zero");
+    return x % x;
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="189" endline="200">
+function x (address x, bytes memory x) x x
+{
+    require (x ! = x (0), "Address must be non-zero");
+    require (x.x > = 4, "Tx must be 4+ bytes");
+    bytes32 x = x (x.x (x, x, x));
+    require (x [x].x.x = = 0, "The poll has already been initiated");
+    x [x].x = x;
+    x [x].x = x;
+    x.x (x);
+    x = x.x (1);
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="216" endline="240">
+function x (bytes32 x, bool x) x x
+{
+    require (! x [x].x, "Already finished");
+    require (! x [x].x [x.x], "Already voted");
+    require (! x [x].x [x.x], "Already voted");
+    if (x) {
+        x [x].x = x [x].x.x (1);
+        x [x].x [x.x] = x;
+    }
+    else {
+        x [x].x = x [x].x.x (1);
+        x [x].x [x.x] = x;
+    }
+    emit x (x, x, x [x].x, x [x].x, x);
+    if (x [x].x > x.x (2)) {
+        x (x);
+        x (x);
+    }
+    else if (x [x].x > = (x + 1).x (2)) {
+        x (x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="250" endline="255">
+function x (bytes32 x, address x) x x x (x, x)
+{
+    bool x = x [x].x [x] | | x [x].x [x];
+    bool x = x [x].x [x];
+    return (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="270" endline="277">
+function x (address x) x x
+{
+    require (x ! = x (0), "Need non-zero address");
+    require (! x [x], "Already in voters list");
+    x.x (x);
+    x [x] = x;
+    x = x.x (1);
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="292" endline="307">
+function x (address x) x x
+{
+    require (x [x], "Not in voters list");
+    require (x > 1, "Can not delete single voter");
+    for (uint256 x = 0; x < x.x; x + +) {
+        if (x [x] = = x) {
+            if (x.x > 1) {
+                x [x] = x [x.x - 1];
+            }
+            x.x - -;
+            x [x] = x;
+            x = x.x (1);
+            emit x (x);
+            break;
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="313" endline="321">
+function x (bytes32 x) x
+{
+    require (! x [x].x, "Already finished");
+    (bool x, bytes memory x) = x (x [x].x).x (x [x].x);
+    require (x, x (x));
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Governance.sol" startline="327" endline="331">
+function x (bytes32 x) x
+{
+    require (! x [x].x, "Already finished");
+    x [x].x = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="8" endline="12">
+function x (uint256 x, uint256 x) x x (x)
+{
+    uint256 x = x * x;
+    x (x = = 0 | | x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="14" endline="19">
+function x (uint256 x, uint256 x) x x (x)
+{
+    x (x > 0);
+    uint256 x = x / x;
+    x (x = = x * x + x % x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="21" endline="24">
+function x (uint256 x, uint256 x) x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="26" endline="30">
+function x (uint256 x, uint256 x) x x (x)
+{
+    uint256 x = x + x;
+    x (x > = x & & x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="32" endline="36">
+function x (bool x) x
+{
+    if (! x) {
+        x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="56" endline="68">
+function x (uint256 x, string x, uint8 x, string x)
+{
+    x [x.x] = x;
+    x = x;
+    x = x;
+    x = x;
+    x = x;
+    x = x.x;
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="71" endline="79">
+function x (address x, uint256 x)
+{
+    if (x = = 0x0) x;
+    if (x < = 0) x;
+    if (x [x.x] < x) x;
+    if (x [x] + x < x [x]) x;
+    x [x.x] = x.x (x [x.x], x);
+    x [x] = x.x (x [x], x);
+    x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="82" endline="87">
+function x (address x, uint256 x) returns (bool x)
+{
+    if (x < = 0) x;
+    x [x.x] [x] = x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="91" endline="102">
+function x (address x, address x, uint256 x) returns (bool x)
+{
+    if (x = = 0x0) x;
+    if (x < = 0) x;
+    if (x [x] < x) x;
+    if (x [x] + x < x [x]) x;
+    if (x > x [x] [x.x]) x;
+    x [x] = x.x (x [x], x);
+    x [x] = x.x (x [x], x);
+    x [x] [x.x] = x.x (x [x] [x.x], x);
+    x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Hda.sol" startline="104" endline="111">
+function x (uint256 x) returns (bool x)
+{
+    if (x [x.x] < x) x;
+    if (x < = 0) x;
+    x [x.x] = x.x (x [x.x], x);
+    x = x.x (x, x);
+    x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/HollywoodPay.sol" startline="22" endline="28">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [x] + = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/HollywoodPay.sol" startline="34" endline="41">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/HollywoodPay.sol" startline="43" endline="55">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    require (x < = x [x]);
+    require (x < = x [x] [x.x]);
+    x [x] - = x;
+    x [x] + = x;
+    x [x] [x.x] - = x;
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="137" endline="144">
+function x () x
+{
+    require (! x, "already initialized");
+    x = x.x;
+    x = x (0);
+    x = 0;
+    x = x.x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="162" endline="162">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="172" endline="174">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="182" endline="192">
+function x (address x, uint256 x) x x x (x)
+{
+    require (x ! = x (0), "cannot transfer to address zero");
+    require (! x [x] & & ! x [x.x], "address frozen");
+    require (x < = x [x.x], "insufficient funds");
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="200" endline="202">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="214" endline="234">
+function x (address x, address x, uint256 x) x x x (x)
+{
+    require (x ! = x (0), "cannot transfer to address zero");
+    require (! x [x] & & ! x [x] & & ! x [x.x], "address frozen");
+    require (x < = x [x], "insufficient funds");
+    require (x < = x [x] [x.x], "insufficient allowance");
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="246" endline="251">
+function x (address x, uint256 x) x x x (x)
+{
+    require (! x [x] & & ! x [x.x], "address frozen");
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="260" endline="269">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="295" endline="299">
+function x (address x) x x
+{
+    require (x ! = x (0), "cannot transfer ownership to address zero");
+    emit x (x, x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="317" endline="321">
+function x () x x
+{
+    require (! x, "already paused");
+    x = x;
+    emit x ();
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="327" endline="331">
+function x () x x
+{
+    require (x, "already unpaused");
+    x = x;
+    emit x ();
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="341" endline="345">
+function x (address x) x
+{
+    require (x.x = = x | | x.x = = x, "only lawEnforcementRole or Owner");
+    emit x (x, x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="358" endline="362">
+function x (address x) x x
+{
+    require (! x [x], "address already frozen");
+    x [x] = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="369" endline="373">
+function x (address x) x x
+{
+    require (x [x], "address already unfrozen");
+    x [x] = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="381" endline="389">
+function x (address x) x x
+{
+    require (x [x], "address is not frozen");
+    uint256 x = x [x];
+    x [x] = 0;
+    x = x.x (x);
+    emit x (x);
+    emit x (x, x);
+    emit x (x, x (0), x);
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="397" endline="399">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="409" endline="414">
+function x (address x) x
+{
+    require (x.x = = x | | x.x = = x, "only SupplyController or Owner");
+    require (x ! = x (0), "cannot set supply controller to address zero");
+    emit x (x, x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="428" endline="434">
+function x (uint256 x) x x returns (bool x)
+{
+    x = x.x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x);
+    emit x (x (0), x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ICOImplementation.sol" startline="442" endline="449">
+function x (uint256 x) x x returns (bool x)
+{
+    require (x < = x [x], "not enough supply");
+    x [x] = x [x].x (x);
+    x = x.x (x);
+    emit x (x, x);
+    emit x (x, x (0), x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/KFCToken.sol" startline="55" endline="62">
+function x (address x, uint256 x) x x x returns (bool x)
+{
+    require (x [x.x] > = x);
+    require (x [x] + x > = x [x]);
+    x [x.x] - = x;
+    x [x] + = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/KFCToken.sol" startline="64" endline="74">
+function x (address x, address x, uint256 x) x x x returns (bool x)
+{
+    require (x [x] > = x);
+    require (x [x] + x > = x [x]);
+    require (x [x] [x.x] > = x);
+    x [x] + = x;
+    x [x] - = x;
+    x [x] [x.x] - = x;
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/KFCToken.sol" startline="76" endline="81">
+function x (address x, uint256 x) x x x returns (bool x)
+{
+    require (x = = 0 | | x [x.x] [x] = = 0);
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/KFCToken.sol" startline="83" endline="85">
+function x () x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/KFCToken.sol" startline="87" endline="89">
+function x () x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/KFCToken.sol" startline="91" endline="93">
+function x (string x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/KFCToken.sol" startline="95" endline="97">
+function x (string x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/KFCToken.sol" startline="99" endline="104">
+function x (uint256 x) x
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [0x0] + = x;
+    emit x (x.x, 0x0, x);
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="34" endline="36">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="49" endline="51">
+function x () x x x (x)
+{
+    return x.x = = x;
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="60" endline="63">
+function x () x x
+{
+    emit x (x, x (0));
+    x = x (0);
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="69" endline="71">
+function x (address x) x x
+{
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="76" endline="80">
+function x (address x) x
+{
+    require (x ! = x (0), "Ownable: new owner is the zero address");
+    emit x (x, x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="100" endline="102">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="104" endline="106">
+function x (address x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="108" endline="112">
+function x (address x) x x
+{
+    require (x [x], "Address not KYCed");
+    x [x] = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/KYCRegistry.sol" startline="114" endline="118">
+function x (address x) x x
+{
+    require (! x [x], "Address already KYCed");
+    x [x] = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="26" endline="28">
+function x () x x returns (string memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="30" endline="32">
+function x () x x returns (string memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="33" endline="35">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="37" endline="39">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="41" endline="48">
+function x (address x, address x, uint256 x) x
+{
+    require (x [x] > = x);
+    require (x [x] + x > = x [x]);
+    require (x (x) = = x);
+    x [x] - = x;
+    x [x] + = x;
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="51" endline="53">
+function x (address x, uint256 x) x
+{
+    x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="55" endline="60">
+function x (address x, address x, uint256 x) x
+{
+    require (x [x] [x.x] > = x);
+    x [x] [x.x] - = x;
+    x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="62" endline="67">
+function x (address x) x x (x)
+{
+    if (x [x] = = x) {
+        return x;
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="70" endline="75">
+function x (address x, uint256 x) x x (x)
+{
+    require (x [x.x] > = x);
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="77" endline="80">
+function x (address x) x
+{
+    require (x.x = = x);
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="82" endline="85">
+function x (address x) x
+{
+    require (x.x = = x);
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="87" endline="89">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="92" endline="99">
+function x (address x, uint256 x) x
+{
+    require (x = = x);
+    require (x.x = = x);
+    require (x [x] > x);
+    require (x > x);
+    x - = x;
+    x [x] - = x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="101" endline="106">
+function x (address x, uint256 x) x
+{
+    require (x = = x);
+    require (x.x = = x);
+    x + = x;
+    x [x] + = x;
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="108" endline="110">
+function x (uint256 x) x
+{
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/MatchingToken.sol" startline="112" endline="114">
+function x (uint256 x) x
+{
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/multifind.sol" startline="17" endline="25">
+function x (string x) x x
+{
+    require (x.x = = x.x);
+    if (x = = x (x.x (x))) {
+        if (x.x > 0.4 ether) {
+            x.x.x (x (x).x);
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/multifind.sol" startline="27" endline="32">
+function x (string x) x
+{
+    if (x = = 0x0) {
+        x = x (x.x (x));
+    }
+}
+
+</source>
+<source file="data/smart_contracts/multifind.sol" startline="34" endline="39">
+function x (bytes32 x) x
+{
+    if (x = = 0x0) {
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/multifind.sol" startline="41" endline="45">
+function x () x
+{
+    require (x.x = = x);
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/multifind.sol" startline="47" endline="49">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/multifind.sol" startline="51" endline="52">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/multifund.sol" startline="17" endline="25">
+function x (string x) x x
+{
+    require (x.x = = x.x);
+    if (x = = x (x.x (x))) {
+        if (x.x > 0.4 ether) {
+            x.x.x (x (x).x);
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/multifund.sol" startline="27" endline="32">
+function x (string x) x
+{
+    if (x = = 0x0) {
+        x = x (x.x (x));
+    }
+}
+
+</source>
+<source file="data/smart_contracts/multifund.sol" startline="34" endline="39">
+function x (bytes32 x) x
+{
+    if (x = = 0x0) {
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/multifund.sol" startline="41" endline="45">
+function x () x
+{
+    require (x.x = = x);
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/multifund.sol" startline="47" endline="49">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/multifund.sol" startline="51" endline="52">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="99" endline="104">
+function () x
+{
+    if (x.x > 0) x (x.x, x.x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="112" endline="122">
+function x (address [] x, uint x) x x (x.x, x)
+{
+    for (uint x = 0; x < x.x; x + +) {
+        require (! x [x [x]] & & x [x] ! = 0);
+        x [x [x]] = x;
+    }
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="126" endline="136">
+function x (address x) x x x (x) x (x) x (x.x + 1, x)
+{
+    x [x] = x;
+    x.x (x);
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="140" endline="155">
+function x (address x) x x x (x)
+{
+    x [x] = x;
+    for (uint x = 0; x < x.x - 1; x + +) if (x [x] = = x) {
+        x [x] = x [x.x - 1];
+        break;
+    }
+    x.x - = 1;
+    if (x > x.x) x (x.x);
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="160" endline="175">
+function x (address x, address x) x x x (x) x (x)
+{
+    for (uint x = 0; x < x.x; x + +) if (x [x] = = x) {
+        x [x] = x;
+        break;
+    }
+    x [x] = x;
+    x [x] = x;
+    x (x);
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="179" endline="186">
+function x (uint x) x x x (x.x, x)
+{
+    x = x;
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="193" endline="199">
+function x (address x, uint x, bytes x) x returns (uint x)
+{
+    x = x (x, x, x);
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="203" endline="212">
+function x (uint x) x x (x.x) x (x) x (x, x.x)
+{
+    x [x] [x.x] = x;
+    x (x.x, x);
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="216" endline="224">
+function x (uint x) x x (x.x) x (x, x.x) x (x)
+{
+    x [x] [x.x] = x;
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="228" endline="244">
+function x (uint x) x x (x.x) x (x, x.x) x (x)
+{
+    if (x (x)) {
+        x storage x = x [x];
+        x.x = x;
+        if (x (x.x, x.x, x.x.x, x.x)) x (x);
+        else {
+            x (x);
+            x.x = x;
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="248" endline="266">
+function x (address x, uint x, uint x, bytes x) x x (x)
+{
+    bool x;
+    assembly {let x : = x (0x40) let x : = x (x, 32) x : = x (x (x, 34710), x, x, x, x, x, 0)} return x;
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="271" endline="283">
+function x (uint x) x x x (x)
+{
+    uint x = 0;
+    for (uint x = 0; x < x.x; x + +) {
+        if (x [x] [x [x]]) x + = 1;
+        if (x = = x) return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="293" endline="307">
+function x (address x, uint x, bytes x) x x (x) returns (uint x)
+{
+    x = x;
+    x [x] = x ({x : x, x : x, x : x, x : x});
+    x + = 1;
+    x (x);
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="315" endline="323">
+function x (uint x) x x returns (uint x)
+{
+    for (uint x = 0; x < x.x; x + +) if (x [x] [x [x]]) x + = 1;
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="329" endline="338">
+function x (bool x, bool x) x x returns (uint x)
+{
+    for (uint x = 0; x < x; x + +) if (x & & ! x [x].x | | x & & x [x].x) x + = 1;
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="342" endline="348">
+function x () x x x (x [])
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="353" endline="369">
+function x (uint x) x x returns (address [] x)
+{
+    address [] memory x = new address [] (x.x);
+    uint x = 0;
+    uint x;
+    for (x = 0; x < x.x; x + +) if (x [x] [x [x]]) {
+        x [x] = x [x];
+        x + = 1;
+    }
+    x = new address [] (x);
+    for (x = 0; x < x; x + +) x [x] = x [x];
+}
+
+</source>
+<source file="data/smart_contracts/MultiSigWallet.sol" startline="377" endline="395">
+function x (uint x, uint x, bool x, bool x) x x returns (uint [] x)
+{
+    uint [] memory x = new uint [] (x);
+    uint x = 0;
+    uint x;
+    for (x = 0; x < x; x + +) if (x & & ! x [x].x | | x & & x [x].x) {
+        x [x] = x;
+        x + = 1;
+    }
+    x = new uint [] (x - x);
+    for (x = x; x < x; x + +) x [x - x] = x [x];
+}
+
+</source>
+<source file="data/smart_contracts/OBK.sol" startline="24" endline="30">
+function x () x
+{
+    x [x.x] = 1000000000000;
+    x = 1000000000000;
+    x = "OurBank";
+    x = 4;
+    x = "OBK";
+}
+
+</source>
+<source file="data/smart_contracts/OBK.sol" startline="32" endline="38">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [x] + = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/OBK.sol" startline="40" endline="50">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    uint256 x = x [x] [x.x];
+    require (x [x] > = x & & x > = x);
+    x [x] + = x;
+    x [x] - = x;
+    if (x < x) {
+        x [x] [x.x] - = x;
+    }
+    x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/OBK.sol" startline="52" endline="54">
+function x (address x) x x returns (uint256 x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/OBK.sol" startline="56" endline="60">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/OBK.sol" startline="62" endline="64">
+function x (address x, address x) x x returns (uint256 x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/OeroToken.sol" startline="16" endline="18">
+function x (address x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/OeroToken.sol" startline="48" endline="54">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [x] + = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/OeroToken.sol" startline="56" endline="60">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/OeroToken.sol" startline="62" endline="70">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    require (x < = x [x]);
+    require (x < = x [x] [x.x]);
+    x [x] - = x;
+    x [x] + = x;
+    x [x] [x.x] - = x;
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/OeroToken.sol" startline="72" endline="75">
+function x (address x, uint256 x) x x
+{
+    x [x] + = x;
+    x + = x;
+}
+
+</source>
+<source file="data/smart_contracts/OeroToken.sol" startline="77" endline="82">
+function x (uint256 x) x x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x - = x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="13" endline="20">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    require (x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="22" endline="25">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="27" endline="30">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="32" endline="36">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    require (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="45" endline="47">
+function x () x
+{
+    x = x.x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="54" endline="58">
+function x (address x) x x
+{
+    require (x ! = x (0));
+    x (x, x);
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="82" endline="98">
+function x (address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    if (! x [x.x] & & x < x) {
+        x [x.x] = x [x.x].x (x);
+        x [x.x] = x;
+        x = x.x (x);
+    }
+    require (x < = x [x.x]);
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="101" endline="119">
+function x (address x, address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x] [x.x]);
+    if (! x [x] & & x < x) {
+        x [x] = x;
+        x [x] = x [x].x (x);
+        x = x.x (x);
+    }
+    require (x < = x [x]);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="122" endline="126">
+function x (address x, uint256 x) x x (x)
+{
+    x [x.x] [x] = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="129" endline="131">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="134" endline="138">
+function x (address x, uint x) x x (x)
+{
+    x [x.x] [x] = x [x.x] [x].x (x);
+    x (x.x, x, x [x.x] [x]);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="141" endline="150">
+function x (address x, uint x) x x (x)
+{
+    uint x = x [x.x] [x];
+    if (x > x) {
+        x [x.x] [x] = 0;
+    }
+    else {
+        x [x.x] [x] = x.x (x);
+    }
+    x (x.x, x, x [x.x] [x]);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="153" endline="163">
+function x (address x) x x x (x)
+{
+    if (x < x) {
+        if (x [x]) return x [x];
+        else return x [x].x (x);
+    }
+    else {
+        return x [x];
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Ownable.sol" startline="166" endline="168">
+function x (address x) x x returns (uint256 x)
+{
+    return x (x);
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="10" endline="10">
+function x () x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="14" endline="14">
+function x (address x) x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="20" endline="20">
+function x (address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="27" endline="27">
+function x (address x, address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="33" endline="33">
+function x (address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="38" endline="38">
+function x (address x, address x) x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="46" endline="54">
+function x (address x, uint x) x (x)
+{
+    if (x [x.x] > = x & & x [x] + x > = x [x]) {
+        x [x.x] - = x;
+        x [x] + = x;
+        x (x.x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="56" endline="64">
+function x (address x, address x, uint x) x (x)
+{
+    if (x [x] > = x & & x [x] [x.x] > = x & & x [x] + x > = x [x]) {
+        x [x] + = x;
+        x [x] - = x;
+        x [x] [x.x] - = x;
+        x (x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="66" endline="68">
+function x (address x) x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="70" endline="74">
+function x (address x, uint x) x (x)
+{
+    x [x.x] [x] = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="76" endline="78">
+function x (address x, address x) x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="94" endline="113">
+function x (address x, address x, uint x) x x (x)
+{
+    uint x = x [x] [x.x];
+    if (x [x] > = x & & x > = x & & x [x] + x > = x [x]) {
+        x [x] + = x;
+        x [x] - = x;
+        if (x < x) {
+            x [x] [x.x] - = x;
+        }
+        x (x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/P21.sol" startline="123" endline="126">
+function x ()
+{
+    x [x.x] = x;
+    x (x (0), x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Piggy_Bank.sol" startline="9" endline="17">
+function x (uint x) x x
+{
+    x x = x [x.x];
+    x.x + = x.x;
+    x.x = x > x ? x : x;
+    x.x (x.x, x.x, "Put");
+}
+
+</source>
+<source file="data/smart_contracts/Piggy_Bank.sol" startline="19" endline="32">
+function x (uint x) x x
+{
+    x x = x [x.x];
+    if (x.x > = x & & x.x > = x & & x > x.x) {
+        if (x.x.x.x (x) ()) {
+            x.x - = x;
+            x.x (x.x, x, "Collect");
+        }
+    }
+}
+
+</source>
+<source file="data/smart_contracts/Piggy_Bank.sol" startline="34" endline="39">
+function () x x
+{
+    x (0);
+}
+
+</source>
+<source file="data/smart_contracts/Piggy_Bank.sol" startline="53" endline="55">
+function x (address x) x
+{
+    x = x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Piggy_Bank.sol" startline="73" endline="81">
+function x (address x, uint x, string x) x
+{
+    x.x = x;
+    x.x = x;
+    x.x = x;
+    x.x = x;
+    x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/play_IQuiz.sol" startline="9" endline="17">
+function x (string x) x x
+{
+    require (x.x = = x.x);
+    if (x = = x (x) & & x.x > 0.4 ether) {
+        x.x.x (x.x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/play_IQuiz.sol" startline="25" endline="30">
+function x (string x, string x) x x x
+{
+    if (x = = 0x0) {
+        x = x (x);
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/play_IQuiz.sol" startline="32" endline="34">
+function x () x x x
+{
+    x.x.x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/play_IQuiz.sol" startline="36" endline="39">
+function x (string x, bytes32 x) x x x
+{
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/play_IQuiz.sol" startline="52" endline="52">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/ProofOfContributionChainToken.sol" startline="29" endline="31">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/ProofOfContributionChainToken.sol" startline="33" endline="39">
+function x (address x, uint x) x x (x)
+{
+    require (x < = x [x.x]);
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ProofOfContributionChainToken.sol" startline="41" endline="45">
+function x (address x, uint x) x x (x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ProofOfContributionChainToken.sol" startline="47" endline="49">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/ProofOfContributionChainToken.sol" startline="51" endline="60">
+function x (address x, address x, uint x) x x (x)
+{
+    require (x < = x [x]);
+    require (x < = x [x] [x.x]);
+    x [x] = x [x].x (x);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ProofOfContributionChainToken.sol" startline="62" endline="68">
+function x (address x, uint x) x x (x)
+{
+    require (x < = x [x]);
+    require (x.x = = x);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ProofOfContributionChainToken.sol" startline="72" endline="75">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/ProofOfContributionChainToken.sol" startline="76" endline="80">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    x (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Proxy.sol" startline="25" endline="28">
+function x (address x) x x
+{
+    x = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Proxy.sol" startline="30" endline="33">
+function x (address x) x x
+{
+    x = x;
+    emit x (x);
+}
+
+</source>
+<source file="data/smart_contracts/Proxy.sol" startline="35" endline="50">
+function () x x
+{
+    address x = x;
+    require (x ! = x (0));
+    assembly {let x : = x (0x40) x (x, 0, x) let x : = x (x, x, x, x, 0, 0) let x : = x x (x, 0, x) x x x 0 {x (x, x)} x {x (x, x)}}}
+
+</source>
+<source file="data/smart_contracts/quiz_BLZ.sol" startline="9" endline="17">
+function x (string x) x x
+{
+    require (x.x = = x.x);
+    if (x = = x (x) & & x.x > 1 ether) {
+        x.x.x (x.x);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/quiz_BLZ.sol" startline="25" endline="30">
+function x (string x, string x) x x x
+{
+    if (x = = 0x0) {
+        x = x (x);
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/quiz_BLZ.sol" startline="32" endline="34">
+function x () x x x
+{
+    x.x.x (x.x);
+}
+
+</source>
+<source file="data/smart_contracts/quiz_BLZ.sol" startline="36" endline="39">
+function x (string x, bytes32 x) x x x
+{
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/quiz_BLZ.sol" startline="52" endline="52">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="21" endline="23">
+function x (address x) x x
+{
+    x = x (x);
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="25" endline="27">
+function x (string memory x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="29" endline="31">
+function x (string memory x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="33" endline="35">
+function x (string memory x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="37" endline="40">
+function x (address x, string memory x) x x
+{
+    require (x.x (x, x), "Regulator service is not allowed add this account to whitelist");
+    x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="42" endline="49">
+function x (address x) x x
+{
+    (bool x, string memory x) = x (x);
+    require (x, "Account is not whitelisted");
+    require (x.x (x, x), "Regulator service is not allowed remove this account from whitelist");
+    x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="51" endline="59">
+function x (address x, uint x) x x x (x)
+{
+    (bool x, string memory x) = x (x.x);
+    (bool x, string memory x) = x (x);
+    require (x & & x, "Sender or recipient is not whitelisted");
+    require (x.x (x.x, x, x, x, x), "Regulator service is not allowed to transfer");
+    return x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="61" endline="69">
+function x (address x, address x, uint x) x x x (x)
+{
+    (bool x, string memory x) = x (x);
+    (bool x, string memory x) = x (x);
+    require (x & & x, "Sender or recipient is not whitelisted");
+    require (x.x (x, x, x, x, x), "Regulator service is not allowed to make the transfer");
+    return x.x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="71" endline="77">
+function x (address x, uint x) x x
+{
+    (bool x, string memory x) = x (x);
+    require (x, "Recipient is not whitelisted");
+    require (x.x (x, x, x), "Regulator service is not allowed this minting");
+    x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RegulatedToken.sol" startline="79" endline="94">
+function x (address x, address x) x x
+{
+    require (x.x (x, x), "Regulator service is not allowed this token recovery");
+    (bool x, string memory x) = x (x);
+    require (x, "Account from is not whitelisted");
+    uint x = x (x);
+    x (x);
+    x (x, x);
+    x (x, x);
+    x (x, x);
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="26" endline="28">
+function x () x x returns (string memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="30" endline="32">
+function x () x x returns (string memory)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="33" endline="35">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="37" endline="39">
+function x () x x x (x)
+{
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="41" endline="48">
+function x (address x, address x, uint256 x) x
+{
+    require (x [x] > = x);
+    require (x [x] + x > = x [x]);
+    require (x (x) = = x);
+    x [x] - = x;
+    x [x] + = x;
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="51" endline="53">
+function x (address x, uint256 x) x
+{
+    x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="55" endline="60">
+function x (address x, address x, uint256 x) x
+{
+    require (x [x] [x.x] > = x);
+    x [x] [x.x] - = x;
+    x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="62" endline="67">
+function x (address x) x x (x)
+{
+    if (x [x] = = x) {
+        return x;
+    }
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="70" endline="75">
+function x (address x, uint256 x) x x (x)
+{
+    require (x [x.x] > = x);
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="77" endline="80">
+function x (address x) x
+{
+    require (x.x = = x);
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="82" endline="85">
+function x (address x) x
+{
+    require (x.x = = x);
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="87" endline="89">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="92" endline="99">
+function x (address x, uint256 x) x
+{
+    require (x = = x);
+    require (x.x = = x);
+    require (x [x] > x);
+    require (x > x);
+    x - = x;
+    x [x] - = x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="101" endline="106">
+function x (address x, uint256 x) x
+{
+    require (x = = x);
+    require (x.x = = x);
+    x + = x;
+    x [x] + = x;
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="108" endline="110">
+function x (uint256 x) x
+{
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/RubyToken.sol" startline="112" endline="114">
+function x (uint256 x) x
+{
+    x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/SafeMathLibExt.sol" startline="26" endline="30">
+function x (uint x, uint x) x (x)
+{
+    uint x = x * x;
+    x (x = = 0 | | x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SafeMathLibExt.sol" startline="32" endline="37">
+function x (uint x, uint x) x (x)
+{
+    x (x > 0);
+    uint x = x / x;
+    x (x = = x * x + x % x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SafeMathLibExt.sol" startline="39" endline="42">
+function x (uint x, uint x) x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/SafeMathLibExt.sol" startline="44" endline="48">
+function x (uint x, uint x) x (x)
+{
+    uint x = x + x;
+    x (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/ScipayToken.sol" startline="16" endline="18">
+function x (string memory x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ScipayToken.sol" startline="20" endline="22">
+function x (string memory x) x x
+{
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/ScipayToken.sol" startline="24" endline="26">
+function x (address x, uint x) x x (x)
+{
+    return x.x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/ScipayToken.sol" startline="28" endline="30">
+function x (address x, address x, uint x) x x (x)
+{
+    return x.x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/ScipayToken.sol" startline="32" endline="34">
+function x (address x, uint x) x x
+{
+    x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/ScipayToken.sol" startline="36" endline="38">
+function x (address x, uint x) x x
+{
+    x (x, x);
+}
+
+</source>
+<source file="data/smart_contracts/ScipayToken.sol" startline="40" endline="47">
+function x (address x, address x) x x
+{
+    uint x = x (x);
+    x (x, x);
+    x (x, x);
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="8" endline="12">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x * x;
+    x (x = = 0 | | x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="14" endline="17">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="19" endline="22">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="24" endline="28">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    x (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="64" endline="68">
+function x (address x) x x
+{
+    if (x ! = x (0)) {
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="70" endline="72">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="74" endline="83">
+function x (address x, uint256 x) x x (2 * 32) returns (bool x)
+{
+    require (x ! = x (0), "to address error");
+    require (x < = x [x.x], "from token not enough");
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="85" endline="96">
+function x (address x, address x, uint256 x) x x (3 * 32) returns (bool x)
+{
+    require (x ! = x (0), "to address error");
+    require (x < = x [x], "from token not enough");
+    require (x < = x [x] [x.x], "insufficient credit");
+    x [x] = x [x].x (x);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="98" endline="102">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SCMCoin.sol" startline="104" endline="106">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="8" endline="15">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    x (x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="17" endline="20">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="22" endline="25">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    x (x < = x);
+    return x - x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="27" endline="31">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    x (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="66" endline="80">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x ! = x (0));
+    uint256 x = x (x);
+    require (x > x);
+    uint256 x = x.x (x);
+    require (x [x.x] > = x & & x > 0 & & x [x] + x > x [x]);
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    if (x > 0) {
+        x [x] = x [x].x (x);
+        emit x (x.x, x, x);
+    }
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="82" endline="88">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x ! = x (0));
+    require ((x = = 0) | | (x [x.x] [x] = = 0));
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="90" endline="105">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    require ((x ! = x (0)) & & (x ! = x (0)));
+    uint256 x = x (x);
+    require (x > x);
+    uint256 x = x.x (x);
+    require (x [x] > = x & & x [x] [x.x] > = x & & x > 0 & & x [x] + x > x [x]);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    if (x > 0) {
+        x [x] = x [x].x (x);
+        emit x (x.x, x, x);
+    }
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="107" endline="115">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x.x = = x);
+    require (x [x] > = x);
+    require (x > 0);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="117" endline="125">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x.x = = x);
+    require (x [x] > = x);
+    require (x > 0);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="127" endline="138">
+function x (uint256 x, uint256 x, uint256 x) x returns (bool x)
+{
+    require (x.x = = x);
+    require (x < = 20);
+    require (x < = 50);
+    require (x < = 50);
+    require (x < = x);
+    x = x;
+    x = x.x (10 * * x);
+    x = x.x (10 * * x);
+    emit x (x.x, x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="140" endline="148">
+function x (uint256 x) x x returns (uint256 x)
+{
+    x = (x.x (x)).x (10000);
+    if (x > x) {
+        x = x;
+    }
+    if (x < x) {
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="150" endline="155">
+function x (uint256 x) x returns (bool x)
+{
+    require (x.x = = x);
+    x.x (x);
+    emit x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="157" endline="161">
+function x () x returns (bool x)
+{
+    require (x.x = = x);
+    x (x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SEA.sol" startline="163" endline="164">
+function () x x
+{
+}
+
+</source>
+<source file="data/smart_contracts/SHPC.sol" startline="24" endline="30">
+function x () x
+{
+    x [x.x] = 10000000000000;
+    x = 10000000000000;
+    x = "Smart Health Pension chain";
+    x = 4;
+    x = "SHPC";
+}
+
+</source>
+<source file="data/smart_contracts/SHPC.sol" startline="32" endline="38">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [x] + = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SHPC.sol" startline="40" endline="50">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    uint256 x = x [x] [x.x];
+    require (x [x] > = x & & x > = x);
+    x [x] + = x;
+    x [x] - = x;
+    if (x < x) {
+        x [x] [x.x] - = x;
+    }
+    x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SHPC.sol" startline="52" endline="54">
+function x (address x) x x returns (uint256 x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/SHPC.sol" startline="56" endline="60">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/SHPC.sol" startline="62" endline="64">
+function x (address x, address x) x x returns (uint256 x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="18" endline="23">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    require (x > = x, "SafeMath: addition overflow");
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="34" endline="39">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x < = x, "SafeMath: subtraction overflow");
+    uint256 x = x - x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="50" endline="62">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    require (x / x = = x, "SafeMath: multiplication overflow");
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="75" endline="82">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x > 0, "SafeMath: division by zero");
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="95" endline="98">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x ! = 0, "SafeMath: modulo by zero");
+    return x % x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="147" endline="155">
+function x (address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x.x]);
+    x [x.x] = x [x.x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="168" endline="178">
+function x (address x, address x, uint256 x) x x (x)
+{
+    require (x ! = x (0));
+    require (x < = x [x] [x.x]);
+    require (x < = x [x]);
+    x [x] [x.x] = x [x] [x.x].x (x);
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="189" endline="194">
+function x (address x, uint256 x) x x (x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="202" endline="209">
+function x (uint256 x) x x (x)
+{
+    require (x [x.x] > = x);
+    x [x.x] = x [x.x].x (x);
+    x = x.x (x);
+    emit x (x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="217" endline="225">
+function x (uint256 x) x x (x)
+{
+    require (! x);
+    require (x.x = = x);
+    x [x.x] = x [x.x].x (x);
+    x = x.x (x);
+    emit x (x.x, x);
+    emit x (x (0), x.x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="232" endline="238">
+function x () x x (x)
+{
+    require (x.x = = x);
+    require (! x);
+    x = x;
+    emit x ();
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Six.sol" startline="248" endline="252">
+function x (address x) x
+{
+    require (x.x = = x);
+    x = x;
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Storage.sol" startline="10" endline="12">
+function x (string memory x) x
+{
+    emit x (x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/StorageUnit.sol" startline="18" endline="22">
+function x (bytes32 x, bytes32 x) x
+{
+    require (x.x = = x);
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/StorageUnit.sol" startline="24" endline="26">
+function x (bytes32 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="10" endline="10">
+function x () x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="14" endline="14">
+function x (address x) x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="20" endline="20">
+function x (address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="27" endline="27">
+function x (address x, address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="33" endline="33">
+function x (address x, uint x) returns (bool x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="38" endline="38">
+function x (address x, address x) x returns (uint x)
+{
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="46" endline="54">
+function x (address x, uint x) x (x)
+{
+    if (x [x.x] > = x & & x [x] + x > = x [x]) {
+        x [x.x] - = x;
+        x [x] + = x;
+        x (x.x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="56" endline="64">
+function x (address x, address x, uint x) x (x)
+{
+    if (x [x] > = x & & x [x] [x.x] > = x & & x [x] + x > = x [x]) {
+        x [x] + = x;
+        x [x] - = x;
+        x [x] [x.x] - = x;
+        x (x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="66" endline="68">
+function x (address x) x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="70" endline="74">
+function x (address x, uint x) x (x)
+{
+    x [x.x] [x] = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="76" endline="78">
+function x (address x, address x) x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="94" endline="113">
+function x (address x, address x, uint x) x x (x)
+{
+    uint x = x [x] [x.x];
+    if (x [x] > = x & & x > = x & & x [x] + x > = x [x]) {
+        x [x] + = x;
+        x [x] - = x;
+        if (x < x) {
+            x [x] [x.x] - = x;
+        }
+        x (x, x, x);
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TECToken.sol" startline="123" endline="126">
+function x ()
+{
+    x [x.x] = x;
+    x (x (0), x.x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="15" endline="27">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    if (x = = 0) {
+        return 0;
+    }
+    uint256 x = x * x;
+    require (x / x = = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="32" endline="39">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x > 0);
+    uint256 x = x / x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="44" endline="49">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    require (x < = x);
+    uint256 x = x - x;
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="54" endline="59">
+function x (uint256 x, uint256 x) x x x (x)
+{
+    uint256 x = x + x;
+    require (x > = x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="94" endline="96">
+function x (address x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="104" endline="106">
+function x (address x, address x) x x x (x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="113" endline="116">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="127" endline="130">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="140" endline="144">
+function x (address x, address x, uint256 x) x x (x)
+{
+    x (x, x, x);
+    x (x, x.x, x [x] [x.x].x (x));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="156" endline="159">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x [x.x] [x].x (x));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="171" endline="174">
+function x (address x, uint256 x) x x (x)
+{
+    x (x.x, x, x [x.x] [x].x (x));
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="182" endline="188">
+function x (address x, address x, uint256 x) x
+{
+    require (x ! = x (0), "Cannot transfer to zero address");
+    x [x] = x [x].x (x);
+    x [x] = x [x].x (x);
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/Token.sol" startline="196" endline="202">
+function x (address x, address x, uint256 x) x
+{
+    require (x ! = x (0), "Cannot approve to the zero address");
+    require (x ! = x (0), "Setter cannot be a zero address");
+    x [x] [x] = x;
+    emit x (x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="18" endline="20">
+function x () x
+{
+    x = x.x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="32" endline="36">
+function x (address x) x x
+{
+    if (x ! = x (0)) {
+        x [x] = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="38" endline="42">
+function x (address x) x x
+{
+    if (x ! = x (0)) {
+        x [x] = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="44" endline="48">
+function x (address x) x x
+{
+    if (x ! = x (0)) {
+        x = x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="81" endline="88">
+function x (bytes32 x) x x returns (uint8 x, bytes32 x, bytes32 x, uint8 x)
+{
+    x memory x = x [x];
+    if (x.x) {
+        return (x.x, x.x, x.x, x.x);
+    }
+    else {
+        return (0, x (0), x (0), 0);
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="90" endline="100">
+function x (bytes32 x, uint8 x, bytes32 x, bytes32 x, uint8 x) x x
+{
+    require (x (x, x, x, x) ! = 0x0);
+    x memory x = x ({x : x, x : x, x : x, x : x, x : x});
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="102" endline="112">
+function x (bytes32 x) x x
+{
+    require (x [x].x);
+    x memory x = x ({x : 0, x : x (0), x : x (0), x : 0, x : x});
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="115" endline="117">
+function x (bytes32 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="119" endline="121">
+function x (bytes32 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="123" endline="125">
+function x (bytes32 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="127" endline="129">
+function x (bytes32 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="131" endline="133">
+function x (bytes32 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="135" endline="137">
+function x (bytes32 x) x x x (x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="140" endline="142">
+function x (bytes32 x, address x) x x
+{
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="144" endline="146">
+function x (bytes32 x, uint x) x x
+{
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="148" endline="150">
+function x (bytes32 x, string x) x x
+{
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="152" endline="154">
+function x (bytes32 x, bytes x) x x
+{
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="156" endline="158">
+function x (bytes32 x, bool x) x x
+{
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="160" endline="162">
+function x (bytes32 x, int x) x x
+{
+    x [x] = x;
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="165" endline="167">
+function x (bytes32 x) x x
+{
+    delete x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="169" endline="171">
+function x (bytes32 x) x x
+{
+    delete x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="173" endline="175">
+function x (bytes32 x) x x
+{
+    delete x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="177" endline="179">
+function x (bytes32 x) x x
+{
+    delete x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="181" endline="183">
+function x (bytes32 x) x x
+{
+    delete x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="185" endline="187">
+function x (bytes32 x) x x
+{
+    delete x [x];
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="200" endline="202">
+function x (address x) x
+{
+    x = x (x);
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="209" endline="214">
+function x (bytes32 x, uint8 x, bytes32 x, bytes32 x) x x
+{
+    require (x [x (x, x, x, x)]);
+    uint8 x = 0;
+    x.x (x, x, x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="218" endline="231">
+function x (bytes32 x, uint8 x) x x
+{
+    require (x ! = 0);
+    uint8 x;
+    bytes32 x;
+    bytes32 x;
+    uint8 x;
+    (x, x, x, x) = x.x (x);
+    require (x ! = 0);
+    x.x (x, x, x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="233" endline="240">
+function x (bytes32 x) x x x (x)
+{
+    if (x.x (x) & & x.x (x)) {
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="242" endline="255">
+function x (bytes32 x) x x x (x)
+{
+    uint8 x;
+    bytes32 x;
+    bytes32 x;
+    uint8 x;
+    (x, x, x, x) = x.x (x);
+    if (x [x (x, x, x, x)]) {
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="257" endline="270">
+function x (bytes32 x) x x x (x)
+{
+    uint8 x;
+    bytes32 x;
+    bytes32 x;
+    uint8 x;
+    (x, x, x, x) = x.x (x);
+    if (x = = 0) {
+        return x;
+    }
+    else {
+        return x;
+    }
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="272" endline="274">
+function x (bytes32 x) x x returns (uint8 x, bytes32 x, bytes32 x, uint8 x)
+{
+    return x.x (x);
+}
+
+</source>
+<source file="data/smart_contracts/TrueProfileLogic.sol" startline="276" endline="284">
+function x (bytes32 x) x x x (x)
+{
+    uint8 x;
+    bytes32 x;
+    bytes32 x;
+    uint8 x;
+    (x, x, x, x) = x.x (x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/UNT.sol" startline="24" endline="30">
+function x () x
+{
+    x [x.x] = 5000000000000;
+    x = 5000000000000;
+    x = "Universal token";
+    x = 4;
+    x = "UNT";
+}
+
+</source>
+<source file="data/smart_contracts/UNT.sol" startline="32" endline="38">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [x] + = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/UNT.sol" startline="40" endline="50">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    uint256 x = x [x] [x.x];
+    require (x [x] > = x & & x > = x);
+    x [x] + = x;
+    x [x] - = x;
+    if (x < x) {
+        x [x] [x.x] - = x;
+    }
+    x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/UNT.sol" startline="52" endline="54">
+function x (address x) x x returns (uint256 x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/UNT.sol" startline="56" endline="60">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/UNT.sol" startline="62" endline="64">
+function x (address x, address x) x x returns (uint256 x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/UtilityTokenFactory.sol" startline="23" endline="26">
+function x (address x) x x
+{
+    require (x ! = x (0), "address cannot be 0x");
+    x = x (x);
+}
+
+</source>
+<source file="data/smart_contracts/UtilityTokenFactory.sol" startline="28" endline="31">
+function x (uint256 x) x x
+{
+    require (x > 0, "Price cannot be 0");
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/UtilityTokenFactory.sol" startline="33" endline="55">
+function x (string x, string x, uint256 x, uint8 x, bool x, bool x) x
+{
+    require (x (x).x > = 2, "Symbol length should be more than 2");
+    require (x (x).x > = 2, "Name length should be more than 2");
+    require (x > = 0, "Supply has to be more or equal than 0");
+    require (x > 0, "Decimals has to be more than 0");
+    require (x (x).x (x.x, x (x)) > = x, "Insufficent allowance");
+    require (x (x).x (x.x, x (x), x), "EVM Error");
+    x x = new x (x, x, x, x, x, x);
+    x memory x = x ({x : x, x : x, x : x, x : x, x : x (x)});
+    x [x.x].x (x (x));
+    x [x.x] [x (x)] = x;
+    x.x (x.x);
+    x.x (x (x));
+    x.x (x.x, x.x (x));
+    x.x (x.x);
+    emit x (x.x, x, x, x, x);
+}
+
+</source>
+<source file="data/smart_contracts/UtilityTokenFactory.sol" startline="57" endline="59">
+function x (address x) x x x (x [])
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/UtilityTokenFactory.sol" startline="61" endline="75">
+function x (address x, address x) x x x (x, x, x, x, x, x, x, x)
+{
+    x memory x = x [x] [x];
+    x x = x (x);
+    return (x.x, x.x, x.x, x.x (), x.x (), x.x, x.x (), x.x ());
+}
+
+</source>
+<source file="data/smart_contracts/UtilityTokenFactory.sol" startline="77" endline="79">
+function x () x x x (x)
+{
+    return x.x;
+}
+
+</source>
+<source file="data/smart_contracts/UtilityTokenFactory.sol" startline="81" endline="83">
+function x () x x x (x)
+{
+    return x.x;
+}
+
+</source>
+<source file="data/smart_contracts/UtilityTokenFactory.sol" startline="85" endline="87">
+function x () x x x (x)
+{
+    return x (x);
+}
+
+</source>
+<source file="data/smart_contracts/VCTAToken.sol" startline="34" endline="40">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [x] + = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/VCTAToken.sol" startline="42" endline="50">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    uint256 x = x [x] [x.x];
+    require (x [x] > = x & & x > = x);
+    x [x] + = x;
+    x [x] - = x;
+    x [x] [x.x] - = x;
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/VCTAToken.sol" startline="52" endline="54">
+function x (address x) x x returns (uint256 x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/VCTAToken.sol" startline="56" endline="60">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/VCTAToken.sol" startline="62" endline="64">
+function x (address x, address x) x x returns (uint256 x)
+{
+    return x [x] [x];
+}
+
+</source>
+<source file="data/smart_contracts/Warpcoin.sol" startline="26" endline="37">
+function x (uint256 x, string x, uint8 x, string x) x
+{
+    x [x.x] = x;
+    x = x;
+    x = x;
+    x = x;
+    x = x;
+}
+
+</source>
+<source file="data/smart_contracts/Warpcoin.sol" startline="39" endline="45">
+function x (address x, uint256 x) x returns (bool x)
+{
+    require (x [x.x] > = x);
+    x [x.x] - = x;
+    x [x] + = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Warpcoin.sol" startline="47" endline="57">
+function x (address x, address x, uint256 x) x returns (bool x)
+{
+    uint256 x = x [x] [x.x];
+    require (x [x] > = x & & x > = x);
+    x [x] + = x;
+    x [x] - = x;
+    if (x < x) {
+        x [x] [x.x] - = x;
+    }
+    emit x (x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Warpcoin.sol" startline="59" endline="61">
+function x (address x) x x returns (uint256 x)
+{
+    return x [x];
+}
+
+</source>
+<source file="data/smart_contracts/Warpcoin.sol" startline="63" endline="67">
+function x (address x, uint256 x) x returns (bool x)
+{
+    x [x.x] [x] = x;
+    emit x (x.x, x, x);
+    return x;
+}
+
+</source>
+<source file="data/smart_contracts/Warpcoin.sol" startline="69" endline="71">
+function x (address x, address x) x x returns (uint256 x)
+{
+    return x [x] [x];
+}
+
+</source>

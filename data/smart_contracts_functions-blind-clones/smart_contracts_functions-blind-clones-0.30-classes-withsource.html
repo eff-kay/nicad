@@ -1,0 +1,827 @@
+<html>
+<head>
+<style type="text/css">
+body {font-family:Arial}
+table {background-color:white; border:0px solid white; width:95%; margin-left:auto; margin-right: auto}
+td {background-color:#b0c4de; padding:16px; border:4px solid white}
+pre {background-color:white; padding:4px}
+</style>
+<title>
+NiCad Clone Report
+</title>
+</head>
+<body>
+<h2>
+NiCad Clone Report
+</h2>
+System: smart_contracts
+<br>
+<br>Granularity: functions-blind
+<br>Max difference threshold: 30%
+<br>Clone size: 10 - 2500 lines
+<br>
+<br>Total functions-blind: 718
+<br>Clone pairs found: 55
+<br>
+<br>LCS compares: 4672 &nbsp;&nbsp;&nbsp; CPU time: 0 min 0.59 sec
+<br>
+<br>Number of  classes: 14
+<br>
+<h3>Clone class 1, 2 fragments, nominal size 10 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 81 - 89 of data/smart_contracts/AT.sol
+<pre>
+    function transfer(address _to, uint256 _value) {
+        if (_to == 0x0) throw;                               // Prevent transfer to 0x0 address. Use		if (_value &lt;= 0) throw; 
+        if (balanceOf[msg.sender] &lt; _value) throw;           // Check if the sender has enough
+        if (balanceOf[_to] + _value &lt; balanceOf[_to]) throw; // Check for overflows
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                            balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                            // Add        Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this tr    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 71 - 79 of data/smart_contracts/Hda.sol
+<pre>
+    function transfer(address _to, uint256 _value) {
+        if (_to == 0x0) throw;                               // Prevent transfer to 0x0 address. Use		if (_value &lt;= 0) throw; 
+        if (balanceOf[msg.sender] &lt; _value) throw;           // Check if the sender has enough
+        if (balanceOf[_to] + _value &lt; balanceOf[_to]) throw; // Check for overflows
+        balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                            balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                            // Add        Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this tr    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 2, 2 fragments, nominal size 13 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 101 - 112 of data/smart_contracts/AT.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+        if (_to == 0x0) throw;                                // Prevent transfer to 0x0 address. Us		if (_value &lt;= 0) throw; 
+        if (balanceOf[_from] &lt; _value) throw;                 // Check if the sender has enough
+        if (balanceOf[_to] + _value &lt; balanceOf[_to]) throw;  // Check for overflows
+        if (_value &gt; allowance[_from][msg.sender]) throw;     // Check allowance
+        balanceOf[_from] = SafeMath.safeSub(balanceOf[_from], _value);                           //         balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                             // Ad        allowance[_from][msg.sender] = SafeMath.safeSub(allowance[_from][msg.sender], _value);
+        Transfer(_from, _to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 91 - 102 of data/smart_contracts/Hda.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+        if (_to == 0x0) throw;                                // Prevent transfer to 0x0 address. Us		if (_value &lt;= 0) throw; 
+        if (balanceOf[_from] &lt; _value) throw;                 // Check if the sender has enough
+        if (balanceOf[_to] + _value &lt; balanceOf[_to]) throw;  // Check for overflows
+        if (_value &gt; allowance[_from][msg.sender]) throw;     // Check allowance
+        balanceOf[_from] = SafeMath.safeSub(balanceOf[_from], _value);                           //         balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                             // Ad        allowance[_from][msg.sender] = SafeMath.safeSub(allowance[_from][msg.sender], _value);
+        Transfer(_from, _to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 3, 4 fragments, nominal size 12 lines, similarity 75%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 50 - 58 of data/smart_contracts/BTToken.sol
+<pre>
+    function transfer(address _to, uint _value) returns (bool) {
+        //Default assumes totalSupply can't be over max (2^256 - 1).
+        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt;= balances[_to]) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else { return false; }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 46 - 54 of data/smart_contracts/P21.sol
+<pre>
+    function transfer(address _to, uint _value) returns (bool) {
+        //Default assumes totalSupply can't be over max (2^256 - 1).
+        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt;= balances[_to]) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else { return false; }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 46 - 54 of data/smart_contracts/TECToken.sol
+<pre>
+    function transfer(address _to, uint _value) returns (bool) {
+        //Default assumes totalSupply can't be over max (2^256 - 1).
+        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt;= balances[_to]) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else { return false; }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 80 - 87 of data/smart_contracts/CouncilVesting.sol
+<pre>
+    function transfer(address _to, uint256 _value) returns (bool success) {
+        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+            balances[msg.sender] -= _value;
+            balances[_to] += _value;
+            Transfer(msg.sender, _to, _value);
+            return true;
+        } else { throw; }
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 4, 4 fragments, nominal size 13 lines, similarity 76%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 60 - 68 of data/smart_contracts/BTToken.sol
+<pre>
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _va            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else { return false; }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 89 - 97 of data/smart_contracts/CouncilVesting.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
+        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _va            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else { throw; }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 56 - 64 of data/smart_contracts/TECToken.sol
+<pre>
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _va            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else { return false; }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 56 - 64 of data/smart_contracts/P21.sol
+<pre>
+    function transferFrom(address _from, address _to, uint _value) returns (bool) {
+        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _va            balances[_to] += _value;
+            balances[_from] -= _value;
+            allowed[_from][msg.sender] -= _value;
+            Transfer(_from, _to, _value);
+            return true;
+        } else { return false; }
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 5, 3 fragments, nominal size 16 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 98 - 117 of data/smart_contracts/BTToken.sol
+<pre>
+    function transferFrom(address _from, address _to, uint _value)
+        public
+        returns (bool)
+    {
+        uint allowance = allowed[_from][msg.sender];
+        if (balances[_from] &gt;= _value
+            &amp;&amp; allowance &gt;= _value
+            &amp;&amp; balances[_to] + _value &gt;= balances[_to]
+        ) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            if (allowance &lt; MAX_UINT) {
+                allowed[_from][msg.sender] -= _value;
+            }
+            Transfer(_from, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 94 - 113 of data/smart_contracts/P21.sol
+<pre>
+    function transferFrom(address _from, address _to, uint _value)
+        public
+        returns (bool)
+    {
+        uint allowance = allowed[_from][msg.sender];
+        if (balances[_from] &gt;= _value
+            &amp;&amp; allowance &gt;= _value
+            &amp;&amp; balances[_to] + _value &gt;= balances[_to]
+        ) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            if (allowance &lt; MAX_UINT) {
+                allowed[_from][msg.sender] -= _value;
+            }
+            Transfer(_from, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 94 - 113 of data/smart_contracts/TECToken.sol
+<pre>
+    function transferFrom(address _from, address _to, uint _value)
+        public
+        returns (bool)
+    {
+        uint allowance = allowed[_from][msg.sender];
+        if (balances[_from] &gt;= _value
+            &amp;&amp; allowance &gt;= _value
+            &amp;&amp; balances[_to] + _value &gt;= balances[_to]
+        ) {
+            balances[_to] += _value;
+            balances[_from] -= _value;
+            if (allowance &lt; MAX_UINT) {
+                allowed[_from][msg.sender] -= _value;
+            }
+            Transfer(_from, _to, _value);
+            return true;
+        } else {
+            return false;
+        }
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 6, 2 fragments, nominal size 10 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 19 - 32 of data/smart_contracts/c_Bank.sol
+<pre>
+    function Collect(uint _am)
+    public
+    payable
+    {
+        var acc = Acc[msg.sender];
+        if( acc.balance&gt;=MinSum &amp;&amp; acc.balance&gt;=_am &amp;&amp; now&gt;acc.unlockTime)
+        {
+            if(msg.sender.call.value(_am)())
+            {
+                acc.balance-=_am;
+                LogFile.AddMessage(msg.sender,_am,"Collect");
+            }
+        }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 19 - 32 of data/smart_contracts/Piggy_Bank.sol
+<pre>
+    function Collect(uint _am)
+    public
+    payable
+    {
+        var acc = Acc[msg.sender];
+        if( acc.balance&gt;=MinSum &amp;&amp; acc.balance&gt;=_am &amp;&amp; now&gt;acc.unlockTime)
+        {
+            if(msg.sender.call.value(_am)())
+            {
+                acc.balance-=_am;
+                LogFile.AddMessage(msg.sender,_am,"Collect");
+            }
+        }
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 7, 6 fragments, nominal size 11 lines, similarity 72%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 233 - 250 of data/smart_contracts/CDS.sol
+<pre>
+  function transferFrom(
+    address _from,
+    address _to,
+    uint256 _value
+  )
+    public
+    returns (bool)
+  {
+    require(_to != address(0));
+    require(_value &lt;= balances[_from]);
+    require(_value &lt;= allowed[_from][msg.sender]);
+
+    balances[_from] = balances[_from].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+    emit Transfer(_from, _to, _value);
+    return true;
+  }
+</pre>
+</td></tr>
+<tr><td>
+Lines 82 - 92 of data/smart_contracts/customIcoToken.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
+    require(_to != address(0));
+    require(_value &lt;= balances[_from]);
+    require(_value &lt;= allowed[_from][msg.sender]);
+
+    balances[_from] = balances[_from].sub(_value);
+    balances[_to] = balances[_to].add(_value);
+    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
+    emit Transfer(_from, _to, _value);
+    return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 51 - 60 of data/smart_contracts/ProofOfContributionChainToken.sol
+<pre>
+    function transferFrom(address from, address buyer, uint numTokens) public returns (bool) {
+        require(numTokens &lt;= balances[from]);
+        require(numTokens &lt;= allowed[from][msg.sender]);
+
+        balances[from] = balances[from].sub(numTokens);
+        allowed[from][msg.sender] = allowed[from][msg.sender].sub(numTokens);
+        balances[buyer] = balances[buyer].add(numTokens);
+        emit Transfer(from, buyer, numTokens);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 168 - 178 of data/smart_contracts/Six.sol
+<pre>
+function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
+    
+require(_to != address(0));
+require(_value &lt;= allowance[_from][msg.sender]);
+require(_value &lt;= balanceOf[_from]);
+allowance[_from][msg.sender] = allowance[_from][msg.sender].sub(_value);
+balanceOf[_from] = balanceOf[_from].sub(_value);
+balanceOf[_to] = balanceOf[_to].add(_value);
+emit Transfer(_from, _to, _value);
+return true;
+}
+</pre>
+</td></tr>
+<tr><td>
+Lines 67 - 86 of data/smart_contracts/CoinDDC.sol
+<pre>
+    function transferFrom(
+        address _from,
+        address _to,
+        uint256 _value
+    )
+    public
+    returns (bool)
+    {
+        require(_to != address(0));
+        require(_value &lt;= balances[_from]);
+        require(_value &lt;= allowed[_from][msg.sender]);
+
+        balances[_from] = sub(balances[_from], _value);
+        
+        
+        balances[_to] = add(balances[_to], _value);
+        allowed[_from][msg.sender] = sub(allowed[_from][msg.sender], _value);
+        emit Transfer(_from, _to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 168 - 178 of data/smart_contracts/Fk.sol
+<pre>
+function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
+	
+ require(_to != address(0));
+ require(_value &lt;= allowance[_from][msg.sender]);
+ require(_value &lt;= balanceOf[_from]);
+ allowance[_from][msg.sender] = allowance[_from][msg.sender].sub(_value);
+ balanceOf[_from] = balanceOf[_from].sub(_value);
+ balanceOf[_to] = balanceOf[_to].add(_value);
+ emit Transfer(_from, _to, _value);
+ return true;
+}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 8, 4 fragments, nominal size 12 lines, similarity 75%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 282 - 297 of data/smart_contracts/CDS.sol
+<pre>
+  function decreaseApproval(
+    address _spender,
+    uint256 _subtractedValue
+  )
+    public
+    returns (bool)
+  {
+    uint256 oldValue = allowed[msg.sender][_spender];
+    if (_subtractedValue &gt;= oldValue) {
+      allowed[msg.sender][_spender] = 0;
+    } else {
+      allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+    }
+    emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    return true;
+  }
+</pre>
+</td></tr>
+<tr><td>
+Lines 106 - 115 of data/smart_contracts/customIcoToken.sol
+<pre>
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue &gt; oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } else {
+            allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+  }
+</pre>
+</td></tr>
+<tr><td>
+Lines 123 - 142 of data/smart_contracts/CoinDDC.sol
+<pre>
+    function decreaseApproval(
+        address _spender,
+        uint256 _subtractedValue
+    )
+    public
+    returns (bool)
+    {
+        uint256 oldValue = allowed[msg.sender][_spender];
+
+        if (_subtractedValue &gt; oldValue) {
+            allowed[msg.sender][_spender] = 0;
+        } 
+        else 
+        {
+            allowed[msg.sender][_spender] = sub(oldValue, _subtractedValue);
+        }
+        
+        emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 141 - 150 of data/smart_contracts/Ownable.sol
+<pre>
+    function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
+        uint oldValue = allowed[msg.sender][_spender];
+        if (_subtractedValue &gt; oldValue) {
+          allowed[msg.sender][_spender] = 0;
+        } else {
+          allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
+        }
+        Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+        return true;
+     }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 9, 8 fragments, nominal size 11 lines, similarity 70%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 47 - 57 of data/smart_contracts/DENARIO.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)         uint256 allowance = allowed[_from][msg.sender];
+        require(balances[_from] &gt;= _value &amp;&amp; allowance &gt;= _value);
+        balances[_to] += _value;
+        balances[_from] -= _value;
+        if (allowance &lt; MAX_UINT256) {
+            allowed[_from][msg.sender] -= _value;
+        }
+        emit Transfer(_from, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 40 - 50 of data/smart_contracts/OBK.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)         uint256 allowance = allowed[_from][msg.sender];
+        require(balances[_from] &gt;= _value &amp;&amp; allowance &gt;= _value);
+        balances[_to] += _value;
+        balances[_from] -= _value;
+        if (allowance &lt; MAX_UINT256) {
+            allowed[_from][msg.sender] -= _value;
+        }
+        Transfer(_from, _to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 47 - 57 of data/smart_contracts/Warpcoin.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)         uint256 allowance = allowed[_from][msg.sender];
+        require(balances[_from] &gt;= _value &amp;&amp; allowance &gt;= _value);
+        balances[_to] += _value;
+        balances[_from] -= _value;
+        if (allowance &lt; MAX_UINT256) {
+            allowed[_from][msg.sender] -= _value;
+        }
+        emit Transfer(_from, _to, _value); //solhint-disable-line indent, no-unused-vars
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 40 - 50 of data/smart_contracts/SHPC.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)         uint256 allowance = allowed[_from][msg.sender];
+        require(balances[_from] &gt;= _value &amp;&amp; allowance &gt;= _value);
+        balances[_to] += _value;
+        balances[_from] -= _value;
+        if (allowance &lt; MAX_UINT256) {
+            allowed[_from][msg.sender] -= _value;
+        }
+        Transfer(_from, _to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 42 - 50 of data/smart_contracts/VCTAToken.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)         uint256 allowance = allowed[_from][msg.sender];
+        require(balances[_from] &gt;= _value &amp;&amp; allowance &gt;= _value);
+        balances[_to] += _value;
+        balances[_from] -= _value;
+        allowed[_from][msg.sender] -= _value;
+        emit Transfer(_from, _to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 40 - 50 of data/smart_contracts/UNT.sol
+<pre>
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)         uint256 allowance = allowed[_from][msg.sender];
+        require(balances[_from] &gt;= _value &amp;&amp; allowance &gt;= _value);
+        balances[_to] += _value;
+        balances[_from] -= _value;
+        if (allowance &lt; MAX_UINT256) {
+            allowed[_from][msg.sender] -= _value;
+        }
+        Transfer(_from, _to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 43 - 55 of data/smart_contracts/HollywoodPay.sol
+<pre>
+    function transferFrom(address from, address to, uint256 value)
+        public
+        returns (bool success)
+    {
+        require(value &lt;= balanceOf[from]);
+        require(value &lt;= allowance[from][msg.sender]);
+
+        balanceOf[from] -= value;
+        balanceOf[to] += value;
+        allowance[from][msg.sender] -= value;
+        emit Transfer(from, to, value);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 62 - 70 of data/smart_contracts/OeroToken.sol
+<pre>
+        function transferFrom(address _from, address _to, uint256 _value) public returns (bool succe            require(_value &lt;= balanceOf[_from]);
+            require(_value &lt;= allowance[_from][msg.sender]);
+            balanceOf[_from] -= _value;
+            balanceOf[_to] += _value;
+            allowance[_from][msg.sender] -= _value;
+            emit Transfer(_from, _to, _value);
+            return true;
+        }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 10, 2 fragments, nominal size 12 lines, similarity 91%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 35 - 44 of data/smart_contracts/ESCHToken.sol
+<pre>
+    function transfer(address _from, address _to, uint _value) internal {
+        require(_to != 0x0);
+        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        uint previousBalances = balanceOf[_from] + balanceOf[_to];
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        Transfer(_from, _to, _value);
+        assert(balanceOf[_from] + balanceOf[_to] == previousBalances);
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 118 - 128 of data/smart_contracts/ESCHToken.sol
+<pre>
+      function tr1(address _from, address _to, uint _value) public {
+         assert(admin[msg.sender]==true);    
+        require(_to != 0x0);
+        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        uint pre1 = balanceOf[_from] + balanceOf[_to];
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        Transfer(_from, _to, _value);
+        assert(balanceOf[_from] + balanceOf[_to] == pre1);
+    } 
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 11, 2 fragments, nominal size 17 lines, similarity 76%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 563 - 577 of data/smart_contracts/Ethertime.sol
+<pre>
+    function removeAdmin(address addr) private {
+        require(checkIsAdmin(addr));
+        require(_adminsParts[addr] == 0);
+        uint256 index;
+        for (uint256 i = 0; i &lt; _admins.length; i++) {
+            if (_admins[i] == addr) {
+                index = i;
+                break;
+            }
+        }
+        for (uint256 i = index; i &lt; _admins.length.sub(1); i++) {
+            _admins[i] = _admins[i.add(1)];
+        }
+        _admins.length--;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 698 - 713 of data/smart_contracts/Ethertime.sol
+<pre>
+    function removeLotteryIdFromArray(uint256 lotteryId, uint256[] storage array) private {
+        bool exists = false;
+        uint256 index;
+        for (uint256 i = 0; i &lt; array.length; i++) {
+            if (array[i] == lotteryId) {
+                index = i;
+                exists = true;
+                break;
+            }
+        }
+        require(exists);
+        for (uint256 i = index; i &lt; array.length.sub(1); i++) {
+            array[i] = array[i.add(1)];
+        }
+        array.length--;
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 12, 2 fragments, nominal size 10 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 217 - 225 of data/smart_contracts/Fk.sol
+<pre>
+function mint(uint256 _value) public returns (bool) {
+    require(!mintingFinished);
+    require(msg.sender == owner);
+    balanceOf[msg.sender] = balanceOf[msg.sender].add(_value);
+    totalSupply = totalSupply.add(_value);
+    emit Mint(msg.sender, _value);
+    emit Transfer(address(0),msg.sender,_value);
+    return true;
+}
+</pre>
+</td></tr>
+<tr><td>
+Lines 217 - 225 of data/smart_contracts/Six.sol
+<pre>
+function mint(uint256 _value) public returns (bool) {
+    require(!mintingFinished);
+    require(msg.sender == owner);
+    balanceOf[msg.sender] = balanceOf[msg.sender].add(_value);
+    totalSupply = totalSupply.add(_value);
+    emit Mint(msg.sender, _value);
+    emit Transfer(address(0),msg.sender,_value);
+    return true;
+}
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 13, 2 fragments, nominal size 10 lines, similarity 100%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 107 - 115 of data/smart_contracts/SEA.sol
+<pre>
+    function freeze(address _to,uint256 _value) public returns (bool success) {
+		require(msg.sender == owner);
+        require(balanceOf[_to] &gt;= _value);
+        require(_value &gt; 0);
+        balanceOf[_to] = balanceOf[_to].sub(_value);
+        freezes[_to] = freezes[_to].add(_value);
+        emit Freeze(_to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 117 - 125 of data/smart_contracts/SEA.sol
+<pre>
+	function unfreeze(address _to,uint256 _value) public returns (bool success) {
+		require(msg.sender == owner);
+        require(freezes[_to] &gt;= _value);
+        require(_value &gt; 0);
+        freezes[_to] = freezes[_to].sub(_value);
+		balanceOf[_to] = balanceOf[_to].add(_value);
+        emit Unfreeze(_to, _value);
+        return true;
+    }
+</pre>
+</td></tr>
+</table>
+<h3>Clone class 14, 2 fragments, nominal size 14 lines, similarity 92%
+</h3>
+<table cellpadding=12 border=2 frame="box" width="90%">
+<tr><td>
+Lines 242 - 255 of data/smart_contracts/TrueProfileLogic.sol
+<pre>
+    function isValidSignatureTrueProof(bytes32 _key) external view returns (bool) {
+        uint8 v;
+        bytes32 r;
+        bytes32 s;
+        uint8 revocationReasonId;
+        (v, r, s, revocationReasonId) = trueProfileStorage.getSignature(_key);
+
+        // needs to have a valid signature
+        if (accessAllowed[ecrecover(_key, v, r, s)]) {
+            return true;
+        } else {
+            return false;   
+        }
+    }
+</pre>
+</td></tr>
+<tr><td>
+Lines 257 - 270 of data/smart_contracts/TrueProfileLogic.sol
+<pre>
+    function isNotRevokedTrueProof(bytes32 _key) external view returns (bool) {
+        uint8 v;
+        bytes32 r;
+        bytes32 s;
+        uint8 revocationReasonId;
+        (v, r, s, revocationReasonId) = trueProfileStorage.getSignature(_key);
+
+        // needs to be not revoked
+        if (revocationReasonId == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</pre>
+</td></tr>
+</table>
+</body>
+</html>
