@@ -32,23 +32,25 @@ define function_header
 end define
 
 define function_body
-	[FunctionInternalEndBlock]
+    [Statement*]
 end define
 
 redefine FunctionDefinition
 	% Input form 
 	[srcfilename] [srclinenumber] [NL]		% Keep track of starting file and line number
 	[function_header]
-	[function_body]	
-	[srcfilename] [srclinenumber] [NL]	% Keep track of ending file and line number [NL]
+	'{                                        [NL][IN] 
+	    [function_body]			  [EX]
+	    [srcfilename] [srclinenumber] 	% Keep track of ending file and line number
+	'}
 	|
 	
 	[not token]				% disallow output form in input parse
 	[opt xml_source_coordinate]
 	[function_header]
-	                                   [NL][IN] 
-	[function_body]			  [EX]
-	
+	'{                                        [NL][IN] 
+	    [function_body]			  [EX]
+	'}	
 	[opt end_xml_source_coordinate]
 
 end define
@@ -57,7 +59,9 @@ define method_definition
 	% Input form 
 	[srcfilename] [srclinenumber] [NL]		% Keep track of starting file and line number
 	[function_header]
-	[function_body]	
+	'{
+		[function_body]
+	'}	
 	[srcfilename] [srclinenumber] [NL]	% Keep track of ending file and line number [NL]
 end define
 
@@ -79,9 +83,10 @@ function main
     replace [program]
 	  P [program]
 	construct ab [repeat FunctionDefinition]
-	  _ [^ P] 
+	  _ [^ P]
+	  [convertFunctionDefinitions] 
     by
-      ab [convertFunctionDefinitions]
+      ab 
 end function
 
 rule RuleUpdateFunctions
@@ -97,8 +102,10 @@ rule convertFunctionDefinitions
     replace [FunctionDefinition]
 	FileName [srcfilename] LineNumber [srclinenumber]
 	FunctionHeader [function_header]
-	FunctionBody [function_body]
-	EndFileName [srcfilename] EndLineNumber [srclinenumber]
+	'{
+	    FunctionBody [function_body]
+	    EndFileName [srcfilename] EndLineNumber [srclinenumber]
+	'}
 
     % Convert file name and line numbers to strings for XML
     construct FileNameString [stringlit]
@@ -113,8 +120,10 @@ rule convertFunctionDefinitions
 	<source file=FileNameString startline=LineNumberString endline=EndLineNumberString>
     by
     XmlHeader
-	FunctionHeader 
-	FunctionBody
+	FunctionHeader
+	'{
+		FunctionBody
+	'}
 	</source>
 end rule
 

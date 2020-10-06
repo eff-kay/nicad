@@ -480,9 +480,9 @@ define Parameter
 end define
 
 define Block
-  [NL]'{  [NL][IN]  
-    [Statement*] [EX]
-[NL] '}[NL]
+  '{ [NL] [IN]
+  [Statement*] [EX]
+  '} [NL]
 end define
 
 define Statement
